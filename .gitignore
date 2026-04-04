@@ -1,0 +1,14 @@
+.env
+api/config.php
+.vscode/
+*.py
+*.md
+Analiz.pdf
+*.png
+*.webp
+!eka_emblem.png
+!eka_emblem.webp
+!robot_green_nodes.png
+!robot_green_nodes.webp
+!sve_emblem.png
+!map.png

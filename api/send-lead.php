@@ -2,9 +2,15 @@
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 
-// Настоящий токен и ID чата скрыты на сервере
-$botToken = '8778679367:AAHzAsbzsV34Zt3YRXq4Cbn6W9rLH66n-PI';
-$chatId = '5930269100';
+// Загружаем конфиг с ключами
+$configPath = __DIR__ . '/config.php';
+if (!file_exists($configPath)) {
+    echo json_encode(['success' => false, 'error' => 'Server configuration error']);
+    exit;
+}
+$config = require $configPath;
+$botToken = $config['bot_token'];
+$chatId = $config['chat_id'];
 
 // Читаем входящий JSON
 $inputRaw = file_get_contents("php://input");
