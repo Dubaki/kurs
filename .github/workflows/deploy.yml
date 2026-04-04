@@ -17,5 +17,5 @@ jobs:
           server: ${{ secrets.SFTP_SERVER }}
           password: ${{ secrets.SFTP_PASSWORD }}
           local_path: './*'
-          remote_path: '/66ai.ru/'
+          remote_path: '66ai.ru/'
           delete_remote_files: false
