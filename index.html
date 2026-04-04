@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html class="light" lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Курсы по Vibe Coding | Создай IT-инструменты без программистов</title>
+    <meta name="description" content="Обучение владельцев бизнеса Vibe Coding. Создавайте ERP, CRM и ИИ-ботов своими руками с помощью нейросетей, без найма программистов.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ai-fedor.com/">
+    <meta property="og:title" content="Курсы по Vibe Coding | Создай IT-инструменты без программистов">
+    <meta property="og:description" content="Один человек. Мощность отдела. Ноль программистов. Научим автоматизировать бизнес через Cursor и Claude.">
+    <meta property="og:image" content="https://ai-fedor.com/robot_green_nodes.webp">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Курсы по Vibe Coding | Создай IT-инструменты без программистов">
+    <meta property="twitter:image" content="https://ai-fedor.com/robot_green_nodes.webp">
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#e8e2d9",
+              "inverse-primary": "#006875",
+              "on-tertiary-container": "#412d00",
+              "secondary-container": "#d3e3ff",
+              "surface-container-lowest": "#ffffff",
+              "tertiary": "#8d5f00",
+              "on-secondary": "#ffffff",
+              "on-surface": "#191c1e",
+              "surface-bright": "#fcf8f1",
+              "primary-container": "#9cf0ff",
+              "surface": "#f5f0e6",
+              "on-primary-container": "#001f24",
+              "on-background": "#191c1e",
+              "error": "#ba1a1a",
+              "primary": "#006875",
+              "on-primary": "#ffffff",
+              "surface-container": "#f0eade",
+              "on-surface-variant": "#43474e",
+              "background": "#f5f0e6",
+              "outline": "#73777f",
+              "surface-variant": "#dee3eb",
+              "outline-variant": "#c3c6cf"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #f5f0e6;
+        color: #191c1e;
+      }
+      .image-container-glow {
+          position: relative;
+      }
+      .image-container-glow::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(circle at center, transparent 40%, #f5f0e6 80%);
+          pointer-events: none;
+      }
+      @media (max-width: 767px) {
+        body {
+          padding-bottom: 80px;
+        }
+      }
+      @keyframes btn-pulse {
+          0%, 100% { box-shadow: 0 0 0 0 rgba(0, 104, 117, 0.4); transform: scale(1); }
+          50%       { box-shadow: 0 0 0 10px rgba(0, 104, 117, 0); transform: scale(1.02); }
+      }
+      .btn-pulse { animation: btn-pulse 2s ease-in-out infinite; }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary">
+    <!-- TopNavBar -->
+    <header class="bg-[#f5f0e6]/80 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-black/5">
+        <div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+            <a href="index.html" class="flex items-center gap-2 text-xl font-black text-on-surface tracking-tighter no-underline">
+                <div class="bg-primary text-white w-8 h-8 flex items-center justify-center rounded font-bold text-sm">Ai</div>
+                <span>Дядя Фёдор</span>
+            </a>
+            <nav class="hidden lg:flex items-center gap-6 font-['Space_Grotesk'] font-bold uppercase tracking-tight text-[11px]">
+                <a class="text-primary border-b-2 border-primary pb-1" href="index.html">НАЧАЛО</a>
+                <a class="text-on-surface/70 hover:text-primary transition-all duration-300" href="index.html#process">ПРОЦЕСС</a>
+                <a class="text-on-surface/70 hover:text-primary transition-all duration-300" href="index.html#program">ПРОГРАММА</a>
+                <a class="text-on-surface/70 hover:text-primary transition-all duration-300" href="cases.html">КЕЙСЫ</a>
+                <a class="text-on-surface/70 hover:text-primary transition-all duration-300" href="about.html">АВТОР</a>
+                <a class="text-on-surface/70 hover:text-primary transition-all duration-300" href="index.html#faq">FAQ</a>
+            </nav>
+            <div class="flex items-center gap-6">
+                <a href="tel:+79221800911" class="hidden lg:block font-['Space_Grotesk'] font-bold text-on-surface/50 text-sm uppercase tracking-widest hover:text-primary transition-colors">+7 (922) 180-09-11</a>
+                <button onclick="openAuditModal()" class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-headline font-bold text-xs uppercase tracking-widest hover:scale-105 transition-transform active:scale-95">
+                    АУДИТ
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Fixed Bottom Navigation -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 z-[60] bg-surface/90 backdrop-blur-xl border-t border-black/5 px-6 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+        <div class="flex justify-between items-center w-full max-w-md mx-auto px-2">
+            <a class="flex flex-col items-center gap-1 text-primary" href="index.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="home">home</span>
+                <span class="text-[8px] font-headline font-black uppercase tracking-widest">Домой</span>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-on-surface/60 hover:text-primary transition-colors" href="index.html#process">
+                <span class="material-symbols-outlined text-[20px]" data-icon="schema">schema</span>
+                <span class="text-[8px] font-headline font-black uppercase tracking-widest">Процесс</span>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-on-surface/60 hover:text-primary transition-colors" href="index.html#program">
+                <span class="material-symbols-outlined text-[20px]" data-icon="school">school</span>
+                <span class="text-[8px] font-headline font-black uppercase tracking-widest">Курсы</span>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-on-surface/60 hover:text-primary transition-colors" href="cases.html">
+                <span class="material-symbols-outlined text-[20px]" data-icon="grid_view">grid_view</span>
+                <span class="text-[8px] font-headline font-black uppercase tracking-widest">Кейсы</span>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-[90vh] flex items-center overflow-hidden pt-12 pb-24 border-b border-black/5">
+            <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 z-10">
+                    <div class="inline-flex items-center gap-3 px-4 py-1.5 bg-primary/5 rounded-full border border-primary/20 mb-10">
+                        <span class="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(0,104,117,0.4)]"></span>
+                        <span class="text-primary font-headline text-[10px] font-black uppercase tracking-[0.3em]">КУРСЫ ПО АВТОМАТИЗАЦИИ</span>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-headline font-black text-on-surface leading-[0.85] tracking-tighter mb-6 min-h-[2.5em] md:min-h-0">
+                        ОДИН ЧЕЛОВЕК.<br/>МОЩНОСТЬ <span class="text-primary italic">ОТДЕЛА.</span><br/>НОЛЬ ПРОГРАММИСТОВ.
+                    </h1>
+                    <p class="text-lg md:text-xl text-primary font-black mb-4 uppercase tracking-tight border-l-4 border-primary pl-6">Создавайте ERP-системы, CRM и ботов сами — за дни, а не месяцы.</p>
+                    <p class="text-on-surface-variant font-bold max-w-xl mb-10 text-sm md:text-base">Автор курса — управленец, который собрал ERP для производства на 20 человек через Vibe Coding. Без единого программиста.</p>
+                    <div class="flex flex-wrap gap-6 mt-12">
+                        <button onclick="openAuditModal()" class="bg-primary text-on-primary px-12 py-6 rounded-full font-headline font-black text-sm uppercase tracking-widest shadow-xl shadow-primary/20 hover:scale-105 transition-all active:scale-95 group flex items-center gap-3">
+                            Бесплатный разбор
+                            <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform" data-icon="trending_flat">trending_flat</span>
+                        </button>
+                        <a href="#program" class="bg-black/5 border border-black/10 text-on-surface px-10 py-6 rounded-full font-headline font-bold text-sm uppercase tracking-widest hover:bg-black/10 transition-all flex items-center justify-center">
+                            Смотреть программу
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 relative flex justify-center lg:justify-end">
+                    <div class="relative w-full max-w-[540px] aspect-square group mt-10 lg:mt-0">
+                        <div class="absolute -inset-4 border border-primary/40 rounded-full animate-[spin_20s_linear_infinite] pointer-events-none"></div>
+                        <div class="relative z-10 w-full h-full rounded-full overflow-hidden image-container-glow">
+                            <img alt="ИИ Агент Дядя Фёдор" class="w-full h-full object-cover transition-all duration-700 hover:scale-105 grayscale hover:grayscale-0" src="robot_green_nodes.png"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section class="py-24 bg-surface-container-lowest border-b border-black/5" id="problem">
+            <div class="max-w-7xl mx-auto px-8">
+                <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface leading-tight mb-16 text-center">
+                    Узнаёте себя?
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-8 bg-surface rounded-3xl border border-black/5 flex items-start gap-6 hover:border-primary/30 transition-all hover:-translate-y-1">
+                        <span class="text-4xl">💸</span>
+                        <p class="text-lg text-on-surface font-semibold leading-snug">«Получили смету на CRM — 1.5 млн. Решили "пока обойдёмся"»</p>
+                    </div>
+                    <div class="p-8 bg-surface rounded-3xl border border-black/5 flex items-start gap-6 hover:border-primary/30 transition-all hover:-translate-y-1">
+                        <span class="text-4xl">📋</span>
+                        <p class="text-lg text-on-surface font-semibold leading-snug">«Заказы в Excel, переписка в WhatsApp, счета в почте. Ничего не найти»</p>
+                    </div>
+                    <div class="p-8 bg-surface rounded-3xl border border-black/5 flex items-start gap-6 hover:border-primary/30 transition-all hover:-translate-y-1">
+                        <span class="text-4xl">⏳</span>
+                        <p class="text-lg text-on-surface font-semibold leading-snug">«Попросили IT-подрядчика сделать простой дашборд — ждёте третий месяц»</p>
+                    </div>
+                    <div class="p-8 bg-surface rounded-3xl border border-black/5 flex items-start gap-6 hover:border-primary/30 transition-all hover:-translate-y-1">
+                        <span class="text-4xl">🤷</span>
+                        <p class="text-lg text-on-surface font-semibold leading-snug">«Слышали про ИИ и автоматизацию, но непонятно, с какой стороны подойти»</p>
+                    </div>
+                </div>
+                <div class="mt-12 text-center max-w-2xl mx-auto text-on-surface-variant text-lg">
+                    Всё это — симптомы одной проблемы: ваш бизнес зависит от людей, которых сложно найти, дорого нанять и невозможно контролировать. Есть другой путь.
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section class="py-24 bg-surface border-b border-black/5" id="solution">
+            <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface leading-tight mb-8 tracking-tighter">
+                        А что если ВЫ — свой лучший IT-отдел?
+                    </h2>
+                    <div class="space-y-6 text-on-surface-variant text-lg leading-relaxed font-light">
+                        <p><strong class="font-bold text-primary">Vibe Coding</strong> — это подход, при котором ИИ пишет код, а вы управляете процессом на человеческом языке. Вы описываете задачу словами — ИИ создаёт рабочее решение. Не шаблон, не конструктор — полноценный код, который делает то, что вам нужно.</p>
+                        <p>Я не программист. Я управленец на производстве — 20 человек, металлоконструкции, заказы, логистика, документооборот. Когда хаос достал, я сел и за несколько недель собрал ERP-систему через ИИ. Потом сделал сайт для бизнеса по ремонту. Потом — этот сайт.</p>
+                        <p class="font-bold text-on-surface pt-4 border-t border-black/10">Всё своими руками, без единого программиста. Теперь я учу других делать то же самое.</p>
+                    </div>
+                </div>
+                <div class="relative w-full aspect-[4/3] bg-surface-container-lowest rounded-3xl border border-black/5 overflow-hidden shadow-xl flex items-center justify-center group text-on-surface/20 transition-all hover:border-primary/50">
+                    <div class="text-center">
+                        <span class="material-symbols-outlined text-6xl mb-4" data-icon="dashboard">dashboard</span>
+                        <p class="font-bold text-sm uppercase tracking-widest text-on-surface/40">Интерфейс ERP</p>
+                        <p class="text-[10px] mt-2 opacity-50 uppercase tracking-widest">[ СКРИНШОТ В РАЗРАБОТКЕ ]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Process Section -->
+        <section class="py-24 bg-surface-container-lowest border-b border-black/5" id="process">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="text-center max-w-4xl mx-auto mb-16">
+                    <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface mb-6 tracking-tighter">
+                        Вы не пишете промпты.<br/><span class="text-primary italic">Вы управляете ИИ-командой.</span>
+                    </h2>
+                    <p class="text-xl text-on-surface-variant font-light">У вас будет три ИИ-сотрудника с чёткими ролями. Вы — руководитель.</p>
+                </div>
+
+                <!-- Conveyor scheme -->
+                <div class="relative max-w-6xl mx-auto">
+                    <div class="flex flex-col md:flex-row gap-4 items-center justify-between text-center relative z-10">
+                        <!-- Step 1 -->
+                        <div class="flex-1 w-full bg-surface p-6 rounded-2xl border border-black/5 hover:-translate-y-1 transition-transform relative text-center">
+                            <div class="text-4xl mb-4">💡</div>
+                            <h4 class="font-black font-headline text-[10px] uppercase tracking-widest mb-2 opacity-50">ШАГ 1</h4>
+                            <h3 class="font-black text-sm uppercase tracking-widest mb-3">ВЫ + ИДЕЯ</h3>
+                            <p class="text-xs text-on-surface-variant leading-relaxed">Описываете задачу обычными словами</p>
+                        </div>
+                        <div class="hidden md:block material-symbols-outlined text-primary/30 text-2xl">arrow_forward</div>
+                        <div class="md:hidden material-symbols-outlined text-primary/30 text-2xl rotate-90">arrow_forward</div>
+                        
+                        <!-- Step 2 -->
+                        <div class="flex-1 w-full bg-surface p-6 rounded-2xl border border-black/5 hover:-translate-y-1 transition-transform relative text-center">
+                            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#10B981] text-white px-3 py-1 rounded-full text-[8px] font-black uppercase shadow tracking-widest whitespace-nowrap">Gemini Pro</div>
+                            <div class="text-4xl mb-4 mt-2">📐</div>
+                            <h4 class="font-black font-headline text-[10px] uppercase tracking-widest mb-2 opacity-50">ШАГ 2</h4>
+                            <h3 class="font-black text-sm uppercase tracking-widest mb-3 text-primary">АРХИТЕКТОР</h3>
+                            <p class="text-xs text-on-surface-variant leading-relaxed">Превращает идею в точное техзадание</p>
+                        </div>
+                        <div class="hidden md:block material-symbols-outlined text-primary/30 text-2xl">arrow_forward</div>
+                        <div class="md:hidden material-symbols-outlined text-primary/30 text-2xl rotate-90">arrow_forward</div>
+
+                        <!-- Step 3 -->
+                        <div class="flex-1 w-full bg-surface p-6 rounded-2xl border border-black/5 hover:-translate-y-1 transition-transform relative text-center">
+                            <div class="text-4xl mb-4">📁</div>
+                            <h4 class="font-black font-headline text-[10px] uppercase tracking-widest mb-2 opacity-50">ШАГ 3</h4>
+                            <h3 class="font-black text-sm uppercase tracking-widest mb-3">ЗАДАНИЕ → TODO</h3>
+                            <p class="text-xs text-on-surface-variant leading-relaxed">Один шаг — одна задача</p>
+                        </div>
+                        <div class="hidden md:block material-symbols-outlined text-primary/30 text-2xl">arrow_forward</div>
+                        <div class="md:hidden material-symbols-outlined text-primary/30 text-2xl rotate-90">arrow_forward</div>
+
+                        <!-- Step 4 -->
+                        <div class="flex-1 w-full bg-surface p-6 rounded-2xl border border-black/5 hover:-translate-y-1 transition-transform relative text-center">
+                            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white px-3 py-1 rounded-full text-[8px] font-black uppercase shadow tracking-widest whitespace-nowrap">Claude Code</div>
+                            <div class="text-4xl mb-4 mt-2">⌨️</div>
+                            <h4 class="font-black font-headline text-[10px] uppercase tracking-widest mb-2 opacity-50">ШАГ 4</h4>
+                            <h3 class="font-black text-sm uppercase tracking-widest mb-3 text-primary">ПРОГРАММИСТ</h3>
+                            <p class="text-xs text-on-surface-variant leading-relaxed">Выполняет задание → перемещает в DONE</p>
+                        </div>
+                        <div class="hidden md:block material-symbols-outlined text-primary/30 text-2xl">arrow_forward</div>
+                        <div class="md:hidden material-symbols-outlined text-primary/30 text-2xl rotate-90">arrow_forward</div>
+
+                        <!-- Step 5 -->
+                        <div class="flex-1 w-full bg-surface p-6 rounded-2xl border border-black/5 hover:-translate-y-1 transition-transform relative text-center">
+                            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-tertiary text-white px-3 py-1 rounded-full text-[8px] font-black uppercase shadow tracking-widest whitespace-nowrap">Совет 3 Моделей</div>
+                            <div class="text-4xl mb-4 mt-2">🛡️</div>
+                            <h4 class="font-black font-headline text-[10px] uppercase tracking-widest mb-2 opacity-50">ШАГ 5</h4>
+                            <h3 class="font-black text-sm uppercase tracking-widest mb-3 text-primary">АУДИТ</h3>
+                            <p class="text-xs text-on-surface-variant leading-relaxed">Перекрёстная проверка перед запуском</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 text-center">
+                    <div class="text-2xl md:text-3xl font-headline font-black text-on-surface tracking-tighter uppercase">
+                        Промпты создаёт ИИ. Код пишет ИИ. Вы — руководите.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Team Section -->
+        <section class="py-24 bg-surface border-b border-black/5" id="ai-team">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface mb-4 tracking-tighter">Три сотрудника. Чёткие роли. Минимальный стек.</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Архитектор -->
+                    <div class="bg-surface-container-lowest rounded-3xl p-8 border border-black/5 hover:-translate-y-1 transition-transform">
+                        <div class="text-5xl mb-4">📐</div>
+                        <h4 class="text-xl font-headline font-black mb-1">АРХИТЕКТОР</h4>
+                        <p class="text-xs font-bold text-[#10B981] uppercase tracking-widest mb-4">Gemini Pro</p>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Проектирует решения и создаёт задания для программиста</p>
+                    </div>
+                    
+                    <!-- Программист -->
+                    <div class="bg-primary text-white rounded-3xl p-8 border border-primary/20 hover:-translate-y-1 transition-transform relative">
+                        <div class="absolute top-8 right-8 bg-white/20 text-white px-3 py-1 rounded-full text-[9px] font-black tracking-widest uppercase">Финальный арбитр</div>
+                        <div class="text-5xl mb-4">⌨️</div>
+                        <h4 class="text-xl font-headline font-black mb-1">ПРОГРАММИСТ</h4>
+                        <p class="text-xs font-bold text-white/50 uppercase tracking-widest mb-4">Claude Code Pro</p>
+                        <p class="text-white/80 text-sm leading-relaxed">Пишет код и принимает финальные решения</p>
+                    </div>
+
+                    <!-- Аудитор -->
+                    <div class="bg-surface-container-lowest rounded-3xl p-8 border border-black/5 hover:-translate-y-1 transition-transform relative">
+                        <div class="absolute top-8 right-8 bg-black/5 text-on-surface px-3 py-1 rounded-full text-[9px] font-black tracking-widest uppercase">Бесплатно</div>
+                        <div class="text-5xl mb-4">🔍</div>
+                        <h4 class="text-xl font-headline font-black mb-1">АУДИТОР</h4>
+                        <p class="text-xs font-bold text-tertiary uppercase tracking-widest mb-4">Qwen Code</p>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Проверяет результат и страхует при исчерпании лимитов</p>
+                    </div>
+                </div>
+                <div class="text-center mt-12 text-[11px] font-bold uppercase tracking-widest text-on-surface-variant/50">
+                    Резерв: Gemini CLI. Никаких десятков приложений — три инструмента и чёткая методология.
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Cases Section -->
+        <section class="py-24 bg-surface-container-lowest border-b border-black/5" id="cases">
+            <div class="max-w-7xl mx-auto px-8">
+                <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface leading-tight mb-16">
+                    Что я уже собрал через <span class="text-primary italic">Vibe Coding</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Case 1 -->
+                    <div class="bg-surface rounded-3xl p-8 border border-black/5 hover:border-primary/30 transition-all flex flex-col h-full group">
+                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-sm group-hover:scale-110 transition-transform">⚙️</div>
+                        <h3 class="text-2xl font-headline font-black mb-4">ERP для производства</h3>
+                        <ul class="space-y-3 mb-8 flex-grow text-sm text-on-surface-variant">
+                            <li><strong class="text-on-surface">Компания:</strong> 20 сотрудников, металлоконструкции.</li>
+                            <li><strong class="text-on-surface">Проблема:</strong> Excel, бумага, потери.</li>
+                            <li><strong class="text-on-surface">Решение:</strong> ERP (заказы, задачи, доки) за пару недель через ИИ.</li>
+                        </ul>
+                        <a href="cases.html" class="h-16 bg-surface-container rounded-xl border border-black/10 flex items-center justify-center text-xs text-on-surface-variant font-bold tracking-widest uppercase mt-auto group-hover:border-primary/30 hover:text-primary transition-all">Смотреть кейс →</a>
+                    </div>
+                    <!-- Case 2 -->
+                    <div class="bg-surface rounded-3xl p-8 border border-black/5 hover:border-primary/30 transition-all flex flex-col h-full group">
+                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-sm group-hover:scale-110 transition-transform">🏠</div>
+                        <h3 class="text-2xl font-headline font-black mb-4">Сайт по ремонту квартир</h3>
+                        <ul class="space-y-3 mb-8 flex-grow text-sm text-on-surface-variant">
+                            <li><strong class="text-on-surface">Задача:</strong> Портфолио и лид-формы.</li>
+                            <li><strong class="text-on-surface">Решение:</strong> Vibe Coding, собрано быстро, работает стабильно, клиенты приходят без студий.</li>
+                        </ul>
+                        <a href="cases.html" class="h-16 bg-surface-container rounded-xl border border-black/10 flex items-center justify-center text-xs text-on-surface-variant font-bold tracking-widest uppercase mt-auto group-hover:border-primary/30 hover:text-primary transition-all">Смотреть кейс →</a>
+                    </div>
+                    <!-- Case 3 -->
+                    <div class="bg-surface rounded-3xl p-8 border border-black/5 hover:border-primary/30 transition-all flex flex-col h-full group">
+                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-sm group-hover:scale-110 transition-transform">🤖</div>
+                        <h3 class="text-2xl font-headline font-black mb-4">Сайт ИИ-агентства</h3>
+                        <ul class="space-y-3 mb-8 flex-grow text-sm text-on-surface-variant">
+                            <li><strong class="text-on-surface">Задача:</strong> Продающий лендинг.</li>
+                            <li><strong class="text-on-surface">Решение:</strong> Этот сайт, на котором вы сейчас находитесь, с подключенным Telegram-ботом.</li>
+                        </ul>
+                        <a href="cases.html" class="h-16 bg-surface-container rounded-xl border border-black/10 flex items-center justify-center text-xs text-on-surface-variant font-bold tracking-widest uppercase mt-auto group-hover:border-primary/30 hover:text-primary transition-all">Смотреть кейс →</a>
+                    </div>
+                </div>
+                <div class="mt-12 text-center">
+                    <a href="cases.html" class="inline-flex bg-black/5 border border-black/10 text-on-surface px-10 py-5 rounded-full font-headline font-bold text-sm uppercase tracking-widest hover:bg-black/10 transition-all">
+                        Все кейсы и демо
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Process Section -->
+        
+
+        <!-- AI Team Section -->
+        
+
+
+        <!-- Program Section -->
+        
+
+        
+        <!-- Social Proof Section -->
+        <section class="py-12 bg-primary text-white border-y border-black/10 relative overflow-hidden">
+            <div class="absolute inset-0 z-0 opacity-10 mix-blend-overlay"></div>
+            <div class="max-w-7xl mx-auto px-8 relative z-10">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/20">
+                    <div>
+                        <div class="text-4xl md:text-5xl font-black font-headline mb-2">3</div>
+                        <div class="text-[10px] font-bold uppercase tracking-widest opacity-80">проекта собрано</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl md:text-5xl font-black font-headline mb-2">0 ₽</div>
+                        <div class="text-[10px] font-bold uppercase tracking-widest opacity-80">на программистов</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl md:text-5xl font-black font-headline mb-2">20</div>
+                        <div class="text-[10px] font-bold uppercase tracking-widest opacity-80">человек на производстве</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl md:text-5xl font-black font-headline mb-2">4</div>
+                        <div class="text-[10px] font-bold uppercase tracking-widest opacity-80">недели до результата</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Program Section (v5) -->
+        <section class="py-24 bg-surface border-b border-black/5" id="program">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="text-center max-w-4xl mx-auto mb-20">
+                    <h2 class="text-4xl md:text-6xl font-headline font-black text-on-surface mb-6 tracking-tighter">Три ступени к результату</h2>
+                    <p class="text-xl text-on-surface-variant font-light">От первого бота за выходные — до системы, которая работает без вас.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                    <!-- Ступень 1 -->
+                    <div class="bg-surface-container-lowest p-8 rounded-3xl border border-black/5 flex flex-col hover:border-primary/50 transition-all shadow-sm">
+                        <div class="inline-flex items-center justify-center bg-black/5 px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest text-on-surface-variant mb-6 w-max">Быстрый старт • 2 дня</div>
+                        <h3 class="font-headline font-black text-2xl mb-4">ИИ-Конвейер за выходные</h3>
+                        <p class="text-sm text-on-surface-variant mb-6">Настраиваете свою ИИ-команду (Gemini + Claude Code + Qwen), осваиваете конвейер и собираете первый рабочий инструмент для бизнеса — Telegram-бот или мини-сайт.</p>
+                        
+                        <div class="bg-surface p-4 rounded-xl mb-8">
+                            <p class="text-[10px] uppercase font-black text-primary mb-2">ВАШ РЕЗУЛЬТАТ:</p>
+                            <ul class="text-xs space-y-2 font-medium">
+                                <li>— Рабочий стек ИИ-инструментов</li>
+                                <li>— Первый продукт для вашего бизнеса</li>
+                                <li>— Понимание: «это реально, я могу»</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mt-auto pt-6 border-t border-black/5">
+                            <p class="text-xs text-on-surface-variant mb-4">Формат: скринкасты + текстовые гайды + чат поддержки 2 недели</p>
+                            <p class="text-3xl font-black text-on-surface mb-6">4 990 ₽</p>
+                            <button onclick="openAuditModal()" class="w-full bg-surface-container-highest border border-black/10 text-on-surface hover:bg-black/5 py-4 rounded-full font-bold uppercase text-xs tracking-widest transition-colors">Начать за 4 990 ₽</button>
+                        </div>
+                    </div>
+
+                    <!-- Ступень 2 Флагман -->
+                    <div class="bg-primary text-white p-8 md:p-10 rounded-3xl border border-primary-container/30 flex flex-col shadow-2xl relative md:-translate-y-6 z-10">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#10B981] text-white px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest whitespace-nowrap shadow-md">Флагманский курс • 4 недели • Малая группа</div>
+                        <h3 class="font-headline font-black text-3xl mb-4 mt-2">Бизнес-инженер</h3>
+                        <p class="text-sm text-white/80 mb-6 font-light">Полный путь от бизнес-задачи до работающей системы. CRM, дашборды, боты, автоматизации — конкретно для ВАШЕГО бизнеса. Авторская методология: «Совет 3 Моделей», конвейер TODO→DONE, управление ИИ-командой.</p>
+                        
+                        <div class="space-y-3 mb-8">
+                            <div class="bg-white/10 p-3 rounded-lg border border-white/5">
+                                <p class="text-[10px] font-black uppercase text-primary-container mb-1">Уровень 1 — «Постановщик задач»</p>
+                                <p class="text-xs text-white/90">Результат: ставите задачу ИИ и получаете результат с первого раза</p>
+                            </div>
+                            <div class="bg-white/10 p-3 rounded-lg border border-white/5">
+                                <p class="text-[10px] font-black uppercase text-primary-container mb-1">Уровень 2 — «Контролёр качества»</p>
+                                <p class="text-xs text-white/90">Результат: выявляете ошибки ИИ, получаете надёжный результат</p>
+                            </div>
+                            <div class="bg-white/10 p-3 rounded-lg border border-white/5">
+                                <p class="text-[10px] font-black uppercase text-primary-container mb-1">Уровень 3 — «Архитектор систем»</p>
+                                <p class="text-xs text-white/90">Результат: собираете рабочее приложение для бизнеса</p>
+                            </div>
+                            <div class="bg-white/10 p-3 rounded-lg border border-white/5">
+                                <p class="text-[10px] font-black uppercase text-primary-container mb-1">Уровень 4 — «Руководитель ИИ-команды»</p>
+                                <p class="text-xs text-white/90">Результат: автоматизации работают без вашего контроля</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-auto pt-6 border-t border-white/10">
+                            <p class="text-xs text-white/70 mb-4">Формат: скринкасты + живые эфиры + текстовые гайды + чат</p>
+                            <p class="text-3xl font-black text-white mb-6">от 19 900 ₽</p>
+                            <button onclick="openAuditModal()" class="w-full bg-white text-primary hover:bg-surface py-4 rounded-full font-bold uppercase text-xs tracking-widest transition-colors shadow">Записаться на курс</button>
+                        </div>
+                    </div>
+
+                    <!-- Ступень 3 -->
+                    <div class="bg-surface-container-lowest p-8 rounded-3xl border border-black/5 flex flex-col hover:border-black/20 transition-all shadow-sm">
+                        <div class="inline-flex items-center justify-center bg-black/5 px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest text-on-surface-variant mb-6 w-max">Индивидуально</div>
+                        <h3 class="font-headline font-black text-2xl mb-4">Персональный консалтинг</h3>
+                        <p class="text-sm text-on-surface-variant mb-6">Аудит ваших процессов + совместная сборка системы. Результат быстрее, фокус на вашем бизнесе.</p>
+                        
+                        <div class="mt-auto pt-6 border-t border-black/5 flex flex-col h-full justify-end">
+                            <p class="text-3xl font-black text-on-surface mb-6">По запросу</p>
+                            <button onclick="openAuditModal()" class="w-full bg-black/5 text-on-surface hover:bg-black/10 py-4 rounded-full font-bold uppercase text-xs tracking-widest transition-colors">Обсудить задачу</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Flow Section -->
+        <section class="py-24 bg-surface-container-lowest border-b border-black/5" id="flow">
+            <div class="max-w-7xl mx-auto px-8">
+                <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface leading-tight mb-16 text-center">
+                    4 шага — от идеи до работающей системы
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div class="p-8 bg-surface rounded-3xl border border-black/5 relative hover:-translate-y-1 transition-transform">
+                        <div class="text-primary font-black text-4xl mb-4 opacity-30">01</div>
+                        <h3 class="font-headline font-black text-xl mb-3">Описываете задачу</h3>
+                        <p class="text-sm text-on-surface-variant">Вы объясняете, что нужно, обычными словами. Никакого кода.</p>
+                    </div>
+                    <div class="p-8 bg-surface rounded-3xl border border-black/5 relative hover:-translate-y-1 transition-transform">
+                        <div class="text-primary font-black text-4xl mb-4 opacity-30">02</div>
+                        <h3 class="font-headline font-black text-xl mb-3">ИИ создаёт решение</h3>
+                        <p class="text-sm text-on-surface-variant">Gemini проектирует, Claude Code реализует.</p>
+                    </div>
+                    <div class="p-8 bg-surface rounded-3xl border border-black/5 relative hover:-translate-y-1 transition-transform">
+                        <div class="text-primary font-black text-4xl mb-4 opacity-30">03</div>
+                        <h3 class="font-headline font-black text-xl mb-3">Тестируете и правите</h3>
+                        <p class="text-sm text-on-surface-variant">Проверяете, уточняете нюансы. ИИ исправляет всё за секунды.</p>
+                    </div>
+                    <div class="p-8 bg-surface rounded-3xl border border-black/5 relative hover:-translate-y-1 transition-transform">
+                        <div class="text-primary font-black text-4xl mb-4 opacity-30">04</div>
+                        <h3 class="font-headline font-black text-xl mb-3">Запускаете в бизнес</h3>
+                        <p class="text-sm text-on-surface-variant">Система работает, вы или ваши сотрудники пользуются ею каждый день.</p>
+                    </div>
+                </div>
+                <div class="mt-12 text-center text-primary font-bold uppercase tracking-widest text-sm">
+                    Весь путь — без написания единой строчки кода руками.
+                </div>
+            </div>
+        </section>
+
+        <!-- Audience Section -->
+        <section class="py-24 bg-surface border-b border-black/5" id="audience">
+            <div class="max-w-7xl mx-auto px-8">
+                <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface leading-tight mb-16 text-center">
+                    Кому подойдут курсы
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-8 group">
+                        <div class="text-4xl mb-6 group-hover:scale-110 transition-transform origin-left">🏭</div>
+                        <h3 class="text-2xl font-headline font-black mb-4">Владельцы бизнеса</h3>
+                        <p class="text-on-surface-variant leading-relaxed">У вас 5-50 сотрудников, процессы в хаосе, бюджета на IT нет. Вы хотите систему как у «больших», но без их затрат и месяцев ожидания.</p>
+                    </div>
+                    <div class="p-8 group border-t md:border-t-0 md:border-l border-black/10">
+                        <div class="text-4xl mb-6 group-hover:scale-110 transition-transform origin-left">📊</div>
+                        <h3 class="text-2xl font-headline font-black mb-4">Руководители отделов</h3>
+                        <p class="text-on-surface-variant leading-relaxed">Вам нужен дашборд, бот или автоматизация — но IT-отдел занят, либо его нет. Вы устали ждать, пока вашу заявку возьмут в работу.</p>
+                    </div>
+                    <div class="p-8 group border-t md:border-t-0 md:border-l border-black/10">
+                        <div class="text-4xl mb-6 group-hover:scale-110 transition-transform origin-left">💼</div>
+                        <h3 class="text-2xl font-headline font-black mb-4">Консультанты</h3>
+                        <p class="text-on-surface-variant leading-relaxed">Вы хотите новую профессию: собирать бизнес-приложения для клиентов за хорошие деньги и без команды разработчиков в штате.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Methodology Section -->
+        
+
+        <!-- FAQ Section -->
+        <section class="py-24 bg-surface-container-lowest border-b border-black/5" id="faq">
+            <div class="max-w-4xl mx-auto px-8">
+                <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface leading-tight mb-16 text-center">
+                    Частые вопросы
+                </h2>
+                <div class="space-y-4">
+                    <details class="bg-surface rounded-2xl p-6 group cursor-pointer border border-black/5 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex justify-between items-center font-headline font-black focus:outline-none">
+                            Какие инструменты нужны?
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180 text-primary">expand_more</span>
+                        </summary>
+                        <p class="mt-4 text-on-surface-variant leading-relaxed font-light">Три ИИ-модели: Gemini Pro, Claude Code Pro и Qwen Code (бесплатно). Настроим всё на первом занятии. Никаких десятков приложений.</p>
+                    </details>
+                    <details class="bg-surface rounded-2xl p-6 group cursor-pointer border border-black/5 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex justify-between items-center font-headline font-black focus:outline-none">
+                            Мне нужно уметь писать промпты?
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180 text-primary">expand_more</span>
+                        </summary>
+                        <p class="mt-4 text-on-surface-variant leading-relaxed font-light">Нет. В нашей методологии промпты создаёт ИИ, а не вы. Вы описываете задачу словами, Архитектор превращает её в техзадание, Программист выполняет. Вы — руководитель.</p>
+                    </details>
+                    <details class="bg-surface rounded-2xl p-6 group cursor-pointer border border-black/5 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex justify-between items-center font-headline font-black focus:outline-none">
+                            Что такое "Совет 3 Моделей"?
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180 text-primary">expand_more</span>
+                        </summary>
+                        <p class="mt-4 text-on-surface-variant leading-relaxed font-light">Авторская методика перекрёстной проверки. Три ИИ-модели проверяют работу друг друга — вместо слепого доверия одной нейросети. Подробно разбираем на курсе.</p>
+                    </details>
+                    <details class="bg-surface rounded-2xl p-6 group cursor-pointer border border-black/5 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex justify-between items-center font-headline font-black focus:outline-none">
+                            Сколько стоят подписки на инструменты?
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180 text-primary">expand_more</span>
+                        </summary>
+                        <p class="mt-4 text-on-surface-variant leading-relaxed font-light">Gemini Pro и Claude Code — платные подписки. Qwen — бесплатно. Суммарно в десятки раз дешевле одного месяца работы программиста. Точные цены и инструкцию дадим на старте.</p>
+                    </details>
+                    <details class="bg-surface rounded-2xl p-6 group cursor-pointer border border-black/5 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex justify-between items-center font-headline font-black focus:outline-none">
+                            Чем это отличается от других курсов по Vibe Coding?
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180 text-primary">expand_more</span>
+                        </summary>
+                        <p class="mt-4 text-on-surface-variant leading-relaxed font-light">Другие курсы учат нажимать кнопки в Cursor. Мы учим управлять ИИ-командой по строгой методологии — с разделением ролей, конвейером задач и перекрёстным контролем качества. Автор — управленец, который собрал ERP для реального производства, а не блогер.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="py-32 bg-primary relative overflow-hidden" id="cta">
+            <!-- Background Image overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="robot_green_nodes.png" alt="" class="w-full h-full object-cover opacity-10 grayscale mix-blend-overlay" />
+            </div>
+            <div class="max-w-4xl mx-auto px-8 relative z-10 text-center">
+                <h2 class="text-4xl md:text-6xl font-headline font-black text-white leading-tight mb-6">
+                    Один человек с ИИ опаснее <span class="italic text-primary-container">целого IT-отдела</span>
+                </h2>
+                <p class="text-xl text-white/80 mb-12 font-light">Перестаньте платить за то, что можете сделать сами. Начните сегодня.</p>
+                <div class="flex flex-col md:flex-row justify-center gap-6">
+                    <button onclick="openAuditModal()" class="bg-white text-primary px-10 py-5 rounded-full font-headline font-black text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+                        Бесплатный разбор
+                    </button>
+                    <a href="#program" class="bg-primary-container/20 border border-primary-container/30 text-white px-10 py-5 rounded-full font-headline font-black text-sm uppercase tracking-widest hover:bg-primary-container/40 transition-all flex items-center justify-center">
+                        Интенсив за 4 990 ₽
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#f5f0e6] full-width py-16 border-t border-black/5">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-12 mb-12">
+                <div class="text-2xl font-black text-on-surface tracking-tighter flex items-center gap-2">
+                    <div class="bg-primary text-white w-8 h-8 flex items-center justify-center rounded font-bold text-sm">Ai</div>
+                    <span>Дядя Фёдор</span>
+                </div>
+                <div class="flex flex-wrap justify-center gap-10 font-['Space_Grotesk'] font-bold text-[10px] uppercase tracking-[0.2em] text-on-surface/40">
+                    <a class="hover:text-primary transition-colors" href="#">Политика конфиденциальности</a>
+                    <a class="hover:text-primary transition-colors" href="#">Условия</a>
+                    <a class="hover:text-primary transition-colors" href="about.html">О нас</a>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="font-['Manrope'] text-[10px] uppercase tracking-widest text-on-surface/20 text-center md:text-left">
+                    © 2025 Дядя Фёдор. Интеллектуальная автоматизация бизнеса.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Audit Form Modal -->
+    <div id="audit-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div class="bg-surface-container rounded-[2rem] p-8 lg:p-12 border border-black/5 max-w-lg w-full relative">
+            <button onclick="closeAuditModal()" class="absolute top-6 right-6 text-on-surface/40 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <div id="audit-form-view">
+                <h2 class="text-3xl font-headline font-black text-on-surface mb-4 uppercase">Бесплатный аудит</h2>
+                <p class="text-on-surface-variant mb-8 text-sm leading-relaxed">Оставьте контакт — разберём ваш бизнес и покажем, где ИИ принесёт первые деньги.</p>
+                <div class="space-y-4">
+                    <input type="text" id="audit-name" placeholder="Ваше имя" class="w-full bg-surface-container-lowest border border-black/5 rounded-2xl p-4 outline-none focus:ring-2 focus:ring-primary/20"/>
+                    <input type="text" id="audit-contact" placeholder="Телефон или @telegram" class="w-full bg-surface-container-lowest border border-black/5 rounded-2xl p-4 outline-none focus:ring-2 focus:ring-primary/20"/>
+                    <button onclick="submitAuditForm()" class="w-full bg-primary text-on-primary py-5 rounded-full font-headline font-black text-sm uppercase tracking-widest hover:scale-[1.02] transition-all">ОТПРАВИТЬ ЗАЯВКУ</button>
+                    <p id="audit-error" class="text-error text-xs hidden">Заполните имя и контакт</p>
+                </div>
+            </div>
+            <div id="audit-success-view" class="hidden text-center py-12">
+                <span class="material-symbols-outlined text-6xl text-primary" data-icon="verified">verified</span>
+                <h2 class="text-2xl font-headline font-black text-on-surface mt-6 uppercase">ЗАЯВКА ОТПРАВЛЕНА</h2>
+                <p class="text-on-surface-variant mt-2">Свяжемся с вами в течение часа.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ─── TYPEWRITER ───────────────────────────────────────────────
+        const typeWords = ['СЛИВА БЮДЖЕТА.', 'ПУСТЫХ СЛОВ.', 'ЛИШНИХ ТРАТ.', 'БЕСПОРЯДКА.', 'ОЖИДАНИЙ.'];
+        let twWord = 0, twChar = 0, twDeleting = false;
+        const twEl = document.getElementById('typewriter');
+
+        function typeWriter() {
+            const word = typeWords[twWord];
+            twEl.textContent = twDeleting
+                ? word.substring(0, twChar - 1)
+                : word.substring(0, twChar + 1);
+
+            twDeleting ? twChar-- : twChar++;
+
+            let delay = twDeleting ? 70 : 110;
+
+            if (!twDeleting && twChar === word.length) {
+                delay = 2200;
+                twDeleting = true;
+            } else if (twDeleting && twChar === 0) {
+                twDeleting = false;
+                twWord = (twWord + 1) % typeWords.length;
+                delay = 400;
+            }
+            setTimeout(typeWriter, delay);
+        }
+        typeWriter();
+
+        
+
+        // ─── MODAL LOGIC ─────────────────────────────────────────────
+        function openAuditModal() {
+            document.getElementById('audit-modal').classList.remove('hidden');
+            document.getElementById('audit-modal').classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeAuditModal() {
+            document.getElementById('audit-modal').classList.add('hidden');
+            document.getElementById('audit-modal').classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        async function submitAuditForm() {
+            const name = document.getElementById('audit-name').value.trim();
+            const contact = document.getElementById('audit-contact').value.trim();
+            const errEl = document.getElementById('audit-error');
+            if (!name || !contact) { errEl.classList.remove('hidden'); return; }
+            errEl.classList.add('hidden');
+
+            const text = `🔔 Новая заявка на аудит!\n👤 Имя: ${name}\n📞 Контакт: ${contact}`;
+            try {
+                await fetch('/api/send-lead.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text })
+                });
+            } catch (_) {}
+
+            document.getElementById('audit-form-view').classList.add('hidden');
+            document.getElementById('audit-success-view').classList.remove('hidden');
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('audit-modal')) closeAuditModal();
+        }
+    </script>
+</body>
+</html>

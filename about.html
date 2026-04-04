@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="light" lang="ru" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Об авторе | Vibe Coding</title>
+    <meta name="description" content="Биография автора курсов Vibe Coding. От управленца на заводе до создателя собственных IT-решений.">
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#e8e2d9",
+              "inverse-primary": "#006875",
+              "on-tertiary-container": "#412d00",
+              "secondary-container": "#d3e3ff",
+              "surface-container-lowest": "#ffffff",
+              "tertiary": "#8d5f00",
+              "on-secondary": "#ffffff",
+              "on-surface": "#191c1e",
+              "surface-bright": "#fcf8f1",
+              "primary-container": "#9cf0ff",
+              "surface": "#f5f0e6",
+              "on-primary-container": "#001f24",
+              "on-background": "#191c1e",
+              "error": "#ba1a1a",
+              "primary": "#006875",
+              "on-primary": "#ffffff",
+              "surface-container": "#f0eade",
+              "on-surface-variant": "#43474e",
+              "background": "#f5f0e6",
+              "outline": "#73777f",
+              "surface-variant": "#dee3eb",
+              "outline-variant": "#c3c6cf"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"]
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+      body { background-color: #f5f0e6; color: #191c1e; }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary">
+    <!-- TopNavBar -->
+    <header class="bg-[#f5f0e6]/80 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-black/5">
+        <div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+            <a href="index.html" class="flex items-center gap-2 text-xl font-black text-on-surface tracking-tighter no-underline hover:opacity-80 transition-opacity">
+                <div class="bg-primary text-white w-8 h-8 flex items-center justify-center rounded font-bold text-sm">Ai</div>
+                <span>Дядя Фёдор</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8 font-[\'Space_Grotesk\'] font-bold uppercase tracking-tight">
+                <a class="text-on-surface/70 hover:text-primary transition-all duration-300" href="index.html">НАЧАЛО</a>
+                <a class="text-on-surface/70 hover:text-primary transition-all duration-300" href="index.html#program">ПРОГРАММА</a>
+                <a class="text-on-surface/70 hover:text-primary transition-all duration-300" href="cases.html">КЕЙСЫ</a>
+                <a class="text-primary border-b-2 border-primary pb-1" href="about.html">АВТОР</a>
+            </nav>
+            <div class="flex items-center gap-6">
+                <button onclick="window.location.href='index.html#cta'" class="hidden lg:block bg-primary text-on-primary px-6 py-2.5 rounded-full font-headline font-bold text-xs uppercase tracking-widest hover:scale-105 transition-transform active:scale-95 shadow-lg shadow-primary/20">
+                    ЗАПИСАТЬСЯ
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Fixed Bottom Navigation -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 z-[60] bg-surface/90 backdrop-blur-xl border-t border-black/5 px-6 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+        <div class="flex justify-between items-center max-w-md mx-auto">
+            <a class="flex flex-col items-center gap-1 text-on-surface/60 hover:text-primary transition-colors" href="index.html">
+                <span class="material-symbols-outlined" data-icon="home">home</span>
+                <span class="text-[10px] font-headline font-black uppercase tracking-widest">Домой</span>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-on-surface/60 hover:text-primary transition-colors" href="index.html#program">
+                <span class="material-symbols-outlined" data-icon="school">school</span>
+                <span class="text-[10px] font-headline font-black uppercase tracking-widest">Курсы</span>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-on-surface/60 hover:text-primary transition-colors" href="cases.html">
+                <span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+                <span class="text-[10px] font-headline font-black uppercase tracking-widest">Кейсы</span>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-primary" href="about.html">
+                <span class="material-symbols-outlined" data-icon="person">person</span>
+                <span class="text-[10px] font-headline font-black uppercase tracking-widest">Автор</span>
+            </a>
+        </div>
+    </div>
+
+    <main class="py-24">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                
+                <!-- Left Side: Photo -->
+                <div class="lg:col-span-5 relative group">
+                    <!-- Photo placeholder -->
+                    <div class="w-full aspect-[3/4] bg-surface-container-highest rounded-3xl overflow-hidden border border-black/10 relative shadow-2xl transition-transform group-hover:-translate-y-2">
+                        <!-- REPLACE_WITH_YOUR_PHOTO --><img src="https://placehold.co/800x1067/e8e2d9/191c1e?font=Montserrat&text=AUTHOR+PHOTO" alt="Александр Олегович" class="w-full h-full object-cover grayscale mix-blend-multiply opacity-80" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-8">
+                            <div>
+                                <h2 class="text-white font-headline font-black text-3xl">Александр Олегович</h2>
+                                <p class="text-white/80 font-bold uppercase tracking-widest text-xs mt-2">Основатель Vibe Coding</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Decorative Elements -->
+                    <div class="absolute -z-10 top-10 -right-10 w-full h-full border-2 border-primary/20 rounded-3xl"></div>
+                </div>
+
+                <!-- Right Side: Bio -->
+                <div class="lg:col-span-7 flex flex-col justify-center">
+                    <h1 class="text-5xl md:text-6xl font-headline font-black text-on-surface leading-tight tracking-tighter mb-8">
+                        Я не программист.<br/><span class="text-primary italic">Я строю системы.</span>
+                    </h1>
+                    
+                    <div class="space-y-8 text-on-surface-variant text-lg leading-relaxed font-light">
+                        <p>
+                            Меня зовут Александр. Я управленец с производства. Долгое время я управлял цехом из 20 человек, занимающимся металлоконструкциями. Заказы, логистика, документооборот — всё это было в Экселе, WhatsApp и на бумажках.
+                        </p>
+                        
+                        <div class="p-8 bg-surface-container-low rounded-2xl border border-black/5 border-l-4 border-l-primary">
+                            <p class="font-bold text-on-surface italic">"Мы получили смету на внедрение ERP-системы в 1.5 миллиона рублей. Я понял, что платить такую сумму просто за то, чтобы связать таблицы между собой — это безумие."</p>
+                        </div>
+                        
+                        <p>
+                            Я начал искать альтернативы и наткнулся на мощь современных языковых моделей (LLM). Я обнаружил, что если правильно формулировать задачи, ИИ может писать код за меня. Я использовал Cursor, Claude и Supabase, чтобы шаг за шагом собрать собственную ERP-систему.
+                        </p>
+                        <p>
+                            <strong class="font-bold text-on-surface">Результат:</strong> через несколько недель у нас была полноценная система управления производством. Без единого программиста. Без миллионных бюджетов.
+                        </p>
+                        <p>
+                            Я понял, что этот подход — Vibe Coding — это революция для предпринимателей. Я стал собирать решения для других бизнесов — сделал сайт для компании по ремонту квартир (полностью функциональный портал с формами и CRM), создал бота-агента для продаж.
+                        </p>
+                        <p>
+                            Теперь моя миссия — научить ВАС быть своим собственным IT-отделом. Я упаковал свой опыт в интенсивные курсы и консалтинг, чтобы вы могли управлять своим бизнесом и автоматизировать рутину без страха перед программированием.
+                        </p>
+                    </div>
+
+                    <div class="mt-12 flex gap-4">
+                        <a href="https://t.me/Mebabanza" target="_blank" class="flex items-center gap-2 bg-black/5 hover:bg-black/10 px-6 py-3 rounded-full text-on-surface font-bold text-sm tracking-widest uppercase transition-colors">
+                            <span class="material-symbols-outlined text-lg">flight_takeoff</span>
+                            Telegram
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#f5f0e6] full-width py-16 border-t border-black/5">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-12 mb-12">
+                <div class="text-2xl font-black text-on-surface tracking-tighter flex items-center gap-2">
+                    <div class="bg-primary text-white w-8 h-8 flex items-center justify-center rounded font-bold text-sm">Ai</div>
+                    <span>Дядя Фёдор</span>
+                </div>
+                <div class="flex flex-wrap justify-center gap-10 font-['Space_Grotesk'] font-bold text-[10px] uppercase tracking-[0.2em] text-on-surface/40">
+                    <a class="hover:text-primary transition-colors" href="#">Политика конфиденциальности</a>
+                    <a class="hover:text-primary transition-colors" href="#">Условия</a>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="font-['Manrope'] text-[10px] uppercase tracking-widest text-on-surface/40 text-center md:text-left">
+                    © 2025 Дядя Фёдор. Vibe Coding & Автоматизация.
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
