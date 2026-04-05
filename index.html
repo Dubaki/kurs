@@ -491,7 +491,7 @@
                                 <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">shield</span>
                                 Гарантия результата: если не поймёте, как создать свой проект — верну деньги. 100%.
                             </p>
-                            <button onclick="openAuditModal()" class="w-full bg-error text-white hover:opacity-90 py-4 rounded-full font-bold uppercase text-xs tracking-widest transition-colors">Начать за 990 ₽</button>
+                            <button onclick="openAuditModal('Заявка на ИИ-Спринт')" class="w-full bg-error text-white hover:opacity-90 py-4 rounded-full font-bold uppercase text-xs tracking-widest transition-colors">Начать за 990 ₽</button>
                         </div>
                     </div>
 
@@ -530,7 +530,7 @@
                                 <p class="text-lg text-white/50 line-through decoration-white/30">72 000 ₽</p>
                                 <p class="text-4xl font-black text-white">36 000 ₽</p>
                             </div>
-                            <button onclick="openAuditModal()" class="w-full bg-white text-primary hover:bg-surface py-4 rounded-full font-bold uppercase text-xs tracking-widest transition-colors shadow">Записаться на курс</button>
+                            <button onclick="openAuditModal('Заявка на Флагман')" class="w-full bg-white text-primary hover:bg-surface py-4 rounded-full font-bold uppercase text-xs tracking-widest transition-colors shadow">Записаться на курс</button>
                         </div>
                     </div>
 
@@ -542,7 +542,7 @@
                         
                         <div class="mt-auto pt-6 border-t border-black/5 flex flex-col h-full justify-end">
                             <p class="text-3xl font-black text-on-surface mb-6">от 300 000 ₽</p>
-                            <button onclick="openAuditModal()" class="w-full bg-black/5 text-on-surface hover:bg-black/10 py-4 rounded-full font-bold uppercase text-xs tracking-widest transition-colors">Обсудить задачу</button>
+                            <button onclick="openAuditModal('Обсудить задачу')" class="w-full bg-black/5 text-on-surface hover:bg-black/10 py-4 rounded-full font-bold uppercase text-xs tracking-widest transition-colors">Обсудить задачу</button>
                         </div>
                     </div>
                 </div>
@@ -719,11 +719,12 @@
                 <span class="material-symbols-outlined">close</span>
             </button>
             <div id="audit-form-view">
-                <h2 class="text-3xl font-headline font-black text-on-surface mb-4 uppercase">Бесплатный аудит</h2>
+                <h2 id="audit-modal-title" class="text-3xl font-headline font-black text-on-surface mb-4 uppercase">Бесплатный аудит</h2>
                 <p class="text-on-surface-variant mb-8 text-sm leading-relaxed">Оставьте контакт — разберём ваш бизнес и покажем, где ИИ принесёт первые деньги.</p>
                 <div class="space-y-4">
                     <input type="text" id="audit-name" placeholder="Ваше имя" class="w-full bg-surface-container-lowest border border-black/5 rounded-2xl p-4 outline-none focus:ring-2 focus:ring-primary/20"/>
-                    <input type="text" id="audit-contact" placeholder="Телефон или @telegram" class="w-full bg-surface-container-lowest border border-black/5 rounded-2xl p-4 outline-none focus:ring-2 focus:ring-primary/20"/>
+                    <input type="tel" id="audit-phone" placeholder="+7 (___) ___-__-__" class="w-full bg-surface-container-lowest border border-black/5 rounded-2xl p-4 outline-none focus:ring-2 focus:ring-primary/20"/>
+                    <input type="text" id="audit-tg" placeholder="@username (Telegram)" class="w-full bg-surface-container-lowest border border-black/5 rounded-2xl p-4 outline-none focus:ring-2 focus:ring-primary/20"/>
                     <button onclick="submitAuditForm()" class="w-full bg-primary text-on-primary py-5 rounded-full font-headline font-black text-sm uppercase tracking-widest hover:scale-[1.02] transition-all">ОТПРАВИТЬ ЗАЯВКУ</button>
                     <p id="audit-error" class="text-error text-xs hidden">Заполните имя и контакт</p>
                 </div>
@@ -769,7 +770,9 @@
         
 
         // ─── MODAL LOGIC ─────────────────────────────────────────────
-        function openAuditModal() {
+        function openAuditModal(sourceTitle) {
+            const titleEl = document.getElementById('audit-modal-title');
+            if (titleEl) titleEl.textContent = sourceTitle || 'Бесплатный аудит';
             document.getElementById('audit-modal').classList.remove('hidden');
             document.getElementById('audit-modal').classList.add('flex');
             document.body.style.overflow = 'hidden';
@@ -781,14 +784,38 @@
             document.body.style.overflow = 'auto';
         }
 
+        // Phone mask: +7 (XXX) XXX-XX-XX
+        document.getElementById('audit-phone').addEventListener('input', function(e) {
+            let v = e.target.value.replace(/\D/g, '');
+            if (v.startsWith('8')) v = '7' + v.slice(1);
+            if (!v.startsWith('7')) v = '7' + v;
+            v = v.slice(0, 11);
+            let out = '+7';
+            if (v.length > 1) out += ' (' + v.slice(1, 4);
+            if (v.length >= 4) out += ') ' + v.slice(4, 7);
+            if (v.length >= 7) out += '-' + v.slice(7, 9);
+            if (v.length >= 9) out += '-' + v.slice(9, 11);
+            e.target.value = out;
+        });
+
         async function submitAuditForm() {
-            const name = document.getElementById('audit-name').value.trim();
-            const contact = document.getElementById('audit-contact').value.trim();
+            const name  = document.getElementById('audit-name').value.trim();
+            const phone = document.getElementById('audit-phone').value.trim();
+            const tg    = document.getElementById('audit-tg').value.trim();
             const errEl = document.getElementById('audit-error');
-            if (!name || !contact) { errEl.classList.remove('hidden'); return; }
+
+            if (!name) {
+                errEl.textContent = 'Пожалуйста, введите ваше имя';
+                errEl.classList.remove('hidden'); return;
+            }
+            if (!phone && !tg) {
+                errEl.textContent = 'Укажите телефон или Telegram';
+                errEl.classList.remove('hidden'); return;
+            }
             errEl.classList.add('hidden');
 
-            const text = `🔔 Новая заявка на аудит!\n👤 Имя: ${name}\n📞 Контакт: ${contact}`;
+            const title = document.getElementById('audit-modal-title').textContent;
+            const text = `🔔 Новая заявка: ${title}\n👤 Имя: ${name}\n📞 Телефон: ${phone || '—'}\n✈️ Telegram: ${tg || '—'}`;
             try {
                 await fetch('/api/send-lead.php', {
                     method: 'POST',
