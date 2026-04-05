@@ -55,12 +55,12 @@
           0%, 100% { background-color: #006875; border-radius: 4px; border: 2px solid transparent; }
           50%      { background-color: transparent; border-radius: 50%; border: 2px solid #006875; }
       }
-      @keyframes logo-morph-text {
+      @keyframes logo-v-morph {
           0%, 100% { color: #ffffff; }
           50%      { color: #1e40af; }
       }
       .logo-morph { animation: logo-morph 5s ease-in-out infinite; will-change: background-color, border-radius; }
-      .logo-morph-text { animation: logo-morph-text 5s ease-in-out infinite; will-change: color; }
+      .logo-v-morph { animation: logo-v-morph 5s ease-in-out infinite; will-change: color; }
     </style>
 </head>
 <body class="font-body selection:bg-primary selection:text-on-primary">
@@ -68,8 +68,8 @@
     <header class="bg-[#f5f0e6]/80 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-black/5">
         <div class="flex justify-between items-center w-full px-4 md:px-8 py-4 max-w-7xl mx-auto">
             <a href="index.html" class="flex items-center gap-2 text-xl font-black text-on-surface tracking-tighter no-underline hover:opacity-80 transition-opacity">
-                <div class="bg-primary text-white w-8 h-8 flex items-center justify-center rounded font-bold text-sm logo-morph">V</div>
-                <span class="logo-morph-text">VibeCraft</span>
+                <div class="bg-primary text-white w-8 h-8 flex items-center justify-center rounded font-bold text-sm logo-morph"><span class="logo-v-morph">V</span></div>
+                <span>VibeCraft</span>
             </a>
             <nav class="hidden md:flex items-center gap-8 font-[\'Space_Grotesk\'] font-bold uppercase tracking-tight">
                 <a class="text-on-surface/70 hover:text-primary transition-all duration-300" href="index.html">НАЧАЛО</a>
