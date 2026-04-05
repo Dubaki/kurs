@@ -84,7 +84,7 @@
 <body class="font-body selection:bg-primary selection:text-on-primary">
     <!-- TopNavBar -->
     <header class="bg-[#f5f0e6]/80 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-black/5">
-        <div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+        <div class="flex justify-between items-center w-full px-4 md:px-8 py-4 max-w-7xl mx-auto">
             <a href="index.html" class="flex items-center gap-2 text-xl font-black text-on-surface tracking-tighter no-underline hover:opacity-80 transition-opacity">
                 <div class="bg-primary text-white w-8 h-8 flex items-center justify-center rounded font-bold text-sm">V</div>
                 <span>VibeCraft</span>
@@ -100,7 +100,21 @@
                 <button onclick="window.location.href='index.html#cta'" class="hidden lg:block bg-primary text-on-primary px-6 py-2.5 rounded-full font-headline font-bold text-xs uppercase tracking-widest hover:scale-105 transition-transform active:scale-95 shadow-lg shadow-primary/20">
                     ЗАПИСАТЬСЯ
                 </button>
+                <!-- Hamburger (mobile only) -->
+                <button id="mobile-menu-btn" class="lg:hidden text-on-surface hover:text-primary transition-colors p-1" onclick="toggleMobileMenu()">
+                    <span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span>
+                </button>
             </div>
+        </div>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#f5f0e6]/95 backdrop-blur-xl border-t border-black/5 absolute top-full left-0 right-0 z-50 shadow-lg">
+            <nav class="flex flex-col items-center py-6 gap-1 font-['Space_Grotesk'] font-bold uppercase tracking-tight text-sm">
+                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="index.html" onclick="closeMobileMenu()">НАЧАЛО</a>
+                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="index.html#program" onclick="closeMobileMenu()">ПРОГРАММА</a>
+                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="cases.html" onclick="closeMobileMenu()">КЕЙСЫ</a>
+                <a class="w-full text-center py-3 text-primary bg-primary/5 font-black" href="blog.html" onclick="closeMobileMenu()">БЛОГ</a>
+                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="about.html" onclick="closeMobileMenu()">АВТОР</a>
+            </nav>
         </div>
     </header>
 
@@ -133,7 +147,7 @@
     <main>
         <!-- Blog Header -->
         <section class="py-20 bg-surface border-b border-black/5">
-            <div class="max-w-7xl mx-auto px-8 text-center">
+            <div class="max-w-7xl mx-auto px-4 md:px-8 text-center">
                 <h2 class="text-[10px] font-headline font-black text-primary uppercase tracking-[0.5em] mb-6">Статьи и мысли</h2>
                 <h1 class="text-4xl md:text-6xl font-headline font-black text-on-surface mb-8 tracking-tighter">
                     Блог VibeCraft: <span class="text-primary italic">Мысли об ИИ и автоматизации</span>
@@ -146,7 +160,7 @@
 
         <!-- Blog Grid -->
         <section class="py-24 bg-surface">
-            <div class="max-w-7xl mx-auto px-8">
+            <div class="max-w-7xl mx-auto px-4 md:px-8">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                     <!-- Post Card 1 (Coming Soon) -->
@@ -222,7 +236,7 @@
             <div class="absolute inset-0 z-0">
                 <img src="robot_green_nodes.png" alt="" class="w-full h-full object-cover opacity-10 grayscale mix-blend-overlay" />
             </div>
-            <div class="max-w-4xl mx-auto px-8 relative z-10 text-center">
+            <div class="max-w-4xl mx-auto px-4 md:px-8 relative z-10 text-center">
                 <h2 class="text-4xl md:text-5xl font-headline font-black mb-8">
                     Хватит ждать. Начните создавать.
                 </h2>
@@ -243,7 +257,7 @@
 
     <!-- Footer -->
     <footer class="bg-[#f5f0e6] full-width py-16 border-t border-black/5">
-        <div class="max-w-7xl mx-auto px-8">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-12 mb-12">
                 <div class="text-2xl font-black text-on-surface tracking-tighter flex items-center gap-2">
                     <div class="bg-primary text-white w-8 h-8 flex items-center justify-center rounded font-bold text-sm">V</div>
@@ -262,5 +276,25 @@
             </div>
         </div>
     </footer>
+    <script>
+        // ─── MOBILE MENU TOGGLE ──────────────────────────────────────
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.textContent = 'close';
+            } else {
+                menu.classList.add('hidden');
+                icon.textContent = 'menu';
+            }
+        }
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.add('hidden');
+            icon.textContent = 'menu';
+        }
+    </script>
 </body>
 </html>

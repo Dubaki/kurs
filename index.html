@@ -113,7 +113,7 @@
 <body class="font-body selection:bg-primary selection:text-on-primary">
     <!-- TopNavBar -->
     <header class="bg-[#f5f0e6]/80 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-black/5">
-        <div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+        <div class="flex justify-between items-center w-full px-4 md:px-8 py-4 max-w-7xl mx-auto">
             <a href="index.html" class="flex items-center gap-2 text-xl font-black text-on-surface tracking-tighter no-underline">
                 <div class="bg-primary text-white w-8 h-8 flex items-center justify-center rounded font-bold text-sm">V</div>
                 <span>VibeCraft</span>
@@ -132,7 +132,23 @@
                 <button onclick="openAuditModal()" class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-headline font-bold text-xs uppercase tracking-widest hover:scale-105 transition-transform active:scale-95">
                     АУДИТ
                 </button>
+                <!-- Hamburger (mobile only) -->
+                <button id="mobile-menu-btn" class="lg:hidden text-on-surface hover:text-primary transition-colors p-1" onclick="toggleMobileMenu()">
+                    <span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span>
+                </button>
             </div>
+        </div>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#f5f0e6]/95 backdrop-blur-xl border-t border-black/5 absolute top-full left-0 right-0 z-50 shadow-lg">
+            <nav class="flex flex-col items-center py-6 gap-1 font-['Space_Grotesk'] font-bold uppercase tracking-tight text-sm">
+                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="index.html" onclick="closeMobileMenu()">НАЧАЛО</a>
+                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="index.html#process" onclick="closeMobileMenu()">ПРОЦЕСС</a>
+                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="index.html#program" onclick="closeMobileMenu()">ПРОГРАММА</a>
+                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="cases.html" onclick="closeMobileMenu()">КЕЙСЫ</a>
+                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="blog.html" onclick="closeMobileMenu()">БЛОГ</a>
+                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="about.html" onclick="closeMobileMenu()">АВТОР</a>
+                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="index.html#faq" onclick="closeMobileMenu()">FAQ</a>
+            </nav>
         </div>
     </header>
 
@@ -161,17 +177,22 @@
     <main>
         <!-- Hero Section -->
         <section class="relative min-h-[90vh] flex items-center overflow-hidden pt-12 pb-24 border-b border-black/5">
-            <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-5 flex justify-center lg:justify-start lg:-mt-32">
-                    <img alt="Шахмаев Александр — основатель VibeCraft" class="w-full h-auto max-w-md object-contain p-0 m-0 relative z-10" src="photos/ph1.webp?v=1.1"/>
-                </div>
-                <div class="lg:col-span-7 z-10">
-                    <a href="#program" class="block w-fit bg-error text-white px-8 py-4 rounded-full shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer animate-pulse mb-10">
+            <div class="max-w-7xl mx-auto px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <!-- CTA Block: Mobile order-1, Desktop order-1 (full width top) -->
+                <div class="lg:col-span-12 order-1 lg:order-1 flex justify-center">
+                    <a href="#program" class="block w-fit bg-error text-white px-8 py-4 rounded-full shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer animate-pulse">
                         <div class="flex flex-col items-center justify-center">
                             <span class="font-headline font-black text-lg uppercase tracking-widest">Твой бот за 2 часа</span>
                             <span class="text-xs font-bold opacity-90 mt-1">Акция действует: <span id="timer-cta" class="font-mono text-sm tracking-widest">00:00:00</span></span>
                         </div>
                     </a>
+                </div>
+                <!-- Photo: Mobile order-2, Desktop order-2 -->
+                <div class="lg:col-span-4 order-2 lg:order-2 flex justify-center lg:justify-start lg:-mt-32">
+                    <img alt="Шахмаев Александр — основатель VibeCraft" class="w-full h-auto max-w-md object-contain p-0 m-0 relative z-10" src="photos/ph1.webp?v=1.1"/>
+                </div>
+                <!-- Text: Mobile order-3, Desktop order-3 -->
+                <div class="lg:col-span-8 order-3 lg:order-3 z-10">
                     <h1 class="text-4xl md:text-6xl font-headline font-black text-on-surface leading-[0.85] tracking-tighter mb-6 min-h-[2.5em] md:min-h-0">
                         НЕ НАНИМАЙ.<br/><span class="text-primary italic">МАСШТАБИРУЙ.</span>
                     </h1>
@@ -192,14 +213,14 @@
 
         <!-- Problem Section -->
         <section class="py-24 bg-surface-container-lowest border-b border-black/5" id="problem">
-            <div class="max-w-7xl mx-auto px-8">
+            <div class="max-w-7xl mx-auto px-4 md:px-8">
                 <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface leading-tight mb-16 text-center">
                     Узнаёте себя?
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="p-8 bg-surface rounded-3xl border border-black/5 flex items-start gap-6 hover:border-primary/30 transition-all hover:-translate-y-1">
                         <span class="text-4xl">💸</span>
-                        <p class="text-lg text-on-surface font-semibold leading-snug">«Получили смету на CRM — 1.5 млн. Решили "пока обойдёмся"»</p>
+                        <p class="text-lg text-on-surface font-semibold leading-snug">«Получили смету на CRM — 1 млн. Решили "пока обойдёмся"»</p>
                     </div>
                     <div class="p-8 bg-surface rounded-3xl border border-black/5 flex items-start gap-6 hover:border-primary/30 transition-all hover:-translate-y-1">
                         <span class="text-4xl">📋</span>
@@ -222,7 +243,7 @@
 
         <!-- Solution Section -->
         <section class="py-24 bg-surface border-b border-black/5" id="solution">
-            <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
                     <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface leading-tight mb-8 tracking-tighter">
                         А что если ВЫ — свой лучший IT-отдел?
@@ -255,7 +276,7 @@
         
         <!-- Process Section -->
         <section class="py-24 bg-surface-container-lowest border-b border-black/5" id="process">
-            <div class="max-w-7xl mx-auto px-8">
+            <div class="max-w-7xl mx-auto px-4 md:px-8">
                 <div class="text-center max-w-4xl mx-auto mb-16">
                     <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface mb-6 tracking-tighter">
                         Вы не пишете промпты.<br/><span class="text-primary italic">Вы управляете ИИ-командой.</span>
@@ -329,7 +350,7 @@
 
         <!-- AI Team Section -->
         <section class="py-24 bg-surface border-b border-black/5" id="ai-team">
-            <div class="max-w-7xl mx-auto px-8">
+            <div class="max-w-7xl mx-auto px-4 md:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface mb-4 tracking-tighter">Три сотрудника. Чёткие роли. Минимальный стек.</h2>
                 </div>
@@ -370,7 +391,7 @@
 
         <!-- Cases Section -->
         <section class="py-24 bg-surface-container-lowest border-b border-black/5" id="cases">
-            <div class="max-w-7xl mx-auto px-8">
+            <div class="max-w-7xl mx-auto px-4 md:px-8">
                 <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface leading-tight mb-16">
                     Что я уже собрал через <span class="text-primary italic">Vibe Coding</span>
                 </h2>
@@ -433,7 +454,7 @@
         <!-- Social Proof Section -->
         <section class="py-12 bg-primary text-white border-y border-black/10 relative overflow-hidden">
             <div class="absolute inset-0 z-0 opacity-10 mix-blend-overlay"></div>
-            <div class="max-w-7xl mx-auto px-8 relative z-10">
+            <div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/20">
                     <div>
                         <div class="text-4xl md:text-5xl font-black font-headline mb-2">3</div>
@@ -458,7 +479,7 @@
         
         <!-- Program Section (v5) -->
         <section class="py-24 bg-surface border-b border-black/5" id="program">
-            <div class="max-w-7xl mx-auto px-8">
+            <div class="max-w-7xl mx-auto px-4 md:px-8">
                 <div class="text-center max-w-4xl mx-auto mb-20">
                     <h2 class="text-4xl md:text-6xl font-headline font-black text-on-surface mb-6 tracking-tighter">Три ступени к результату</h2>
                     <p class="text-xl text-on-surface-variant font-light">От первого бота за выходные — до системы, которая работает без вас.</p>
@@ -553,7 +574,7 @@
 
         <!-- Flow Section -->
         <section class="py-24 bg-surface-container-lowest border-b border-black/5" id="flow">
-            <div class="max-w-7xl mx-auto px-8">
+            <div class="max-w-7xl mx-auto px-4 md:px-8">
                 <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface leading-tight mb-16 text-center">
                     4 шага — от идеи до работающей системы
                 </h2>
@@ -587,7 +608,7 @@
 
         <!-- Audience Section -->
         <section class="py-24 bg-surface border-b border-black/5" id="audience">
-            <div class="max-w-7xl mx-auto px-8">
+            <div class="max-w-7xl mx-auto px-4 md:px-8">
                 <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface leading-tight mb-16 text-center">
                     Кому подойдут курсы
                 </h2>
@@ -617,7 +638,7 @@
 
         <!-- FAQ Section -->
         <section class="py-24 bg-surface-container-lowest border-b border-black/5" id="faq">
-            <div class="max-w-4xl mx-auto px-8">
+            <div class="max-w-4xl mx-auto px-4 md:px-8">
                 <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface leading-tight mb-16 text-center">
                     Частые вопросы
                 </h2>
@@ -674,7 +695,7 @@
             <div class="absolute inset-0 z-0">
                 <img src="robot_green_nodes.png" alt="" class="w-full h-full object-cover opacity-10 grayscale mix-blend-overlay" />
             </div>
-            <div class="max-w-4xl mx-auto px-8 relative z-10 text-center">
+            <div class="max-w-4xl mx-auto px-4 md:px-8 relative z-10 text-center">
                 <h2 class="text-4xl md:text-6xl font-headline font-black text-white leading-tight mb-6">
                     Один человек с ИИ опаснее <span class="italic text-primary-container">целого IT-отдела</span>
                 </h2>
@@ -693,7 +714,7 @@
 
     <!-- Footer -->
     <footer class="bg-[#f5f0e6] full-width py-16 border-t border-black/5">
-        <div class="max-w-7xl mx-auto px-8">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-12 mb-12">
                 <div class="text-2xl font-black text-on-surface tracking-tighter flex items-center gap-2">
                     <div class="bg-primary text-white w-8 h-8 flex items-center justify-center rounded font-bold text-sm">V</div>
@@ -857,6 +878,25 @@
             updateTimer();
             setInterval(updateTimer, 1000);
         })();
+
+        // ─── MOBILE MENU TOGGLE ──────────────────────────────────────
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.textContent = 'close';
+            } else {
+                menu.classList.add('hidden');
+                icon.textContent = 'menu';
+            }
+        }
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.add('hidden');
+            icon.textContent = 'menu';
+        }
     </script>
 </body>
 </html>
