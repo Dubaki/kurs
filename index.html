@@ -113,6 +113,17 @@
           50%      { transform: scale(1.05); }
       }
       .anim-breathe { animation: breathe 3s ease-in-out infinite; will-change: transform; }
+      /* Logo morph animation */
+      @keyframes logo-morph {
+          0%, 100% { background-color: #006875; border-radius: 4px; border: 2px solid transparent; }
+          50%      { background-color: transparent; border-radius: 50%; border: 2px solid #006875; }
+      }
+      @keyframes logo-morph-text {
+          0%, 100% { color: #ffffff; }
+          50%      { color: #1e40af; }
+      }
+      .logo-morph { animation: logo-morph 5s ease-in-out infinite; will-change: background-color, border-radius; }
+      .logo-morph-text { animation: logo-morph-text 5s ease-in-out infinite; will-change: color; }
     </style>
 </head>
 <body class="font-body selection:bg-primary selection:text-on-primary">
@@ -120,8 +131,8 @@
     <header class="bg-[#f5f0e6]/80 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-black/5">
         <div class="flex justify-between items-center w-full px-4 md:px-8 py-2 md:py-4 max-w-7xl mx-auto">
             <a href="index.html" class="flex items-center gap-2 text-xl font-black text-on-surface tracking-tighter no-underline">
-                <div class="bg-primary text-white w-8 h-8 flex items-center justify-center rounded font-bold text-sm">V</div>
-                <span>VibeCraft</span>
+                <div class="bg-primary text-white w-8 h-8 flex items-center justify-center rounded font-bold text-sm logo-morph">V</div>
+                <span class="logo-morph-text">VibeCraft</span>
             </a>
             <nav class="hidden lg:flex items-center gap-6 font-['Space_Grotesk'] font-bold uppercase tracking-tight text-[11px]">
                 <a class="text-primary border-b-2 border-primary pb-1" href="index.html">НАЧАЛО</a>
@@ -187,8 +198,9 @@
                 <div class="lg:col-span-12 order-1 lg:order-1 flex justify-center relative z-20">
                     <a href="#program" class="block w-full lg:w-fit bg-[#1e40af] text-white px-6 py-4 lg:px-8 lg:py-5 rounded-3xl lg:rounded-full shadow-lg anim-breathe mt-0">
                         <div class="flex flex-col items-center justify-center">
-                            <span class="font-headline font-black text-lg uppercase tracking-widest">Твой бот за 2 часа — ЖМИ!</span>
-                            <span class="text-xs font-bold opacity-90 mt-1">Акция действует: <span id="timer-cta" class="font-mono text-sm tracking-widest">00:00:00</span></span>
+                            <span class="font-headline font-black text-lg uppercase tracking-widest">Твой бот за 2 часа</span>
+                            <span class="font-headline font-black text-base uppercase tracking-[0.3em] mt-1">ЖМИ!</span>
+                            <span class="text-xs font-bold opacity-90 mt-2">Акция действует: <span id="timer-cta" class="font-mono text-sm tracking-widest">00:00:00</span></span>
                         </div>
                     </a>
                 </div>
