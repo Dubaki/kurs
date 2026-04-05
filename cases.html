@@ -88,6 +88,7 @@
                 <a class="text-on-surface/70 hover:text-primary transition-all duration-300" href="index.html">НАЧАЛО</a>
                 <a class="text-on-surface/70 hover:text-primary transition-all duration-300" href="index.html#program">ПРОГРАММА</a>
                 <a class="text-primary border-b-2 border-primary pb-1" href="cases.html">КЕЙСЫ</a>
+                <a class="text-on-surface/70 hover:text-primary transition-all duration-300" href="blog.html">БЛОГ</a>
                 <a class="text-on-surface/70 hover:text-primary transition-all duration-300" href="about.html">АВТОР</a>
             </nav>
             <div class="flex items-center gap-6">
@@ -147,13 +148,16 @@
                             <h3 class="title">ERP-система для производства (металлоконструкции)</h3>
                             <p class="lead">Собрана за несколько недель человеком без опыта в IT, чтобы спасти свой бизнес от хаоса.</p>
                             <div class="media" data-type="video">
-                                <!-- PLACEHOLDER FOR VIDEO -->
-                                <div class="w-full aspect-video bg-surface rounded-2xl border border-black/10 flex items-center justify-center relative overflow-hidden group-media mb-6">
-                                    <div class="absolute inset-0 bg-black/5 hover:bg-black/10 transition-colors cursor-pointer flex flex-col items-center justify-center">
-                                        <span class="material-symbols-outlined text-5xl text-primary mb-2 opacity-80" data-icon="play_circle">play_circle</span>
-                                        <span class="text-xs font-bold uppercase tracking-widest text-on-surface/60">Смотреть демо (В разработке)</span>
-                                    </div>
-                                    <img src="https://placehold.co/800x450/e8e2d9/191c1e?font=Montserrat&text=DEMO+VIDEO+PLACEHOLDER" alt="ERP Demo" class="w-full h-full object-cover">
+                                <div class="w-full aspect-video bg-surface rounded-2xl border border-black/10 overflow-hidden mb-6">
+                                    <iframe 
+                                        src="https://www.youtube.com/embed/Eum9d20sl18" 
+                                        title="ERP система демо" 
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                        referrerpolicy="strict-origin-when-cross-origin" 
+                                        allowfullscreen
+                                        class="w-full h-full"
+                                    ></iframe>
                                 </div>
                             </div>
                             <ul class="results">
@@ -192,20 +196,20 @@
                         </div>
                     </div>
 
-                    <!-- Case 3: AI Agency -->
+                    <!-- Case 3: VibeCraft Ecosystem -->
                     <div onclick="openCaseModal(3)" class="group bg-surface-container-highest p-10 rounded-[2.5rem] border border-black/5 hover:bg-white hover:border-primary/30 transition-all cursor-pointer relative overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1">
                         <div>
-                            <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl mb-8 shadow-sm group-hover:scale-110 transition-transform">🤖</div>
-                            <h4 class="text-2xl font-headline font-black text-on-surface mb-4 leading-snug">Сайт Vibe Coding (этот)</h4>
-                            <p class="text-on-surface-variant text-sm mb-8 leading-relaxed">Тот самый лендинг, на котором вы находитесь прямо сейчас. Собирает заявки, обучает, конвертирует.</p>
+                            <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl mb-8 shadow-sm group-hover:scale-110 transition-transform">🌐</div>
+                            <h4 class="text-2xl font-headline font-black text-on-surface mb-4 leading-snug">Экосистема VibeCraft</h4>
+                            <p class="text-on-surface-variant text-sm mb-8 leading-relaxed">Собственная экосистема VibeCraft — полноценный многостраничный сайт с интегрированной CRM-системой в Telegram, защитой от кэширования и высокой скоростью загрузки. Создано в концепции Vibe Coding за 3 дня.</p>
                         </div>
                         <div class="mt-auto">
-                            <div class="text-primary font-black font-headline text-2xl">Только ИИ</div>
-                            <div class="text-on-surface/30 text-[10px] uppercase tracking-widest mt-2">Landing + CRM</div>
+                            <div class="text-primary font-black font-headline text-2xl">3 дня</div>
+                            <div class="text-on-surface/30 text-[10px] uppercase tracking-widest mt-2">Business Ecosystem</div>
                         </div>
                         <div id="case-data-3" class="hidden">
-                            <h3 class="title">Создание этого образовательного портала</h3>
-                            <p class="lead">Сайт-платформа для продажи курсов, от дизайна до логики форм.</p>
+                            <h3 class="title">Создание бизнес-экосистемы VibeCraft</h3>
+                            <p class="lead">Собственная экосистема VibeCraft — полноценный многостраничный сайт с интегрированной CRM-системой в Telegram, защитой от кэширования и высокой скоростью загрузки. Создано в концепции Vibe Coding за 3 дня.</p>
                             <div class="media" data-type="image"></div>
                             <ul class="results">
                                 <li>Мультистраничная архитектура (Главная, Кейсы, Автор).</li>
