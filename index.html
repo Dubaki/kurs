@@ -174,7 +174,7 @@
                     <h1 class="text-4xl md:text-6xl font-headline font-black text-on-surface leading-[0.85] tracking-tighter mb-6 min-h-[2.5em] md:min-h-0">
                         НЕ НАНИМАЙ.<br/><span class="text-primary italic">МАСШТАБИРУЙ.</span>
                     </h1>
-                    <p class="text-lg md:text-xl text-primary font-black mb-4 uppercase tracking-tight border-l-4 border-primary pl-6">Усиливай <span id="typewriter-hero" class="text-on-surface">себя</span> до мощности целого отдела — с помощью ИИ, без программистов и миллионных бюджетов.</p>
+                    <p class="text-lg md:text-xl text-primary font-black mb-4 uppercase tracking-tight border-l-4 border-primary pl-6">Усиливай <span id="typewriter-hero" class="text-on-surface inline-block min-w-[12ch] text-left">себя</span> до мощности целого отдела — с помощью ИИ, без программистов и миллионных бюджетов.</p>
                     <p class="text-on-surface-variant font-bold max-w-xl mb-10 text-sm md:text-base">Автор — управленец из реального сектора, который собрал ERP для производства через Vibe Coding. Без единого программиста.</p>
                     <div class="flex flex-wrap gap-6 mt-12">
                         <button onclick="openAuditModal()" class="bg-primary text-on-primary px-12 py-6 rounded-full font-headline font-black text-sm uppercase tracking-widest shadow-xl shadow-primary/20 hover:scale-105 transition-all active:scale-95 group flex items-center gap-3">
@@ -233,7 +233,7 @@
                     </div>
                 </div>
                 <div class="relative w-full bg-surface-container-lowest rounded-3xl border border-black/5 overflow-hidden shadow-xl flex items-center justify-center group text-on-surface/20 transition-all hover:border-primary/50 cursor-pointer" onclick="document.getElementById('erp-image-modal').classList.remove('hidden');document.getElementById('erp-image-modal').classList.add('flex');">
-                    <img src="ufa/photos/erp1.jpg" alt="Интерфейс ERP системы" class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-500"/>
+                    <img src="photos/erp1.jpg" alt="Интерфейс ERP системы" class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-500"/>
                     <div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md text-white px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
                         Интерфейс ERP
                     </div>
@@ -245,7 +245,7 @@
                         <button onclick="document.getElementById('erp-image-modal').classList.add('hidden');document.getElementById('erp-image-modal').classList.remove('flex');" class="absolute -top-10 right-0 text-white/70 hover:text-white transition-colors bg-black/40 w-10 h-10 rounded-full flex items-center justify-center">
                             <span class="material-symbols-outlined">close</span>
                         </button>
-                        <img src="ufa/photos/erp1.jpg" alt="Интерфейс ERP системы" class="w-full h-auto rounded-2xl shadow-2xl"/>
+                        <img src="photos/erp1.jpg" alt="Интерфейс ERP системы" class="w-full h-auto rounded-2xl shadow-2xl"/>
                     </div>
                 </dialog>
             </div>
@@ -470,7 +470,7 @@
                             <div class="inline-flex items-center justify-center bg-black/5 px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest text-on-surface-variant w-max">Быстрый старт • 2 дня</div>
                             <div class="inline-flex items-center justify-center bg-error text-white px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest w-max animate-pulse">🔥 Скидка 80% до конца дня</div>
                         </div>
-                        <h3 class="font-headline font-black text-2xl mb-4">ИИ-Конвейер за выходные</h3>
+                        <h3 class="font-headline font-black text-2xl mb-4">ИИ-Спринт: Твой первый робот за 2 часа</h3>
                         <p class="text-sm text-on-surface-variant mb-6">Настраиваете свою ИИ-команду (Gemini + Claude Code + Qwen), осваиваете конвейер и собираете первый рабочий инструмент для бизнеса — Telegram-бот или мини-сайт.</p>
                         
                         <div class="bg-surface p-4 rounded-xl mb-8">
@@ -738,35 +738,9 @@
 
     <script>
         // ─── TYPEWRITER ───────────────────────────────────────────────
-        const typeWords = ['СЛИВА БЮДЖЕТА.', 'ПУСТЫХ СЛОВ.', 'ЛИШНИХ ТРАТ.', 'БЕСПОРЯДКА.', 'ОЖИДАНИЙ.'];
         const heroWords = ['себя', 'сотрудников'];
-        
-        let twWord = 0, twChar = 0, twDeleting = false;
         let hwWord = 0, hwChar = 0, hwDeleting = false;
-        
-        const twEl = document.getElementById('typewriter');
         const hwEl = document.getElementById('typewriter-hero');
-
-        function typeWriter() {
-            const word = typeWords[twWord];
-            twEl.textContent = twDeleting
-                ? word.substring(0, twChar - 1)
-                : word.substring(0, twChar + 1);
-
-            twDeleting ? twChar-- : twChar++;
-
-            let delay = twDeleting ? 70 : 110;
-
-            if (!twDeleting && twChar === word.length) {
-                delay = 2200;
-                twDeleting = true;
-            } else if (twDeleting && twChar === 0) {
-                twDeleting = false;
-                twWord = (twWord + 1) % typeWords.length;
-                delay = 400;
-            }
-            setTimeout(typeWriter, delay);
-        }
 
         function typeWriterHero() {
             if (!hwEl) return;
@@ -790,8 +764,7 @@
             setTimeout(typeWriterHero, delay);
         }
 
-        typeWriter();
-        typeWriterHero();
+        setTimeout(typeWriterHero, 800);
 
         
 
