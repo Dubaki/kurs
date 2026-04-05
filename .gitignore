@@ -4,13 +4,3 @@ api/config.php
 *.py
 *.md
 Analiz.pdf
-*.png
-*.webp
-!eka_emblem.png
-!eka_emblem.webp
-!robot_green_nodes.png
-!robot_green_nodes.webp
-!sve_emblem.png
-!map.png
-!photos/ph1.webp
-!photos/ph1.png
