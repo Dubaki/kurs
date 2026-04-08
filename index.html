@@ -495,98 +495,351 @@
 
         
         <!-- Program Section (v5) -->
-        <section class="py-24 bg-surface border-b border-black/5" id="program">
+        <section class="py-16 md:py-20 bg-surface border-b border-black/5" id="program">
             <div class="max-w-7xl mx-auto px-4 md:px-8">
-                <div class="text-center max-w-4xl mx-auto mb-20">
-                    <h2 class="text-4xl md:text-6xl font-headline font-black text-on-surface mb-6 tracking-tighter">Три ступени к результату</h2>
-                    <p class="text-xl text-on-surface-variant font-light">От первого бота за выходные — до системы, которая работает без вас.</p>
+                <!-- Табы навигации -->
+                <div class="flex justify-center gap-3 mb-10 md:mb-12 flex-wrap">
+                    <button data-tab="program-start" class="tab-btn px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider transition-all border-2 border-black/10 text-on-surface-variant hover:border-primary/50" onclick="switchTab('program-start')">Быстрый старт</button>
+                    <button data-tab="program-engineer" class="tab-btn px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider transition-all border-2 border-primary bg-primary text-white shadow-lg" onclick="switchTab('program-engineer')">Бизнес-инженер</button>
+                    <button data-tab="program-business" class="tab-btn px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider transition-all border-2 border-black/10 text-on-surface-variant hover:border-primary/50" onclick="switchTab('program-business')">Для бизнеса</button>
                 </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-                    <!-- Ступень 1 -->
-                    <div class="bg-surface-container-lowest p-8 rounded-3xl border border-black/5 flex flex-col hover:border-primary/50 transition-all shadow-sm">
-                        <div class="flex flex-wrap items-center gap-2 mb-6">
-                            <div class="inline-flex items-center justify-center bg-black/5 px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest text-on-surface-variant w-max">Быстрый старт • 2 дня</div>
-                            <div class="inline-flex items-center justify-center bg-error text-white px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest w-max animate-pulse">🔥 Скидка 80% до конца дня</div>
-                        </div>
-                        <h3 class="font-headline font-black text-2xl mb-4">ИИ-Спринт: Твой первый робот за 2 часа</h3>
-                        <p class="text-sm text-on-surface-variant mb-6">Настраиваете свою ИИ-команду (Gemini + Claude Code + Qwen), осваиваете конвейер и собираете первый рабочий инструмент для бизнеса — Telegram-бот или мини-сайт.</p>
-                        
-                        <div class="bg-surface p-4 rounded-xl mb-8">
-                            <p class="text-[10px] uppercase font-black text-primary mb-2">ВАШ РЕЗУЛЬТАТ:</p>
-                            <ul class="text-xs space-y-2 font-medium">
-                                <li>— Рабочий стек ИИ-инструментов</li>
-                                <li>— Первый продукт для вашего бизнеса</li>
-                                <li>— Понимание: «это реально, я могу»</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="mt-auto pt-6 border-t border-black/5">
-                            <p class="text-xs text-on-surface-variant mb-4">Формат: скринкасты + текстовые гайды + чат поддержки 2 недели</p>
-                            <p class="text-lg text-on-surface-variant line-through">4 990 ₽</p>
-                            <p class="text-4xl font-black text-error mb-1">990 ₽</p>
-                            <p class="text-[10px] font-black text-error mb-2">Осталось: <span id="promo-timer">--:--:--</span></p>
-                            <p class="text-[10px] font-bold text-primary mb-6 flex items-center gap-1">
-                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">shield</span>
-                                Гарантия результата: если не поймёте, как создать свой проект — верну деньги. 100%.
-                            </p>
-                            <button onclick="openAuditModal('Заявка на ИИ-Спринт')" class="w-full bg-error text-white hover:opacity-90 py-4 rounded-full font-bold uppercase text-xs tracking-widest transition-colors">Начать за 990 ₽</button>
+
+                <!-- Контент табов -->
+                <!-- ====== ТАБ: БЫСТРЫЙ СТАРТ ====== -->
+                <div class="tab-content" id="tab-program-start">
+                    <div class="max-w-2xl mx-auto">
+                        <div class="bg-surface-container-lowest p-8 rounded-3xl border border-black/5 flex flex-col shadow-sm">
+                            <div class="flex flex-wrap items-center gap-2 mb-6">
+                                <div class="inline-flex items-center justify-center bg-black/5 px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest text-on-surface-variant w-max">Быстрый старт • 2 дня</div>
+                                <div class="inline-flex items-center justify-center bg-error text-white px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest w-max animate-pulse">🔥 Скидка 90% до конца дня</div>
+                            </div>
+                            <h3 class="font-headline font-black text-2xl mb-4">ИИ-Спринт: Твой первый робот за 2 часа</h3>
+                            <p class="text-sm text-on-surface-variant mb-6">Настраиваете свою ИИ-команду (Gemini + Claude Code + Qwen), осваиваете конвейер и собираете первый рабочий инструмент для бизнеса — Telegram-бот или мини-сайт.</p>
+
+                            <div class="bg-surface p-4 rounded-xl mb-6">
+                                <p class="text-[10px] uppercase font-black text-primary mb-2">ВАШ РЕЗУЛЬТАТ:</p>
+                                <ul class="text-xs space-y-2 font-medium">
+                                    <li>— Рабочий стек ИИ-инструментов</li>
+                                    <li>— Первый продукт для вашего бизнеса</li>
+                                    <li>— Понимание: «это реально, я могу»</li>
+                                </ul>
+                            </div>
+
+                            <!-- Формат -->
+                            <div class="bg-primary-container/10 p-4 rounded-xl mb-6 border border-primary/20">
+                                <p class="text-[10px] uppercase font-black text-primary mb-2">ФОРМАТ:</p>
+                                <ul class="text-xs space-y-2 font-medium">
+                                    <li>— Скринкасты + текстовые гайды</li>
+                                    <li>— Чат поддержки 2 недели</li>
+                                    <li class="font-bold text-primary">— 2 видео созвона каждый день по часу (личная работа с автором)</li>
+                                </ul>
+                            </div>
+
+                            <!-- Гарантия -->
+                            <div class="bg-error/10 border-2 border-error/30 p-5 rounded-2xl mb-6">
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-3xl text-error flex-shrink-0" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                    <div>
+                                        <p class="text-sm font-black text-error mb-1 uppercase tracking-wider">Гарантия результата</p>
+                                        <p class="text-sm text-on-surface-variant font-medium">Если у Вас не будет готового рабочего бота — верну деньги. Без вопросов.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-auto pt-6 border-t border-black/5">
+                                <p class="text-lg text-on-surface-variant line-through price-element">9 999 ₽</p>
+                                <p class="text-4xl font-black text-error mb-1 price-element">990 ₽</p>
+                                <p class="text-[10px] font-black text-error mb-2">Осталось: <span id="promo-timer">--:--:--</span></p>
+                                <p class="text-[10px] font-bold text-primary mb-6 flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">shield</span>
+                                    Гарантия результата: если не поймёте, как создать свой проект — верну деньги. 100%.
+                                </p>
+                                <button onclick="openAuditModal('Заявка на ИИ-Спринт')" class="w-full bg-error text-white hover:opacity-90 py-4 rounded-full font-bold uppercase text-xs tracking-widest transition-colors">Начать за 990 ₽</button>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Ступень 2 Флагман -->
-                    <div class="bg-primary text-white p-8 md:p-10 rounded-3xl border border-primary-container/30 flex flex-col shadow-2xl relative md:-translate-y-6 z-10">
-                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#10B981] text-white px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest shadow-md whitespace-nowrap">Первая группа • Май 2025</div>
-                        <h3 class="font-headline font-black text-3xl mb-3 mt-2">Бизнес-инженер</h3>
-                        <div class="inline-flex items-center gap-2 bg-orange-500/20 border border-orange-400/30 px-3 py-2 rounded-xl mb-4 w-max">
-                            <span class="text-base leading-none">🔥</span>
-                            <span class="text-[10px] font-black uppercase tracking-wider text-orange-400">Осталось мест на личное ведение: <span class="text-white">4 из 15</span></span>
-                        </div>
-                        <p class="text-sm text-white/80 mb-6 font-light">Полный путь от бизнес-задачи до работающей системы. CRM, дашборды, боты, автоматизации — конкретно для ВАШЕГО бизнеса. Авторская методология: «Совет 3 Моделей», конвейер TODO→DONE, управление ИИ-командой.</p>
-                        
-                        <div class="space-y-3 mb-8">
-                            <div class="bg-white/10 p-3 rounded-lg border border-white/5">
-                                <p class="text-[10px] font-black uppercase text-primary-container mb-1">Уровень 1 — «Постановщик задач»</p>
-                                <p class="text-xs text-white/90">Результат: ставите задачу ИИ и получаете результат с первого раза</p>
+                <!-- ====== ТАБ: БИЗНЕС-ИНЖЕНЕР ====== -->
+                <div class="tab-content hidden" id="tab-program-engineer">
+                    <div class="max-w-2xl mx-auto">
+                        <div class="bg-primary text-white p-8 md:p-10 rounded-3xl border border-primary-container/30 flex flex-col shadow-2xl relative">
+                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#10B981] text-white px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest shadow-md whitespace-nowrap">Первая группа • Май 2025</div>
+                            <h3 class="font-headline font-black text-3xl mb-3 mt-2">Бизнес-инженер</h3>
+                            <div class="inline-flex items-center gap-2 bg-orange-500/20 border border-orange-400/30 px-3 py-2 rounded-xl mb-4 w-max">
+                                <span class="text-base leading-none">🔥</span>
+                                <span class="text-[10px] font-black uppercase tracking-wider text-orange-400">Осталось мест на личное ведение: <span class="text-white">4 из 15</span></span>
                             </div>
-                            <div class="bg-white/10 p-3 rounded-lg border border-white/5">
-                                <p class="text-[10px] font-black uppercase text-primary-container mb-1">Уровень 2 — «Контролёр качества»</p>
-                                <p class="text-xs text-white/90">Результат: выявляете ошибки ИИ, получаете надёжный результат</p>
-                            </div>
-                            <div class="bg-white/10 p-3 rounded-lg border border-white/5">
-                                <p class="text-[10px] font-black uppercase text-primary-container mb-1">Уровень 3 — «Архитектор систем»</p>
-                                <p class="text-xs text-white/90">Результат: собираете рабочее приложение для бизнеса</p>
-                            </div>
-                            <div class="bg-white/10 p-3 rounded-lg border border-white/5">
-                                <p class="text-[10px] font-black uppercase text-primary-container mb-1">Уровень 4 — «Руководитель ИИ-команды»</p>
-                                <p class="text-xs text-white/90">Результат: автоматизации работают без вашего контроля</p>
-                            </div>
-                        </div>
+                            <p class="text-sm text-white/80 mb-6 font-light">Полный путь от бизнес-задачи до работающей системы. CRM, дашборды, боты, автоматизации — конкретно для ВАШЕГО бизнеса. Авторская методология: «Совет 3 Моделей», конвейер TODO→DONE, управление ИИ-командой.</p>
 
-                        <div class="mt-auto pt-6 border-t border-white/10">
-                            <p class="text-xs text-white/70 mb-4">Формат: скринкасты + живые эфиры + текстовые гайды + чат</p>
-                            <div class="mb-6">
-                                <p class="text-lg text-white/50 line-through decoration-white/30">72 000 ₽</p>
-                                <p class="text-4xl font-black text-white">36 000 ₽</p>
+                            <!-- Аккордеоны модулей 1-4 -->
+                            <div class="mb-6 space-y-3">
+                                <p class="text-[11px] font-black uppercase text-primary-container mb-3 tracking-wider">Программа курса (4 модуля):</p>
+
+                                <!-- Модуль 1 -->
+                                <details class="group bg-white/10 rounded-xl border border-white/10 overflow-hidden">
+                                    <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-white/5 transition-colors">
+                                        <div class="flex items-center gap-3">
+                                            <span class="bg-primary-container text-primary text-xs font-black px-2 py-1 rounded-lg">М1</span>
+                                            <span class="text-sm font-bold text-white">Фундамент</span>
+                                        </div>
+                                        <span class="material-symbols-outlined text-white/50 group-open:rotate-180 transition-transform">expand_more</span>
+                                    </summary>
+                                    <div class="px-4 pb-4 pt-2 border-t border-white/10">
+                                        <ul class="text-xs text-white/80 space-y-1.5 mb-3">
+                                            <li>• Настройка ИИ-команды (Gemini + Claude Code + Qwen)</li>
+                                            <li>• Методология «Совет моделей»</li>
+                                            <li>• Конвейер TODO→DONE</li>
+                                        </ul>
+                                        <p class="text-[11px] font-bold text-[#10B981] bg-[#10B981]/10 px-3 py-1.5 rounded-lg inline-block">Результат: 3 выполненных таска для вашего проекта</p>
+                                    </div>
+                                </details>
+
+                                <!-- Модуль 2 -->
+                                <details class="group bg-white/10 rounded-xl border border-white/10 overflow-hidden">
+                                    <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-white/5 transition-colors">
+                                        <div class="flex items-center gap-3">
+                                            <span class="bg-primary-container text-primary text-xs font-black px-2 py-1 rounded-lg">М2</span>
+                                            <span class="text-sm font-bold text-white">Поддержка 24/7</span>
+                                        </div>
+                                        <span class="material-symbols-outlined text-white/50 group-open:rotate-180 transition-transform">expand_more</span>
+                                    </summary>
+                                    <div class="px-4 pb-4 pt-2 border-t border-white/10">
+                                        <ul class="text-xs text-white/80 space-y-1.5 mb-3">
+                                            <li>• Telegram-бот с ИИ-мозгами по вашим данным</li>
+                                            <li>• Подключение к Supabase (MCP)</li>
+                                            <li>• Логика квалификации</li>
+                                        </ul>
+                                        <p class="text-[11px] font-bold text-[#10B981] bg-[#10B981]/10 px-3 py-1.5 rounded-lg inline-block">Результат: Экономия 2–4 часа/день</p>
+                                    </div>
+                                </details>
+
+                                <!-- Модуль 3 -->
+                                <details class="group bg-white/10 rounded-xl border border-white/10 overflow-hidden">
+                                    <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-white/5 transition-colors">
+                                        <div class="flex items-center gap-3">
+                                            <span class="bg-primary-container text-primary text-xs font-black px-2 py-1 rounded-lg">М3</span>
+                                            <span class="text-sm font-bold text-white">Данные и Дашборды</span>
+                                        </div>
+                                        <span class="material-symbols-outlined text-white/50 group-open:rotate-180 transition-transform">expand_more</span>
+                                    </summary>
+                                    <div class="px-4 pb-4 pt-2 border-t border-white/10">
+                                        <ul class="text-xs text-white/80 space-y-1.5 mb-3">
+                                            <li>• Веб-дашборд</li>
+                                            <li>• ИИ управляет БД напрямую</li>
+                                            <li>• Автоматизация кодом (без n8n/Make)</li>
+                                            <li>• Деплой 24/7</li>
+                                        </ul>
+                                        <p class="text-[11px] font-bold text-[#10B981] bg-[#10B981]/10 px-3 py-1.5 rounded-lg inline-block">Результат: Экономия до 8 часов/неделю</p>
+                                    </div>
+                                </details>
+
+                                <!-- Модуль 4 -->
+                                <details class="group bg-white/10 rounded-xl border border-white/10 overflow-hidden">
+                                    <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-white/5 transition-colors">
+                                        <div class="flex items-center gap-3">
+                                            <span class="bg-primary-container text-primary text-xs font-black px-2 py-1 rounded-lg">М4</span>
+                                            <span class="text-sm font-bold text-white">Автопилот</span>
+                                        </div>
+                                        <span class="material-symbols-outlined text-white/50 group-open:rotate-180 transition-transform">expand_more</span>
+                                    </summary>
+                                    <div class="px-4 pb-4 pt-2 border-t border-white/10">
+                                        <ul class="text-xs text-white/80 space-y-1.5 mb-3">
+                                            <li>• ИИ-агент отвечает строго по вашим документам</li>
+                                            <li>• Знает прайс из 500 позиций</li>
+                                            <li>• Аудит безопасности + автотесты</li>
+                                        </ul>
+                                        <p class="text-[11px] font-bold text-[#10B981] bg-[#10B981]/10 px-3 py-1.5 rounded-lg inline-block">Результат: ROI = замена 1 сотрудника (экономия 40–80 тыс. ₽/мес)</p>
+                                    </div>
+                                </details>
                             </div>
-                            <button onclick="openAuditModal('Заявка на Флагман')" class="w-full bg-white text-primary hover:bg-surface py-4 rounded-full font-bold uppercase text-xs tracking-widest transition-colors shadow">Записаться на курс</button>
+
+                            <!-- VIP Toggle -->
+                            <div class="mb-6 p-5 bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-2xl border border-amber-400/30">
+                                <label class="flex items-start gap-4 cursor-pointer">
+                                    <div class="relative flex-shrink-0 mt-0.5">
+                                        <input type="checkbox" id="vip-toggle" class="sr-only peer" onchange="updateCalculator()">
+                                        <div class="w-10 h-6 bg-white/20 rounded-full peer-checked:bg-amber-500 peer-focus:ring-2 peer-focus:ring-amber-400/50 transition-colors"></div>
+                                        <div class="absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow-md peer-checked:translate-x-4 transition-transform"></div>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-black text-amber-300 uppercase tracking-wider">VIP-блок (+36 000 ₽)</p>
+                                        <p class="text-[11px] text-white/70 mt-1">Всё из «Бизнес-инженера» + TDD-тестирование каждой функции, изолированные ветки для каждой фичи, персональное ревью автора (2 сессии)</p>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <!-- Калькулятор -->
+                            <div class="mb-6 p-4 bg-white/10 rounded-xl border border-white/20">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-white/70">Итого:</span>
+                                    <span class="text-3xl font-black text-white"><span id="calc-total">36 000</span> ₽</span>
+                                </div>
+                                <div id="vip-line" class="hidden flex justify-between items-center pt-2 border-t border-white/10 mt-2">
+                                    <span class="text-xs text-amber-300">+ VIP-блок</span>
+                                    <span class="text-sm font-bold text-amber-300">+36 000 ₽</span>
+                                </div>
+                            </div>
+
+                            <!-- Что вы получаете -->
+                            <button onclick="openResultsModal()" class="w-full mb-6 bg-white/10 hover:bg-white/15 border border-white/20 rounded-xl p-4 text-left transition-colors flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm font-bold text-white">📦 Что вы получите по итогу курса</p>
+                                    <p class="text-[11px] text-white/60">4 инструмента + связь + навыки</p>
+                                </div>
+                                <span class="material-symbols-outlined text-white/50">arrow_forward_ios</span>
+                            </button>
+
+                            <div class="mt-auto pt-6 border-t border-white/10">
+                                <p class="text-xs text-white/70 mb-4">Формат: скринкасты + живые эфиры + текстовые гайды + чат</p>
+                                <div class="mb-6">
+                                    <p class="text-lg text-white/50 line-through decoration-white/30 price-element">72 000 ₽</p>
+                                    <div class="flex items-center gap-3 flex-wrap">
+                                        <p class="text-4xl font-black text-white price-element">от 36 000 ₽</p>
+                                        <span class="inline-flex items-center bg-[#10B981]/20 border border-[#10B981]/40 text-[#10B981] px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest whitespace-nowrap">
+                                            🔥 Скидка 50% только в этом месяце (Первый поток)
+                                        </span>
+                                    </div>
+                                </div>
+                                <button onclick="openAuditModal('Заявка на Флагман')" class="w-full bg-white text-primary hover:bg-surface py-4 rounded-full font-bold uppercase text-xs tracking-widest transition-colors shadow">Записаться на курс</button>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Ступень 3 -->
-                    <div class="bg-surface-container-lowest p-8 rounded-3xl border border-black/5 flex flex-col hover:border-black/20 transition-all shadow-sm">
-                        <div class="inline-flex items-center justify-center bg-black/5 px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest text-on-surface-variant mb-6 w-max">Индивидуально</div>
-                        <h3 class="font-headline font-black text-2xl mb-4">Персональный консалтинг</h3>
-                        <p class="text-sm text-on-surface-variant mb-6">Аудит ваших процессов + совместная сборка системы. Результат быстрее, фокус на вашем бизнесе.</p>
-                        
-                        <div class="mt-auto pt-6 border-t border-black/5 flex flex-col h-full justify-end">
-                            <p class="text-3xl font-black text-on-surface mb-6">от 300 000 ₽</p>
-                            <button onclick="openAuditModal('Обсудить задачу')" class="w-full bg-black/5 text-on-surface hover:bg-black/10 py-4 rounded-full font-bold uppercase text-xs tracking-widest transition-colors">Обсудить задачу</button>
+                <!-- ====== ТАБ: ДЛЯ БИЗНЕСА (Корпоративный + Консалтинг) ====== -->
+                <div class="tab-content hidden" id="tab-program-business">
+                    <div class="max-w-5xl mx-auto space-y-12">
+
+                        <!-- Что получит ваш бизнес -->
+                        <div class="bg-surface-container-lowest p-6 md:p-8 rounded-3xl border border-black/5">
+                            <h3 class="font-headline font-black text-xl md:text-2xl mb-6 text-on-surface">Что получит ваш бизнес</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-primary text-2xl flex-shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">speed</span>
+                                    <div>
+                                        <p class="text-sm font-bold text-on-surface mb-1">Оптимизация</p>
+                                        <p class="text-xs text-on-surface-variant">Каждый из 10 сотрудников научится автоматизировать свои рутинные задачи</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-primary text-2xl flex-shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+                                    <div>
+                                        <p class="text-sm font-bold text-on-surface mb-1">Продуктивность</p>
+                                        <p class="text-xs text-on-surface-variant">Создание кастомных ИИ-приложений под конкретные отделы</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-primary text-2xl flex-shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">hub</span>
+                                    <div>
+                                        <p class="text-sm font-bold text-on-surface mb-1">Инструментарий</p>
+                                        <p class="text-xs text-on-surface-variant">Полная настройка ИИ-стека на инфраструктуре компании</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Корпоративный интенсив -->
+                        <div>
+                            <h3 class="font-headline font-black text-xl md:text-2xl mb-2 text-on-surface">Корпоративный интенсив</h3>
+                            <p class="text-sm text-on-surface-variant mb-6">Обучение вашей команды до 10 человек. От идеи до работающего прототипа.</p>
+
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                                <!-- Базовый -->
+                                <div class="bg-surface-container-lowest p-6 rounded-2xl border border-black/5 hover:border-primary/30 transition-all flex flex-col">
+                                    <div class="text-[9px] font-black uppercase tracking-widest text-primary mb-2">Базовый</div>
+                                    <p class="text-xs text-on-surface-variant mb-3">2–3 дня</p>
+                                    <div class="bg-primary/5 p-3 rounded-xl mb-4 flex-grow">
+                                        <p class="text-[11px] font-bold text-on-surface mb-1">Результат:</p>
+                                        <p class="text-xs text-on-surface-variant">Понимание возможностей ИИ и 1 пилотный проект автоматизации</p>
+                                    </div>
+                                    <p class="text-2xl font-black text-on-surface mb-4 price-element">250 000 ₽</p>
+                                    <button onclick="openAuditModal('Корпоративный — Базовый')" class="w-full bg-primary text-white hover:bg-primary/90 py-3 rounded-full font-bold uppercase text-[10px] tracking-widest transition-colors">Оставить заявку</button>
+                                </div>
+                                <!-- Расширенный -->
+                                <div class="bg-primary text-white p-6 rounded-2xl border border-primary-container/30 shadow-xl relative md:-translate-y-2 flex flex-col">
+                                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#10B981] text-white px-3 py-1 rounded-full text-[8px] font-black uppercase tracking-widest">Популярный</div>
+                                    <div class="text-[9px] font-black uppercase tracking-widest text-primary-container mb-2 mt-2">Расширенный</div>
+                                    <p class="text-xs text-white/70 mb-3">5–6 дней + кастом под отрасль</p>
+                                    <div class="bg-white/10 p-3 rounded-xl mb-4 flex-grow">
+                                        <p class="text-[11px] font-bold text-white mb-1">Результат:</p>
+                                        <p class="text-xs text-white/80">Решение отраслевых задач + пакет из 3–5 готовых инструментов для работы</p>
+                                    </div>
+                                    <p class="text-2xl font-black text-white mb-4 price-element">400 000 ₽</p>
+                                    <button onclick="openAuditModal('Корпоративный — Расширенный')" class="w-full bg-white text-primary hover:bg-surface py-3 rounded-full font-bold uppercase text-[10px] tracking-widest transition-colors">Оставить заявку</button>
+                                </div>
+                                <!-- Премиум -->
+                                <div class="bg-surface-container-lowest p-6 rounded-2xl border border-black/5 hover:border-amber-400/50 transition-all flex flex-col">
+                                    <div class="text-[9px] font-black uppercase tracking-widest text-amber-600 mb-2">Премиум</div>
+                                    <p class="text-xs text-on-surface-variant mb-3">10 дней + 2 нед. сопровождение</p>
+                                    <div class="bg-amber-500/5 p-3 rounded-xl mb-4 flex-grow">
+                                        <p class="text-[11px] font-bold text-on-surface mb-1">Результат:</p>
+                                        <p class="text-xs text-on-surface-variant">Создание полноценной ИИ-экосистемы предприятия + 2 недели сопровождения для внедрения «в кровь» компании <span class="font-bold text-amber-600">(Максимальный ROI)</span></p>
+                                    </div>
+                                    <p class="text-2xl font-black text-on-surface mb-4 price-element">600 000 ₽</p>
+                                    <button onclick="openAuditModal('Корпоративный — Премиум')" class="w-full bg-black text-white hover:bg-black/80 py-3 rounded-full font-bold uppercase text-[10px] tracking-widest transition-colors">Оставить заявку</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Персональный консалтинг -->
+                        <div>
+                            <h3 class="font-headline font-black text-xl md:text-2xl mb-2 text-on-surface">Персональный консалтинг</h3>
+                            <p class="text-sm text-on-surface-variant mb-6">Аудит ваших процессов + совместная сборка системы. Результат быстрее, фокус на вашем бизнесе.</p>
+                            <div class="bg-surface-container-lowest p-8 rounded-3xl border border-black/5 flex flex-col shadow-sm">
+                                <div class="mt-auto pt-6 border-t border-black/5 flex flex-col h-full justify-end">
+                                    <p class="text-3xl font-black text-on-surface mb-6 price-element">от 300 000 ₽</p>
+                                    <button onclick="openAuditModal('Обсудить задачу')" class="w-full bg-black/5 text-on-surface hover:bg-black/10 py-4 rounded-full font-bold uppercase text-xs tracking-widest transition-colors">Обсудить задачу</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+
+        <!-- Модалка: Результаты курса -->
+        <div id="results-modal" class="fixed inset-0 bg-black/60 z-50 hidden items-center justify-center p-4" onclick="closeResultsModal()">
+            <div class="bg-surface-container-lowest rounded-3xl max-w-lg w-full p-8 relative border border-black/10 shadow-2xl" onclick="event.stopPropagation()">
+                <button onclick="closeResultsModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+                <h3 class="font-headline font-black text-2xl text-on-surface mb-6">📦 Что вы получите по итогу курса</h3>
+
+                <div class="space-y-5">
+                    <!-- 4 инструмента -->
+                    <div class="bg-primary/5 p-4 rounded-xl border border-primary/20">
+                        <p class="text-sm font-bold text-on-surface mb-2">4 работающих инструмента:</p>
+                        <ul class="text-xs text-on-surface-variant space-y-1">
+                            <li>🤖 Telegram-бот</li>
+                            <li>📊 Веб-дашборд</li>
+                            <li>🧠 ИИ-агент</li>
+                            <li>⚡ Автоматизации кодом</li>
+                        </ul>
+                    </div>
+
+                    <!-- Всё связано -->
+                    <div class="bg-[#10B981]/5 p-4 rounded-xl border border-[#10B981]/20">
+                        <p class="text-sm font-bold text-on-surface mb-2">Всё связано:</p>
+                        <p class="text-xs text-on-surface-variant">Клиент пишет боту → квалификация → база → дашборд → сводка в TG → <strong class="text-[#10B981]">всё работает без вас</strong></p>
+                    </div>
+
+                    <!-- Навыки -->
+                    <div class="bg-amber-500/5 p-4 rounded-xl border border-amber-400/20">
+                        <p class="text-sm font-bold text-on-surface mb-2">Навыки:</p>
+                        <ul class="text-xs text-on-surface-variant space-y-1">
+                            <li>• Управление ИИ-командой</li>
+                            <li>• Декомпозиция задач</li>
+                            <li>• Базы данных</li>
+                            <li>• Деплой</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button onclick="closeResultsModal(); openAuditModal('Заявка на Флагман')" class="w-full mt-6 bg-primary text-white hover:bg-primary/90 py-4 rounded-full font-bold uppercase text-xs tracking-widest transition-colors">Записаться на курс</button>
+            </div>
+        </div>
 
 
         <!-- Flow Section -->
@@ -809,9 +1062,27 @@
         
 
         // ─── MODAL LOGIC ─────────────────────────────────────────────
-        function openAuditModal(sourceTitle) {
+        let currentTariff = '';
+        let currentOptions = '';
+
+        function openAuditModal(sourceTitle, options) {
             const titleEl = document.getElementById('audit-modal-title');
             if (titleEl) titleEl.textContent = sourceTitle || 'Бесплатный аудит';
+            currentTariff = sourceTitle || '';
+            currentOptions = options || '';
+
+            // Если открыли из Флагмана — проверяем VIP
+            if (sourceTitle && sourceTitle.includes('Флагман')) {
+                const vipToggle = document.getElementById('vip-toggle');
+                if (vipToggle && vipToggle.checked) {
+                    currentOptions = 'VIP-блок (+36 000 ₽)';
+                }
+            }
+
+            // Сбросить форму и показать форму
+            document.getElementById('audit-form-view').classList.remove('hidden');
+            document.getElementById('audit-success-view').classList.add('hidden');
+
             document.getElementById('audit-modal').classList.remove('hidden');
             document.getElementById('audit-modal').classList.add('flex');
             document.body.style.overflow = 'hidden';
@@ -854,14 +1125,59 @@
             errEl.classList.add('hidden');
 
             const title = document.getElementById('audit-modal-title').textContent;
-            const text = `🔔 Новая заявка: ${title}\n👤 Имя: ${name}\n📞 Телефон: ${phone || '—'}\n✈️ Telegram: ${tg || '—'}`;
+            let text = `🔔 Новая заявка: ${title}\n👤 Имя: ${name}\n📞 Телефон: ${phone || '—'}\n✈️ Telegram: ${tg || '—'}`;
+
+            // Добавить тариф и опции
+            if (currentTariff) text += `\n📋 Тариф: ${currentTariff}`;
+            if (currentOptions) text += `\n⚙️ Опции: ${currentOptions}`;
+
+            // ─── LOCALHOST MODE (заглушка) ───
+            const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
+            if (isLocalhost) {
+                console.log('═══ LOCALHOST TEST MODE ═══');
+                console.log('Форма:', title);
+                console.log('Имя:', name);
+                console.log('Телефон:', phone || '—');
+                console.log('Telegram:', tg || '—');
+                if (currentTariff) console.log('Тариф:', currentTariff);
+                if (currentOptions) console.log('Опции:', currentOptions);
+                console.log('Полный текст для Telegram:');
+                console.log(text);
+                console.log('═══ END TEST MODE ═══');
+
+                // Показать success без реального запроса
+                document.getElementById('audit-form-view').classList.add('hidden');
+                document.getElementById('audit-success-view').classList.remove('hidden');
+                return;
+            }
+
+            // ─── PRODUCTION MODE ───
             try {
-                await fetch('/api/send-lead.php', {
+                console.log('Отправка заявки на сервер...');
+                const response = await fetch('/api/send-lead.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ text })
                 });
-            } catch (_) {}
+
+                if (!response.ok) {
+                    console.error('Ошибка сервера:', response.status, response.statusText);
+                }
+
+                const result = await response.json();
+                console.log('Ответ сервера:', result);
+
+                if (!result.success) {
+                    console.error('Ошибка отправки:', result.error);
+                }
+            } catch (error) {
+                console.error('═══ FETCH ERROR ═══');
+                console.error('Тип ошибки:', error.name);
+                console.error('Сообщение:', error.message);
+                console.error('═══ END ERROR ═══');
+                // Всё равно показать success — пользователь не должен видеть технические ошибки
+            }
 
             document.getElementById('audit-form-view').classList.add('hidden');
             document.getElementById('audit-success-view').classList.remove('hidden');
@@ -914,6 +1230,116 @@
             menu.classList.add('hidden');
             icon.textContent = 'menu';
         }
+
+        // ─── PROGRAM TABS (Hash Routing) ─────────────────────────────
+        function switchTab(tabId) {
+            // Скрыть все табы
+            document.querySelectorAll('.tab-content').forEach(function(tab) {
+                tab.classList.add('hidden');
+            });
+            // Сбросить стили кнопок
+            document.querySelectorAll('.tab-btn').forEach(function(btn) {
+                btn.classList.remove('bg-primary', 'text-white', 'shadow-lg', 'border-primary');
+                btn.classList.add('border-black/10', 'text-on-surface-variant');
+            });
+
+            // Показать нужный таб
+            const targetTab = document.getElementById('tab-' + tabId);
+            if (targetTab) targetTab.classList.remove('hidden');
+
+            // Активировать кнопку
+            const activeBtn = document.querySelector('.tab-btn[data-tab="' + tabId + '"]');
+            if (activeBtn) {
+                activeBtn.classList.add('bg-primary', 'text-white', 'shadow-lg', 'border-primary');
+                activeBtn.classList.remove('border-black/10', 'text-on-surface-variant');
+            }
+
+            // Обновить хеш без скролла
+            history.pushState(null, null, '#program-' + tabId.replace('program-', ''));
+        }
+
+        // Чтение хеша при загрузке страницы
+        function initTabsFromHash() {
+            const hash = window.location.hash.replace('#', '');
+            if (hash.startsWith('program-')) {
+                const tabId = hash; // program-start, program-engineer, program-business
+                switchTab(tabId);
+            }
+        }
+
+        // Слушаем изменения хеша
+        window.addEventListener('hashchange', function() {
+            const hash = window.location.hash.replace('#', '');
+            if (hash.startsWith('program-')) {
+                switchTab(hash);
+            }
+        });
+
+        // Инициализация при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            initTabsFromHash();
+        });
+
+        // ─── FLAGMAN CALCULATOR ──────────────────────────────────────
+        const BASE_PRICE = 36000;
+        const VIP_PRICE = 36000;
+
+        function updateCalculator() {
+            const vipToggle = document.getElementById('vip-toggle');
+            const totalEl = document.getElementById('calc-total');
+            const vipLine = document.getElementById('vip-line');
+
+            if (!totalEl) return;
+
+            let total = BASE_PRICE;
+
+            if (vipToggle && vipToggle.checked) {
+                total += VIP_PRICE;
+                if (vipLine) vipLine.classList.remove('hidden');
+            } else {
+                if (vipLine) vipLine.classList.add('hidden');
+            }
+
+            totalEl.textContent = total.toLocaleString('ru-RU');
+        }
+
+        // ─── UTM PRICE HIDER ─────────────────────────────────────────
+        function checkUtmPriceParam() {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('utm_custom_price') === 'hide') {
+                document.querySelectorAll('.price-element').forEach(function(el) {
+                    el.style.display = 'none';
+                });
+
+                const replacementText = 'Специальные условия (уточняйте у менеджера)';
+                document.querySelectorAll('.price-element').forEach(function(el) {
+                    const replacement = document.createElement('p');
+                    replacement.className = 'text-sm font-bold text-primary';
+                    replacement.textContent = replacementText;
+                    el.parentNode.insertBefore(replacement, el);
+                });
+            }
+        }
+
+        // ─── RESULTS MODAL ──────────────────────────────────────────
+        function openResultsModal() {
+            const modal = document.getElementById('results-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeResultsModal() {
+            const modal = document.getElementById('results-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Запуск UTM проверки при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            checkUtmPriceParam();
+        });
     </script>
 </body>
 </html>

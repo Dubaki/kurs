@@ -3,4 +3,6 @@ api/config.php
 .vscode/
 *.py
 *.md
+!task/
+!task/**/*.md
 Analiz.pdf
