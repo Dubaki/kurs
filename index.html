@@ -130,6 +130,38 @@
           50%      { box-shadow: 0 4px 28px rgba(0, 104, 117, 0.45); }
       }
       .slow-pulse { animation: slow-pulse 3s ease-in-out infinite; will-change: box-shadow; }
+      /* "Fantastic" shine animation for secondary button */
+      @keyframes fancy-shine {
+          0%   { transform: translateX(-120%); }
+          100% { transform: translateX(220%); }
+      }
+      .fancy-shine {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 40%;
+          height: 100%;
+          background: linear-gradient(
+              105deg,
+              transparent 20%,
+              rgba(0, 104, 117, 0.12) 40%,
+              rgba(0, 104, 117, 0.25) 50%,
+              rgba(0, 104, 117, 0.12) 60%,
+              transparent 80%
+          );
+          animation: fancy-shine 3.5s ease-in-out infinite;
+          will-change: transform;
+      }
+      .fancy-btn:hover {
+          border-color: rgba(0, 104, 117, 0.8);
+          background-color: rgba(0, 104, 117, 0.06);
+          box-shadow: 0 4px 20px rgba(0, 104, 117, 0.15);
+          transition: all 0.4s cubic-bezier(.4,0,.2,1);
+      }
+      .fancy-btn:active {
+          transform: scale(0.97);
+          transition: transform 0.15s ease;
+      }
     </style>
 </head>
 <body class="font-body selection:bg-primary selection:text-on-primary">
@@ -244,6 +276,15 @@
                     </h1>
                     <p class="text-base md:text-xl text-primary font-black mb-3 uppercase tracking-tight border-l-4 border-primary pl-4 md:pl-6">Усиливай <span id="typewriter-hero" class="text-on-surface inline-block min-w-[12ch] text-left">себя</span> до мощности целого отдела — с помощью ИИ, без программистов и миллионных бюджетов.</p>
                     <p class="text-on-surface-variant font-bold max-w-xl mb-6 text-xs md:text-base">Объективная оценка ИИ-компетенций: узнайте, насколько эффективно вы и ваша команда используете потенциал нейросетей в рабочих процессах.</p>
+                    <div class="flex items-center gap-4 mt-8">
+                        <a href="#" class="relative overflow-hidden inline-flex items-center gap-2 border-2 border-primary/40 text-primary px-6 py-3 rounded-full font-body font-bold text-sm uppercase tracking-wider group fancy-btn">
+                            <span class="relative z-10 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-lg">description</span>
+                                Пример отчёта Аттестации 66ai
+                            </span>
+                            <span class="fancy-shine"></span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
