@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html class="dark" lang="ru" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Аттестация 66AI | Тестирование ИИ-компетенций сотрудников</title>
+    <meta name="description" content="Аттестация 66AI — многоуровневое тестирование ИИ-компетенций вашей команды. PDF-сертификаты, HR-дашборд, аналитика. B2B решение для руководителей.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://66ai.ru/attestation.html">
+    <meta property="og:title" content="Аттестация 66AI | Тестирование ИИ-компетенций сотрудников">
+    <meta property="og:description" content="Многоуровневое тестирование через ботов с выдачей сертификатов. Определите реальный уровень ИИ-компетенций вашей команды.">
+    <meta property="og:image" content="https://66ai.ru/robot_green_nodes.webp">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Аттестация 66AI | Тестирование ИИ-компетенций">
+    <meta property="twitter:image" content="https://66ai.ru/robot_green_nodes.webp">
+    <link rel="canonical" href="https://66ai.ru/attestation.html" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#2a2e33",
+              "inverse-primary": "#006875",
+              "on-tertiary-container": "#ffd9a2",
+              "secondary-container": "#3a4a5e",
+              "surface-container-lowest": "#1a1e22",
+              "tertiary": "#c48a00",
+              "on-secondary": "#1a2a3e",
+              "on-surface": "#e1e2e8",
+              "surface-bright": "#2a2e33",
+              "primary-container": "#003a42",
+              "surface": "#191c1e",
+              "on-primary-container": "#9cf0ff",
+              "on-background": "#e1e2e8",
+              "error": "#ffb4ab",
+              "primary": "#00c7d4",
+              "on-primary": "#00363d",
+              "surface-container": "#202428",
+              "on-surface-variant": "#b3b6be",
+              "background": "#14171a",
+              "outline": "#7d8088",
+              "surface-variant": "#3a3e44",
+              "outline-variant": "#4a4e54"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"]
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #14171a;
+        color: #e1e2e8;
+      }
+      @media (max-width: 767px) {
+        body {
+          padding-bottom: 80px;
+        }
+      }
+      @keyframes logo-morph {
+          0%, 100% { background-color: #00c7d4; border-radius: 4px; border: 2px solid transparent; }
+          50%      { background-color: transparent; border-radius: 50%; border: 2px solid #00c7d4; }
+      }
+      @keyframes logo-v-morph {
+          0%, 100% { color: #00363d; }
+          50%      { color: #1e40af; }
+      }
+      .logo-morph { animation: logo-morph 5s ease-in-out infinite; will-change: background-color, border-radius; }
+      .logo-v-morph { animation: logo-v-morph 5s ease-in-out infinite; will-change: color; }
+      @keyframes glow-pulse {
+          0%, 100% { box-shadow: 0 0 20px rgba(0, 199, 212, 0.15); }
+          50%      { box-shadow: 0 0 40px rgba(0, 199, 212, 0.3); }
+      }
+      .glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary">
+    <!-- TopNavBar -->
+    <header class="bg-[#14171a]/80 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-white/5">
+        <div class="flex justify-between items-center w-full px-4 md:px-8 py-4 max-w-7xl mx-auto">
+            <a href="index.html" class="flex items-center gap-2 text-xl font-black text-on-surface tracking-tighter no-underline hover:opacity-80 transition-opacity">
+                <div class="bg-primary text-on-primary w-8 h-8 flex items-center justify-center rounded font-bold text-sm logo-morph"><span class="logo-v-morph">V</span></div>
+                <span>VibeCraft</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] font-bold uppercase tracking-tight">
+                <a class="text-on-surface/70 hover:text-primary transition-all duration-300" href="index.html">НАЧАЛО</a>
+                <a class="text-on-surface/70 hover:text-primary transition-all duration-300" href="cases.html">КЕЙСЫ</a>
+                <a class="text-primary border-b-2 border-primary pb-1" href="attestation.html">АТТЕСТАЦИЯ</a>
+                <a class="text-on-surface/70 hover:text-primary transition-all duration-300" href="blog.html">БЛОГ</a>
+                <a class="text-on-surface/70 hover:text-primary transition-all duration-300" href="about.html">АВТОР</a>
+            </nav>
+            <div class="flex items-center gap-6">
+                <button onclick="window.location.href='index.html#cta'" class="hidden lg:block bg-primary text-on-primary px-6 py-2.5 rounded-full font-headline font-bold text-xs uppercase tracking-widest hover:scale-105 transition-transform active:scale-95 shadow-lg shadow-primary/20">
+                    ЗАПИСАТЬСЯ
+                </button>
+                <button id="mobile-menu-btn" class="lg:hidden text-on-surface hover:text-primary transition-colors p-1" onclick="toggleMobileMenu()">
+                    <span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#14171a]/95 backdrop-blur-xl border-t border-white/5 absolute top-full left-0 right-0 z-50 shadow-lg">
+            <nav class="flex flex-col items-center py-6 gap-1 font-['Space_Grotesk'] font-bold uppercase tracking-tight text-sm">
+                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="index.html" onclick="closeMobileMenu()">НАЧАЛО</a>
+                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="cases.html" onclick="closeMobileMenu()">КЕЙСЫ</a>
+                <a class="w-full text-center py-3 text-primary bg-primary/5 font-black" href="attestation.html" onclick="closeMobileMenu()">АТТЕСТАЦИЯ</a>
+                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="blog.html" onclick="closeMobileMenu()">БЛОГ</a>
+                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="about.html" onclick="closeMobileMenu()">АВТОР</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Fixed Bottom Navigation -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 z-[60] bg-surface/90 backdrop-blur-xl border-t border-white/5 px-6 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.3)]">
+        <div class="flex justify-between items-center max-w-md mx-auto">
+            <a class="flex flex-col items-center gap-1 text-on-surface/60 hover:text-primary transition-colors" href="index.html">
+                <span class="material-symbols-outlined">home</span>
+                <span class="text-[10px] font-headline font-black uppercase tracking-widest">Домой</span>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-on-surface/60 hover:text-primary transition-colors" href="cases.html">
+                <span class="material-symbols-outlined">grid_view</span>
+                <span class="text-[10px] font-headline font-black uppercase tracking-widest">Кейсы</span>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-primary" href="attestation.html">
+                <span class="material-symbols-outlined">verified</span>
+                <span class="text-[10px] font-headline font-black uppercase tracking-widest">Аттестация</span>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-on-surface/60 hover:text-primary transition-colors" href="about.html">
+                <span class="material-symbols-outlined">person</span>
+                <span class="text-[10px] font-headline font-black uppercase tracking-widest">Автор</span>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-24 bg-surface relative overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="photos/robot_green_nodes.webp" alt="" class="w-full h-full object-cover opacity-5 grayscale" />
+            </div>
+            <div class="max-w-4xl mx-auto px-4 md:px-8 relative z-10 text-center">
+                <span class="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs font-headline font-black uppercase tracking-[0.3em] mb-6">B2B Решение</span>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-headline font-black text-on-surface mb-6 tracking-tighter leading-none">
+                    Аттестация 66AI
+                </h1>
+                <p class="text-xl md:text-2xl text-on-surface-variant font-light mb-4 max-w-2xl mx-auto">
+                    Определите реальный уровень ИИ-компетенций вашей команды
+                </p>
+                <p class="text-base text-on-surface-variant/70 mb-10 max-w-xl mx-auto">
+                    Многоуровневое тестирование через ботов. Сертификаты. Аналитика для руководителей.
+                </p>
+                <a href="https://t.me/your_bot" target="_blank" rel="noopener" class="inline-flex items-center gap-3 bg-primary text-on-primary px-10 py-5 rounded-full font-headline font-black text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl glow-pulse">
+                    <span class="material-symbols-outlined">smart_toy</span>
+                    Запустить тест в Telegram
+                </a>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section class="py-20 bg-surface-container">
+            <div class="max-w-5xl mx-auto px-4 md:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-[10px] font-headline font-black text-primary uppercase tracking-[0.5em] mb-4">Проблема</h2>
+                    <h3 class="text-3xl md:text-5xl font-headline font-black text-on-surface tracking-tighter">
+                        Руководители <span class="text-primary italic">не видят</span>, как сотрудники используют ИИ
+                    </h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-surface p-8 rounded-[1.5rem] border border-white/5">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-4">question_mark</span>
+                        <h4 class="text-lg font-headline font-black text-on-surface mb-3">Кто что умеет?</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Нет единой системы оценки. Каждый сотрудник работает с ИИ как хочет, без стандартов и метрик.</p>
+                    </div>
+                    <div class="bg-surface p-8 rounded-[1.5rem] border border-white/5">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-4">warning</span>
+                        <h4 class="text-lg font-headline font-black text-on-surface mb-3">Риски утечки</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Сотрудники загружают конфиденциальные данные в публичные ИИ без контроля и политик безопасности.</p>
+                    </div>
+                    <div class="bg-surface p-8 rounded-[1.5rem] border border-white/5">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-4">trending_down</span>
+                        <h4 class="text-lg font-headline font-black text-on-surface mb-3">Потеря продуктивности</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Без аттестации невозможно понять, кто реально использует ИИ, а кто тратит время впустую.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section class="py-20 bg-surface">
+            <div class="max-w-5xl mx-auto px-4 md:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-[10px] font-headline font-black text-primary uppercase tracking-[0.5em] mb-4">Решение</h2>
+                    <h3 class="text-3xl md:text-5xl font-headline font-black text-on-surface tracking-tighter">
+                        Многоуровневое тестирование <span class="text-primary italic">через ботов</span>
+                    </h3>
+                    <p class="text-on-surface-variant mt-6 max-w-2xl mx-auto text-lg font-light">
+                        Сотрудники проходят аттестацию прямо в Telegram. Никаких сложных платформ — только мессенджер.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-surface-container p-8 rounded-[1.5rem] border border-white/5 flex flex-col gap-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary text-2xl">quiz</span>
+                            </div>
+                            <div>
+                                <h4 class="font-headline font-bold text-on-surface">Уровень 1: Базовый</h4>
+                                <p class="text-on-surface-variant text-xs">Основы промпт-инжиниринга и этики ИИ</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary text-2xl">code</span>
+                            </div>
+                            <div>
+                                <h4 class="font-headline font-bold text-on-surface">Уровень 2: Практический</h4>
+                                <p class="text-on-surface-variant text-xs">Создание рабочих инструментов через ИИ</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary text-2xl">hub</span>
+                            </div>
+                            <div>
+                                <h4 class="font-headline font-bold text-on-surface">Уровень 3: Экспертный</h4>
+                                <p class="text-on-surface-variant text-xs">Интеграции, API, автоматизация процессов</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-surface-container p-8 rounded-[1.5rem] border border-white/5 flex items-center justify-center">
+                        <div class="text-center">
+                            <span class="material-symbols-outlined text-6xl text-primary/30 mb-4">terminal</span>
+                            <p class="text-on-surface-variant text-sm">Тестирование проходит прямо в Telegram-боте. Сотрудник получает задания, отвечает, выполняет практические задачи — всё в одном окне мессенджера.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="py-20 bg-surface-container">
+            <div class="max-w-5xl mx-auto px-4 md:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-[10px] font-headline font-black text-primary uppercase tracking-[0.5em] mb-4">Результаты</h2>
+                    <h3 class="text-3xl md:text-5xl font-headline font-black text-on-surface tracking-tighter">
+                        Что получает <span class="text-primary italic">компания</span>
+                    </h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Result 1: PDF Certificate -->
+                    <div class="bg-surface p-8 rounded-[1.5rem] border border-white/5 text-center hover:border-primary/30 transition-all group">
+                        <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-primary text-3xl">certificate</span>
+                        </div>
+                        <h4 class="text-xl font-headline font-black text-on-surface mb-3">PDF-сертификат</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Каждый сотрудник получает именной сертификат с указанием уровня компетенций. Готов к печати и для HR-портфолио.</p>
+                    </div>
+                    <!-- Result 2: Physical Diploma -->
+                    <div class="bg-surface p-8 rounded-[1.5rem] border border-white/5 text-center hover:border-primary/30 transition-all group">
+                        <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-primary text-3xl">workspace_premium</span>
+                        </div>
+                        <h4 class="text-xl font-headline font-black text-on-surface mb-3">Физический диплом</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Печатаемый диплом для офиса. Мотивирует сотрудников и подтверждает квалификацию на стене, а не только в файле.</p>
+                    </div>
+                    <!-- Result 3: HR Dashboard -->
+                    <div class="bg-surface p-8 rounded-[1.5rem] border border-white/5 text-center hover:border-primary/30 transition-all group">
+                        <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-primary text-3xl">monitoring</span>
+                        </div>
+                        <h4 class="text-xl font-headline font-black text-on-surface mb-3">HR-Дашборд с аналитикой</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Руководитель видит общую картину: кто прошёл, какие уровни, где пробелы. Решения по обучению на основе данных.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-24 bg-primary text-white border-t border-white/5 relative overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="photos/robot_green_nodes.webp" alt="" class="w-full h-full object-cover opacity-10 grayscale mix-blend-overlay" />
+            </div>
+            <div class="max-w-4xl mx-auto px-4 md:px-8 relative z-10 text-center">
+                <h2 class="text-4xl md:text-5xl font-headline font-black mb-6 tracking-tighter">
+                    Готовы оценить вашу команду?
+                </h2>
+                <p class="text-lg text-white/80 mb-10 max-w-xl mx-auto">
+                    Запустите тестирование сотрудников прямо сейчас. Один клик — и бот начнёт аттестацию.
+                </p>
+                <a href="https://t.me/your_bot" target="_blank" rel="noopener" class="inline-flex items-center gap-3 bg-white text-primary px-10 py-5 rounded-full font-headline font-black text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+                    <span class="material-symbols-outlined">smart_toy</span>
+                    Запустить тест в Telegram
+                </a>
+                <p class="text-white/40 text-xs mt-6">Ссылка на Telegram-бота (заглушка — будет обновлена)</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface full-width py-16 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-12 mb-12">
+                <a href="index.html" class="text-2xl font-black text-on-surface tracking-tighter flex items-center gap-2 no-underline hover:opacity-80 transition-opacity">
+                    <div class="bg-primary text-on-primary w-8 h-8 flex items-center justify-center rounded font-bold text-sm">V</div>
+                    <span>VibeCraft</span>
+                </a>
+                <div class="flex flex-wrap justify-center gap-10 font-['Space_Grotesk'] font-bold text-[10px] uppercase tracking-[0.2em] text-on-surface/40">
+                    <a class="hover:text-primary transition-colors" href="#">Политика конфиденциальности</a>
+                    <a class="hover:text-primary transition-colors" href="#">Условия</a>
+                    <a class="hover:text-primary transition-colors" href="about.html">О нас</a>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="font-['Manrope'] text-[10px] uppercase tracking-widest text-on-surface/40 text-center md:text-left">
+                    © 2025 VibeCraft. Vibe Coding & Автоматизация.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ─── MOBILE MENU TOGGLE ──────────────────────────────────────
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.textContent = 'close';
+            } else {
+                menu.classList.add('hidden');
+                icon.textContent = 'menu';
+            }
+        }
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.add('hidden');
+            icon.textContent = 'menu';
+        }
+    </script>
+</body>
+</html>
