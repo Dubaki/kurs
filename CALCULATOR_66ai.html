@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор аттестации 66ai</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f7f4;color:#2c2c2a;line-height:1.6}
+.calc{max-width:720px;margin:40px auto;padding:32px;background:#fff;border-radius:16px;border:1px solid #e8e6df}
+h1{font-size:24px;font-weight:600;margin-bottom:4px}
+.sub{font-size:14px;color:#888780;margin-bottom:32px}
+.field{margin-bottom:24px}
+.field label{display:block;font-size:14px;font-weight:500;margin-bottom:8px;color:#5f5e5a}
+.slider-row{display:flex;align-items:center;gap:12px}
+.slider-row input[type=range]{flex:1;height:6px;-webkit-appearance:none;background:#e8e6df;border-radius:3px;outline:none}
+.slider-row input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#2c2c2a;cursor:pointer}
+.slider-val{min-width:40px;font-size:18px;font-weight:600;text-align:right}
+.tabs{display:flex;gap:0;margin-bottom:24px;border-radius:10px;overflow:hidden;border:1px solid #e8e6df}
+.tab{flex:1;padding:12px;text-align:center;cursor:pointer;font-size:14px;font-weight:500;background:#f8f7f4;transition:all .2s}
+.tab.active{background:#2c2c2a;color:#fff}
+.results{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+.card{padding:20px;border-radius:12px;background:#f8f7f4}
+.card .label{font-size:12px;color:#888780;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
+.card .value{font-size:28px;font-weight:600}
+.card .hint{font-size:12px;color:#888780;margin-top:4px}
+.card.accent{background:#e1f5ee}
+.card.accent .value{color:#0f6e56}
+.breakdown{margin-top:24px;border-top:1px solid #e8e6df;padding-top:24px}
+.breakdown h3{font-size:16px;font-weight:600;margin-bottom:12px}
+.row{display:flex;justify-content:space-between;padding:8px 0;font-size:14px;border-bottom:1px solid #f1efe8}
+.row:last-child{border:none;font-weight:600;font-size:15px}
+.row .dim{color:#888780}
+.note{margin-top:24px;padding:16px;background:#faeeda;border-radius:10px;font-size:13px;color:#854f0b}
+</style>
+</head>
+<body>
+<div class="calc">
+<h1>Калькулятор аттестации</h1>
+<p class="sub">Узнайте стоимость и потенциал экономии для вашей компании</p>
+
+<div class="field">
+<label>Количество сотрудников</label>
+<div class="slider-row">
+<input type="range" min="10" max="200" value="30" step="5" id="emp">
+<span class="slider-val" id="empV">30</span>
+</div>
+</div>
+
+<div class="field">
+<label>Из них руководителей</label>
+<div class="slider-row">
+<input type="range" min="0" max="30" value="4" step="1" id="mgr">
+<span class="slider-val" id="mgrV">4</span>
+</div>
+</div>
+
+<div class="field">
+<label>Тариф</label>
+<div class="tabs">
+<div class="tab active" data-plan="standard" onclick="setPlan('standard')">Standard</div>
+<div class="tab" data-plan="premium" onclick="setPlan('premium')">Premium</div>
+</div>
+</div>
+
+<div class="results">
+<div class="card">
+<div class="label">Стоимость аттестации</div>
+<div class="value" id="totalPrice">165 000 ₽</div>
+<div class="hint" id="perPerson">5 000 ₽ / сотрудник</div>
+</div>
+<div class="card accent">
+<div class="label">Экономия в 1-й месяц</div>
+<div class="value" id="savings">450 000 ₽</div>
+<div class="hint" id="hours">300 часов</div>
+</div>
+<div class="card">
+<div class="label">ROI первого месяца</div>
+<div class="value" id="roi">2.7x</div>
+<div class="hint">Окупается за 11 дней</div>
+</div>
+<div class="card accent">
+<div class="label">Экономия за год</div>
+<div class="value" id="yearSavings">5.4 млн ₽</div>
+<div class="hint" id="yearHours">3 600 часов</div>
+</div>
+</div>
+
+<div class="breakdown">
+<h3>Детализация</h3>
+<div class="row"><span>Сотрудники</span><span id="empCost">125 000 ₽</span></div>
+<div class="row"><span>Руководители</span><span id="mgrCost">40 000 ₽</span></div>
+<div class="row"><span class="dim">Средняя экономия на сотрудника</span><span>10 ч/мес</span></div>
+<div class="row"><span class="dim">Стоимость часа (среднее по МСБ)</span><span>1 500 ₽</span></div>
+<div class="row"><span>Итого</span><span id="totalFinal">165 000 ₽</span></div>
+</div>
+
+<div class="note">
+Расчёт экономии основан на средних результатах аттестаций: 10 часов экономии на сотрудника в месяц при средней ставке 1 500 ₽/час. Фактическая экономия зависит от отрасли и текущего уровня использования ИИ.
+</div>
+</div>
+
+<script>
+let plan='standard';
+function setPlan(p){
+plan=p;
+document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.plan===p));
+calc();
+}
+function calc(){
+const emp=parseInt(document.getElementById('emp').value);
+const mgr=parseInt(document.getElementById('mgr').value);
+const staff=emp-mgr;
+document.getElementById('empV').textContent=emp;
+document.getElementById('mgrV').textContent=mgr;
+let ppStaff,ppMgr;
+if(plan==='standard'){
+if(emp>=100){ppStaff=3500;ppMgr=8000}
+else if(emp>=50){ppStaff=4500;ppMgr=8000}
+else if(emp>=30){ppStaff=5000;ppMgr=8000}
+else{ppStaff=5500;ppMgr=8000}
+}else{
+if(emp>=100){ppStaff=8000;ppMgr=20000}
+else if(emp>=50){ppStaff=9000;ppMgr=25000}
+else if(emp>=30){ppStaff=10000;ppMgr=25000}
+else{ppStaff=12000;ppMgr=30000}
+}
+const staffCost=staff*ppStaff;
+const mgrCost=mgr*ppMgr;
+const total=staffCost+mgrCost;
+const monthHours=emp*10;
+const monthSavings=monthHours*1500;
+const roiVal=monthSavings/total;
+const yearSav=monthSavings*12;
+const paybackDays=Math.round(30/roiVal);
+document.getElementById('totalPrice').textContent=fmt(total)+' \u20BD';
+document.getElementById('perPerson').textContent=fmt(ppStaff)+' \u20BD / сотрудник';
+document.getElementById('savings').textContent=fmt(monthSavings)+' \u20BD';
+document.getElementById('hours').textContent=monthHours+' часов';
+document.getElementById('roi').textContent=roiVal.toFixed(1)+'x';
+document.getElementById('roi').parentElement.querySelector('.hint').textContent='Окупается за '+paybackDays+' дней';
+if(yearSav>=1000000){document.getElementById('yearSavings').textContent=(yearSav/1000000).toFixed(1)+' млн \u20BD'}
+else{document.getElementById('yearSavings').textContent=fmt(yearSav)+' \u20BD'}
+document.getElementById('yearHours').textContent=fmt(monthHours*12)+' часов';
+document.getElementById('empCost').textContent=fmt(staffCost)+' \u20BD';
+document.getElementById('mgrCost').textContent=fmt(mgrCost)+' \u20BD';
+document.getElementById('totalFinal').textContent=fmt(total)+' \u20BD';
+}
+function fmt(n){return n.toLocaleString('ru-RU')}
+document.getElementById('emp').addEventListener('input',()=>{
+const e=parseInt(document.getElementById('emp').value);
+const m=document.getElementById('mgr');
+if(parseInt(m.value)>=e)m.value=Math.max(0,e-1);
+m.max=Math.min(30,e-1);
+calc();
+});
+document.getElementById('mgr').addEventListener('input',calc);
+calc();
+</script>
+</body>
+</html>

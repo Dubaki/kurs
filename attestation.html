@@ -4,11 +4,11 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Аттестация 66AI | Оцените ИИ-компетенции команды</title>
-    <meta name="description" content="Аттестация 66AI — системная оценка ИИ-навыков сотрудников. Тестирование через бота, панель руководителя, именные сертификаты. Корпоративное решение для бизнеса.">
+    <meta name="description" content="Аттестация 66AI — системная оценка ИИ-навыков сотрудников. Карта автоматизации рутины. ROI с первого месяца. Два тарифа: Standard и Premium.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://66ai.ru/attestation.html">
     <meta property="og:title" content="Аттестация 66AI | Оцените ИИ-компетенции команды">
-    <meta property="og:description" content="99% компаний управляют ИИ-командой вслепую. Проведите аттестацию и узнайте реальный уровень навыков ваших сотрудников.">
+    <meta property="og:description" content="Узнайте, сколько часов рутины ваши сотрудники могут автоматизировать с помощью ИИ. Карта автоматизации + ROI в рублях.">
     <meta property="og:image" content="https://66ai.ru/robot_green_nodes.webp">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="Аттестация 66AI | ИИ-компетенции команды">
@@ -82,14 +82,15 @@
         50%       { box-shadow: 0 0 40px rgba(0,104,117,0.3); }
       }
       .glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
-
-      /* Radar chart */
       .radar-skill-bar { transition: width 1.2s cubic-bezier(.4,0,.2,1); }
+      .plan-tab { transition: all 0.3s; }
+      .plan-tab.active { background: #006875; color: #fff; }
+      .calc-card { transition: all 0.3s; }
     </style>
 </head>
 <body class="font-body selection:bg-primary selection:text-on-primary">
 
-    <!-- TopNavBar -->
+    <!-- TopNavBar (без изменений) -->
     <header class="bg-[#f5f0e6]/80 backdrop-blur-xl top-0 sticky z-50 border-b border-black/5">
         <div class="flex justify-between items-center w-full px-4 md:px-8 py-2 md:py-4 max-w-7xl mx-auto">
             <a href="index.html" class="flex items-center gap-2 text-xl font-black text-on-surface tracking-tighter no-underline hover:opacity-80 transition-opacity">
@@ -106,7 +107,6 @@
                 <a class="text-on-surface/70 hover:text-primary hover:-translate-y-0.5 px-3 py-1 rounded-lg transition-all duration-300 ease-in-out" href="index.html#faq">FAQ</a>
             </nav>
             <div class="flex items-center gap-1">
-                <!-- Contact Icons: Phone, TG, MAX -->
                 <a href="tel:+79221800911" class="hover:opacity-80 transition-all duration-300 ease-in-out p-1.5" title="Позвонить">
                     <img src="photos/T.png" alt="Позвонить" class="h-6 w-6 object-contain"/>
                 </a>
@@ -116,7 +116,6 @@
                 <a href="https://max.ru/+79221800911" target="_blank" rel="noopener" class="hover:opacity-80 transition-all duration-300 ease-in-out p-1.5" title="MAX">
                     <img src="photos/MAX.svg.png" alt="MAX" class="h-6 w-6 object-contain"/>
                 </a>
-                <!-- Hamburger (mobile only) -->
                 <button id="mobile-menu-btn" class="lg:hidden text-on-surface hover:text-primary transition-colors p-1" onclick="toggleMobileMenu()">
                     <span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span>
                 </button>
@@ -132,21 +131,15 @@
                 <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="about.html" onclick="closeMobileMenu()">АВТОР</a>
                 <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="index.html#faq" onclick="closeMobileMenu()">FAQ</a>
                 <div class="flex items-center gap-4 py-3 text-on-surface/50">
-                    <a href="tel:+79221800911" class="hover:opacity-80 transition-colors p-1.5" title="Позвонить">
-                        <img src="photos/T.png" alt="Позвонить" class="h-6 w-6 object-contain"/>
-                    </a>
-                    <a href="https://t.me/Bizbezit" target="_blank" rel="noopener" class="hover:opacity-80 transition-colors p-1.5" title="Telegram">
-                        <img src="photos/Telegram.png" alt="Telegram" class="h-6 w-6 object-contain"/>
-                    </a>
-                    <a href="https://max.ru/+79221800911" target="_blank" rel="noopener" class="hover:opacity-80 transition-colors p-1.5" title="MAX">
-                        <img src="photos/MAX.svg.png" alt="MAX" class="h-6 w-6 object-contain"/>
-                    </a>
+                    <a href="tel:+79221800911" class="hover:opacity-80 transition-colors p-1.5"><img src="photos/T.png" alt="Позвонить" class="h-6 w-6 object-contain"/></a>
+                    <a href="https://t.me/Bizbezit" target="_blank" rel="noopener" class="hover:opacity-80 transition-colors p-1.5"><img src="photos/Telegram.png" alt="Telegram" class="h-6 w-6 object-contain"/></a>
+                    <a href="https://max.ru/+79221800911" target="_blank" rel="noopener" class="hover:opacity-80 transition-colors p-1.5"><img src="photos/MAX.svg.png" alt="MAX" class="h-6 w-6 object-contain"/></a>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- Мобильная нижняя навигация -->
+    <!-- Мобильная навигация (без изменений) -->
     <div class="md:hidden fixed bottom-0 left-0 right-0 z-[60] bg-surface/90 backdrop-blur-xl border-t border-black/5 px-6 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
         <div class="flex justify-between items-center max-w-md mx-auto">
             <a class="flex flex-col items-center gap-1 text-on-surface/60 hover:text-primary transition-colors" href="index.html">
@@ -169,263 +162,339 @@
     </div>
 
     <main>
-        <!-- Hero Section -->
+        <!-- HERO -->
         <section class="py-24 md:py-36 bg-surface relative overflow-hidden border-b border-black/5">
             <div class="absolute inset-0 z-0">
                 <img src="photos/robot_green_nodes.webp" alt="" class="w-full h-full object-cover opacity-5 grayscale"/>
             </div>
             <div class="max-w-4xl mx-auto px-4 md:px-8 relative z-10 text-center">
-                <span class="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs font-headline font-black uppercase tracking-[0.3em] mb-6">Корпоративное решение</span>
+                <span class="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs font-headline font-black uppercase tracking-[0.3em] mb-6">Корпоративное решение для МСБ</span>
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-headline font-black text-on-surface mb-6 tracking-tighter leading-[1.0]">
-                    99% компаний управляют<br class="hidden md:block"/>
-                    <span class="text-primary italic">ИИ-командой вслепую</span>
+                    Узнайте, сколько часов<br class="hidden md:block"/>
+                    <span class="text-primary italic">рутины можно убрать</span>
                 </h1>
                 <p class="text-lg md:text-xl text-on-surface-variant font-light mb-4 max-w-2xl mx-auto">
-                    Ваши сотрудники говорят «я использую нейросети» — но как именно, насколько эффективно и безопасно?
+                    Аттестация покажет, какие задачи каждого сотрудника можно автоматизировать — и сколько это сэкономит в рублях.
                 </p>
                 <p class="text-base text-on-surface-variant/70 mb-10 max-w-xl mx-auto">
-                    Без системной оценки вы платите за иллюзию и теряете до 30% эффективности команды.
+                    Средний результат: 10 часов экономии на сотрудника в месяц. ROI с первого месяца.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button onclick="openAuditModal('Аттестация команды')" class="inline-flex items-center justify-center gap-3 bg-primary text-on-primary px-10 py-5 rounded-full font-headline font-black text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl glow-pulse">
+                    <button onclick="openAuditModal('Запуск аттестации')" class="inline-flex items-center justify-center gap-3 bg-primary text-on-primary px-10 py-5 rounded-full font-headline font-black text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl glow-pulse">
                         <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">verified</span>
                         Запустить аттестацию
                     </button>
-                    <a href="#how-it-works" class="inline-flex items-center justify-center gap-2 bg-black/5 border border-black/10 text-on-surface px-8 py-5 rounded-full font-headline font-bold text-sm uppercase tracking-widest hover:bg-black/10 transition-all">
-                        Как это работает
+                    <a href="#calculator" class="inline-flex items-center justify-center gap-2 bg-black/5 border border-black/10 text-on-surface px-8 py-5 rounded-full font-headline font-bold text-sm uppercase tracking-widest hover:bg-black/10 transition-all">
+                        Рассчитать стоимость
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Радар ИИ-навыков -->
+        <!-- ДОМЕНЫ ОЦЕНКИ -->
         <section class="py-24 bg-surface-container-lowest border-b border-black/5">
             <div class="max-w-5xl mx-auto px-4 md:px-8">
                 <div class="text-center mb-16">
-                    <span class="inline-block text-[10px] font-headline font-black text-primary uppercase tracking-[0.5em] mb-4">Типичная картина</span>
+                    <span class="inline-block text-[10px] font-headline font-black text-primary uppercase tracking-[0.5em] mb-4">Что оцениваем</span>
                     <h2 class="text-3xl md:text-5xl font-headline font-black text-on-surface tracking-tighter">
-                        Где теряют деньги<br class="hidden md:block"/> большинство команд
+                        Четыре направления<br class="hidden md:block"/> <span class="text-primary italic">оценки навыков</span>
                     </h2>
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <!-- Skill Bars -->
                     <div class="space-y-6" id="skill-bars">
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="text-sm font-headline font-bold text-on-surface">Составление запросов к нейросети</span>
-                                <span class="text-xs font-bold text-error">24%</span>
+                                <span class="text-sm font-headline font-bold text-on-surface">Идентификация рутины для автоматизации</span>
+                                <span class="text-xs font-bold text-primary">40%</span>
                             </div>
                             <div class="h-3 bg-black/5 rounded-full overflow-hidden">
-                                <div class="h-full bg-error/60 rounded-full radar-skill-bar" style="width: 24%"></div>
+                                <div class="h-full bg-primary rounded-full radar-skill-bar" style="width: 40%"></div>
                             </div>
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="text-sm font-headline font-bold text-on-surface">Безопасная работа с данными</span>
-                                <span class="text-xs font-bold text-error">18%</span>
+                                <span class="text-sm font-headline font-bold text-on-surface">Промптинг и практические навыки</span>
+                                <span class="text-xs font-bold text-primary">30%</span>
                             </div>
                             <div class="h-3 bg-black/5 rounded-full overflow-hidden">
-                                <div class="h-full bg-error/60 rounded-full radar-skill-bar" style="width: 18%"></div>
+                                <div class="h-full bg-primary/80 rounded-full radar-skill-bar" style="width: 30%"></div>
                             </div>
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="text-sm font-headline font-bold text-on-surface">Автоматизация рутины через ИИ</span>
-                                <span class="text-xs font-bold text-tertiary">41%</span>
+                                <span class="text-sm font-headline font-bold text-on-surface">Понимание возможностей и ограничений</span>
+                                <span class="text-xs font-bold text-primary/70">20%</span>
                             </div>
                             <div class="h-3 bg-black/5 rounded-full overflow-hidden">
-                                <div class="h-full bg-tertiary/60 rounded-full radar-skill-bar" style="width: 41%"></div>
+                                <div class="h-full bg-primary/60 rounded-full radar-skill-bar" style="width: 20%"></div>
                             </div>
                         </div>
                         <div>
                             <div class="flex justify-between mb-2">
-                                <span class="text-sm font-headline font-bold text-on-surface">Оценка достоверности ответов ИИ</span>
-                                <span class="text-xs font-bold text-error">12%</span>
+                                <span class="text-sm font-headline font-bold text-on-surface">Правовая грамотность и безопасность</span>
+                                <span class="text-xs font-bold text-primary/50">10%</span>
                             </div>
                             <div class="h-3 bg-black/5 rounded-full overflow-hidden">
-                                <div class="h-full bg-error/60 rounded-full radar-skill-bar" style="width: 12%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-sm font-headline font-bold text-on-surface">Внедрение инструментов в команде</span>
-                                <span class="text-xs font-bold text-error">29%</span>
-                            </div>
-                            <div class="h-3 bg-black/5 rounded-full overflow-hidden">
-                                <div class="h-full bg-error/60 rounded-full radar-skill-bar" style="width: 29%"></div>
+                                <div class="h-full bg-primary/40 rounded-full radar-skill-bar" style="width: 10%"></div>
                             </div>
                         </div>
                     </div>
-                    <!-- Insight block -->
                     <div class="bg-white/80 backdrop-blur-sm rounded-3xl border border-black/5 shadow-sm p-8">
-                        <div class="text-5xl mb-4">📊</div>
+                        <div class="text-5xl mb-4">🎯</div>
                         <h3 class="text-2xl font-headline font-black text-on-surface mb-4 tracking-tighter">
-                            Средний показатель по рынку — ниже 30%
+                            Главная цель — карта автоматизации
                         </h3>
                         <p class="text-on-surface-variant text-sm leading-relaxed mb-6">
-                            Большинство сотрудников умеют открыть нейросеть и задать простой вопрос. Но системно автоматизировать задачи, работать безопасно и масштабировать результат — единицы.
+                            Каждый сотрудник составляет карту своих рутинных задач. Мы оцениваем потенциал автоматизации каждой. Руководитель получает сводку: ТОП-10 задач → часы → рубли.
                         </p>
                         <div class="bg-primary/5 border border-primary/20 rounded-2xl p-4">
-                            <p class="text-primary font-black text-sm uppercase tracking-wider mb-2">После аттестации</p>
-                            <p class="text-on-surface text-sm">Вы видите точную карту компетенций и знаете, кого обучать, кого сертифицировать и где — реальные риски утечки данных.</p>
+                            <p class="text-primary font-black text-sm uppercase tracking-wider mb-2">Результат для руководителя</p>
+                            <p class="text-on-surface text-sm">Конкретный список: какие задачи автоматизировать, сколько людей вовлечено, сколько часов и рублей сэкономить. Не теория — действия.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Три проблемы -->
-        <section class="py-24 bg-surface border-b border-black/5">
-            <div class="max-w-5xl mx-auto px-4 md:px-8">
-                <div class="text-center mb-16">
-                    <span class="inline-block text-[10px] font-headline font-black text-primary uppercase tracking-[0.5em] mb-4">Почему это важно</span>
-                    <h2 class="text-3xl md:text-5xl font-headline font-black text-on-surface tracking-tighter">
-                        Руководители <span class="text-primary italic">не видят</span>, что происходит
-                    </h2>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-black/5 shadow-sm hover:shadow-md hover:border-primary/20 transition-all group">
-                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-primary text-2xl">help_outline</span>
-                        </div>
-                        <h4 class="text-lg font-headline font-black text-on-surface mb-3">Кто что умеет?</h4>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">Нет единой системы оценки. Каждый работает с нейросетями по-своему, без стандартов и без метрик. Вы не можете управлять тем, что не измеряете.</p>
-                    </div>
-                    <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-black/5 shadow-sm hover:shadow-md hover:border-primary/20 transition-all group">
-                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-primary text-2xl">security</span>
-                        </div>
-                        <h4 class="text-lg font-headline font-black text-on-surface mb-3">Риски утечки данных</h4>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">Сотрудники загружают конфиденциальные документы в публичные нейросети без осознания последствий. Один инцидент может стоить дороже всего обучения.</p>
-                    </div>
-                    <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-black/5 shadow-sm hover:shadow-md hover:border-primary/20 transition-all group">
-                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-primary text-2xl">trending_down</span>
-                        </div>
-                        <h4 class="text-lg font-headline font-black text-on-surface mb-3">Потеря производительности</h4>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">Без аттестации вы не знаете, кто реально экономит время с помощью ИИ, а кто тратит его на бесплодные попытки. Фонд оплаты труда уходит в пустоту.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Как работает -->
-        <section class="py-24 bg-surface-container-lowest border-b border-black/5" id="how-it-works">
+        <!-- ТРИ ЭТАПА -->
+        <section class="py-24 bg-surface border-b border-black/5" id="how-it-works">
             <div class="max-w-5xl mx-auto px-4 md:px-8">
                 <div class="text-center mb-16">
                     <span class="inline-block text-[10px] font-headline font-black text-primary uppercase tracking-[0.5em] mb-4">Процесс</span>
                     <h2 class="text-3xl md:text-5xl font-headline font-black text-on-surface tracking-tighter">
-                        Тестирование за три шага — <span class="text-primary italic">без сложных платформ</span>
+                        Три этапа — <span class="text-primary italic">от теста до ROI</span>
                     </h2>
                     <p class="text-on-surface-variant text-lg font-light mt-4 max-w-2xl mx-auto">
-                        Сотрудники проходят аттестацию прямо в мессенджере. Никаких установок, регистраций и учебных порталов.
+                        Сотрудники проходят аттестацию прямо в мессенджере. Руководитель получает карту автоматизации в рублях.
                     </p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-                    <!-- Connecting line for desktop -->
                     <div class="hidden md:block absolute top-16 left-1/6 right-1/6 h-px bg-primary/20 z-0"></div>
-
                     <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-black/5 shadow-sm relative z-10">
                         <div class="w-12 h-12 bg-primary text-on-primary rounded-xl flex items-center justify-center mb-6 font-headline font-black text-lg">01</div>
-                        <h4 class="font-headline font-black text-on-surface text-lg mb-3">Сотрудник проходит тест</h4>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">Получает ссылку на Telegram-бот. Отвечает на вопросы и выполняет практические задания — всё в одном окне мессенджера.</p>
+                        <h4 class="font-headline font-black text-on-surface text-lg mb-3">Карта рутины</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Telegram-бот за 15-20 минут. Сотрудник отвечает на ситуационные вопросы и составляет карту своих задач с потенциалом автоматизации.</p>
+                        <div class="flex items-center gap-2 text-xs text-primary font-headline font-bold">
+                            <span class="material-symbols-outlined text-sm">schedule</span>
+                            15-20 минут
+                        </div>
                     </div>
                     <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-black/5 shadow-sm relative z-10">
                         <div class="w-12 h-12 bg-primary text-on-primary rounded-xl flex items-center justify-center mb-6 font-headline font-black text-lg">02</div>
-                        <h4 class="font-headline font-black text-on-surface text-lg mb-3">Система анализирует результаты</h4>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">Три уровня сложности: базовый, практический, экспертный. Каждый сотрудник получает персональный балл и разбор пробелов.</p>
+                        <h4 class="font-headline font-black text-on-surface text-lg mb-3">Навыки в деле</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">ИИ-симулятор с реальной задачей по профилю сотрудника. Нейросеть-судья оценивает качество промптов. Замер ускорения vs ручной работы.</p>
+                        <div class="flex items-center gap-2 text-xs text-primary font-headline font-bold">
+                            <span class="material-symbols-outlined text-sm">schedule</span>
+                            30-45 минут
+                        </div>
                     </div>
                     <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-black/5 shadow-sm relative z-10">
                         <div class="w-12 h-12 bg-primary text-on-primary rounded-xl flex items-center justify-center mb-6 font-headline font-black text-lg">03</div>
-                        <h4 class="font-headline font-black text-on-surface text-lg mb-3">Руководитель видит картину</h4>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">На панели руководителя — полная аналитика: кто прошёл, какой уровень, где критические пробелы. Решения по обучению на основе данных.</p>
+                        <h4 class="font-headline font-black text-on-surface text-lg mb-3">Микро-проект</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Сотрудник автоматизирует реальную задачу из своей карты рутины. Руководитель оценивает по 5 критериям. Результат — конкретная экономия.</p>
+                        <div class="flex items-center gap-2 text-xs text-primary font-headline font-bold">
+                            <span class="material-symbols-outlined text-sm">schedule</span>
+                            1-2 недели
+                        </div>
                     </div>
                 </div>
 
-                <!-- Уровни -->
+                <!-- 5 уровней -->
                 <div class="mt-16 bg-white/80 backdrop-blur-sm rounded-2xl border border-black/5 shadow-sm p-8">
-                    <h3 class="font-headline font-black text-on-surface text-xl mb-6">Три уровня аттестации</h3>
-                    <div class="space-y-4">
+                    <h3 class="font-headline font-black text-on-surface text-xl mb-6">Пять грейдов ИИ-компетенций</h3>
+                    <div class="space-y-3">
                         <div class="flex items-center gap-6 p-4 rounded-xl border border-black/5 hover:border-primary/20 transition-colors">
-                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <span class="material-symbols-outlined text-primary text-xl">quiz</span>
-                            </div>
-                            <div>
-                                <p class="font-headline font-bold text-on-surface">Уровень 1 — Базовый</p>
-                                <p class="text-on-surface-variant text-xs">Основы составления запросов, понимание возможностей нейросетей, этика и безопасность</p>
-                            </div>
+                            <div class="w-10 h-10 bg-black/5 rounded-lg flex items-center justify-center flex-shrink-0 font-headline font-black text-on-surface-variant">1</div>
+                            <div class="flex-1"><p class="font-headline font-bold text-on-surface">Новичок</p><p class="text-on-surface-variant text-xs">Не использует ИИ в работе</p></div>
                         </div>
                         <div class="flex items-center gap-6 p-4 rounded-xl border border-black/5 hover:border-primary/20 transition-colors">
-                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <span class="material-symbols-outlined text-primary text-xl">code</span>
-                            </div>
-                            <div>
-                                <p class="font-headline font-bold text-on-surface">Уровень 2 — Практический</p>
-                                <p class="text-on-surface-variant text-xs">Создание рабочих инструментов через нейросети, автоматизация задач отдела, работа с данными</p>
-                            </div>
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 font-headline font-black text-primary/60">2</div>
+                            <div class="flex-1"><p class="font-headline font-bold text-on-surface">Начинающий</p><p class="text-on-surface-variant text-xs">Простые запросы, хаотичные промпты</p></div>
                         </div>
                         <div class="flex items-center gap-6 p-4 rounded-xl border border-black/5 hover:border-primary/20 transition-colors">
-                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <span class="material-symbols-outlined text-primary text-xl">hub</span>
-                            </div>
-                            <div>
-                                <p class="font-headline font-bold text-on-surface">Уровень 3 — Экспертный</p>
-                                <p class="text-on-surface-variant text-xs">Интеграции между сервисами, разработка рабочих процессов с нейросетью, внедрение в команде</p>
-                            </div>
+                            <div class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0 font-headline font-black text-primary/80">3</div>
+                            <div class="flex-1"><p class="font-headline font-bold text-on-surface">Практик</p><p class="text-on-surface-variant text-xs">Структурированные промпты, реальная экономия времени</p></div>
+                        </div>
+                        <div class="flex items-center gap-6 p-4 rounded-xl border border-black/5 hover:border-primary/20 transition-colors">
+                            <div class="w-10 h-10 bg-primary/40 rounded-lg flex items-center justify-center flex-shrink-0 font-headline font-black text-white">4</div>
+                            <div class="flex-1"><p class="font-headline font-bold text-on-surface">Опытный</p><p class="text-on-surface-variant text-xs">Строит пайплайны, обучает коллег, измеряет ROI</p></div>
+                        </div>
+                        <div class="flex items-center gap-6 p-4 rounded-xl border border-primary/30 hover:border-primary transition-colors bg-primary/5">
+                            <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 font-headline font-black text-white">5</div>
+                            <div class="flex-1"><p class="font-headline font-bold text-on-surface">Эксперт</p><p class="text-on-surface-variant text-xs">Проектирует ИИ-стратегию, внедряет системные решения</p></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Что получает компания -->
-        <section class="py-24 bg-surface border-b border-black/5">
+        <!-- ЧТО ПОЛУЧАЕТ КОМПАНИЯ -->
+        <section class="py-24 bg-surface-container-lowest border-b border-black/5">
             <div class="max-w-5xl mx-auto px-4 md:px-8">
                 <div class="text-center mb-16">
-                    <span class="inline-block text-[10px] font-headline font-black text-primary uppercase tracking-[0.5em] mb-4">Итоги аттестации</span>
+                    <span class="inline-block text-[10px] font-headline font-black text-primary uppercase tracking-[0.5em] mb-4">Результат</span>
                     <h2 class="text-3xl md:text-5xl font-headline font-black text-on-surface tracking-tighter">
-                        Что получает <span class="text-primary italic">компания</span>
+                        Что получает <span class="text-primary italic">руководитель</span>
                     </h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-black/5 shadow-sm text-center hover:shadow-md hover:border-primary/20 transition-all group">
                         <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings:'FILL' 1;">workspace_premium</span>
+                            <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings:'FILL' 1;">map</span>
                         </div>
-                        <h4 class="text-xl font-headline font-black text-on-surface mb-3">Именной сертификат</h4>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">Каждый сотрудник получает сертификат с подтверждённым уровнем компетенций. Готов к печати и публикации в профессиональном портфолио.</p>
+                        <h4 class="text-xl font-headline font-black text-on-surface mb-3">Карта автоматизации</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">ТОП-10 задач для автоматизации по всей компании. Для каждой: сколько людей, сколько часов, сколько рублей экономии.</p>
                     </div>
                     <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-black/5 shadow-sm text-center hover:shadow-md hover:border-primary/20 transition-all group">
                         <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings:'FILL' 1;">card_membership</span>
+                            <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings:'FILL' 1;">person_search</span>
                         </div>
-                        <h4 class="text-xl font-headline font-black text-on-surface mb-3">Физический диплом</h4>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">Печатный диплом для офиса. Мотивирует сотрудников и подтверждает квалификацию — не только в файле, но и на стене.</p>
+                        <h4 class="text-xl font-headline font-black text-on-surface mb-3">Профиль каждого</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Грейд, баллы по каждому направлению, персональная карта рутины, зоны роста. Видите, кого обучать, кого назначить ИИ-чемпионом.</p>
                     </div>
                     <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-black/5 shadow-sm text-center hover:shadow-md hover:border-primary/20 transition-all group">
                         <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                             <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings:'FILL' 1;">monitoring</span>
                         </div>
-                        <h4 class="text-xl font-headline font-black text-on-surface mb-3">Панель руководителя</h4>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">Полная аналитика по команде: кто прошёл, какие уровни, где критические пробелы. Принимайте решения по обучению на основе данных, а не ощущений.</p>
+                        <h4 class="text-xl font-headline font-black text-on-surface mb-3">ROI в рублях</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Сводный отчёт: общий потенциал экономии, утверждённые проекты к внедрению, план действий. Конкретные цифры, не абстракции.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Оптимизация ФОТ -->
+        <!-- КАЛЬКУЛЯТОР -->
+        <section class="py-24 bg-surface border-b border-black/5" id="calculator">
+            <div class="max-w-3xl mx-auto px-4 md:px-8">
+                <div class="text-center mb-12">
+                    <span class="inline-block text-[10px] font-headline font-black text-primary uppercase tracking-[0.5em] mb-4">Калькулятор</span>
+                    <h2 class="text-3xl md:text-5xl font-headline font-black text-on-surface tracking-tighter">
+                        Рассчитайте <span class="text-primary italic">стоимость и ROI</span>
+                    </h2>
+                </div>
+                <div class="bg-white/80 backdrop-blur-sm rounded-3xl border border-black/5 shadow-sm p-8 md:p-12">
+                    <!-- Слайдеры -->
+                    <div class="space-y-8 mb-8">
+                        <div>
+                            <label class="text-sm font-headline font-bold text-on-surface mb-3 block">Количество сотрудников</label>
+                            <div class="flex items-center gap-4">
+                                <input type="range" min="10" max="200" value="30" step="5" id="calc-emp" class="flex-1 h-2 bg-black/5 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-primary [&::-webkit-slider-thumb]:cursor-pointer">
+                                <span class="text-2xl font-headline font-black text-on-surface min-w-[3rem] text-right" id="calc-empV">30</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="text-sm font-headline font-bold text-on-surface mb-3 block">Из них руководителей</label>
+                            <div class="flex items-center gap-4">
+                                <input type="range" min="0" max="30" value="4" step="1" id="calc-mgr" class="flex-1 h-2 bg-black/5 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-primary [&::-webkit-slider-thumb]:cursor-pointer">
+                                <span class="text-2xl font-headline font-black text-on-surface min-w-[3rem] text-right" id="calc-mgrV">4</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Тариф -->
+                    <div class="flex rounded-2xl overflow-hidden border border-black/10 mb-8">
+                        <button class="plan-tab active flex-1 py-4 text-center font-headline font-black text-sm uppercase tracking-widest" data-plan="standard" onclick="setCalcPlan('standard')">Standard</button>
+                        <button class="plan-tab flex-1 py-4 text-center font-headline font-black text-sm uppercase tracking-widest bg-black/5 text-on-surface-variant" data-plan="premium" onclick="setCalcPlan('premium')">Premium</button>
+                    </div>
+
+                    <!-- Результаты -->
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="bg-surface rounded-2xl p-5">
+                            <p class="text-[10px] font-headline font-black text-on-surface-variant uppercase tracking-widest mb-1">Стоимость</p>
+                            <p class="text-2xl md:text-3xl font-headline font-black text-on-surface" id="calc-total">165 000 ₽</p>
+                            <p class="text-xs text-on-surface-variant mt-1" id="calc-perPerson">5 000 ₽ / сотрудник</p>
+                        </div>
+                        <div class="bg-primary/5 rounded-2xl p-5">
+                            <p class="text-[10px] font-headline font-black text-primary uppercase tracking-widest mb-1">Экономия / мес</p>
+                            <p class="text-2xl md:text-3xl font-headline font-black text-primary" id="calc-savings">450 000 ₽</p>
+                            <p class="text-xs text-primary/60 mt-1" id="calc-hours">300 часов</p>
+                        </div>
+                        <div class="bg-surface rounded-2xl p-5">
+                            <p class="text-[10px] font-headline font-black text-on-surface-variant uppercase tracking-widest mb-1">ROI 1-й месяц</p>
+                            <p class="text-2xl md:text-3xl font-headline font-black text-on-surface" id="calc-roi">2.7x</p>
+                            <p class="text-xs text-on-surface-variant mt-1" id="calc-payback">Окупается за 11 дней</p>
+                        </div>
+                        <div class="bg-primary/5 rounded-2xl p-5">
+                            <p class="text-[10px] font-headline font-black text-primary uppercase tracking-widest mb-1">Экономия / год</p>
+                            <p class="text-2xl md:text-3xl font-headline font-black text-primary" id="calc-year">5.4 млн ₽</p>
+                            <p class="text-xs text-primary/60 mt-1" id="calc-yearH">3 600 часов</p>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-on-surface-variant/60 leading-relaxed">
+                        Расчёт: 10 часов экономии на сотрудника в месяц при средней ставке 1 500 ₽/час. Фактическая экономия зависит от отрасли.
+                    </p>
+
+                    <div class="mt-8 pt-8 border-t border-black/5 text-center">
+                        <button onclick="openAuditModal('Запуск аттестации')" class="inline-flex items-center justify-center gap-3 bg-primary text-on-primary px-10 py-5 rounded-full font-headline font-black text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-lg">
+                            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">verified</span>
+                            Запустить аттестацию
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ТАРИФЫ -->
         <section class="py-24 bg-surface-container-lowest border-b border-black/5">
+            <div class="max-w-5xl mx-auto px-4 md:px-8">
+                <div class="text-center mb-16">
+                    <span class="inline-block text-[10px] font-headline font-black text-primary uppercase tracking-[0.5em] mb-4">Тарифы</span>
+                    <h2 class="text-3xl md:text-5xl font-headline font-black text-on-surface tracking-tighter">
+                        Standard <span class="text-primary italic">или</span> Premium
+                    </h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Standard -->
+                    <div class="bg-white/80 backdrop-blur-sm rounded-3xl border border-black/5 shadow-sm p-8 hover:shadow-md transition-all">
+                        <h3 class="text-2xl font-headline font-black text-on-surface mb-2">Standard</h3>
+                        <p class="text-on-surface-variant text-sm mb-6">Максимальная автоматизация. Минимум вашего времени.</p>
+                        <p class="text-3xl font-headline font-black text-on-surface mb-8">от 3 500 <span class="text-base font-normal text-on-surface-variant">₽ / сотрудник</span></p>
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-center gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings:'FILL' 1;">check_circle</span>Все 3 этапа аттестации</div>
+                            <div class="flex items-center gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings:'FILL' 1;">check_circle</span>LLM-Judge оценка промптов</div>
+                            <div class="flex items-center gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings:'FILL' 1;">check_circle</span>Карта автоматизации</div>
+                            <div class="flex items-center gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings:'FILL' 1;">check_circle</span>Автоматические отчёты</div>
+                            <div class="flex items-center gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings:'FILL' 1;">check_circle</span>Онбординг-гайд (видео)</div>
+                            <div class="flex items-center gap-3 text-sm text-on-surface-variant/40"><span class="material-symbols-outlined text-lg">cancel</span>Экспертный комментарий 66ai</div>
+                            <div class="flex items-center gap-3 text-sm text-on-surface-variant/40"><span class="material-symbols-outlined text-lg">cancel</span>Созвон с экспертом</div>
+                        </div>
+                        <button onclick="openAuditModal('Standard')" class="w-full bg-black/5 border border-black/10 text-on-surface py-4 rounded-full font-headline font-black text-sm uppercase tracking-widest hover:bg-black/10 transition-all">Выбрать Standard</button>
+                    </div>
+                    <!-- Premium -->
+                    <div class="bg-white/80 backdrop-blur-sm rounded-3xl border-2 border-primary/30 shadow-md p-8 hover:shadow-lg transition-all relative">
+                        <span class="absolute -top-3 left-8 bg-primary text-on-primary px-4 py-1 rounded-full text-[10px] font-headline font-black uppercase tracking-widest">Рекомендуем</span>
+                        <h3 class="text-2xl font-headline font-black text-on-surface mb-2">Premium</h3>
+                        <p class="text-on-surface-variant text-sm mb-6">Автоматизация + экспертиза 66ai на каждом этапе.</p>
+                        <p class="text-3xl font-headline font-black text-on-surface mb-8">от 8 000 <span class="text-base font-normal text-on-surface-variant">₽ / сотрудник</span></p>
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-center gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings:'FILL' 1;">check_circle</span>Все 3 этапа аттестации</div>
+                            <div class="flex items-center gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings:'FILL' 1;">check_circle</span>LLM-Judge оценка промптов</div>
+                            <div class="flex items-center gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings:'FILL' 1;">check_circle</span>Карта автоматизации</div>
+                            <div class="flex items-center gap-3 text-sm text-on-surface"><span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings:'FILL' 1;">check_circle</span>Расширенные отчёты</div>
+                            <div class="flex items-center gap-3 text-sm text-on-surface font-bold"><span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings:'FILL' 1;">check_circle</span>Экспертный комментарий к каждому</div>
+                            <div class="flex items-center gap-3 text-sm text-on-surface font-bold"><span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings:'FILL' 1;">check_circle</span>Созвон-онбординг (30-40 мин)</div>
+                            <div class="flex items-center gap-3 text-sm text-on-surface font-bold"><span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings:'FILL' 1;">check_circle</span>Выделенный эксперт</div>
+                        </div>
+                        <button onclick="openAuditModal('Premium')" class="w-full bg-primary text-on-primary py-4 rounded-full font-headline font-black text-sm uppercase tracking-widest hover:scale-[1.02] transition-all shadow-lg glow-pulse">Выбрать Premium</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ЭКОНОМИКА -->
+        <section class="py-24 bg-surface border-b border-black/5">
             <div class="max-w-5xl mx-auto px-4 md:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <span class="inline-block text-[10px] font-headline font-black text-primary uppercase tracking-[0.5em] mb-4">Экономика</span>
                         <h2 class="text-3xl md:text-4xl font-headline font-black text-on-surface tracking-tighter mb-6">
-                            Как аттестация влияет на фонд оплаты труда
+                            Та же команда, в два раза больше результата
                         </h2>
                         <div class="space-y-4 text-on-surface-variant text-sm leading-relaxed">
-                            <p>Сотрудник, который умеет автоматизировать рутину с помощью нейросетей, делает работу двух-трёх человек. Это не гипербола — это измеримый результат.</p>
-                            <p>Аттестация позволяет точно определить, кого стоит обучить, кого — сертифицировать, а где нужна срочная работа над безопасностью. Вместо слепых инвестиций в «обучение ИИ» — точечные вложения с измеримой отдачей.</p>
-                            <p class="font-bold text-on-surface">Результат: та же команда, в два раза больше выпуска.</p>
+                            <p>Сотрудник, который автоматизировал рутину с помощью ИИ, делает работу двух. Это не гипербола — средний результат аттестации: 10 часов экономии в месяц на человека.</p>
+                            <p>Аттестация показывает, где именно эти часы скрыты. Вместо слепых инвестиций в «обучение ИИ» — точечные действия с измеримой отдачей.</p>
+                            <p class="font-bold text-on-surface">Стоимость аттестации окупается за 10-15 дней.</p>
                         </div>
                     </div>
                     <div class="space-y-4">
@@ -435,16 +504,7 @@
                             </div>
                             <div>
                                 <p class="font-headline font-black text-on-surface">Экономия на найме</p>
-                                <p class="text-on-surface-variant text-xs">Обученный сотрудник заменяет потребность в 1–2 дополнительных специалистах</p>
-                            </div>
-                        </div>
-                        <div class="bg-white/80 backdrop-blur-sm rounded-2xl border border-black/5 shadow-sm p-6 flex items-center gap-4">
-                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                                <span class="material-symbols-outlined text-primary text-2xl">shield_lock</span>
-                            </div>
-                            <div>
-                                <p class="font-headline font-black text-on-surface">Снижение рисков</p>
-                                <p class="text-on-surface-variant text-xs">Аттестованные сотрудники работают безопасно — без утечки корпоративных данных</p>
+                                <p class="text-on-surface-variant text-xs">Каждые 10 сотрудников уровня 3+ = минус 1 открытая вакансия</p>
                             </div>
                         </div>
                         <div class="bg-white/80 backdrop-blur-sm rounded-2xl border border-black/5 shadow-sm p-6 flex items-center gap-4">
@@ -453,7 +513,16 @@
                             </div>
                             <div>
                                 <p class="font-headline font-black text-on-surface">Рост производительности</p>
-                                <p class="text-on-surface-variant text-xs">Каждый час рутины, переданный нейросети — это час на задачи, которые растят бизнес</p>
+                                <p class="text-on-surface-variant text-xs">Каждый час рутины, переданный ИИ — час на задачи, которые растят бизнес</p>
+                            </div>
+                        </div>
+                        <div class="bg-white/80 backdrop-blur-sm rounded-2xl border border-black/5 shadow-sm p-6 flex items-center gap-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-primary text-2xl">trending_up</span>
+                            </div>
+                            <div>
+                                <p class="font-headline font-black text-on-surface">ROI с первого месяца</p>
+                                <p class="text-on-surface-variant text-xs">Средний ROI аттестации: 3x за первый месяц, 36x за год</p>
                             </div>
                         </div>
                     </div>
@@ -461,28 +530,28 @@
             </div>
         </section>
 
-        <!-- CTA Section -->
+        <!-- CTA -->
         <section class="py-32 bg-primary relative overflow-hidden">
             <div class="absolute inset-0 z-0">
                 <img src="photos/robot_green_nodes.webp" alt="" class="w-full h-full object-cover opacity-10 grayscale mix-blend-overlay"/>
             </div>
             <div class="max-w-4xl mx-auto px-4 md:px-8 relative z-10 text-center">
                 <h2 class="text-4xl md:text-5xl font-headline font-black text-white mb-6 tracking-tighter">
-                    Готовы узнать реальный уровень команды?
+                    Сколько часов рутины скрыто в вашей команде?
                 </h2>
                 <p class="text-lg text-white/80 mb-10 max-w-xl mx-auto font-light">
-                    Запустите аттестацию прямо сейчас. Узнаете, кто из сотрудников готов работать с ИИ на уровне эксперта — и где скрытые риски.
+                    Запустите аттестацию и получите карту автоматизации с конкретными цифрами — задачи, часы, рубли.
                 </p>
                 <button onclick="openAuditModal('Аттестация команды')" class="inline-flex items-center gap-3 bg-white text-primary px-10 py-5 rounded-full font-headline font-black text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
                     <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">verified</span>
                     Запустить аттестацию
                 </button>
-                <p class="text-white/40 text-xs mt-6">Свяжемся с вами в течение рабочего дня</p>
+                <p class="text-white/40 text-xs mt-6">Свяжемся в течение рабочего дня</p>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer (без изменений) -->
     <footer class="bg-[#f5f0e6] py-16 border-t border-black/5">
         <div class="max-w-7xl mx-auto px-4 md:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-12 mb-12">
@@ -504,7 +573,7 @@
         </div>
     </footer>
 
-    <!-- Форма заявки -->
+    <!-- Модалка заявки (без изменений) -->
     <div id="audit-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
         <div class="bg-surface-container rounded-[2rem] p-8 lg:p-12 border border-black/5 max-w-lg w-full relative">
             <button onclick="closeAuditModal()" class="absolute top-6 right-6 text-on-surface/40 hover:text-primary transition-colors">
@@ -530,110 +599,60 @@
     </div>
 
     <script>
-        // ─── MOBILE MENU ──────────────────────────────────────────────
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const icon = document.getElementById('menu-icon');
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-                icon.textContent = 'close';
-            } else {
-                menu.classList.add('hidden');
-                icon.textContent = 'menu';
-            }
-        }
-        function closeMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const icon = document.getElementById('menu-icon');
-            menu.classList.add('hidden');
-            icon.textContent = 'menu';
-        }
+        // Mobile menu
+        function toggleMobileMenu(){const m=document.getElementById('mobile-menu'),i=document.getElementById('menu-icon');if(m.classList.contains('hidden')){m.classList.remove('hidden');i.textContent='close'}else{m.classList.add('hidden');i.textContent='menu'}}
+        function closeMobileMenu(){document.getElementById('mobile-menu').classList.add('hidden');document.getElementById('menu-icon').textContent='menu'}
 
-        // ─── MODAL ───────────────────────────────────────────────────
-        let currentTariff = '';
-
-        function openAuditModal(sourceTitle) {
-            const titleEl = document.getElementById('audit-modal-title');
-            if (titleEl && sourceTitle) titleEl.textContent = sourceTitle;
-            currentTariff = sourceTitle || '';
-            document.getElementById('audit-form-view').classList.remove('hidden');
-            document.getElementById('audit-success-view').classList.add('hidden');
-            document.getElementById('audit-modal').classList.remove('hidden');
-            document.getElementById('audit-modal').classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeAuditModal() {
-            document.getElementById('audit-modal').classList.add('hidden');
-            document.getElementById('audit-modal').classList.remove('flex');
-            document.body.style.overflow = 'auto';
-        }
+        // Modal
+        let currentTariff='';
+        function openAuditModal(t){const e=document.getElementById('audit-modal-title');if(e&&t)e.textContent=t;currentTariff=t||'';document.getElementById('audit-form-view').classList.remove('hidden');document.getElementById('audit-success-view').classList.add('hidden');document.getElementById('audit-modal').classList.remove('hidden');document.getElementById('audit-modal').classList.add('flex');document.body.style.overflow='hidden'}
+        function closeAuditModal(){document.getElementById('audit-modal').classList.add('hidden');document.getElementById('audit-modal').classList.remove('flex');document.body.style.overflow='auto'}
 
         // Phone mask
-        document.getElementById('audit-phone').addEventListener('input', function(e) {
-            let v = e.target.value.replace(/\D/g, '');
-            if (v.startsWith('8')) v = '7' + v.slice(1);
-            if (!v.startsWith('7')) v = '7' + v;
-            v = v.slice(0, 11);
-            let out = '+7';
-            if (v.length > 1) out += ' (' + v.slice(1, 4);
-            if (v.length >= 4) out += ') ' + v.slice(4, 7);
-            if (v.length >= 7) out += '-' + v.slice(7, 9);
-            if (v.length >= 9) out += '-' + v.slice(9, 11);
-            e.target.value = out;
-        });
+        document.getElementById('audit-phone').addEventListener('input',function(e){let v=e.target.value.replace(/\D/g,'');if(v.startsWith('8'))v='7'+v.slice(1);if(!v.startsWith('7'))v='7'+v;v=v.slice(0,11);let o='+7';if(v.length>1)o+=' ('+v.slice(1,4);if(v.length>=4)o+=') '+v.slice(4,7);if(v.length>=7)o+='-'+v.slice(7,9);if(v.length>=9)o+='-'+v.slice(9,11);e.target.value=o});
 
-        async function submitAuditForm() {
-            const name  = document.getElementById('audit-name').value.trim();
-            const phone = document.getElementById('audit-phone').value.trim();
-            const tg    = document.getElementById('audit-tg').value.trim();
-            const errEl = document.getElementById('audit-error');
+        async function submitAuditForm(){const n=document.getElementById('audit-name').value.trim(),p=document.getElementById('audit-phone').value.trim(),t=document.getElementById('audit-tg').value.trim(),er=document.getElementById('audit-error');if(!n){er.textContent='Пожалуйста, введите ваше имя';er.classList.remove('hidden');return}if(!p&&!t){er.textContent='Укажите телефон или Telegram';er.classList.remove('hidden');return}er.classList.add('hidden');let text=`🔔 Новая заявка: ${document.getElementById('audit-modal-title').textContent}\n👤 ${n}\n📞 ${p||'—'}\n✈️ ${t||'—'}`;if(currentTariff)text+=`\n📋 ${currentTariff}`;const isLocal=location.hostname==='localhost'||location.hostname==='127.0.0.1';if(isLocal){console.log('TEST:',text)}else{try{await fetch('/api/send-lead.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text})})}catch(e){console.error(e)}}document.getElementById('audit-form-view').classList.add('hidden');document.getElementById('audit-success-view').classList.remove('hidden')}
 
-            if (!name) { errEl.textContent = 'Пожалуйста, введите ваше имя'; errEl.classList.remove('hidden'); return; }
-            if (!phone && !tg) { errEl.textContent = 'Укажите телефон или Telegram'; errEl.classList.remove('hidden'); return; }
-            errEl.classList.add('hidden');
+        window.onclick=function(e){if(e.target==document.getElementById('audit-modal'))closeAuditModal()};
 
-            const title = document.getElementById('audit-modal-title').textContent;
-            let text = `🔔 Новая заявка: ${title}\n👤 Имя: ${name}\n📞 Телефон: ${phone || '—'}\n✈️ Telegram: ${tg || '—'}`;
-            if (currentTariff) text += `\n📋 Откуда: ${currentTariff}`;
+        // Skill bars animation
+        const obs=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.querySelectorAll('.radar-skill-bar').forEach(function(b){const t=b.style.width;b.style.width='0%';setTimeout(function(){b.style.width=t},100)});obs.unobserve(e.target)}})},{threshold:0.3});
+        const sk=document.getElementById('skill-bars');if(sk)obs.observe(sk);
 
-            const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-            if (isLocalhost) {
-                console.log('TEST MODE:', text);
-            } else {
-                try {
-                    await fetch('/api/send-lead.php', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ text })
-                    });
-                } catch(e) { console.error(e); }
+        // Calculator
+        let calcPlan='standard';
+        function setCalcPlan(p){calcPlan=p;document.querySelectorAll('.plan-tab').forEach(t=>{t.classList.toggle('active',t.dataset.plan===p);if(t.dataset.plan!==p){t.classList.add('bg-black/5','text-on-surface-variant');t.classList.remove('text-white')}else{t.classList.remove('bg-black/5','text-on-surface-variant')}});calcUpdate()}
+        function calcUpdate(){
+            const emp=parseInt(document.getElementById('calc-emp').value);
+            const mgr=parseInt(document.getElementById('calc-mgr').value);
+            const staff=Math.max(0,emp-mgr);
+            document.getElementById('calc-empV').textContent=emp;
+            document.getElementById('calc-mgrV').textContent=mgr;
+            let ppS,ppM;
+            if(calcPlan==='standard'){
+                if(emp>=100){ppS=3500;ppM=8000}else if(emp>=50){ppS=4500;ppM=8000}else if(emp>=30){ppS=5000;ppM=8000}else{ppS=5500;ppM=8000}
+            }else{
+                if(emp>=100){ppS=8000;ppM=20000}else if(emp>=50){ppS=9000;ppM=25000}else if(emp>=30){ppS=10000;ppM=25000}else{ppS=12000;ppM=30000}
             }
-
-            document.getElementById('audit-form-view').classList.add('hidden');
-            document.getElementById('audit-success-view').classList.remove('hidden');
+            const total=staff*ppS+mgr*ppM;
+            const mH=emp*10;
+            const mS=mH*1500;
+            const roi=mS/total;
+            const pd=Math.round(30/roi);
+            const yS=mS*12;
+            const fmt=n=>n.toLocaleString('ru-RU');
+            document.getElementById('calc-total').textContent=fmt(total)+' ₽';
+            document.getElementById('calc-perPerson').textContent=fmt(ppS)+' ₽ / сотрудник';
+            document.getElementById('calc-savings').textContent=fmt(mS)+' ₽';
+            document.getElementById('calc-hours').textContent=fmt(mH)+' часов';
+            document.getElementById('calc-roi').textContent=roi.toFixed(1)+'x';
+            document.getElementById('calc-payback').textContent='Окупается за '+pd+' дней';
+            document.getElementById('calc-year').textContent=yS>=1e6?(yS/1e6).toFixed(1)+' млн ₽':fmt(yS)+' ₽';
+            document.getElementById('calc-yearH').textContent=fmt(mH*12)+' часов';
         }
-
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('audit-modal')) closeAuditModal();
-        };
-
-        // ─── SKILL BARS ANIMATION ────────────────────────────────────
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.querySelectorAll('.radar-skill-bar').forEach(function(bar) {
-                        const target = bar.style.width;
-                        bar.style.width = '0%';
-                        setTimeout(function() { bar.style.width = target; }, 100);
-                    });
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.3 });
-
-        const skillSection = document.getElementById('skill-bars');
-        if (skillSection) observer.observe(skillSection);
+        document.getElementById('calc-emp').addEventListener('input',()=>{const e=parseInt(document.getElementById('calc-emp').value),m=document.getElementById('calc-mgr');if(parseInt(m.value)>=e)m.value=Math.max(0,e-1);m.max=Math.min(30,e-1);calcUpdate()});
+        document.getElementById('calc-mgr').addEventListener('input',calcUpdate);
+        calcUpdate();
     </script>
 </body>
 </html>
