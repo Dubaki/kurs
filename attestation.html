@@ -93,19 +93,24 @@
     <!-- TopNavBar (без изменений) -->
     <header class="bg-[#f5f0e6]/80 backdrop-blur-xl top-0 sticky z-50 border-b border-black/5">
         <div class="flex justify-between items-center w-full px-4 md:px-8 py-2 md:py-4 max-w-7xl mx-auto">
-            <a href="index.html" class="flex items-center gap-2 text-xl font-black text-on-surface tracking-tighter no-underline hover:opacity-80 transition-opacity">
-                <div class="bg-primary text-white w-8 h-8 flex items-center justify-center rounded font-bold text-sm logo-morph"><span class="logo-v-morph">V</span></div>
-                <span>VibeCraft</span>
+            <a href="index.html" class="flex items-center gap-2 no-underline hover:opacity-80 transition-opacity">
+                <img src="photos/start.png" alt="VibeCraft" class="h-8 w-auto"/>
             </a>
-            <div class="flex items-center gap-1 ml-auto lg:ml-0">
-                <a href="tel:+79221800911" class="hover:opacity-80 transition-all duration-300 ease-in-out p-1.5" title="Позвонить">
-                    <img src="photos/T.png" alt="Позвонить" class="h-6 w-6 object-contain"/>
+            <nav class="hidden lg:flex items-center gap-6 ml-auto">
+                <a href="otchet.html" class="text-sm font-bold uppercase tracking-wider text-on-surface/70 hover:text-primary transition-colors">Пример отчёта</a>
+                <a href="#calculator" class="text-sm font-bold uppercase tracking-wider text-on-surface/70 hover:text-primary transition-colors">Рассчитать</a>
+                <a href="#tariffs" class="text-sm font-bold uppercase tracking-wider text-on-surface/70 hover:text-primary transition-colors">Тарифы</a>
+                <a href="price.html" class="text-sm font-bold uppercase tracking-wider text-on-surface/70 hover:text-primary transition-colors">Цены</a>
+            </nav>
+            <div class="flex items-center gap-1 ml-4">
+                <a href="tel:+79221800911" class="hover:opacity-80 transition-all duration-300 ease-in-out p-1.5 hidden md:block" title="Позвонить">
+                    <img src="photos/T.png" alt="Позвонить" class="h-5 w-5 object-contain"/>
                 </a>
-                <a href="https://t.me/Bizbezit" target="_blank" rel="noopener" class="hover:opacity-80 transition-all duration-300 ease-in-out p-1.5" title="Telegram">
-                    <img src="photos/Telegram.png" alt="Telegram" class="h-6 w-6 object-contain"/>
+                <a href="https://t.me/Bizbezit" target="_blank" rel="noopener" class="hover:opacity-80 transition-all duration-300 ease-in-out p-1.5 hidden md:block" title="Telegram">
+                    <img src="photos/Telegram.png" alt="Telegram" class="h-5 w-5 object-contain"/>
                 </a>
-                <a href="https://max.ru/+79221800911" target="_blank" rel="noopener" class="hover:opacity-80 transition-all duration-300 ease-in-out p-1.5" title="MAX">
-                    <img src="photos/MAX.svg.png" alt="MAX" class="h-6 w-6 object-contain"/>
+                <a href="https://max.ru/+79221800911" target="_blank" rel="noopener" class="hover:opacity-80 transition-all duration-300 ease-in-out p-1.5 hidden md:block" title="MAX">
+                    <img src="photos/MAX.svg.png" alt="MAX" class="h-5 w-5 object-contain"/>
                 </a>
                 <button id="mobile-menu-btn" class="lg:hidden text-on-surface hover:text-primary transition-colors p-1" onclick="toggleMobileMenu()">
                     <span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span>
@@ -113,11 +118,15 @@
             </div>
         </div>
         <div id="mobile-menu" class="hidden lg:hidden bg-[#f5f0e6]/95 backdrop-blur-xl border-t border-black/5 absolute top-full left-0 right-0 z-50 shadow-lg">
-            <nav class="flex flex-col items-center py-4 gap-1">
-                <div class="flex items-center gap-6 py-3 text-on-surface/50">
-                    <a href="tel:+79221800911" class="hover:opacity-80 transition-colors p-1.5"><img src="photos/T.png" alt="Позвонить" class="h-8 w-8 object-contain"/></a>
-                    <a href="https://t.me/Bizbezit" target="_blank" rel="noopener" class="hover:opacity-80 transition-colors p-1.5"><img src="photos/Telegram.png" alt="Telegram" class="h-8 w-8 object-contain"/></a>
-                    <a href="https://max.ru/+79221800911" target="_blank" rel="noopener" class="hover:opacity-80 transition-colors p-1.5"><img src="photos/MAX.svg.png" alt="MAX" class="h-8 w-8 object-contain"/></a>
+            <nav class="flex flex-col items-center py-4 gap-2 font-['Space_Grotesk'] font-bold uppercase tracking-wider text-sm">
+                <a class="w-full text-center py-2 text-on-surface/70 hover:text-primary transition-all" href="otchet.html" onclick="closeMobileMenu()">Пример отчёта</a>
+                <a class="w-full text-center py-2 text-on-surface/70 hover:text-primary transition-all" href="#calculator" onclick="closeMobileMenu()">Рассчитать</a>
+                <a class="w-full text-center py-2 text-on-surface/70 hover:text-primary transition-all" href="#tariffs" onclick="closeMobileMenu()">Тарифы</a>
+                <a class="w-full text-center py-2 text-on-surface/70 hover:text-primary transition-all" href="price.html" onclick="closeMobileMenu()">Цены</a>
+                <div class="flex items-center gap-6 pt-2 text-on-surface/50">
+                    <a href="tel:+79221800911" class="hover:opacity-80 transition-colors p-1.5"><img src="photos/T.png" alt="Позвонить" class="h-7 w-7 object-contain"/></a>
+                    <a href="https://t.me/Bizbezit" target="_blank" rel="noopener" class="hover:opacity-80 transition-colors p-1.5"><img src="photos/Telegram.png" alt="Telegram" class="h-7 w-7 object-contain"/></a>
+                    <a href="https://max.ru/+79221800911" target="_blank" rel="noopener" class="hover:opacity-80 transition-colors p-1.5"><img src="photos/MAX.svg.png" alt="MAX" class="h-7 w-7 object-contain"/></a>
                 </div>
             </nav>
         </div>
@@ -148,10 +157,6 @@
                 <img src="photos/robot_green_nodes.webp" alt="" class="w-full h-full object-cover opacity-5 grayscale"/>
             </div>
             <div class="max-w-4xl mx-auto px-4 md:px-8 relative z-10 text-center">
-                <a href="otchet.html" class="inline-flex items-center justify-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full font-headline font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-lg glow-pulse mb-8">
-                    <span class="material-symbols-outlined text-lg">description</span>
-                    Пример отчёта Аттестации 66ai
-                </a>
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-headline font-black text-on-surface mb-6 tracking-tighter leading-[1.0]">
                     Узнайте, сколько часов<br class="hidden md:block"/>
                     <span class="text-primary italic">рутины можно убрать</span>
