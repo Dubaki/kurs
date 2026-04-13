@@ -130,7 +130,13 @@
           50%      { box-shadow: 0 4px 28px rgba(0, 104, 117, 0.45); }
       }
       .slow-pulse { animation: slow-pulse 3s ease-in-out infinite; will-change: box-shadow; }
-      /* "Fantastic" shine animation for secondary button */
+      /* Vibe CTA intense pulse - sky blue */
+      @keyframes vibe-cta-pulse {
+          0%, 100% { box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3); }
+          50%      { box-shadow: 0 4px 32px rgba(56, 189, 248, 0.55), 0 0 0 8px rgba(56, 189, 248, 0.08); }
+      }
+      .vibe-cta-pulse { animation: vibe-cta-pulse 2.5s ease-in-out infinite; will-change: box-shadow; }
+      /* "Fantastic" shine animation - kept for potential future use */
       @keyframes fancy-shine {
           0%   { transform: translateX(-120%); }
           100% { transform: translateX(220%); }
@@ -255,10 +261,10 @@
             <div class="max-w-7xl mx-auto px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-3 lg:gap-12 items-start lg:items-center relative z-10">
                 <!-- CTA Block: Mobile order-1, Desktop order-1 (full width top) -->
                 <div class="lg:col-span-12 order-1 lg:order-1 flex justify-center relative z-20">
-                    <a href="attestation.html" class="block w-fit bg-primary text-white px-8 py-4 rounded-2xl slow-pulse hover:scale-[1.02] transition-all mt-0">
+                    <a href="#program" class="block w-fit bg-sky-400 text-white px-8 py-4 rounded-2xl vibe-cta-pulse hover:scale-[1.02] transition-all mt-0">
                         <div class="flex flex-col items-center justify-center leading-tight">
-                            <span class="font-headline font-black text-sm uppercase tracking-widest">Аттестация Ai66</span>
-                            <span class="font-headline font-black text-sm uppercase tracking-widest mt-0.5">для Вас и ваших сотрудников</span>
+                            <span class="font-headline font-black text-sm uppercase tracking-widest">Твой ИИ-Ассистент за выходные</span>
+                            <span class="font-headline font-black text-lg uppercase tracking-widest mt-1">за 990₽</span>
                         </div>
                     </a>
                 </div>
@@ -275,16 +281,7 @@
                         НЕ НАНИМАЙ.<br/><span class="text-primary italic">МАСШТАБИРУЙ.</span>
                     </h1>
                     <p class="text-base md:text-xl text-primary font-black mb-3 uppercase tracking-tight border-l-4 border-primary pl-4 md:pl-6">Усиливай <span id="typewriter-hero" class="text-on-surface inline-block min-w-[12ch] text-left">себя</span> до мощности целого отдела — с помощью ИИ, без программистов и миллионных бюджетов.</p>
-                    <p class="text-on-surface-variant font-bold max-w-xl mb-6 text-xs md:text-base">Объективная оценка ИИ-компетенций: узнайте, насколько эффективно вы и ваша команда используете потенциал нейросетей в рабочих процессах.</p>
-                    <div class="flex items-center gap-4 mt-8">
-                        <a href="#" class="relative overflow-hidden inline-flex items-center gap-2 border-2 border-primary/40 text-primary px-6 py-3 rounded-full font-body font-bold text-sm uppercase tracking-wider group fancy-btn">
-                            <span class="relative z-10 flex items-center gap-2">
-                                <span class="material-symbols-outlined text-lg">description</span>
-                                Пример отчёта Аттестации 66ai
-                            </span>
-                            <span class="fancy-shine"></span>
-                        </a>
-                    </div>
+                    <p class="text-on-surface-variant font-bold max-w-xl mb-6 text-xs md:text-base">Меня зовут Шахмаев Александр — <span class="text-primary font-black">я гарантирую результат, либо возвращаю деньги.</span></p>
                 </div>
             </div>
         </section>
