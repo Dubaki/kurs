@@ -7,8 +7,8 @@
     <link rel="canonical" href="https://66ai.ru/" />
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <!-- Serif для заголовков + Manrope для текста -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <!-- Inter (заголовки) + Manrope (текст) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 
     <script id="tailwind-config">
       tailwind.config = {
@@ -27,7 +27,7 @@
               "card-border": "#d4cfc6",
             },
             fontFamily: {
-              "emboss": ["Playfair Display", "Georgia", "serif"],
+              "emboss": ["Inter", "system-ui", "sans-serif"],
               "body": ["Manrope", "system-ui", "sans-serif"]
             }
           }
@@ -44,7 +44,7 @@
           font-family: 'Manrope', system-ui, sans-serif;
       }
 
-      /* Bronze embossed text — адаптирован для светлого фона */
+      /* Bronze embossed text — Inter 900 */
       .bronze-emboss {
           color: #8b6a4f;
           text-shadow:
@@ -52,10 +52,9 @@
               0 2px 0 rgba(130, 100, 75, 0.2),
               0 3px 3px rgba(80, 60, 40, 0.15),
               0 5px 8px rgba(60, 45, 30, 0.1);
-          font-family: 'Playfair Display', Georgia, serif;
-          letter-spacing: 0.02em;
-          font-weight: 700;
-          font-style: italic;
+          font-family: 'Inter', system-ui, sans-serif;
+          letter-spacing: -0.03em;
+          font-weight: 900;
       }
 
       .bronze-emboss-sm {
@@ -65,9 +64,9 @@
               0 2px 0 rgba(130, 100, 75, 0.15),
               0 3px 3px rgba(80, 60, 40, 0.12),
               0 5px 8px rgba(60, 45, 30, 0.08);
-          font-family: 'Playfair Display', Georgia, serif;
-          letter-spacing: 0.02em;
-          font-weight: 600;
+          font-family: 'Inter', system-ui, sans-serif;
+          letter-spacing: -0.03em;
+          font-weight: 800;
       }
 
       /* Large Gateway Cards */
