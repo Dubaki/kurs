@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Выбор шрифта — VibeCraft</title>
+    <link rel="canonical" href="https://66ai.ru/" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- 10 шрифтов для выбора -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&amp;family=Cormorant+Garamond:wght@300;400;500;600;700&amp;family=Lora:ital,wght@0,400;0,700;1,400;1,700&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=Cinzel:wght@400;600;700;800;900&amp;family=Prata&amp;family=Tenor+Sans&amp;family=Raleway:wght@300;400;600;700;800;900&amp;family=Inter:wght@300;400;500;600;700;800;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+          background-color: #f5f0e6;
+          color: #191c1e;
+          font-family: 'Manrope', sans-serif;
+          padding: 2rem 1rem;
+      }
+      .font-option {
+          background: linear-gradient(160deg, #ffffff 0%, #faf8f4 100%);
+          border: 2px solid #d4cfc6;
+          border-radius: 1.5rem;
+          padding: 2.5rem 2rem;
+          margin-bottom: 1.5rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          position: relative;
+          cursor: pointer;
+          transition: all 0.3s ease;
+      }
+      .font-option:hover {
+          border-color: rgba(0, 104, 117, 0.4);
+          box-shadow: 0 8px 32px rgba(25,28,30,0.08);
+          transform: translateY(-2px);
+      }
+      .font-number {
+          position: absolute;
+          top: 1rem;
+          left: 1.5rem;
+          font-size: 0.7rem;
+          font-weight: 700;
+          color: #006875;
+          background: rgba(0,104,117,0.08);
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          letter-spacing: 0.05em;
+      }
+      .font-name {
+          position: absolute;
+          bottom: 0.75rem;
+          right: 1.5rem;
+          font-size: 0.65rem;
+          color: #9e9b96;
+          font-weight: 500;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+      }
+      .sample-text {
+          color: #8b6a4f;
+          text-shadow:
+              0 1px 0 rgba(163,122,95,0.3),
+              0 2px 0 rgba(130,100,75,0.2),
+              0 3px 3px rgba(80,60,40,0.15),
+              0 5px 8px rgba(60,45,30,0.1);
+          font-size: clamp(2rem, 6vw, 3.5rem);
+          line-height: 1.2;
+      }
+      /* 1. Playfair Display (italic) */
+      .font-1 { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; letter-spacing: 0.02em; }
+      /* 2. Playfair Display (roman) */
+      .font-2 { font-family: 'Playfair Display', serif; font-weight: 900; letter-spacing: 0.03em; }
+      /* 3. Cormorant Garamond */
+      .font-3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; letter-spacing: 0.06em; }
+      /* 4. Lora */
+      .font-4 { font-family: 'Lora', serif; font-weight: 700; font-style: italic; letter-spacing: 0.01em; }
+      /* 5. Libre Baskerville */
+      .font-5 { font-family: 'Libre Baskerville', serif; font-weight: 700; letter-spacing: 0.02em; }
+      /* 6. Cinzel */
+      .font-6 { font-family: 'Cinzel', serif; font-weight: 700; letter-spacing: 0.12em; }
+      /* 7. Prata */
+      .font-7 { font-family: 'Prata', serif; font-weight: 400; letter-spacing: 0.04em; }
+      /* 8. Tenor Sans */
+      .font-8 { font-family: 'Tenor Sans', sans-serif; font-weight: 400; letter-spacing: 0.08em; }
+      /* 9. Raleway */
+      .font-9 { font-family: 'Raleway', sans-serif; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; }
+      /* 10. Inter (bold, modern) */
+      .font-10 { font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: -0.03em; }
+    </style>
+</head>
+<body>
+    <div class="max-w-4xl mx-auto">
+        <p class="text-center text-sm text-[#43474e] mb-8 font-medium tracking-wider uppercase">Выберите номер шрифта для VibeCraft</p>
+
+        <!-- 1. Playfair Display Italic -->
+        <div class="font-option">
+            <span class="font-number">1</span>
+            <span class="font-name">Playfair Display · italic · 700</span>
+            <span class="sample-text font-1">VibeCraft</span>
+        </div>
+
+        <!-- 2. Playfair Display Bold -->
+        <div class="font-option">
+            <span class="font-number">2</span>
+            <span class="font-name">Playfair Display · 900</span>
+            <span class="sample-text font-2">VibeCraft</span>
+        </div>
+
+        <!-- 3. Cormorant Garamond -->
+        <div class="font-option">
+            <span class="font-number">3</span>
+            <span class="font-name">Cormorant Garamond · italic · 300</span>
+            <span class="sample-text font-3">VibeCraft</span>
+        </div>
+
+        <!-- 4. Lora -->
+        <div class="font-option">
+            <span class="font-number">4</span>
+            <span class="font-name">Lora · italic · 700</span>
+            <span class="sample-text font-4">VibeCraft</span>
+        </div>
+
+        <!-- 5. Libre Baskerville -->
+        <div class="font-option">
+            <span class="font-number">5</span>
+            <span class="font-name">Libre Baskerville · 700</span>
+            <span class="sample-text font-5">VibeCraft</span>
+        </div>
+
+        <!-- 6. Cinzel -->
+        <div class="font-option">
+            <span class="font-number">6</span>
+            <span class="font-name">Cinzel · 700</span>
+            <span class="sample-text font-6">VibeCraft</span>
+        </div>
+
+        <!-- 7. Prata -->
+        <div class="font-option">
+            <span class="font-number">7</span>
+            <span class="font-name">Prata · 400</span>
+            <span class="sample-text font-7">VibeCraft</span>
+        </div>
+
+        <!-- 8. Tenor Sans -->
+        <div class="font-option">
+            <span class="font-number">8</span>
+            <span class="font-name">Tenor Sans · 400</span>
+            <span class="sample-text font-8">VibeCraft</span>
+        </div>
+
+        <!-- 9. Raleway -->
+        <div class="font-option">
+            <span class="font-number">9</span>
+            <span class="font-name">Raleway · 800</span>
+            <span class="sample-text font-9">VibeCraft</span>
+        </div>
+
+        <!-- 10. Inter -->
+        <div class="font-option">
+            <span class="font-number">10</span>
+            <span class="font-name">Inter · 900</span>
+            <span class="sample-text font-10">VibeCraft</span>
+        </div>
+    </div>
+</body>
+</html>
