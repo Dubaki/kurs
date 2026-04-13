@@ -162,6 +162,69 @@
           transform: scale(0.97);
           transition: transform 0.15s ease;
       }
+      /* ===== GATEWAY FACADE ANIMATIONS ===== */
+      @keyframes vibe-slide-in {
+          0%   { transform: translateX(-100%); opacity: 0; }
+          60%  { transform: translateX(0); opacity: 1; }
+          100% { transform: translateX(0); opacity: 1; }
+      }
+      @keyframes craft-slide-in {
+          0%   { transform: translateX(100%); opacity: 0; }
+          60%  { transform: translateX(0); opacity: 1; }
+          100% { transform: translateX(0); opacity: 1; }
+      }
+      @keyframes subtitle-fade-in {
+          0%   { opacity: 0; transform: translateY(12px); }
+          100% { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes cards-fade-up {
+          0%   { opacity: 0; transform: translateY(40px); }
+          100% { opacity: 1; transform: translateY(0); }
+      }
+      .vibe-enter {
+          animation: vibe-slide-in 0.8s cubic-bezier(.22,.61,.36,1) forwards;
+          opacity: 0;
+      }
+      .craft-enter {
+          animation: craft-slide-in 0.8s cubic-bezier(.22,.61,.36,1) 0.15s forwards;
+          opacity: 0;
+      }
+      .gateway-subtitle {
+          animation: subtitle-fade-in 0.6s ease-out 0.9s forwards;
+          opacity: 0;
+      }
+      .gateway-cards {
+          animation: cards-fade-up 0.7s ease-out 1.2s forwards;
+          opacity: 0;
+      }
+      /* 3D Tilt card base styles */
+      .tilt-card {
+          transform-style: preserve-3d;
+          transition: transform 0.3s cubic-bezier(.22,.61,.36,1);
+          will-change: transform;
+      }
+      .tilt-card-inner {
+          transform: translateZ(20px);
+      }
+      .tilt-text {
+          transform: translateZ(30px);
+      }
+      /* Card extrusion effect */
+      .card-extrude {
+          box-shadow:
+              0 1px 2px rgba(25,28,30,0.04),
+              0 4px 8px rgba(25,28,30,0.06),
+              0 16px 32px rgba(25,28,30,0.08),
+              0 32px 64px rgba(25,28,30,0.04);
+          transition: box-shadow 0.4s ease, transform 0.3s cubic-bezier(.22,.61,.36,1);
+      }
+      .card-extrude:hover {
+          box-shadow:
+              0 1px 2px rgba(25,28,30,0.04),
+              0 8px 16px rgba(25,28,30,0.08),
+              0 24px 48px rgba(25,28,30,0.1),
+              0 40px 80px rgba(25,28,30,0.06);
+      }
     </style>
 </head>
 <body class="font-body selection:bg-primary selection:text-on-primary">
@@ -246,6 +309,60 @@
     </div>
 
     <main>
+        <!-- Gateway Facade: VIBECRAFT -->
+        <section id="gateway-facade" class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-surface border-b border-black/5">
+            <!-- Background subtle texture -->
+            <div class="absolute inset-0 z-0 pointer-events-none opacity-[0.03]" style="background-image: radial-gradient(circle, #191c1e 1px, transparent 1px); background-size: 32px 32px;"></div>
+
+            <!-- Animated VIBECRAFT Title -->
+            <div class="relative z-10 mb-4 md:mb-6 flex items-center justify-center overflow-hidden">
+                <h1 class="flex items-center justify-center font-headline font-black text-6xl md:text-8xl lg:text-9xl tracking-tighter text-on-surface">
+                    <span class="vibe-enter text-primary">VIBE</span><span class="craft-enter text-on-surface">CRAFT</span>
+                </h1>
+            </div>
+
+            <!-- Subtitle: Ai Школа -->
+            <p class="gateway-subtitle relative z-10 text-lg md:text-2xl font-body font-bold text-on-surface-variant tracking-wide mb-12 md:mb-16">
+                Ai Школа
+            </p>
+
+            <!-- Two Equal Cards -->
+            <div class="gateway-cards relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl w-full px-4 md:px-8">
+                <!-- Card 1: АТТЕСТАЦИЯ 66AI -->
+                <div class="tilt-wrapper" data-tilt>
+                    <a href="attestation.html" class="tilt-card card-extrude block bg-surface-container-highest rounded-3xl p-8 md:p-10 border border-black/5 text-center no-underline group">
+                        <div class="tilt-text">
+                            <div class="text-3xl md:text-4xl font-headline font-black text-on-surface mb-3 tracking-tight">АТТЕСТАЦИЯ 66AI</div>
+                            <p class="text-on-surface-variant text-sm md:text-base font-body leading-relaxed">Узнайте, сколько часов рутины можно убрать</p>
+                            <div class="mt-6 inline-flex items-center gap-2 text-primary font-body font-bold text-xs uppercase tracking-widest group-hover:gap-3 transition-all">
+                                Перейти
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Card 2: VIBECRAFT -->
+                <div class="tilt-wrapper" data-tilt>
+                    <a href="#program" class="tilt-card card-extrude block bg-surface-container-highest rounded-3xl p-8 md:p-10 border border-black/5 text-center no-underline group">
+                        <div class="tilt-text">
+                            <div class="text-3xl md:text-4xl font-headline font-black text-on-surface mb-3 tracking-tight">VIBECRAFT</div>
+                            <p class="text-on-surface-variant text-sm md:text-base font-body leading-relaxed">Научи сотрудника созданию программных решений</p>
+                            <div class="mt-6 inline-flex items-center gap-2 text-primary font-body font-bold text-xs uppercase tracking-widest group-hover:gap-3 transition-all">
+                                Перейти
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Scroll hint -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-on-surface/30 animate-bounce">
+                <span class="material-symbols-outlined text-2xl">expand_more</span>
+            </div>
+        </section>
+
         <!-- Hero Section -->
         <section class="relative min-h-[90vh] flex items-center overflow-hidden pt-3 pb-10 lg:pt-12 lg:pb-24 border-b border-black/5">
             <!-- Фоновое изображение -->
@@ -1459,6 +1576,35 @@
         document.addEventListener('DOMContentLoaded', function() {
             checkUtmPriceParam();
         });
+
+        // ===== 3D TILT PARALLAX (Vanilla JS) =====
+        (function() {
+            var tiltWrappers = document.querySelectorAll('[data-tilt]');
+            var MAX_TILT = 4; // минимальная амплитуда (градусы)
+
+            tiltWrappers.forEach(function(wrapper) {
+                var card = wrapper.querySelector('.tilt-card');
+                if (!card) return;
+
+                wrapper.addEventListener('mousemove', function(e) {
+                    var rect = wrapper.getBoundingClientRect();
+                    var x = e.clientX - rect.left; // позиция внутри элемента
+                    var y = e.clientY - rect.top;
+                    var centerX = rect.width / 2;
+                    var centerY = rect.height / 2;
+
+                    // Нормализуем от -1 до 1
+                    var rotateY = ((x - centerX) / centerX) * MAX_TILT;
+                    var rotateX = ((centerY - y) / centerY) * MAX_TILT;
+
+                    card.style.transform = 'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) scale3d(1.02, 1.02, 1.02)';
+                });
+
+                wrapper.addEventListener('mouseleave', function() {
+                    card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+                });
+            });
+        })();
     </script>
 </body>
 </html>
