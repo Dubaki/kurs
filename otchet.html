@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html class="light" lang="ru" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Примеры отчётов Аттестации 66AI</title>
+    <meta name="description" content="Посмотрите примеры отчётов Аттестации 66AI: для компании, руководителя и сотрудника.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://66ai.ru/otchet.html">
+    <meta property="og:title" content="Примеры отчётов Аттестации 66AI">
+    <meta property="og:description" content="Посмотрите примеры отчётов: для компании, руководителя и сотрудника.">
+    <meta property="og:image" content="https://66ai.ru/robot_green_nodes.webp">
+    <link rel="canonical" href="https://66ai.ru/otchet.html" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#e8e2d9",
+              "inverse-primary": "#006875",
+              "on-surface": "#191c1e",
+              "on-surface-variant": "#43474e",
+              "primary": "#006875",
+              "on-primary": "#ffffff",
+              "surface": "#f5f0e6",
+              "surface-container": "#f0eade",
+              "background": "#f5f0e6",
+              "outline-variant": "#c3c6cf",
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"]
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #f5f0e6;
+        color: #191c1e;
+      }
+      @media (max-width: 767px) { body { padding-bottom: 80px; } }
+      @keyframes logo-morph {
+        0%, 100% { background-color: #006875; border-radius: 4px; border: 2px solid transparent; }
+        50%      { background-color: transparent; border-radius: 50%; border: 2px solid #006875; }
+      }
+      @keyframes logo-v-morph {
+        0%, 100% { color: #ffffff; }
+        50%      { color: #1e40af; }
+      }
+      .logo-morph  { animation: logo-morph 5s ease-in-out infinite; }
+      .logo-v-morph { animation: logo-v-morph 5s ease-in-out infinite; }
+
+      /* Report card styles */
+      .report-card {
+          transition: all 0.4s cubic-bezier(.22,.61,.36,1);
+          box-shadow:
+              0 1px 3px rgba(25,28,30,0.04),
+              0 4px 12px rgba(25,28,30,0.06),
+              0 16px 40px rgba(25,28,30,0.04);
+      }
+      .report-card:hover {
+          transform: translateY(-4px);
+          box-shadow:
+              0 2px 6px rgba(25,28,30,0.05),
+              0 8px 24px rgba(25,28,30,0.08),
+              0 24px 48px rgba(25,28,30,0.05);
+          border-color: rgba(0,104,117,0.3);
+      }
+
+      /* PDF Modal */
+      .pdf-modal {
+          transition: opacity 0.3s ease;
+      }
+      .pdf-modal.hidden {
+          opacity: 0;
+          pointer-events: none;
+      }
+      .pdf-modal:not(.hidden) {
+          opacity: 1;
+          pointer-events: auto;
+      }
+      .pdf-modal iframe {
+          border: none;
+      }
+
+      /* Animations */
+      @keyframes fade-in-up {
+          0%   { opacity: 0; transform: translateY(20px); }
+          100% { opacity: 1; transform: translateY(0); }
+      }
+      .anim-card {
+          opacity: 0;
+          animation: fade-in-up 0.6s ease-out forwards;
+      }
+      .anim-card:nth-child(1) { animation-delay: 0.1s; }
+      .anim-card:nth-child(2) { animation-delay: 0.25s; }
+      .anim-card:nth-child(3) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary">
+
+    <!-- Minimal Header -->
+    <header class="bg-[#f5f0e6]/80 backdrop-blur-xl top-0 sticky z-50 border-b border-black/5">
+        <div class="flex justify-between items-center w-full px-4 md:px-8 py-3 md:py-4 max-w-7xl mx-auto">
+            <a href="index.html" class="flex items-center gap-2 text-xl font-black text-on-surface tracking-tighter no-underline hover:opacity-80 transition-opacity">
+                <div class="bg-primary text-white w-8 h-8 flex items-center justify-center rounded font-bold text-sm logo-morph"><span class="logo-v-morph">V</span></div>
+                <span>VibeCraft</span>
+            </a>
+            <a href="attestation.html" class="inline-flex items-center gap-2 text-on-surface/70 hover:text-primary px-3 py-2 rounded-lg transition-all duration-300 font-body text-sm font-bold">
+                <span class="material-symbols-outlined text-sm">arrow_back</span>
+                Назад к Аттестации
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-20 md:py-28 bg-surface border-b border-black/5">
+            <div class="max-w-4xl mx-auto px-4 md:px-8 text-center">
+                <h1 class="text-3xl md:text-5xl lg:text-6xl font-headline font-black text-on-surface mb-4 tracking-tighter leading-tight">
+                    Примеры отчётов <span class="text-primary italic">Аттестации 66AI</span>
+                </h1>
+                <p class="text-lg text-on-surface-variant font-light max-w-2xl mx-auto mb-2">
+                    Посмотрите, как выглядят результаты аттестации для каждого участника процесса
+                </p>
+            </div>
+        </section>
+
+        <!-- Report Cards -->
+        <section class="py-16 md:py-20 bg-surface-container-lowest">
+            <div class="max-w-5xl mx-auto px-4 md:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+
+                    <!-- Card 1: Компания -->
+                    <div class="anim-card report-card bg-white rounded-2xl border border-outline-variant/50 overflow-hidden cursor-pointer group" onclick="openPdf('docs/Пример отчёта компании.pdf', 'Отчёт компании')">
+                        <div class="p-8 flex flex-col items-center justify-center text-center min-h-[280px]">
+                            <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-primary text-3xl">business</span>
+                            </div>
+                            <h3 class="text-xl font-headline font-bold text-on-surface mb-3">Пример отчёта компании</h3>
+                            <p class="text-on-surface-variant text-sm leading-relaxed">Общая картина по организации: распределение компетенций, бенчмарки, зоны роста</p>
+                            <div class="mt-6 inline-flex items-center gap-2 text-primary font-body font-bold text-xs uppercase tracking-widest group-hover:gap-3 transition-all">
+                                Открыть
+                                <span class="material-symbols-outlined text-sm">open_in_new</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Руководитель -->
+                    <div class="anim-card report-card bg-white rounded-2xl border border-outline-variant/50 overflow-hidden cursor-pointer group" onclick="openPdf('docs/Пример отчёта руководитель.pdf', 'Отчёт руководителя')">
+                        <div class="p-8 flex flex-col items-center justify-center text-center min-h-[280px]">
+                            <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-primary text-3xl">supervisor_account</span>
+                            </div>
+                            <h3 class="text-xl font-headline font-bold text-on-surface mb-3">Пример отчёта руководителя</h3>
+                            <p class="text-on-surface-variant text-sm leading-relaxed">Детальная аналитика по отделам: кто в лидерах, кто отстаёт, рекомендации по обучению</p>
+                            <div class="mt-6 inline-flex items-center gap-2 text-primary font-body font-bold text-xs uppercase tracking-widest group-hover:gap-3 transition-all">
+                                Открыть
+                                <span class="material-symbols-outlined text-sm">open_in_new</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Сотрудник -->
+                    <div class="anim-card report-card bg-white rounded-2xl border border-outline-variant/50 overflow-hidden cursor-pointer group" onclick="openPdf('docs/Пример отчёта сотрудник.pdf', 'Отчёт сотрудника')">
+                        <div class="p-8 flex flex-col items-center justify-center text-center min-h-[280px]">
+                            <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-primary text-3xl">person</span>
+                            </div>
+                            <h3 class="text-xl font-headline font-bold text-on-surface mb-3">Пример отчёта сотрудника</h3>
+                            <p class="text-on-surface-variant text-sm leading-relaxed">Индивидуальные результаты: навыки, баллы, персональный план развития</p>
+                            <div class="mt-6 inline-flex items-center gap-2 text-primary font-body font-bold text-xs uppercase tracking-widest group-hover:gap-3 transition-all">
+                                Открыть
+                                <span class="material-symbols-outlined text-sm">open_in_new</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-20 bg-primary text-white text-center border-t border-black/5 relative overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="photos/robot_green_nodes.webp" alt="" class="w-full h-full object-cover opacity-10 grayscale mix-blend-overlay"/>
+            </div>
+            <div class="max-w-3xl mx-auto px-4 md:px-8 relative z-10">
+                <h2 class="text-3xl md:text-4xl font-headline font-black mb-4 tracking-tighter">
+                    Готовы провести аттестацию?
+                </h2>
+                <p class="text-lg text-white/80 mb-8 font-light max-w-xl mx-auto">
+                    Запустите тестирование для вашей команды и получите подробные отчёты уже через неделю
+                </p>
+                <a href="attestation.html" class="inline-flex items-center gap-2 bg-white text-primary px-10 py-5 rounded-full font-headline font-black text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+                    <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">verified</span>
+                    Перейти к Аттестации
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- PDF Modal -->
+    <div id="pdf-modal" class="pdf-modal hidden fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" onclick="closePdf()">
+        <div class="bg-white rounded-2xl w-full max-w-6xl h-[90vh] flex flex-col overflow-hidden relative" onclick="event.stopPropagation()">
+            <!-- Header -->
+            <div class="flex items-center justify-between px-6 py-4 border-b border-black/5 flex-shrink-0">
+                <h3 id="pdf-title" class="font-headline font-bold text-on-surface text-lg truncate pr-4"></h3>
+                <button onclick="closePdf()" class="text-on-surface/50 hover:text-on-surface transition-colors p-2 rounded-full hover:bg-black/5 flex-shrink-0">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <!-- PDF Viewer -->
+            <div class="flex-1 overflow-hidden">
+                <iframe id="pdf-frame" class="w-full h-full" src=""></iframe>
+            </div>
+            <!-- Footer -->
+            <div class="px-6 py-3 border-t border-black/5 flex justify-between items-center flex-shrink-0 bg-surface">
+                <span class="text-xs text-on-surface-variant">Если PDF не отображается, скачайте файл:</span>
+                <a id="pdf-download" href="" download class="text-xs text-primary hover:underline font-bold flex items-center gap-1">
+                    Скачать
+                    <span class="material-symbols-outlined text-sm">download</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-surface py-12 border-t border-black/5">
+        <div class="max-w-7xl mx-auto px-4 md:px-8 text-center">
+            <div class="text-2xl font-black text-on-surface tracking-tighter flex items-center gap-2 justify-center mb-4">
+                <div class="bg-primary text-white w-8 h-8 flex items-center justify-center rounded font-bold text-sm">V</div>
+                <span>VibeCraft</span>
+            </div>
+            <p class="text-on-surface-variant text-xs font-body uppercase tracking-widest">
+                © 2025 VibeCraft — Аттестация 66AI
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function openPdf(pdfPath, title) {
+            const modal = document.getElementById('pdf-modal');
+            const frame = document.getElementById('pdf-frame');
+            const titleEl = document.getElementById('pdf-title');
+            const downloadEl = document.getElementById('pdf-download');
+
+            frame.src = pdfPath;
+            titleEl.textContent = title;
+            downloadEl.href = pdfPath;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePdf() {
+            const modal = document.getElementById('pdf-modal');
+            const frame = document.getElementById('pdf-frame');
+
+            frame.src = '';
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closePdf();
+        });
+    </script>
+</body>
+</html>
