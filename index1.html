@@ -8,7 +8,7 @@
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <!-- Serif для заголовков + Manrope для текста -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 
     <script id="tailwind-config">
       tailwind.config = {
@@ -27,7 +27,7 @@
               "card-border": "#d4cfc6",
             },
             fontFamily: {
-              "emboss": ["Cinzel", "Georgia", "serif"],
+              "emboss": ["Playfair Display", "Georgia", "serif"],
               "body": ["Manrope", "system-ui", "sans-serif"]
             }
           }
@@ -52,9 +52,10 @@
               0 2px 0 rgba(130, 100, 75, 0.2),
               0 3px 3px rgba(80, 60, 40, 0.15),
               0 5px 8px rgba(60, 45, 30, 0.1);
-          font-family: 'Cinzel', Georgia, serif;
-          letter-spacing: 0.04em;
+          font-family: 'Playfair Display', Georgia, serif;
+          letter-spacing: 0.02em;
           font-weight: 700;
+          font-style: italic;
       }
 
       .bronze-emboss-sm {
@@ -64,30 +65,9 @@
               0 2px 0 rgba(130, 100, 75, 0.15),
               0 3px 3px rgba(80, 60, 40, 0.12),
               0 5px 8px rgba(60, 45, 30, 0.08);
-          font-family: 'Cinzel', Georgia, serif;
-          letter-spacing: 0.03em;
+          font-family: 'Playfair Display', Georgia, serif;
+          letter-spacing: 0.02em;
           font-weight: 600;
-      }
-
-      /* Card background images */
-      .card-bg-img {
-          position: absolute;
-          inset: 0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          opacity: 0.1;
-          pointer-events: none;
-          z-index: 0;
-      }
-      .card-bg-img img {
-          max-width: 60%;
-          max-height: 60%;
-          object-fit: contain;
-      }
-      .gateway-card > .tilt-content {
-          position: relative;
-          z-index: 1;
       }
 
       /* Large Gateway Cards */
@@ -119,7 +99,6 @@
           height: 40%;
           background: linear-gradient(180deg, rgba(255,255,255,0.6) 0%, transparent 100%);
           pointer-events: none;
-          z-index: 0;
       }
       .gateway-card:hover {
           border-color: rgba(0, 104, 117, 0.3);
