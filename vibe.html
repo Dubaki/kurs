@@ -179,7 +179,7 @@
                 <span>VibeCraft</span>
             </a>
             <nav class="hidden lg:flex items-center gap-1 font-['Space_Grotesk'] font-bold uppercase tracking-tight text-lg">
-                <a class="text-primary px-3 py-1 hover:text-inverse-primary hover:-translate-y-0.5 rounded-lg transition-all duration-300 ease-in-out" href="index.html">НАЧАЛО</a>
+                <a class="text-primary px-3 py-1 hover:text-inverse-primary hover:-translate-y-0.5 rounded-lg transition-all duration-300 ease-in-out" href="#top">НАЧАЛО</a>
                 <a class="text-on-surface/70 hover:text-primary hover:-translate-y-0.5 px-3 py-1 rounded-lg transition-all duration-300 ease-in-out" href="#process">ПРОЦЕСС</a>
                 <a class="text-on-surface/70 hover:text-primary hover:-translate-y-0.5 px-3 py-1 rounded-lg transition-all duration-300 ease-in-out" href="#program">ПРОГРАММА</a>
                 <a class="text-on-surface/70 hover:text-primary hover:-translate-y-0.5 px-3 py-1 rounded-lg transition-all duration-300 ease-in-out" href="cases.html">КЕЙСЫ</a>
@@ -207,7 +207,7 @@
         <!-- Mobile Dropdown Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-[#f5f0e6]/95 backdrop-blur-xl border-t border-black/5 absolute top-full left-0 right-0 z-50 shadow-lg">
             <nav class="flex flex-col items-center py-6 gap-1 font-['Space_Grotesk'] font-bold uppercase tracking-tight text-sm">
-                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="index.html" onclick="closeMobileMenu()">НАЧАЛО</a>
+                <a class="w-full text-center py-3 text-primary bg-primary/5 font-black" href="#top" onclick="closeMobileMenu()">НАЧАЛО</a>
                 <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="#process" onclick="closeMobileMenu()">ПРОЦЕСС</a>
                 <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="#program" onclick="closeMobileMenu()">ПРОГРАММА</a>
                 <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="cases.html" onclick="closeMobileMenu()">КЕЙСЫ</a>
@@ -232,7 +232,7 @@
     <!-- Mobile Fixed Bottom Navigation -->
     <div class="md:hidden fixed bottom-0 left-0 right-0 z-[60] bg-surface/90 backdrop-blur-xl border-t border-black/5 px-6 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
         <div class="flex justify-between items-center w-full max-w-md mx-auto px-2">
-            <a class="flex flex-col items-center gap-1 text-primary" href="index.html">
+            <a class="flex flex-col items-center gap-1 text-primary" href="#top">
                 <span class="material-symbols-outlined text-[20px]" data-icon="home">home</span>
                 <span class="text-[8px] font-headline font-black uppercase tracking-widest">Домой</span>
             </a>
@@ -590,7 +590,7 @@
             <div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/20">
                     <div>
-                        <div class="text-4xl md:text-5xl font-black font-headline mb-2">3</div>
+                        <div class="text-4xl md:text-5xl font-black font-headline mb-2">5</div>
                         <div class="text-[10px] font-bold uppercase tracking-widest opacity-80">проекта собрано</div>
                     </div>
                     <div>
@@ -615,8 +615,8 @@
             <div class="max-w-7xl mx-auto px-4 md:px-8">
                 <!-- Табы навигации -->
                 <div class="flex justify-center gap-3 mb-10 md:mb-12 flex-wrap">
-                    <button data-tab="program-start" class="tab-btn px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider transition-all border-2 border-black/10 text-on-surface-variant hover:border-primary/50" onclick="switchTab('program-start')">Быстрый старт</button>
-                    <button data-tab="program-engineer" class="tab-btn px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider transition-all border-2 border-primary bg-primary text-white shadow-lg" onclick="switchTab('program-engineer')">Бизнес-инженер</button>
+                    <button data-tab="program-start" class="tab-btn px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider transition-all border-2 border-primary bg-primary text-white shadow-lg" onclick="switchTab('program-start')">Быстрый старт</button>
+                    <button data-tab="program-engineer" class="tab-btn px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider transition-all border-2 border-black/10 text-on-surface-variant hover:border-primary/50" onclick="switchTab('program-engineer')">Бизнес-инженер</button>
                     <button data-tab="program-business" class="tab-btn px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider transition-all border-2 border-black/10 text-on-surface-variant hover:border-primary/50" onclick="switchTab('program-business')">Для бизнеса</button>
                 </div>
 
