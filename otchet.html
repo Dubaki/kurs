@@ -32,6 +32,10 @@
               "surface-container": "#f0eade",
               "background": "#f5f0e6",
               "outline-variant": "#c3c6cf",
+              "grade-a": "#006875",
+              "grade-b": "#0ea5e9",
+              "grade-c": "#f59e0b",
+              "grade-d": "#ef4444",
             },
             fontFamily: {
               "headline": ["Space Grotesk"],
@@ -42,78 +46,46 @@
       }
     </script>
     <style>
-      .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-      }
-      body {
-        background-color: #f5f0e6;
-        color: #191c1e;
-      }
-      @media (max-width: 767px) { body { padding-bottom: 80px; } }
-      @keyframes logo-morph {
-        0%, 100% { background-color: #006875; border-radius: 4px; border: 2px solid transparent; }
-        50%      { background-color: transparent; border-radius: 50%; border: 2px solid #006875; }
-      }
-      @keyframes logo-v-morph {
-        0%, 100% { color: #ffffff; }
-        50%      { color: #1e40af; }
-      }
-      .logo-morph  { animation: logo-morph 5s ease-in-out infinite; }
-      .logo-v-morph { animation: logo-v-morph 5s ease-in-out infinite; }
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+      body { background-color: #f5f0e6; color: #191c1e; }
+      @keyframes logo-morph { 0%,100%{background:#006875;border-radius:4px;border:2px solid transparent}50%{background:transparent;border-radius:50%;border:2px solid #006875} }
+      @keyframes logo-v-morph { 0%,100%{color:#fff}50%{color:#1e40af} }
+      .logo-morph{animation:logo-morph 5s ease-in-out infinite}
+      .logo-v-morph{animation:logo-v-morph 5s ease-in-out infinite}
       @keyframes logo-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
       .embossed-logo{border-radius:.75rem;box-shadow:3px 3px 8px rgba(25,28,30,.08),-3px -3px 8px rgba(255,255,255,.6);animation:logo-breathe 4s ease-in-out infinite;will-change:transform;transition:opacity .3s}
       .embossed-logo:hover{opacity:.85}
-
-      /* Report card styles */
-      .report-card {
-          transition: all 0.4s cubic-bezier(.22,.61,.36,1);
-          box-shadow:
-              0 1px 3px rgba(25,28,30,0.04),
-              0 4px 12px rgba(25,28,30,0.06),
-              0 16px 40px rgba(25,28,30,0.04);
-      }
-      .report-card:hover {
-          transform: translateY(-4px);
-          box-shadow:
-              0 2px 6px rgba(25,28,30,0.05),
-              0 8px 24px rgba(25,28,30,0.08),
-              0 24px 48px rgba(25,28,30,0.05);
-          border-color: rgba(0,104,117,0.3);
-      }
-
-      /* PDF Modal */
-      .pdf-modal {
-          transition: opacity 0.3s ease;
-      }
-      .pdf-modal.hidden {
-          opacity: 0;
-          pointer-events: none;
-      }
-      .pdf-modal:not(.hidden) {
-          opacity: 1;
-          pointer-events: auto;
-      }
-      .pdf-modal iframe {
-          border: none;
-      }
-
-      /* Animations */
-      @keyframes fade-in-up {
-          0%   { opacity: 0; transform: translateY(20px); }
-          100% { opacity: 1; transform: translateY(0); }
-      }
-      .anim-card {
-          opacity: 0;
-          animation: fade-in-up 0.6s ease-out forwards;
-      }
-      .anim-card:nth-child(1) { animation-delay: 0.1s; }
-      .anim-card:nth-child(2) { animation-delay: 0.25s; }
-      .anim-card:nth-child(3) { animation-delay: 0.4s; }
+      .report-card{transition:all .4s cubic-bezier(.22,.61,.36,1);box-shadow:0 1px 3px rgba(25,28,30,.04),0 4px 12px rgba(25,28,30,.06),0 16px 40px rgba(25,28,30,.04)}
+      .report-card:hover{transform:translateY(-4px);box-shadow:0 2px 6px rgba(25,28,30,.05),0 8px 24px rgba(25,28,30,.08),0 24px 48px rgba(25,28,30,.05);border-color:rgba(0,104,117,.3)}
+      .anim-card{opacity:0;animation:fadeInUp .6s ease-out forwards}
+      .anim-card:nth-child(1){animation-delay:.1s}
+      .anim-card:nth-child(2){animation-delay:.25s}
+      .anim-card:nth-child(3){animation-delay:.4s}
+      @keyframes fadeInUp{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
+      /* Modal styles */
+      .modal-overlay{transition:opacity .3s ease}
+      .modal-overlay.hidden{opacity:0;pointer-events:none}
+      .modal-overlay:not(.hidden){opacity:1;pointer-events:auto}
+      .modal-body::-webkit-scrollbar{width:6px}
+      .modal-body::-webkit-scrollbar-track{background:transparent}
+      .modal-body::-webkit-scrollbar-thumb{background:rgba(25,28,30,.15);border-radius:3px}
+      .modal-body::-webkit-scrollbar-thumb:hover{background:rgba(25,28,30,.25)}
+      /* Progress bars */
+      .progress-bar{height:8px;background:#e8e2d9;border-radius:4px;overflow:hidden}
+      .progress-bar-fill{height:100%;border-radius:4px;transition:width .8s ease}
+      /* Grade badges */
+      .grade-a{background:#006875;color:#fff}
+      .grade-b{background:#0ea5e9;color:#fff}
+      .grade-c{background:#f59e0b;color:#fff}
+      .grade-d{background:#ef4444;color:#fff}
+      /* Table styles */
+      .report-table th{text-align:left;padding:8px 12px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#43474e;background:#f0eade}
+      .report-table td{padding:8px 12px;font-size:13px;border-top:1px solid #e8e2d9}
     </style>
 </head>
 <body class="font-body selection:bg-primary selection:text-on-primary flex flex-col h-screen overflow-hidden">
 
-    <!-- Minimal Header -->
+    <!-- Header -->
     <header class="bg-[#f5f0e6]/80 backdrop-blur-xl top-0 sticky z-50 border-b border-black/5 flex-shrink-0">
         <div class="flex items-center w-full px-4 md:px-6 py-2 md:py-3 max-w-7xl mx-auto">
             <a href="index.html" class="flex-shrink-0 no-underline">
@@ -130,15 +102,13 @@
     </header>
 
     <main class="flex-1 overflow-y-auto">
-        <!-- Hero Section -->
+        <!-- Hero -->
         <section class="py-10 md:py-16 bg-surface border-b border-black/5">
             <div class="max-w-4xl mx-auto px-4 md:px-8 text-center">
                 <h1 class="text-2xl md:text-4xl lg:text-5xl font-headline font-black text-on-surface mb-3 tracking-tighter leading-tight">
                     Примеры отчётов <span class="text-primary italic">Аттестации 66AI</span>
                 </h1>
-                <p class="text-base text-on-surface-variant font-light max-w-xl mx-auto">
-                    Посмотрите, как выглядят результаты аттестации для каждого участника
-                </p>
+                <p class="text-base text-on-surface-variant font-light max-w-xl mx-auto">Посмотрите, как выглядят результаты аттестации</p>
             </div>
         </section>
 
@@ -146,52 +116,47 @@
         <section class="py-10 md:py-14 bg-surface-container-lowest">
             <div class="max-w-5xl mx-auto px-4 md:px-8">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-
                     <!-- Card 1: Компания -->
-                    <div class="anim-card report-card bg-white rounded-2xl border border-outline-variant/50 overflow-hidden cursor-pointer group" onclick="openPdf('docs/Пример отчёта компании.pdf', 'Отчёт компании')">
+                    <div class="anim-card report-card bg-white rounded-2xl border border-outline-variant/50 overflow-hidden cursor-pointer group" onclick="openModal('modal-company')">
                         <div class="p-6 flex flex-col items-center justify-center text-center min-h-[220px]">
                             <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                 <span class="material-symbols-outlined text-primary text-2xl">business</span>
                             </div>
-                            <h3 class="text-lg font-headline font-bold text-on-surface mb-2">Пример отчёта компании</h3>
-                            <p class="text-on-surface-variant text-xs leading-relaxed">Общая картина: распределение компетенций, бенчмарки, зоны роста</p>
+                            <h3 class="text-lg font-headline font-bold text-on-surface mb-2">Сводный по компании</h3>
+                            <p class="text-on-surface-variant text-xs leading-relaxed">Распределение грейдов, рейтинг отделов, топ-10 задач</p>
                             <div class="mt-4 inline-flex items-center gap-1 text-primary font-body font-bold text-[10px] uppercase tracking-widest group-hover:gap-2 transition-all">
-                                Открыть
-                                <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                Открыть <span class="material-symbols-outlined text-sm">open_in_new</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card 2: Руководитель -->
-                    <div class="anim-card report-card bg-white rounded-2xl border border-outline-variant/50 overflow-hidden cursor-pointer group" onclick="openPdf('docs/Пример отчёта руководитель.pdf', 'Отчёт руководителя')">
-                        <div class="p-6 flex flex-col items-center justify-center text-center min-h-[220px]">
-                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                <span class="material-symbols-outlined text-primary text-2xl">supervisor_account</span>
-                            </div>
-                            <h3 class="text-lg font-headline font-bold text-on-surface mb-2">Пример отчёта руководителя</h3>
-                            <p class="text-on-surface-variant text-xs leading-relaxed">Аналитика по отделам: кто в лидерах, рекомендации</p>
-                            <div class="mt-4 inline-flex items-center gap-1 text-primary font-body font-bold text-[10px] uppercase tracking-widest group-hover:gap-2 transition-all">
-                                Открыть
-                                <span class="material-symbols-outlined text-sm">open_in_new</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 3: Сотрудник -->
-                    <div class="anim-card report-card bg-white rounded-2xl border border-outline-variant/50 overflow-hidden cursor-pointer group" onclick="openPdf('docs/Пример отчёта сотрудник.pdf', 'Отчёт сотрудника')">
+                    <!-- Card 2: Сотрудник -->
+                    <div class="anim-card report-card bg-white rounded-2xl border border-outline-variant/50 overflow-hidden cursor-pointer group" onclick="openModal('modal-employee')">
                         <div class="p-6 flex flex-col items-center justify-center text-center min-h-[220px]">
                             <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                 <span class="material-symbols-outlined text-primary text-2xl">person</span>
                             </div>
-                            <h3 class="text-lg font-headline font-bold text-on-surface mb-2">Пример отчёта сотрудника</h3>
-                            <p class="text-on-surface-variant text-xs leading-relaxed">Индивидуальные результаты: навыки, баллы, план развития</p>
+                            <h3 class="text-lg font-headline font-bold text-on-surface mb-2">Сотрудник</h3>
+                            <p class="text-on-surface-variant text-xs leading-relaxed">Профиль Анны Смирновой, карта рутины, прогресс по этапам</p>
                             <div class="mt-4 inline-flex items-center gap-1 text-primary font-body font-bold text-[10px] uppercase tracking-widest group-hover:gap-2 transition-all">
-                                Открыть
-                                <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                Открыть <span class="material-symbols-outlined text-sm">open_in_new</span>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Card 3: Руководитель -->
+                    <div class="anim-card report-card bg-white rounded-2xl border border-outline-variant/50 overflow-hidden cursor-pointer group" onclick="openModal('modal-manager')">
+                        <div class="p-6 flex flex-col items-center justify-center text-center min-h-[220px]">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-primary text-2xl">supervisor_account</span>
+                            </div>
+                            <h3 class="text-lg font-headline font-bold text-on-surface mb-2">Руководитель</h3>
+                            <p class="text-on-surface-variant text-xs leading-relaxed">Профиль Дмитрия Волкова, зоны роста, рекомендации</p>
+                            <div class="mt-4 inline-flex items-center gap-1 text-primary font-body font-bold text-[10px] uppercase tracking-widest group-hover:gap-2 transition-all">
+                                Открыть <span class="material-symbols-outlined text-sm">open_in_new</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -202,12 +167,8 @@
                 <img src="photos/robot_green_nodes.webp" alt="" class="w-full h-full object-cover opacity-10 grayscale mix-blend-overlay"/>
             </div>
             <div class="max-w-3xl mx-auto px-4 md:px-8 relative z-10">
-                <h2 class="text-2xl md:text-3xl font-headline font-black mb-3 tracking-tighter">
-                    Готовы провести аттестацию?
-                </h2>
-                <p class="text-base text-white/80 mb-6 font-light max-w-md mx-auto">
-                    Запустите тестирование для вашей команды
-                </p>
+                <h2 class="text-2xl md:text-3xl font-headline font-black mb-3 tracking-tighter">Готовы провести аттестацию?</h2>
+                <p class="text-base text-white/80 mb-6 font-light max-w-md mx-auto">Запустите тестирование для вашей команды</p>
                 <a href="attestation.html" class="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-full font-headline font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
                     <span class="material-symbols-outlined text-base" style="font-variation-settings:'FILL' 1;">verified</span>
                     Перейти к Аттестации
@@ -216,23 +177,163 @@
         </section>
     </main>
 
-    <!-- PDF Modal -->
-    <div id="pdf-modal" class="pdf-modal hidden fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" onclick="closePdf()">
-        <div class="bg-white rounded-2xl w-full max-w-5xl h-[85vh] flex flex-col overflow-hidden relative" onclick="event.stopPropagation()">
-            <div class="flex items-center justify-between px-4 py-3 border-b border-black/5 flex-shrink-0">
-                <h3 id="pdf-title" class="font-headline font-bold text-on-surface text-base truncate pr-4"></h3>
-                <button onclick="closePdf()" class="text-on-surface/50 hover:text-on-surface transition-colors p-1.5 rounded-full hover:bg-black/5 flex-shrink-0">
-                    <span class="material-symbols-outlined">close</span>
-                </button>
+    <!-- ===== MODAL 1: Сводный по компании ===== -->
+    <div id="modal-company" class="modal-overlay hidden fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-black/5 flex-shrink-0">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-primary text-xl">business</span></div>
+                    <div><h2 class="font-headline font-bold text-on-surface text-lg">Сводный отчёт по компании</h2><p class="text-[10px] text-on-surface-variant">ООО «ТехноПром» • 47 сотрудников</p></div>
+                </div>
+                <button onclick="closeModal('modal-company')" class="text-on-surface/40 hover:text-on-surface transition-colors p-2 rounded-full hover:bg-black/5"><span class="material-symbols-outlined">close</span></button>
             </div>
-            <div class="flex-1 overflow-hidden">
-                <iframe id="pdf-frame" class="w-full h-full" src=""></iframe>
+            <div class="flex-1 overflow-y-auto modal-body px-6 py-6 space-y-6">
+                <!-- Распределение грейдов -->
+                <div>
+                    <h3 class="font-headline font-bold text-on-surface text-base mb-3">Распределение грейдов</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <div class="text-center p-3 rounded-xl bg-[#006875]/5 border border-[#006875]/10"><p class="text-2xl font-black text-[#006875]">12</p><p class="text-[10px] font-bold uppercase tracking-wider text-[#006875]">Grade A — Эксперт</p></div>
+                        <div class="text-center p-3 rounded-xl bg-[#0ea5e9]/5 border border-[#0ea5e9]/10"><p class="text-2xl font-black text-[#0ea5e9]">18</p><p class="text-[10px] font-bold uppercase tracking-wider text-[#0ea5e9]">Grade B — Продвинутый</p></div>
+                        <div class="text-center p-3 rounded-xl bg-[#f59e0b]/5 border border-[#f59e0b]/10"><p class="text-2xl font-black text-[#f59e0b]">11</p><p class="text-[10px] font-bold uppercase tracking-wider text-[#f59e0b]">Grade C — Базовый</p></div>
+                        <div class="text-center p-3 rounded-xl bg-[#ef4444]/5 border border-[#ef4444]/10"><p class="text-2xl font-black text-[#ef4444]">6</p><p class="text-[10px] font-bold uppercase tracking-wider text-[#ef4444]">Grade D — Новичок</p></div>
+                    </div>
+                </div>
+                <!-- Рейтинг отделов -->
+                <div>
+                    <h3 class="font-headline font-bold text-on-surface text-base mb-3">Рейтинг отделов</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-3"><span class="text-sm font-bold text-on-surface w-32">Маркетинг</span><div class="flex-1 progress-bar"><div class="progress-bar-fill bg-[#006875]" style="width:92%"></div></div><span class="text-sm font-bold text-[#006875] w-10 text-right">92%</span></div>
+                        <div class="flex items-center gap-3"><span class="text-sm font-bold text-on-surface w-32">Продажи</span><div class="flex-1 progress-bar"><div class="progress-bar-fill bg-[#0ea5e9]" style="width:78%"></div></div><span class="text-sm font-bold text-[#0ea5e9] w-10 text-right">78%</span></div>
+                        <div class="flex items-center gap-3"><span class="text-sm font-bold text-on-surface w-32">Бухгалтерия</span><div class="flex-1 progress-bar"><div class="progress-bar-fill bg-[#f59e0b]" style="width:54%"></div></div><span class="text-sm font-bold text-[#f59e0b] w-10 text-right">54%</span></div>
+                        <div class="flex items-center gap-3"><span class="text-sm font-bold text-on-surface w-32">Логистика</span><div class="flex-1 progress-bar"><div class="progress-bar-fill bg-[#ef4444]" style="width:31%"></div></div><span class="text-sm font-bold text-[#ef4444] w-10 text-right">31%</span></div>
+                    </div>
+                </div>
+                <!-- Топ-10 задач -->
+                <div>
+                    <h3 class="font-headline font-bold text-on-surface text-base mb-3">Топ-10 задач для автоматизации</h3>
+                    <div class="overflow-x-auto rounded-xl border border-outline-variant/30">
+                        <table class="w-full report-table text-sm">
+                            <thead><tr><th>#</th><th>Задача</th><th>Отдел</th><th>Часы/мес</th><th>Потенциал</th></tr></thead>
+                            <tbody>
+                                <tr><td>1</td><td class="font-medium">Формирование счетов</td><td>Бухгалтерия</td><td>120 ч</td><td><span class="grade-a px-2 py-0.5 rounded-full text-[10px] font-bold">Высокий</span></td></tr>
+                                <tr><td>2</td><td class="font-medium">Обработка входящих заявок</td><td>Продажи</td><td>95 ч</td><td><span class="grade-a px-2 py-0.5 rounded-full text-[10px] font-bold">Высокий</span></td></tr>
+                                <tr><td>3</td><td class="font-medium">Подготовка отчётов</td><td>Маркетинг</td><td>80 ч</td><td><span class="grade-a px-2 py-0.5 rounded-full text-[10px] font-bold">Высокий</span></td></tr>
+                                <tr><td>4</td><td class="font-medium">Маршрутизация грузов</td><td>Логистика</td><td>72 ч</td><td><span class="grade-b px-2 py-0.5 rounded-full text-[10px] font-bold">Средний</span></td></tr>
+                                <tr><td>5</td><td class="font-medium">Сверка с контрагентами</td><td>Бухгалтерия</td><td>60 ч</td><td><span class="grade-a px-2 py-0.5 rounded-full text-[10px] font-bold">Высокий</span></td></tr>
+                                <tr><td>6</td><td class="font-medium">Анализ конкурентов</td><td>Маркетинг</td><td>45 ч</td><td><span class="grade-b px-2 py-0.5 rounded-full text-[10px] font-bold">Средний</span></td></tr>
+                                <tr><td>7</td><td class="font-medium">Ответы на типовые вопросы</td><td>Поддержка</td><td>40 ч</td><td><span class="grade-a px-2 py-0.5 rounded-full text-[10px] font-bold">Высокий</span></td></tr>
+                                <tr><td>8</td><td class="font-medium">Ведение CRM-карточек</td><td>Продажи</td><td>35 ч</td><td><span class="grade-b px-2 py-0.5 rounded-full text-[10px] font-bold">Средний</span></td></tr>
+                                <tr><td>9</td><td class="font-medium">Планирование смен</td><td>Логистика</td><td>28 ч</td><td><span class="grade-c px-2 py-0.5 rounded-full text-[10px] font-bold">Низкий</span></td></tr>
+                                <tr><td>10</td><td class="font-medium">Онбординг новых сотрудников</td><td>HR</td><td>20 ч</td><td><span class="grade-b px-2 py-0.5 rounded-full text-[10px] font-bold">Средний</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-            <div class="px-4 py-2 border-t border-black/5 flex justify-between items-center flex-shrink-0 bg-surface">
-                <span class="text-[10px] text-on-surface-variant">Если PDF не отображается:</span>
-                <a id="pdf-download" href="" download class="text-[10px] text-primary hover:underline font-bold flex items-center gap-1">
-                    Скачать <span class="material-symbols-outlined text-xs">download</span>
-                </a>
+        </div>
+    </div>
+
+    <!-- ===== MODAL 2: Сотрудник ===== -->
+    <div id="modal-employee" class="modal-overlay hidden fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-black/5 flex-shrink-0">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-primary text-xl">person</span></div>
+                    <div><h2 class="font-headline font-bold text-on-surface text-lg">Индивидуальный отчёт сотрудника</h2><p class="text-[10px] text-on-surface-variant">Анна Смирнова • Отдел продаж</p></div>
+                </div>
+                <button onclick="closeModal('modal-employee')" class="text-on-surface/40 hover:text-on-surface transition-colors p-2 rounded-full hover:bg-black/5"><span class="material-symbols-outlined">close</span></button>
+            </div>
+            <div class="flex-1 overflow-y-auto modal-body px-6 py-6 space-y-6">
+                <!-- Профиль -->
+                <div class="bg-surface rounded-2xl p-5">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary font-headline font-black text-xl">АС</div>
+                        <div><h3 class="font-headline font-bold text-on-surface text-lg">Анна Смирнова</h3><p class="text-sm text-on-surface-variant">Менеджер по продажам • Стаж 2 года</p></div>
+                        <span class="ml-auto grade-b px-3 py-1 rounded-full text-xs font-bold">Grade B</span>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
+                        <div><p class="text-xl font-black text-primary">74%</p><p class="text-[10px] text-on-surface-variant uppercase tracking-wider">Общий балл</p></div>
+                        <div><p class="text-xl font-black text-primary">82%</p><p class="text-[10px] text-on-surface-variant uppercase tracking-wider">Промптинг</p></div>
+                        <div><p class="text-xl font-black text-[#f59e0b]">58%</p><p class="text-[10px] text-on-surface-variant uppercase tracking-wider">Безопасность</p></div>
+                        <div><p class="text-xl font-black text-primary">81%</p><p class="text-[10px] text-on-surface-variant uppercase tracking-wider">Автоматизация</p></div>
+                    </div>
+                </div>
+                <!-- Прогресс по этапам -->
+                <div>
+                    <h3 class="font-headline font-bold text-on-surface text-base mb-3">Прогресс по этапам аттестации</h3>
+                    <div class="space-y-3">
+                        <div><div class="flex justify-between mb-1"><span class="text-sm font-bold text-on-surface">Этап 1: Опросник</span><span class="text-sm font-bold text-[#006875]">100%</span></div><div class="progress-bar"><div class="progress-bar-fill bg-[#006875]" style="width:100%"></div></div></div>
+                        <div><div class="flex justify-between mb-1"><span class="text-sm font-bold text-on-surface">Этап 2: Практические задания</span><span class="text-sm font-bold text-[#0ea5e9]">75%</span></div><div class="progress-bar"><div class="progress-bar-fill bg-[#0ea5e9]" style="width:75%"></div></div></div>
+                        <div><div class="flex justify-between mb-1"><span class="text-sm font-bold text-on-surface">Этап 3: Оценка эксперта</span><span class="text-sm font-bold text-[#f59e0b]">60%</span></div><div class="progress-bar"><div class="progress-bar-fill bg-[#f59e0b]" style="width:60%"></div></div></div>
+                    </div>
+                </div>
+                <!-- Карта рутины -->
+                <div>
+                    <h3 class="font-headline font-bold text-on-surface text-base mb-3">Карта рутины</h3>
+                    <div class="overflow-x-auto rounded-xl border border-outline-variant/30">
+                        <table class="w-full report-table text-sm">
+                            <thead><tr><th>Задача</th><th>Часы/нед</th><th>Автоматизируется</th><th>Экономия/мес</th></tr></thead>
+                            <tbody>
+                                <tr><td class="font-medium">Внесение данных в CRM</td><td>8 ч</td><td><span class="text-[#006875] font-bold">✓ Да</span></td><td>32 ч</td></tr>
+                                <tr><td class="font-medium">Подготовка коммерческих предложений</td><td>6 ч</td><td><span class="text-[#006875] font-bold">✓ Да</span></td><td>24 ч</td></tr>
+                                <tr><td class="font-medium">Обработка входящих писем</td><td>5 ч</td><td><span class="text-[#0ea5e9] font-bold">△ Частично</span></td><td>12 ч</td></tr>
+                                <tr><td class="font-medium">Холодные звонки</td><td>10 ч</td><td><span class="text-[#ef4444] font-bold">✗ Нет</span></td><td>0 ч</td></tr>
+                                <tr><td class="font-medium">Еженедельные отчёты</td><td>3 ч</td><td><span class="text-[#006875] font-bold">✓ Да</span></td><td>12 ч</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-4 bg-surface rounded-xl p-4"><p class="text-sm text-on-surface-variant"><strong class="text-on-surface">Итого:</strong> можно автоматизировать <strong class="text-[#006875]">68 часов/мес</strong> — это 17 рабочих часов экономии</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== MODAL 3: Руководитель ===== -->
+    <div id="modal-manager" class="modal-overlay hidden fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-black/5 flex-shrink-0">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-primary text-xl">supervisor_account</span></div>
+                    <div><h2 class="font-headline font-bold text-on-surface text-lg">Отчёт руководителя</h2><p class="text-[10px] text-on-surface-variant">Дмитрий Волков • Руководитель отдела продаж</p></div>
+                </div>
+                <button onclick="closeModal('modal-manager')" class="text-on-surface/40 hover:text-on-surface transition-colors p-2 rounded-full hover:bg-black/5"><span class="material-symbols-outlined">close</span></button>
+            </div>
+            <div class="flex-1 overflow-y-auto modal-body px-6 py-6 space-y-6">
+                <!-- Профиль -->
+                <div class="bg-surface rounded-2xl p-5">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary font-headline font-black text-xl">ДВ</div>
+                        <div><h3 class="font-headline font-bold text-on-surface text-lg">Дмитрий Волков</h3><p class="text-sm text-on-surface-variant">Руководитель отдела продаж • 12 сотрудников в подчинении</p></div>
+                        <span class="ml-auto grade-a px-3 py-1 rounded-full text-xs font-bold">Grade A</span>
+                    </div>
+                </div>
+                <!-- Результаты этапов 1-3 -->
+                <div>
+                    <h3 class="font-headline font-bold text-on-surface text-base mb-3">Результаты по этапам</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                        <div class="bg-[#006875]/5 rounded-xl p-4 border border-[#006875]/10"><p class="text-xs font-bold text-[#006875] uppercase tracking-wider mb-2">Этап 1 — Опросник</p><p class="text-2xl font-black text-[#006875]">91%</p><p class="text-xs text-on-surface-variant mt-1">Отличное понимание возможностей ИИ. Умеет формулировать промпты для большинства задач.</p></div>
+                        <div class="bg-[#0ea5e9]/5 rounded-xl p-4 border border-[#0ea5e9]/10"><p class="text-xs font-bold text-[#0ea5e9] uppercase tracking-wider mb-2">Этап 2 — Практика</p><p class="text-2xl font-black text-[#0ea5e9]">78%</p><p class="text-xs text-on-surface-variant mt-1">Хорошие навыки автоматизации рутины. Есть потенциал в сложных интеграциях.</p></div>
+                        <div class="bg-[#f59e0b]/5 rounded-xl p-4 border border-[#f59e0b]/10"><p class="text-xs font-bold text-[#f59e0b] uppercase tracking-wider mb-2">Этап 3 — Эксперт 66ai</p><p class="text-2xl font-black text-[#f59e0b]">72%</p><p class="text-xs text-on-surface-variant mt-1">Комментарий эксперта: сильный практический навык, требуется углубление в безопасность данных.</p></div>
+                    </div>
+                </div>
+                <!-- Зоны роста -->
+                <div>
+                    <h3 class="font-headline font-bold text-on-surface text-base mb-3">Зоны роста</h3>
+                    <div class="space-y-3">
+                        <div class="flex gap-3 items-start"><div class="w-8 h-8 rounded-full bg-[#ef4444]/10 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-[#ef4444] text-sm">warning</span></div><div><p class="font-bold text-on-surface text-sm">Безопасность данных</p><p class="text-xs text-on-surface-variant">Загружает конфиденциальные данные в публичные ИИ без анонимизации</p></div></div>
+                        <div class="flex gap-3 items-start"><div class="w-8 h-8 rounded-full bg-[#f59e0b]/10 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-[#f59e0b] text-sm">info</span></div><div><p class="font-bold text-on-surface text-sm">API-интеграции</p><p class="text-xs text-on-surface-variant">Не использует API для автоматизации, работает только через чат-интерфейс</p></div></div>
+                        <div class="flex gap-3 items-start"><div class="w-8 h-8 rounded-full bg-[#0ea5e9]/10 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-[#0ea5e9] text-sm">lightbulb</span></div><div><p class="font-bold text-on-surface text-sm">Делегирование ИИ-задач</p><p class="text-xs text-on-surface-variant">Может эффективнее распределять ИИ-задачи внутри команды</p></div></div>
+                    </div>
+                </div>
+                <!-- Рекомендации -->
+                <div class="bg-primary text-white rounded-2xl p-5">
+                    <h3 class="font-headline font-bold text-lg mb-3">Рекомендации</h3>
+                    <ul class="space-y-2 text-sm text-white/90">
+                        <li class="flex gap-2"><span class="material-symbols-outlined text-sm flex-shrink-0 mt-0.5">check_circle</span>Пройти модуль «Безопасность работы с ИИ» (2 ч)</li>
+                        <li class="flex gap-2"><span class="material-symbols-outlined text-sm flex-shrink-0 mt-0.5">check_circle</span>Внедрить автоматизацию отчётов отдела через API (экономия ~20 ч/мес)</li>
+                        <li class="flex gap-2"><span class="material-symbols-outlined text-sm flex-shrink-0 mt-0.5">check_circle</span>Провести внутренний воркшоп для команды по промпт-инжинирингу</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -249,34 +350,14 @@
     </footer>
 
     <script>
-        function openPdf(pdfPath, title) {
-            const modal = document.getElementById('pdf-modal');
-            const frame = document.getElementById('pdf-frame');
-            const titleEl = document.getElementById('pdf-title');
-            const downloadEl = document.getElementById('pdf-download');
-
-            frame.src = pdfPath;
-            titleEl.textContent = title;
-            downloadEl.href = pdfPath;
-
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closePdf() {
-            const modal = document.getElementById('pdf-modal');
-            const frame = document.getElementById('pdf-frame');
-
-            frame.src = '';
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-            document.body.style.overflow = 'auto';
-        }
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closePdf();
-        });
+        function openModal(id){document.getElementById(id).classList.remove('hidden');document.getElementById(id).classList.add('flex');document.body.style.overflow='hidden'}
+        function closeModal(id){document.getElementById(id).classList.add('hidden');document.getElementById(id).classList.remove('flex');document.body.style.overflow=''}
+        // Close on overlay click
+        document.querySelectorAll('.modal-overlay').forEach(function(m){m.addEventListener('click',function(e){if(e.target===m){closeModal(m.id)}})});
+        // Close on Escape
+        document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.modal-overlay:not(.hidden)').forEach(function(m){closeModal(m.id)})}});
+        function toggleMobileMenu(){var m=document.getElementById('mobile-menu'),i=document.getElementById('menu-icon');if(m.classList.contains('hidden')){m.classList.remove('hidden');i.textContent='close'}else{m.classList.add('hidden');i.textContent='menu'}}
+        function closeMobileMenu(){document.getElementById('mobile-menu').classList.add('hidden');document.getElementById('menu-icon').textContent='menu'}
     </script>
 </body>
 </html>
