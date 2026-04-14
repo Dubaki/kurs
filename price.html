@@ -47,24 +47,29 @@
       @keyframes logo-v-morph { 0%,100%{color:#fff}50%{color:#1e40af} }
       .logo-morph{animation:logo-morph 5s ease-in-out infinite}
       .logo-v-morph{animation:logo-v-morph 5s ease-in-out infinite}
+      @keyframes logo-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+      .embossed-logo{border-radius:.75rem;box-shadow:3px 3px 8px rgba(25,28,30,.08),-3px -3px 8px rgba(255,255,255,.6);animation:logo-breathe 4s ease-in-out infinite;will-change:transform;transition:opacity .3s}
+      .embossed-logo:hover{opacity:.85}
     </style>
 </head>
 <body class="font-body selection:bg-primary selection:text-on-primary">
 
-    <!-- Header (идентичен attestation.html) -->
+    <!-- Header -->
     <header class="bg-[#f5f0e6]/80 backdrop-blur-xl top-0 sticky z-50 border-b border-black/5">
-        <div class="flex justify-between items-center w-full px-4 md:px-8 py-3 md:py-4 max-w-7xl mx-auto">
-            <a href="index.html" class="flex items-center gap-2 no-underline hover:opacity-80 transition-opacity">
-                <img src="photos/start.png" alt="VibeCraft" class="h-8 w-auto"/>
+        <div class="flex items-center w-full px-4 md:px-8 py-3 md:py-4 max-w-7xl mx-auto">
+            <a href="index.html" class="flex-shrink-0 no-underline">
+                <img src="photos/start.png" alt="VibeCraft" class="h-8 w-auto embossed-logo"/>
             </a>
-            <nav class="hidden lg:flex items-center gap-6 ml-auto">
+            <nav class="hidden lg:flex items-center gap-6 flex-1 justify-center">
                 <a href="attestation.html" class="text-sm font-bold uppercase tracking-wider text-on-surface/70 hover:text-primary transition-colors">Аттестация</a>
                 <a href="otchet.html" class="text-sm font-bold uppercase tracking-wider text-on-surface/70 hover:text-primary transition-colors">Пример отчёта</a>
                 <a href="attestation.html#calculator" class="text-sm font-bold uppercase tracking-wider text-on-surface/70 hover:text-primary transition-colors">Калькулятор</a>
             </nav>
-            <button id="mobile-menu-btn" class="lg:hidden text-on-surface hover:text-primary transition-colors p-1" onclick="toggleMobileMenu()">
-                <span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span>
-            </button>
+            <div class="flex items-center gap-1 flex-shrink-0 ml-auto">
+                <button id="mobile-menu-btn" class="lg:hidden text-on-surface hover:text-primary transition-colors p-1" onclick="toggleMobileMenu()">
+                    <span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span>
+                </button>
+            </div>
         </div>
         <div id="mobile-menu" class="hidden lg:hidden bg-[#f5f0e6]/95 backdrop-blur-xl border-t border-black/5 absolute top-full left-0 right-0 z-50 shadow-lg">
             <nav class="flex flex-col items-center py-4 gap-2 font-['Space_Grotesk'] font-bold uppercase tracking-wider text-sm">

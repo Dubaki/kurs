@@ -82,6 +82,19 @@
         50%       { box-shadow: 0 0 40px rgba(0,104,117,0.3); }
       }
       .glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
+      /* Embossed breathing logo */
+      @keyframes logo-breathe {
+        0%, 100% { transform: scale(1); }
+        50%      { transform: scale(1.05); }
+      }
+      .embossed-logo {
+        border-radius: 0.75rem;
+        box-shadow: 3px 3px 8px rgba(25,28,30,0.08), -3px -3px 8px rgba(255,255,255,0.6);
+        animation: logo-breathe 4s ease-in-out infinite;
+        will-change: transform;
+        transition: opacity 0.3s;
+      }
+      .embossed-logo:hover { opacity: 0.85; }
       .radar-skill-bar { transition: width 1.2s cubic-bezier(.4,0,.2,1); }
       .plan-tab { transition: all 0.3s; }
       .plan-tab.active { background: #006875; color: #fff; }
@@ -90,19 +103,21 @@
 </head>
 <body class="font-body selection:bg-primary selection:text-on-primary">
 
-    <!-- TopNavBar (без изменений) -->
+    <!-- TopNavBar -->
     <header class="bg-[#f5f0e6]/80 backdrop-blur-xl top-0 sticky z-50 border-b border-black/5">
-        <div class="flex justify-between items-center w-full px-4 md:px-8 py-2 md:py-4 max-w-7xl mx-auto">
-            <a href="index.html" class="flex items-center gap-2 no-underline hover:opacity-80 transition-opacity">
-                <img src="photos/start.png" alt="VibeCraft" class="h-8 w-auto"/>
+        <div class="flex items-center w-full px-4 md:px-8 py-2 md:py-4 max-w-7xl mx-auto">
+            <!-- Logo left -->
+            <a href="index.html" class="flex-shrink-0 no-underline">
+                <img src="photos/start.png" alt="VibeCraft" class="h-8 w-auto embossed-logo"/>
             </a>
-            <nav class="hidden lg:flex items-center gap-6 ml-auto">
+            <!-- Nav centered -->
+            <nav class="hidden lg:flex items-center gap-6 flex-1 justify-center">
                 <a href="otchet.html" class="text-sm font-bold uppercase tracking-wider text-on-surface/70 hover:text-primary transition-colors">Пример отчёта</a>
                 <a href="#calculator" class="text-sm font-bold uppercase tracking-wider text-on-surface/70 hover:text-primary transition-colors">Рассчитать</a>
-                <a href="#tariffs" class="text-sm font-bold uppercase tracking-wider text-on-surface/70 hover:text-primary transition-colors">Тарифы</a>
                 <a href="price.html" class="text-sm font-bold uppercase tracking-wider text-on-surface/70 hover:text-primary transition-colors">Цены</a>
             </nav>
-            <div class="flex items-center gap-1 ml-4">
+            <!-- Icons right -->
+            <div class="flex items-center gap-1 flex-shrink-0 ml-auto lg:ml-4">
                 <a href="tel:+79221800911" class="hover:opacity-80 transition-all duration-300 ease-in-out p-1.5 hidden md:block" title="Позвонить">
                     <img src="photos/T.png" alt="Позвонить" class="h-5 w-5 object-contain"/>
                 </a>
@@ -121,7 +136,6 @@
             <nav class="flex flex-col items-center py-4 gap-2 font-['Space_Grotesk'] font-bold uppercase tracking-wider text-sm">
                 <a class="w-full text-center py-2 text-on-surface/70 hover:text-primary transition-all" href="otchet.html" onclick="closeMobileMenu()">Пример отчёта</a>
                 <a class="w-full text-center py-2 text-on-surface/70 hover:text-primary transition-all" href="#calculator" onclick="closeMobileMenu()">Рассчитать</a>
-                <a class="w-full text-center py-2 text-on-surface/70 hover:text-primary transition-all" href="#tariffs" onclick="closeMobileMenu()">Тарифы</a>
                 <a class="w-full text-center py-2 text-on-surface/70 hover:text-primary transition-all" href="price.html" onclick="closeMobileMenu()">Цены</a>
                 <div class="flex items-center gap-6 pt-2 text-on-surface/50">
                     <a href="tel:+79221800911" class="hover:opacity-80 transition-colors p-1.5"><img src="photos/T.png" alt="Позвонить" class="h-7 w-7 object-contain"/></a>

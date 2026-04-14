@@ -60,6 +60,9 @@
       }
       .logo-morph  { animation: logo-morph 5s ease-in-out infinite; }
       .logo-v-morph { animation: logo-v-morph 5s ease-in-out infinite; }
+      @keyframes logo-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+      .embossed-logo{border-radius:.75rem;box-shadow:3px 3px 8px rgba(25,28,30,.08),-3px -3px 8px rgba(255,255,255,.6);animation:logo-breathe 4s ease-in-out infinite;will-change:transform;transition:opacity .3s}
+      .embossed-logo:hover{opacity:.85}
 
       /* Report card styles */
       .report-card {
@@ -112,15 +115,17 @@
 
     <!-- Minimal Header -->
     <header class="bg-[#f5f0e6]/80 backdrop-blur-xl top-0 sticky z-50 border-b border-black/5">
-        <div class="flex justify-between items-center w-full px-4 md:px-8 py-3 md:py-4 max-w-7xl mx-auto">
-            <a href="index.html" class="flex items-center gap-2 text-xl font-black text-on-surface tracking-tighter no-underline hover:opacity-80 transition-opacity">
-                <div class="bg-primary text-white w-8 h-8 flex items-center justify-center rounded font-bold text-sm logo-morph"><span class="logo-v-morph">V</span></div>
-                <span>VibeCraft</span>
+        <div class="flex items-center w-full px-4 md:px-8 py-3 md:py-4 max-w-7xl mx-auto">
+            <a href="index.html" class="flex-shrink-0 no-underline">
+                <img src="photos/start.png" alt="VibeCraft" class="h-8 w-auto embossed-logo"/>
             </a>
-            <a href="attestation.html" class="inline-flex items-center gap-2 text-on-surface/70 hover:text-primary px-3 py-2 rounded-lg transition-all duration-300 font-body text-sm font-bold">
-                <span class="material-symbols-outlined text-sm">arrow_back</span>
-                Назад к Аттестации
+            <a href="attestation.html" class="flex-1 flex justify-center">
+                <span class="inline-flex items-center gap-2 text-on-surface/70 hover:text-primary px-3 py-2 rounded-lg transition-all duration-300 font-body text-sm font-bold">
+                    <span class="material-symbols-outlined text-sm">arrow_back</span>
+                    Назад к Аттестации
+                </span>
             </a>
+            <div class="flex-shrink-0 ml-auto"></div>
         </div>
     </header>
 
