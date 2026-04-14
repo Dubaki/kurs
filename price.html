@@ -54,16 +54,16 @@
 </head>
 <body class="font-body selection:bg-primary selection:text-on-primary">
 
-    <!-- Header -->
-    <header class="bg-[#f5f0e6]/80 backdrop-blur-xl top-0 sticky z-50 border-b border-black/5">
-        <div class="flex items-center w-full px-4 md:px-8 py-3 md:py-4 max-w-7xl mx-auto">
+    <!-- Header (идентичен attestation.html) -->
+    <header class="bg-[#f5f0e6]/80 backdrop-blur-xl top-0 sticky z-50 border-b border-black/5 flex-shrink-0">
+        <div class="flex items-center w-full px-4 md:px-8 py-2 md:py-3 max-w-7xl mx-auto">
             <a href="index.html" class="flex-shrink-0 no-underline">
-                <img src="photos/start.png" alt="VibeCraft" class="h-8 w-auto embossed-logo"/>
+                <img src="photos/start.png" alt="VibeCraft" class="h-7 w-auto embossed-logo"/>
             </a>
-            <nav class="hidden lg:flex items-center gap-6 flex-1 justify-center">
-                <a href="attestation.html" class="text-sm font-bold uppercase tracking-wider text-on-surface/70 hover:text-primary transition-colors">Аттестация</a>
-                <a href="otchet.html" class="text-sm font-bold uppercase tracking-wider text-on-surface/70 hover:text-primary transition-colors">Пример отчёта</a>
-                <a href="attestation.html#calculator" class="text-sm font-bold uppercase tracking-wider text-on-surface/70 hover:text-primary transition-colors">Калькулятор</a>
+            <nav class="hidden lg:flex items-center gap-4 flex-1 justify-center">
+                <a href="attestation.html" class="text-xs font-bold uppercase tracking-wider text-on-surface/70 hover:text-primary transition-colors">Аттестация</a>
+                <a href="otchet.html" class="text-xs font-bold uppercase tracking-wider text-on-surface/70 hover:text-primary transition-colors">Пример отчёта</a>
+                <a href="attestation.html#calculator" class="text-xs font-bold uppercase tracking-wider text-on-surface/70 hover:text-primary transition-colors">Калькулятор</a>
             </nav>
             <div class="flex items-center gap-1 flex-shrink-0 ml-auto">
                 <button id="mobile-menu-btn" class="lg:hidden text-on-surface hover:text-primary transition-colors p-1" onclick="toggleMobileMenu()">
@@ -72,7 +72,7 @@
             </div>
         </div>
         <div id="mobile-menu" class="hidden lg:hidden bg-[#f5f0e6]/95 backdrop-blur-xl border-t border-black/5 absolute top-full left-0 right-0 z-50 shadow-lg">
-            <nav class="flex flex-col items-center py-4 gap-2 font-['Space_Grotesk'] font-bold uppercase tracking-wider text-sm">
+            <nav class="flex flex-col items-center py-3 gap-2 font-['Space_Grotesk'] font-bold uppercase tracking-wider text-xs">
                 <a class="w-full text-center py-2 text-on-surface/70 hover:text-primary transition-all" href="attestation.html" onclick="closeMobileMenu()">Аттестация</a>
                 <a class="w-full text-center py-2 text-on-surface/70 hover:text-primary transition-all" href="otchet.html" onclick="closeMobileMenu()">Пример отчёта</a>
                 <a class="w-full text-center py-2 text-on-surface/70 hover:text-primary transition-all" href="attestation.html#calculator" onclick="closeMobileMenu()">Калькулятор</a>
@@ -80,111 +80,110 @@
         </div>
     </header>
 
-    <main class="py-12 md:py-16">
+    <main class="flex-1 overflow-y-auto py-6 md:py-8">
         <div class="max-w-6xl mx-auto px-4 md:px-8">
 
             <!-- Title -->
-            <h1 class="text-3xl md:text-5xl font-headline font-black text-on-surface text-center mb-3 tracking-tighter">Тарифы Аттестации 66AI</h1>
-            <p class="text-center text-on-surface-variant font-light mb-10 max-w-xl mx-auto">Прозрачные цены. ROI с первого месяца. Два уровня: Standard и Premium.</p>
+            <h1 class="text-2xl md:text-4xl font-headline font-black text-on-surface text-center mb-2 tracking-tighter">Тарифы Аттестации 66AI</h1>
+            <p class="text-center text-on-surface-variant font-light text-sm mb-6 max-w-xl mx-auto">Прозрачные цены. ROI с первого месяца. Standard и Premium.</p>
 
             <!-- Employee Pricing -->
-            <h2 class="text-xl md:text-2xl font-headline font-bold text-on-surface mb-4">Для сотрудников</h2>
-            <div class="overflow-x-auto mb-10 rounded-2xl border border-outline-variant/50 bg-white">
-                <table class="w-full text-sm md:text-base">
+            <h2 class="text-lg md:text-xl font-headline font-bold text-on-surface mb-2">Для сотрудников</h2>
+            <div class="overflow-x-auto mb-6 rounded-xl border border-outline-variant/50 bg-white">
+                <table class="w-full text-xs md:text-sm">
                     <thead class="bg-surface">
                         <tr>
-                            <th class="text-left px-5 py-3 font-headline font-bold text-on-surface text-xs uppercase tracking-wider">Количество сотрудников</th>
-                            <th class="text-center px-5 py-3 font-headline font-bold text-primary text-xs uppercase tracking-wider">Standard</th>
-                            <th class="text-center px-5 py-3 font-headline font-bold text-primary text-xs uppercase tracking-wider">Premium</th>
+                            <th class="text-left px-4 py-2 font-headline font-bold text-on-surface text-[10px] uppercase tracking-wider">Сотрудников</th>
+                            <th class="text-center px-4 py-2 font-headline font-bold text-primary text-[10px] uppercase tracking-wider">Standard</th>
+                            <th class="text-center px-4 py-2 font-headline font-bold text-primary text-[10px] uppercase tracking-wider">Premium</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-outline-variant/30">
-                        <tr><td class="px-5 py-3 text-on-surface-variant">10 – 29 чел</td><td class="text-center px-5 py-3 font-bold">5 500 ₽/чел</td><td class="text-center px-5 py-3 font-bold">12 000 ₽/чел</td></tr>
-                        <tr><td class="px-5 py-3 text-on-surface-variant">30 – 49 чел</td><td class="text-center px-5 py-3 font-bold">4 500 ₽/чел</td><td class="text-center px-5 py-3 font-bold">10 000 ₽/чел</td></tr>
-                        <tr><td class="px-5 py-3 text-on-surface-variant">50 – 99 чел</td><td class="text-center px-5 py-3 font-bold">4 000 ₽/чел</td><td class="text-center px-5 py-3 font-bold">9 000 ₽/чел</td></tr>
-                        <tr><td class="px-5 py-3 text-on-surface-variant">100+ чел</td><td class="text-center px-5 py-3 font-bold">3 500 ₽/чел</td><td class="text-center px-5 py-3 font-bold">8 000 ₽/чел</td></tr>
+                        <tr><td class="px-4 py-2 text-on-surface-variant">10–29</td><td class="text-center px-4 py-2 font-bold">5 500 ₽</td><td class="text-center px-4 py-2 font-bold">12 000 ₽</td></tr>
+                        <tr><td class="px-4 py-2 text-on-surface-variant">30–49</td><td class="text-center px-4 py-2 font-bold">4 500 ₽</td><td class="text-center px-4 py-2 font-bold">10 000 ₽</td></tr>
+                        <tr><td class="px-4 py-2 text-on-surface-variant">50–99</td><td class="text-center px-4 py-2 font-bold">4 000 ₽</td><td class="text-center px-4 py-2 font-bold">9 000 ₽</td></tr>
+                        <tr><td class="px-4 py-2 text-on-surface-variant">100+</td><td class="text-center px-4 py-2 font-bold">3 500 ₽</td><td class="text-center px-4 py-2 font-bold">8 000 ₽</td></tr>
                     </tbody>
                 </table>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 text-sm">
-                <div class="bg-white rounded-xl border border-outline-variant/50 p-5">
-                    <p class="font-headline font-bold text-on-surface mb-2">Standard — 3 этапа:</p>
-                    <ul class="text-on-surface-variant space-y-1 text-xs">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3 text-xs">
+                <div class="bg-white rounded-xl border border-outline-variant/50 p-4">
+                    <p class="font-headline font-bold text-on-surface mb-1 text-sm">Standard — 3 этапа:</p>
+                    <ul class="text-on-surface-variant space-y-0.5">
                         <li>① Опросник сотрудника</li>
                         <li>② Автоматическая обработка</li>
                         <li>③ Индивидуальный отчёт</li>
                     </ul>
                 </div>
-                <div class="bg-white rounded-xl border border-outline-variant/50 p-5">
-                    <p class="font-headline font-bold text-on-surface mb-2">Premium — 3 этапа + эксперт:</p>
-                    <ul class="text-on-surface-variant space-y-1 text-xs">
-                        <li>① Опросник + этап 2: <strong class="text-on-surface">комментарий эксперта</strong></li>
-                        <li>② Расширенная обработка</li>
+                <div class="bg-white rounded-xl border border-outline-variant/50 p-4">
+                    <p class="font-headline font-bold text-on-surface mb-1 text-sm">Premium — + эксперт:</p>
+                    <ul class="text-on-surface-variant space-y-0.5">
+                        <li>② Этап: <strong class="text-on-surface">комментарий эксперта</strong></li>
                         <li>③ Оценивает <strong class="text-on-surface">эксперт 66ai</strong></li>
                     </ul>
                 </div>
             </div>
 
             <!-- Manager Pricing -->
-            <h2 class="text-xl md:text-2xl font-headline font-bold text-on-surface mb-4">Для руководителей</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-                <div class="bg-white rounded-2xl border border-outline-variant/50 p-6 text-center">
-                    <p class="font-headline font-bold text-on-surface text-lg mb-1">Standard</p>
-                    <p class="text-3xl font-black text-primary mb-2">8 000 ₽</p>
-                    <p class="text-on-surface-variant text-xs">Общая аналитика по отделам, базовый отчёт</p>
+            <h2 class="text-lg md:text-xl font-headline font-bold text-on-surface mb-2">Для руководителей</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+                <div class="bg-white rounded-xl border border-outline-variant/50 p-4 text-center">
+                    <p class="font-headline font-bold text-on-surface text-base mb-1">Standard</p>
+                    <p class="text-2xl font-black text-primary mb-1">8 000 ₽</p>
+                    <p class="text-on-surface-variant text-[10px]">Общая аналитика по отделам</p>
                 </div>
-                <div class="bg-white rounded-2xl border-2 border-primary/30 p-6 text-center relative">
-                    <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Популярный</span>
-                    <p class="font-headline font-bold text-on-surface text-lg mb-1">Premium</p>
-                    <p class="text-3xl font-black text-primary mb-2">20 000 — 30 000 ₽</p>
-                    <p class="text-on-surface-variant text-xs">Расширенная аналитика, карта автоматизации, ROI в рублях</p>
+                <div class="bg-white rounded-xl border-2 border-primary/30 p-4 text-center relative">
+                    <span class="absolute -top-2 left-1/2 -translate-x-1/2 bg-primary text-white text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded-full">Популярный</span>
+                    <p class="font-headline font-bold text-on-surface text-base mb-1">Premium</p>
+                    <p class="text-2xl font-black text-primary mb-1">20 000 — 30 000 ₽</p>
+                    <p class="text-on-surface-variant text-[10px]">Карта автоматизации, ROI</p>
                 </div>
             </div>
 
             <!-- ROI Section -->
-            <div class="bg-primary text-white rounded-2xl p-8 md:p-10 mb-10 text-center">
-                <h2 class="text-xl md:text-2xl font-headline font-black mb-4">ROI для клиента</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <div class="bg-primary text-white rounded-xl p-5 md:p-6 mb-6 text-center">
+                <h2 class="text-lg md:text-xl font-headline font-black mb-3">ROI для клиента</h2>
+                <div class="grid grid-cols-3 gap-4 mb-4">
                     <div>
-                        <p class="text-4xl font-black mb-1">30</p>
-                        <p class="text-white/70 text-sm">сотрудников</p>
+                        <p class="text-2xl md:text-3xl font-black mb-0.5">30</p>
+                        <p class="text-white/70 text-[10px]">сотрудников</p>
                     </div>
                     <div>
-                        <p class="text-4xl font-black mb-1">450 000 ₽</p>
-                        <p class="text-white/70 text-sm">экономия/мес</p>
+                        <p class="text-2xl md:text-3xl font-black mb-0.5">450 000 ₽</p>
+                        <p class="text-white/70 text-[10px]">экономия/мес</p>
                     </div>
                     <div>
-                        <p class="text-4xl font-black mb-1">165 000 ₽</p>
-                        <p class="text-white/70 text-sm">внедрение (Standard)</p>
+                        <p class="text-2xl md:text-3xl font-black mb-0.5">165 000 ₽</p>
+                        <p class="text-white/70 text-[10px]">внедрение</p>
                     </div>
                 </div>
-                <p class="text-2xl md:text-3xl font-black">ROI <span class="text-sky-200">2.7×</span> в первый месяц</p>
+                <p class="text-xl md:text-2xl font-black">ROI <span class="text-sky-200">2.7×</span> в первый месяц</p>
             </div>
 
             <!-- Additional Services -->
-            <h2 class="text-xl md:text-2xl font-headline font-bold text-on-surface mb-4">Дополнительные услуги</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-white rounded-xl border border-outline-variant/50 p-5 flex items-center justify-between">
+            <h2 class="text-lg md:text-xl font-headline font-bold text-on-surface mb-2">Дополнительные услуги</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div class="bg-white rounded-xl border border-outline-variant/50 p-3 flex items-center justify-between">
                     <div>
-                        <p class="font-headline font-bold text-on-surface">Адаптация вопросов под отрасль</p>
-                        <p class="text-on-surface-variant text-xs mt-1">Индивидуальный набор вопросов для вашей ниши</p>
+                        <p class="font-headline font-bold text-on-surface text-sm">Адаптация вопросов</p>
+                        <p class="text-on-surface-variant text-[10px] mt-0.5">Под вашу нишу</p>
                     </div>
-                    <p class="font-black text-primary text-lg whitespace-nowrap ml-4">30 000 ₽</p>
+                    <p class="font-black text-primary text-base whitespace-nowrap ml-3">30 000 ₽</p>
                 </div>
-                <div class="bg-white rounded-xl border border-outline-variant/50 p-5 flex items-center justify-between">
+                <div class="bg-white rounded-xl border border-outline-variant/50 p-3 flex items-center justify-between">
                     <div>
-                        <p class="font-headline font-bold text-on-surface">Обучающий модуль</p>
-                        <p class="text-on-surface-variant text-xs mt-1">Вебинар по результатам аттестации</p>
+                        <p class="font-headline font-bold text-on-surface text-sm">Обучающий модуль</p>
+                        <p class="text-on-surface-variant text-[10px] mt-0.5">Вебинар по итогам</p>
                     </div>
-                    <p class="font-black text-primary text-lg whitespace-nowrap ml-4">50 000 ₽</p>
+                    <p class="font-black text-primary text-base whitespace-nowrap ml-3">50 000 ₽</p>
                 </div>
             </div>
 
             <!-- CTA -->
-            <div class="text-center mt-10">
-                <a href="attestation.html" class="inline-flex items-center gap-2 bg-primary text-on-primary px-10 py-5 rounded-full font-headline font-black text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-lg">
-                    <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">verified</span>
+            <div class="text-center mt-6">
+                <a href="attestation.html" class="inline-flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full font-headline font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-lg">
+                    <span class="material-symbols-outlined text-base" style="font-variation-settings:'FILL' 1;">verified</span>
                     Начать аттестацию
                 </a>
             </div>
@@ -193,13 +192,13 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-surface py-10 border-t border-black/5">
+    <footer class="bg-surface py-6 border-t border-black/5 flex-shrink-0">
         <div class="max-w-7xl mx-auto px-4 md:px-8 text-center">
-            <div class="text-xl font-black text-on-surface tracking-tighter flex items-center gap-2 justify-center mb-3">
-                <img src="photos/start.png" alt="VibeCraft" class="h-6 w-auto"/>
+            <div class="text-lg font-black text-on-surface tracking-tighter flex items-center gap-2 justify-center mb-1">
+                <img src="photos/start.png" alt="VibeCraft" class="h-5 w-auto"/>
                 <span>VibeCraft</span>
             </div>
-            <p class="text-on-surface-variant text-[10px] font-body uppercase tracking-widest">© 2025 VibeCraft — Аттестация 66AI</p>
+            <p class="text-on-surface-variant text-[9px] font-body uppercase tracking-widest">© 2025 VibeCraft — Аттестация 66AI</p>
         </div>
     </footer>
 

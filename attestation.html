@@ -113,7 +113,6 @@
             <!-- Nav centered -->
             <nav class="hidden lg:flex items-center gap-6 flex-1 justify-center">
                 <a href="otchet.html" class="text-sm font-bold uppercase tracking-wider text-on-surface/70 hover:text-primary transition-colors">Пример отчёта</a>
-                <a href="#calculator" class="text-sm font-bold uppercase tracking-wider text-on-surface/70 hover:text-primary transition-colors">Рассчитать</a>
                 <a href="price.html" class="text-sm font-bold uppercase tracking-wider text-on-surface/70 hover:text-primary transition-colors">Цены</a>
             </nav>
             <!-- Icons right -->
@@ -135,7 +134,6 @@
         <div id="mobile-menu" class="hidden lg:hidden bg-[#f5f0e6]/95 backdrop-blur-xl border-t border-black/5 absolute top-full left-0 right-0 z-50 shadow-lg">
             <nav class="flex flex-col items-center py-4 gap-2 font-['Space_Grotesk'] font-bold uppercase tracking-wider text-sm">
                 <a class="w-full text-center py-2 text-on-surface/70 hover:text-primary transition-all" href="otchet.html" onclick="closeMobileMenu()">Пример отчёта</a>
-                <a class="w-full text-center py-2 text-on-surface/70 hover:text-primary transition-all" href="#calculator" onclick="closeMobileMenu()">Рассчитать</a>
                 <a class="w-full text-center py-2 text-on-surface/70 hover:text-primary transition-all" href="price.html" onclick="closeMobileMenu()">Цены</a>
                 <div class="flex items-center gap-6 pt-2 text-on-surface/50">
                     <a href="tel:+79221800911" class="hover:opacity-80 transition-colors p-1.5"><img src="photos/T.png" alt="Позвонить" class="h-7 w-7 object-contain"/></a>
@@ -181,14 +179,11 @@
                 <p class="text-base text-on-surface-variant/70 mb-10 max-w-xl mx-auto">
                     Средний результат: 10 часов экономии на сотрудника в месяц. ROI с первого месяца.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button onclick="openAuditModal('Запуск аттестации')" class="inline-flex items-center justify-center gap-3 bg-primary text-on-primary px-10 py-5 rounded-full font-headline font-black text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl glow-pulse">
+                <div class="flex justify-center">
+                    <button onclick="openAuditModal()" class="inline-flex items-center justify-center gap-3 bg-primary text-on-primary px-10 py-5 rounded-full font-headline font-black text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl glow-pulse">
                         <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">verified</span>
                         Запустить аттестацию
                     </button>
-                    <a href="#calculator" class="inline-flex items-center justify-center gap-2 bg-black/5 border border-black/10 text-on-surface px-8 py-5 rounded-full font-headline font-bold text-sm uppercase tracking-widest hover:bg-black/10 transition-all">
-                        Рассчитать стоимость
-                    </a>
                 </div>
             </div>
         </section>
@@ -575,27 +570,37 @@
         </div>
     </footer>
 
-    <!-- Модалка заявки (без изменений) -->
+    <!-- Модалка заявки -->
     <div id="audit-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-        <div class="bg-surface-container rounded-[2rem] p-8 lg:p-12 border border-black/5 max-w-lg w-full relative">
-            <button onclick="closeAuditModal()" class="absolute top-6 right-6 text-on-surface/40 hover:text-primary transition-colors">
+        <div class="bg-surface-container rounded-[2rem] p-6 md:p-8 lg:p-10 border border-black/5 max-w-md w-full relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeAuditModal()" class="absolute top-4 right-4 text-on-surface/40 hover:text-primary transition-colors">
                 <span class="material-symbols-outlined">close</span>
             </button>
             <div id="audit-form-view">
-                <h2 id="audit-modal-title" class="text-3xl font-headline font-black text-on-surface mb-4 uppercase">Запуск аттестации</h2>
-                <p class="text-on-surface-variant mb-8 text-sm leading-relaxed">Оставьте контакт — обсудим формат аттестации под вашу команду и ответим на вопросы.</p>
-                <div class="space-y-4">
-                    <input type="text" id="audit-name" placeholder="Ваше имя" class="w-full bg-surface-container-lowest border border-black/5 rounded-2xl p-4 outline-none focus:ring-2 focus:ring-primary/20"/>
-                    <input type="tel" id="audit-phone" placeholder="+7 (___) ___-__-__" class="w-full bg-surface-container-lowest border border-black/5 rounded-2xl p-4 outline-none focus:ring-2 focus:ring-primary/20"/>
-                    <input type="text" id="audit-tg" placeholder="@username (Telegram)" class="w-full bg-surface-container-lowest border border-black/5 rounded-2xl p-4 outline-none focus:ring-2 focus:ring-primary/20"/>
-                    <button onclick="submitAuditForm()" class="w-full bg-primary text-on-primary py-5 rounded-full font-headline font-black text-sm uppercase tracking-widest hover:scale-[1.02] transition-all">ОТПРАВИТЬ ЗАЯВКУ</button>
+                <h2 id="audit-modal-title" class="text-xl md:text-2xl font-headline font-black text-on-surface mb-1 uppercase">Запуск аттестации</h2>
+                <p class="text-on-surface-variant mb-5 text-xs leading-relaxed">Заполните форму — мы подготовим персональное предложение под вашу команду.</p>
+                <div class="space-y-3">
+                    <input type="text" id="audit-company" placeholder="Название компании" class="w-full bg-surface-container-lowest border border-black/5 rounded-xl p-3 text-sm outline-none focus:ring-2 focus:ring-primary/20"/>
+                    <input type="text" id="audit-name" placeholder="Ваше имя" class="w-full bg-surface-container-lowest border border-black/5 rounded-xl p-3 text-sm outline-none focus:ring-2 focus:ring-primary/20"/>
+                    <input type="tel" id="audit-phone" placeholder="+7 (___) ___-__-__" class="w-full bg-surface-container-lowest border border-black/5 rounded-xl p-3 text-sm outline-none focus:ring-2 focus:ring-primary/20"/>
+                    <input type="text" id="audit-tg" placeholder="@username (Telegram)" class="w-full bg-surface-container-lowest border border-black/5 rounded-xl p-3 text-sm outline-none focus:ring-2 focus:ring-primary/20"/>
+                    <div class="flex items-center gap-2">
+                        <label class="text-xs text-on-surface-variant font-bold whitespace-nowrap">Сотрудников:</label>
+                        <select id="audit-employees" class="flex-1 bg-surface-container-lowest border border-black/5 rounded-xl p-3 text-sm outline-none focus:ring-2 focus:ring-primary/20 appearance-none">
+                            <option value="10-29">10 – 29</option>
+                            <option value="30-49">30 – 49</option>
+                            <option value="50-99">50 – 99</option>
+                            <option value="100+">100+</option>
+                        </select>
+                    </div>
+                    <button onclick="submitAuditForm()" class="w-full bg-primary text-on-primary py-4 rounded-full font-headline font-black text-xs uppercase tracking-widest hover:scale-[1.02] transition-all">ОТПРАВИТЬ ЗАЯВКУ</button>
                     <p id="audit-error" class="text-error text-xs hidden">Заполните имя и контакт</p>
                 </div>
             </div>
-            <div id="audit-success-view" class="hidden text-center py-12">
-                <span class="material-symbols-outlined text-6xl text-primary" style="font-variation-settings:'FILL' 1;">verified</span>
-                <h2 class="text-2xl font-headline font-black text-on-surface mt-6 uppercase">ЗАЯВКА ОТПРАВЛЕНА</h2>
-                <p class="text-on-surface-variant mt-2">Свяжемся с вами в течение рабочего дня.</p>
+            <div id="audit-success-view" class="hidden text-center py-8">
+                <span class="material-symbols-outlined text-5xl text-primary" style="font-variation-settings:'FILL' 1;">verified</span>
+                <h2 class="text-xl font-headline font-black text-on-surface mt-4 uppercase">ЗАЯВКА ОТПРАВЛЕНА</h2>
+                <p class="text-on-surface-variant mt-1 text-sm">Свяжемся с вами в течение рабочего дня.</p>
             </div>
         </div>
     </div>
@@ -613,7 +618,7 @@
         // Phone mask
         document.getElementById('audit-phone').addEventListener('input',function(e){let v=e.target.value.replace(/\D/g,'');if(v.startsWith('8'))v='7'+v.slice(1);if(!v.startsWith('7'))v='7'+v;v=v.slice(0,11);let o='+7';if(v.length>1)o+=' ('+v.slice(1,4);if(v.length>=4)o+=') '+v.slice(4,7);if(v.length>=7)o+='-'+v.slice(7,9);if(v.length>=9)o+='-'+v.slice(9,11);e.target.value=o});
 
-        async function submitAuditForm(){const n=document.getElementById('audit-name').value.trim(),p=document.getElementById('audit-phone').value.trim(),t=document.getElementById('audit-tg').value.trim(),er=document.getElementById('audit-error');if(!n){er.textContent='Пожалуйста, введите ваше имя';er.classList.remove('hidden');return}if(!p&&!t){er.textContent='Укажите телефон или Telegram';er.classList.remove('hidden');return}er.classList.add('hidden');let text=`🔔 Новая заявка: ${document.getElementById('audit-modal-title').textContent}\n👤 ${n}\n📞 ${p||'—'}\n✈️ ${t||'—'}`;if(currentTariff)text+=`\n📋 ${currentTariff}`;const isLocal=location.hostname==='localhost'||location.hostname==='127.0.0.1';if(isLocal){console.log('TEST:',text)}else{try{await fetch('/api/send-lead.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text})})}catch(e){console.error(e)}}document.getElementById('audit-form-view').classList.add('hidden');document.getElementById('audit-success-view').classList.remove('hidden')}
+        async function submitAuditForm(){const c=document.getElementById('audit-company').value.trim(),n=document.getElementById('audit-name').value.trim(),p=document.getElementById('audit-phone').value.trim(),t=document.getElementById('audit-tg').value.trim(),em=document.getElementById('audit-employees').value,er=document.getElementById('audit-error');if(!n){er.textContent='Пожалуйста, введите ваше имя';er.classList.remove('hidden');return}if(!p&&!t){er.textContent='Укажите телефон или Telegram';er.classList.remove('hidden');return}er.classList.add('hidden');let text=`🔔 Новая заявка: ${document.getElementById('audit-modal-title').textContent}\n🏢 ${c||'—'}\n👤 ${n}\n👥 ${em} сотрудников\n📞 ${p||'—'}\n✈️ ${t||'—'}`;if(currentTariff)text+=`\n📋 ${currentTariff}`;const isLocal=location.hostname==='localhost'||location.hostname==='127.0.0.1';if(isLocal){console.log('TEST:',text)}else{try{await fetch('/api/send-lead.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text})})}catch(e){console.error(e)}}document.getElementById('audit-form-view').classList.add('hidden');document.getElementById('audit-success-view').classList.remove('hidden')}
 
         window.onclick=function(e){if(e.target==document.getElementById('audit-modal'))closeAuditModal()};
 

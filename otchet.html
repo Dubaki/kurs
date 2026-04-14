@@ -111,16 +111,16 @@
       .anim-card:nth-child(3) { animation-delay: 0.4s; }
     </style>
 </head>
-<body class="font-body selection:bg-primary selection:text-on-primary">
+<body class="font-body selection:bg-primary selection:text-on-primary flex flex-col h-screen overflow-hidden">
 
     <!-- Minimal Header -->
-    <header class="bg-[#f5f0e6]/80 backdrop-blur-xl top-0 sticky z-50 border-b border-black/5">
-        <div class="flex items-center w-full px-4 md:px-8 py-3 md:py-4 max-w-7xl mx-auto">
+    <header class="bg-[#f5f0e6]/80 backdrop-blur-xl top-0 sticky z-50 border-b border-black/5 flex-shrink-0">
+        <div class="flex items-center w-full px-4 md:px-6 py-2 md:py-3 max-w-7xl mx-auto">
             <a href="index.html" class="flex-shrink-0 no-underline">
-                <img src="photos/start.png" alt="VibeCraft" class="h-8 w-auto embossed-logo"/>
+                <img src="photos/start.png" alt="VibeCraft" class="h-7 w-auto embossed-logo"/>
             </a>
             <a href="attestation.html" class="flex-1 flex justify-center">
-                <span class="inline-flex items-center gap-2 text-on-surface/70 hover:text-primary px-3 py-2 rounded-lg transition-all duration-300 font-body text-sm font-bold">
+                <span class="inline-flex items-center gap-1 text-on-surface/70 hover:text-primary px-2 py-1.5 rounded-lg transition-all duration-300 font-body text-xs font-bold">
                     <span class="material-symbols-outlined text-sm">arrow_back</span>
                     Назад к Аттестации
                 </span>
@@ -129,33 +129,33 @@
         </div>
     </header>
 
-    <main>
+    <main class="flex-1 overflow-y-auto">
         <!-- Hero Section -->
-        <section class="py-20 md:py-28 bg-surface border-b border-black/5">
+        <section class="py-10 md:py-16 bg-surface border-b border-black/5">
             <div class="max-w-4xl mx-auto px-4 md:px-8 text-center">
-                <h1 class="text-3xl md:text-5xl lg:text-6xl font-headline font-black text-on-surface mb-4 tracking-tighter leading-tight">
+                <h1 class="text-2xl md:text-4xl lg:text-5xl font-headline font-black text-on-surface mb-3 tracking-tighter leading-tight">
                     Примеры отчётов <span class="text-primary italic">Аттестации 66AI</span>
                 </h1>
-                <p class="text-lg text-on-surface-variant font-light max-w-2xl mx-auto mb-2">
-                    Посмотрите, как выглядят результаты аттестации для каждого участника процесса
+                <p class="text-base text-on-surface-variant font-light max-w-xl mx-auto">
+                    Посмотрите, как выглядят результаты аттестации для каждого участника
                 </p>
             </div>
         </section>
 
         <!-- Report Cards -->
-        <section class="py-16 md:py-20 bg-surface-container-lowest">
+        <section class="py-10 md:py-14 bg-surface-container-lowest">
             <div class="max-w-5xl mx-auto px-4 md:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
 
                     <!-- Card 1: Компания -->
                     <div class="anim-card report-card bg-white rounded-2xl border border-outline-variant/50 overflow-hidden cursor-pointer group" onclick="openPdf('docs/Пример отчёта компании.pdf', 'Отчёт компании')">
-                        <div class="p-8 flex flex-col items-center justify-center text-center min-h-[280px]">
-                            <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                <span class="material-symbols-outlined text-primary text-3xl">business</span>
+                        <div class="p-6 flex flex-col items-center justify-center text-center min-h-[220px]">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-primary text-2xl">business</span>
                             </div>
-                            <h3 class="text-xl font-headline font-bold text-on-surface mb-3">Пример отчёта компании</h3>
-                            <p class="text-on-surface-variant text-sm leading-relaxed">Общая картина по организации: распределение компетенций, бенчмарки, зоны роста</p>
-                            <div class="mt-6 inline-flex items-center gap-2 text-primary font-body font-bold text-xs uppercase tracking-widest group-hover:gap-3 transition-all">
+                            <h3 class="text-lg font-headline font-bold text-on-surface mb-2">Пример отчёта компании</h3>
+                            <p class="text-on-surface-variant text-xs leading-relaxed">Общая картина: распределение компетенций, бенчмарки, зоны роста</p>
+                            <div class="mt-4 inline-flex items-center gap-1 text-primary font-body font-bold text-[10px] uppercase tracking-widest group-hover:gap-2 transition-all">
                                 Открыть
                                 <span class="material-symbols-outlined text-sm">open_in_new</span>
                             </div>
@@ -164,13 +164,13 @@
 
                     <!-- Card 2: Руководитель -->
                     <div class="anim-card report-card bg-white rounded-2xl border border-outline-variant/50 overflow-hidden cursor-pointer group" onclick="openPdf('docs/Пример отчёта руководитель.pdf', 'Отчёт руководителя')">
-                        <div class="p-8 flex flex-col items-center justify-center text-center min-h-[280px]">
-                            <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                <span class="material-symbols-outlined text-primary text-3xl">supervisor_account</span>
+                        <div class="p-6 flex flex-col items-center justify-center text-center min-h-[220px]">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-primary text-2xl">supervisor_account</span>
                             </div>
-                            <h3 class="text-xl font-headline font-bold text-on-surface mb-3">Пример отчёта руководителя</h3>
-                            <p class="text-on-surface-variant text-sm leading-relaxed">Детальная аналитика по отделам: кто в лидерах, кто отстаёт, рекомендации по обучению</p>
-                            <div class="mt-6 inline-flex items-center gap-2 text-primary font-body font-bold text-xs uppercase tracking-widest group-hover:gap-3 transition-all">
+                            <h3 class="text-lg font-headline font-bold text-on-surface mb-2">Пример отчёта руководителя</h3>
+                            <p class="text-on-surface-variant text-xs leading-relaxed">Аналитика по отделам: кто в лидерах, рекомендации</p>
+                            <div class="mt-4 inline-flex items-center gap-1 text-primary font-body font-bold text-[10px] uppercase tracking-widest group-hover:gap-2 transition-all">
                                 Открыть
                                 <span class="material-symbols-outlined text-sm">open_in_new</span>
                             </div>
@@ -179,13 +179,13 @@
 
                     <!-- Card 3: Сотрудник -->
                     <div class="anim-card report-card bg-white rounded-2xl border border-outline-variant/50 overflow-hidden cursor-pointer group" onclick="openPdf('docs/Пример отчёта сотрудник.pdf', 'Отчёт сотрудника')">
-                        <div class="p-8 flex flex-col items-center justify-center text-center min-h-[280px]">
-                            <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                <span class="material-symbols-outlined text-primary text-3xl">person</span>
+                        <div class="p-6 flex flex-col items-center justify-center text-center min-h-[220px]">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-primary text-2xl">person</span>
                             </div>
-                            <h3 class="text-xl font-headline font-bold text-on-surface mb-3">Пример отчёта сотрудника</h3>
-                            <p class="text-on-surface-variant text-sm leading-relaxed">Индивидуальные результаты: навыки, баллы, персональный план развития</p>
-                            <div class="mt-6 inline-flex items-center gap-2 text-primary font-body font-bold text-xs uppercase tracking-widest group-hover:gap-3 transition-all">
+                            <h3 class="text-lg font-headline font-bold text-on-surface mb-2">Пример отчёта сотрудника</h3>
+                            <p class="text-on-surface-variant text-xs leading-relaxed">Индивидуальные результаты: навыки, баллы, план развития</p>
+                            <div class="mt-4 inline-flex items-center gap-1 text-primary font-body font-bold text-[10px] uppercase tracking-widest group-hover:gap-2 transition-all">
                                 Открыть
                                 <span class="material-symbols-outlined text-sm">open_in_new</span>
                             </div>
@@ -197,19 +197,19 @@
         </section>
 
         <!-- CTA -->
-        <section class="py-20 bg-primary text-white text-center border-t border-black/5 relative overflow-hidden">
+        <section class="py-14 bg-primary text-white text-center border-t border-black/5 relative overflow-hidden">
             <div class="absolute inset-0 z-0">
                 <img src="photos/robot_green_nodes.webp" alt="" class="w-full h-full object-cover opacity-10 grayscale mix-blend-overlay"/>
             </div>
             <div class="max-w-3xl mx-auto px-4 md:px-8 relative z-10">
-                <h2 class="text-3xl md:text-4xl font-headline font-black mb-4 tracking-tighter">
+                <h2 class="text-2xl md:text-3xl font-headline font-black mb-3 tracking-tighter">
                     Готовы провести аттестацию?
                 </h2>
-                <p class="text-lg text-white/80 mb-8 font-light max-w-xl mx-auto">
-                    Запустите тестирование для вашей команды и получите подробные отчёты уже через неделю
+                <p class="text-base text-white/80 mb-6 font-light max-w-md mx-auto">
+                    Запустите тестирование для вашей команды
                 </p>
-                <a href="attestation.html" class="inline-flex items-center gap-2 bg-white text-primary px-10 py-5 rounded-full font-headline font-black text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
-                    <span class="material-symbols-outlined text-lg" style="font-variation-settings:'FILL' 1;">verified</span>
+                <a href="attestation.html" class="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-full font-headline font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
+                    <span class="material-symbols-outlined text-base" style="font-variation-settings:'FILL' 1;">verified</span>
                     Перейти к Аттестации
                 </a>
             </div>
@@ -218,39 +218,33 @@
 
     <!-- PDF Modal -->
     <div id="pdf-modal" class="pdf-modal hidden fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" onclick="closePdf()">
-        <div class="bg-white rounded-2xl w-full max-w-6xl h-[90vh] flex flex-col overflow-hidden relative" onclick="event.stopPropagation()">
-            <!-- Header -->
-            <div class="flex items-center justify-between px-6 py-4 border-b border-black/5 flex-shrink-0">
-                <h3 id="pdf-title" class="font-headline font-bold text-on-surface text-lg truncate pr-4"></h3>
-                <button onclick="closePdf()" class="text-on-surface/50 hover:text-on-surface transition-colors p-2 rounded-full hover:bg-black/5 flex-shrink-0">
+        <div class="bg-white rounded-2xl w-full max-w-5xl h-[85vh] flex flex-col overflow-hidden relative" onclick="event.stopPropagation()">
+            <div class="flex items-center justify-between px-4 py-3 border-b border-black/5 flex-shrink-0">
+                <h3 id="pdf-title" class="font-headline font-bold text-on-surface text-base truncate pr-4"></h3>
+                <button onclick="closePdf()" class="text-on-surface/50 hover:text-on-surface transition-colors p-1.5 rounded-full hover:bg-black/5 flex-shrink-0">
                     <span class="material-symbols-outlined">close</span>
                 </button>
             </div>
-            <!-- PDF Viewer -->
             <div class="flex-1 overflow-hidden">
                 <iframe id="pdf-frame" class="w-full h-full" src=""></iframe>
             </div>
-            <!-- Footer -->
-            <div class="px-6 py-3 border-t border-black/5 flex justify-between items-center flex-shrink-0 bg-surface">
-                <span class="text-xs text-on-surface-variant">Если PDF не отображается, скачайте файл:</span>
-                <a id="pdf-download" href="" download class="text-xs text-primary hover:underline font-bold flex items-center gap-1">
-                    Скачать
-                    <span class="material-symbols-outlined text-sm">download</span>
+            <div class="px-4 py-2 border-t border-black/5 flex justify-between items-center flex-shrink-0 bg-surface">
+                <span class="text-[10px] text-on-surface-variant">Если PDF не отображается:</span>
+                <a id="pdf-download" href="" download class="text-[10px] text-primary hover:underline font-bold flex items-center gap-1">
+                    Скачать <span class="material-symbols-outlined text-xs">download</span>
                 </a>
             </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-surface py-12 border-t border-black/5">
+    <footer class="bg-surface py-6 border-t border-black/5 flex-shrink-0">
         <div class="max-w-7xl mx-auto px-4 md:px-8 text-center">
-            <div class="text-2xl font-black text-on-surface tracking-tighter flex items-center gap-2 justify-center mb-4">
-                <div class="bg-primary text-white w-8 h-8 flex items-center justify-center rounded font-bold text-sm">V</div>
+            <div class="text-lg font-black text-on-surface tracking-tighter flex items-center gap-2 justify-center mb-1">
+                <img src="photos/start.png" alt="VibeCraft" class="h-5 w-auto"/>
                 <span>VibeCraft</span>
             </div>
-            <p class="text-on-surface-variant text-xs font-body uppercase tracking-widest">
-                © 2025 VibeCraft — Аттестация 66AI
-            </p>
+            <p class="text-on-surface-variant text-[9px] font-body uppercase tracking-widest">© 2025 VibeCraft — Аттестация 66AI</p>
         </div>
     </footer>
 
