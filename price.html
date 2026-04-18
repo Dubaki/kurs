@@ -1,210 +1,391 @@
 <!DOCTYPE html>
-<html class="light" lang="ru" style="scroll-behavior: smooth;">
+<html lang="ru">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Тарифы Аттестации 66AI</title>
-    <meta name="description" content="Тарифы Аттестации 66AI: Standard и Premium для сотрудников и руководителей. ROI с первого месяца.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://66ai.ru/price.html">
-    <meta property="og:title" content="Тарифы Аттестации 66AI">
-    <meta property="og:description" content="Прозрачные тарифы Standard и Premium. ROI с первого месяца.">
-    <meta property="og:image" content="https://66ai.ru/robot_green_nodes.webp">
-    <link rel="canonical" href="https://66ai.ru/price.html" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Цены — 66AI Диагностика ИИ-эффективности</title>
+  <meta name="description" content="Пилот от 10 000 ₽/чел. Скидка за объём. Окупаемость — 16 дней. Начните с двух сотрудников."/>
+  <link rel="canonical" href="https://66ai.ru/price.html"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Manrope', system-ui, sans-serif; background: #0f1219; color: #fff; -webkit-font-smoothing: antialiased; }
+    :root {
+      --teal: #006875; --teal-mid: #00909f; --teal-light: #4dd0e1;
+      --dark: #0f1219; --border: rgba(255,255,255,.09); --muted: rgba(255,255,255,.5);
+      --head: 'Space Grotesk', system-ui, sans-serif;
+    }
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    /* HEADER */
+    header {
+      position: sticky; top: 0; z-index: 100; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px;
+      background: rgba(15,18,25,.9); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; }
+    .logo-mark { width: 32px; height: 32px; border-radius: 8px; background: var(--teal); display: flex; align-items: center; justify-content: center; font-family: var(--head); font-weight: 900; font-size: 12px; }
+    .logo-name { font-family: var(--head); font-weight: 800; font-size: 17px; }
+    .logo-name em { color: var(--teal-light); font-style: normal; }
+    nav { display: flex; gap: 2px; }
+    nav a { font-family: var(--head); font-size: 13px; font-weight: 600; color: var(--muted); text-decoration: none; padding: 6px 13px; border-radius: 20px; transition: color .2s, background .2s; }
+    nav a:hover, nav a.active { color: #fff; background: rgba(255,255,255,.07); }
+    .btn-tg { display: flex; align-items: center; gap: 7px; font-family: var(--head); font-size: 13px; font-weight: 700; color: #fff; text-decoration: none; border: 1px solid var(--border); padding: 7px 18px; border-radius: 24px; transition: border-color .2s, background .2s; }
+    .btn-tg:hover { border-color: rgba(255,255,255,.3); background: rgba(255,255,255,.05); }
+    .btn-tg svg { width: 15px; height: 15px; opacity: .8; }
 
-    <script id="tailwind-config">
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              "surface-container-highest": "#e8e2d9",
-              "surface-container-lowest": "#ffffff",
-              "on-surface": "#191c1e",
-              "on-surface-variant": "#43474e",
-              "primary": "#006875",
-              "on-primary": "#ffffff",
-              "surface": "#f5f0e6",
-              "surface-container": "#f0eade",
-              "background": "#f5f0e6",
-              "outline-variant": "#c3c6cf",
-            },
-            fontFamily: {
-              "headline": ["Space Grotesk"],
-              "body": ["Manrope"]
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-      body { background-color: #f5f0e6; color: #191c1e; }
-      @keyframes logo-morph { 0%,100%{background:#006875;border-radius:4px;border:2px solid transparent}50%{background:transparent;border-radius:50%;border:2px solid #006875} }
-      @keyframes logo-v-morph { 0%,100%{color:#fff}50%{color:#1e40af} }
-      .logo-morph{animation:logo-morph 5s ease-in-out infinite}
-      .logo-v-morph{animation:logo-v-morph 5s ease-in-out infinite}
-      @keyframes logo-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
-      .embossed-logo{border-radius:.75rem;box-shadow:3px 3px 8px rgba(25,28,30,.08),-3px -3px 8px rgba(255,255,255,.6);animation:logo-breathe 4s ease-in-out infinite;will-change:transform;transition:opacity .3s}
-      .embossed-logo:hover{opacity:.85}
-    </style>
+    /* PAGE */
+    main { max-width: 1000px; margin: 0 auto; padding: 80px 40px 120px; }
+
+    .page-label { font-family: var(--head); font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 16px; }
+    .page-title { font-family: var(--head); font-size: clamp(32px, 5vw, 56px); font-weight: 900; letter-spacing: -1.5px; line-height: 1.05; margin-bottom: 16px; }
+    .page-sub { font-size: 17px; color: var(--muted); line-height: 1.7; max-width: 520px; margin-bottom: 72px; }
+
+    /* PRINCIPLE BOX */
+    .principle {
+      background: rgba(77,208,225,.05); border: 1px solid rgba(77,208,225,.18);
+      border-radius: 16px; padding: 28px 32px; margin-bottom: 64px;
+      display: flex; align-items: flex-start; gap: 20px;
+    }
+    .principle-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+    .principle-text { font-size: 15px; color: rgba(255,255,255,.8); line-height: 1.7; }
+    .principle-text strong { color: #fff; font-family: var(--head); font-weight: 700; display: block; margin-bottom: 6px; font-size: 16px; }
+
+    /* PILOT ENTRY */
+    .pilot-entry {
+      background: linear-gradient(135deg, rgba(0,104,117,.35) 0%, rgba(0,60,80,.2) 100%);
+      border: 1.5px solid rgba(77,208,225,.25); border-radius: 20px; padding: 40px 36px;
+      margin-bottom: 48px; position: relative; overflow: hidden;
+    }
+    .pilot-entry::before {
+      content: 'ВХОД'; position: absolute; right: 28px; top: 28px;
+      font-family: var(--head); font-size: 10px; font-weight: 900; letter-spacing: .3em;
+      color: rgba(77,208,225,.35);
+    }
+    .pilot-title { font-family: var(--head); font-size: 22px; font-weight: 900; margin-bottom: 8px; letter-spacing: -.5px; }
+    .pilot-price { font-family: var(--head); font-size: 48px; font-weight: 900; color: var(--teal-light); letter-spacing: -2px; line-height: 1; margin-bottom: 6px; }
+    .pilot-price span { font-size: 20px; color: var(--muted); font-weight: 500; letter-spacing: 0; }
+    .pilot-desc { font-size: 14px; color: var(--muted); line-height: 1.6; max-width: 480px; margin-bottom: 24px; }
+    .pilot-features { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+    .feat-chip {
+      font-family: var(--head); font-size: 12px; font-weight: 600;
+      padding: 5px 14px; border-radius: 20px;
+      background: rgba(255,255,255,.06); border: 1px solid var(--border); color: rgba(255,255,255,.8);
+    }
+    .pilot-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--teal); color: #fff; text-decoration: none;
+      font-family: var(--head); font-size: 14px; font-weight: 700;
+      padding: 13px 28px; border-radius: 32px;
+      transition: background .2s, transform .2s;
+    }
+    .pilot-cta:hover { background: var(--teal-mid); transform: translateY(-1px); }
+    .pilot-cta svg { width: 16px; height: 16px; }
+
+    /* TIERS */
+    .tiers-title { font-family: var(--head); font-size: 20px; font-weight: 800; margin-bottom: 6px; }
+    .tiers-sub { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
+
+    .tiers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 64px; }
+
+    .tier-card {
+      background: rgba(255,255,255,.03); border: 1px solid var(--border);
+      border-radius: 18px; padding: 32px 28px;
+    }
+    .tier-card.featured { background: rgba(0,104,117,.12); border-color: rgba(77,208,225,.22); }
+
+    .tier-badge {
+      font-family: var(--head); font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--teal-light); margin-bottom: 14px;
+    }
+    .tier-name { font-family: var(--head); font-size: 22px; font-weight: 900; margin-bottom: 12px; letter-spacing: -.5px; }
+    .tier-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 24px; }
+
+    .tier-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+    .tier-table th { font-family: var(--head); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); text-align: left; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .tier-table th:last-child { text-align: right; }
+    .tier-table td { font-size: 13px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.04); color: rgba(255,255,255,.8); }
+    .tier-table td:last-child { text-align: right; font-family: var(--head); font-weight: 700; color: #fff; }
+    .tier-table tr.pilot-row td { color: var(--teal-light); }
+    .tier-table tr.pilot-row td:last-child { color: var(--teal-light); }
+
+    .tier-features { display: flex; flex-direction: column; gap: 8px; }
+    .tier-feat {
+      display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.4;
+    }
+    .tier-feat::before { content: '✓'; color: var(--teal-light); font-weight: 700; flex-shrink: 0; }
+    .tier-feat.extra::before { content: '+'; color: rgba(77,208,225,.5); }
+
+    /* ADDONS */
+    .addons-title { font-family: var(--head); font-size: 20px; font-weight: 800; margin-bottom: 6px; }
+    .addons-sub { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
+    .addons-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 64px; }
+    .addon {
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      background: rgba(255,255,255,.025); border: 1px solid var(--border);
+      border-radius: 12px; padding: 16px 20px;
+    }
+    .addon-name { font-family: var(--head); font-size: 13px; font-weight: 700; margin-bottom: 3px; }
+    .addon-desc { font-size: 12px; color: var(--muted); }
+    .addon-price { font-family: var(--head); font-size: 15px; font-weight: 900; color: #fff; white-space: nowrap; }
+
+    /* EXAMPLES */
+    .examples-title { font-family: var(--head); font-size: 20px; font-weight: 800; margin-bottom: 6px; }
+    .examples-sub { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
+    .examples-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 64px; }
+    .example {
+      background: rgba(255,255,255,.025); border: 1px solid var(--border);
+      border-radius: 14px; padding: 22px 20px;
+    }
+    .example-name { font-family: var(--head); font-size: 13px; font-weight: 800; margin-bottom: 4px; }
+    .example-size { font-size: 11px; color: var(--muted); margin-bottom: 16px; }
+    .example-row { display: flex; justify-content: space-between; font-size: 12px; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,.04); }
+    .example-row .el { color: var(--muted); }
+    .example-row .ev { font-family: var(--head); font-weight: 700; }
+    .example-roi { margin-top: 14px; text-align: center; }
+    .example-roi .rn { font-family: var(--head); font-size: 28px; font-weight: 900; color: var(--teal-light); letter-spacing: -1px; }
+    .example-roi .rl { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .12em; font-family: var(--head); font-weight: 700; }
+
+    /* GUARANTEE */
+    .guarantee {
+      background: rgba(255,255,255,.02); border: 1px solid var(--border);
+      border-radius: 20px; padding: 40px 36px; text-align: center; margin-bottom: 64px;
+    }
+    .guarantee-icon { font-size: 36px; margin-bottom: 16px; }
+    .guarantee-title { font-family: var(--head); font-size: 20px; font-weight: 900; margin-bottom: 10px; }
+    .guarantee-text { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 540px; margin: 0 auto; }
+
+    /* BOTTOM CTA */
+    .bottom-cta {
+      text-align: center;
+      background: linear-gradient(135deg, rgba(0,104,117,.25) 0%, rgba(77,208,225,.05) 100%);
+      border: 1px solid rgba(77,208,225,.18); border-radius: 24px;
+      padding: 56px 40px;
+    }
+    .bottom-cta h2 { font-family: var(--head); font-size: clamp(24px, 4vw, 38px); font-weight: 900; letter-spacing: -1px; margin-bottom: 12px; }
+    .bottom-cta p { font-size: 15px; color: var(--muted); margin-bottom: 32px; max-width: 460px; margin-left: auto; margin-right: auto; }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--teal); color: #fff; text-decoration: none;
+      font-family: var(--head); font-size: 15px; font-weight: 700;
+      padding: 15px 32px; border-radius: 32px;
+      transition: background .2s, transform .2s;
+    }
+    .cta-btn:hover { background: var(--teal-mid); transform: translateY(-2px); }
+    .cta-btn svg { width: 18px; height: 18px; }
+    .cta-sub { font-size: 12px; color: var(--muted); margin-top: 14px; }
+
+    /* FOOTER */
+    footer { background: #0a0e15; border-top: 1px solid var(--border); padding: 32px 40px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-logo { font-family: var(--head); font-weight: 800; font-size: 15px; }
+    .footer-logo em { color: var(--teal-light); font-style: normal; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; font-family: var(--head); transition: color .2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,.2); font-family: var(--head); }
+
+    @media (max-width: 768px) {
+      header { padding: 0 20px; }
+      nav { display: none; }
+      main { padding: 48px 20px 80px; }
+      .tiers-grid { grid-template-columns: 1fr; }
+      .addons-grid { grid-template-columns: 1fr; }
+      .examples-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
 </head>
-<body class="font-body selection:bg-primary selection:text-on-primary">
+<body>
+<header>
+  <a href="index.html" class="logo">
+    <div class="logo-mark">66</div>
+    <span class="logo-name">66<em>AI</em></span>
+  </a>
+  <nav>
+    <a href="index.html#how">Как работает</a>
+    <a href="cases.html">Кейсы</a>
+    <a href="price.html" class="active">Цены</a>
+    <a href="about.html">Автор</a>
+    <a href="vibe.html">Обучение</a>
+  </nav>
+  <a href="https://t.me/Bizbezit" target="_blank" rel="noopener" class="btn-tg">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.394 13.9l-2.94-.924c-.64-.203-.652-.64.135-.954l11.57-4.461c.537-.194 1.006.131.735.66z"/></svg>
+    Написать
+  </a>
+</header>
 
-    <!-- Header (идентичен attestation.html) -->
-    <header class="bg-[#f5f0e6]/80 backdrop-blur-xl top-0 sticky z-50 border-b border-black/5 flex-shrink-0">
-        <div class="flex items-center w-full px-4 md:px-8 py-2 md:py-3 max-w-7xl mx-auto">
-            <a href="index.html" class="flex-shrink-0 no-underline">
-                <img src="photos/start.png" alt="VibeCraft" class="h-7 w-auto embossed-logo"/>
-            </a>
-            <nav class="hidden lg:flex items-center gap-4 flex-1 justify-center">
-                <a href="attestation.html" class="text-xs font-bold uppercase tracking-wider text-on-surface/70 hover:text-primary transition-colors">Аттестация</a>
-                <a href="otchet.html" class="text-xs font-bold uppercase tracking-wider text-on-surface/70 hover:text-primary transition-colors">Пример отчёта</a>
-                <a href="attestation.html#calculator" class="text-xs font-bold uppercase tracking-wider text-on-surface/70 hover:text-primary transition-colors">Калькулятор</a>
-            </nav>
-            <div class="flex items-center gap-1 flex-shrink-0 ml-auto">
-                <button id="mobile-menu-btn" class="lg:hidden text-on-surface hover:text-primary transition-colors p-1" onclick="toggleMobileMenu()">
-                    <span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span>
-                </button>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden lg:hidden bg-[#f5f0e6]/95 backdrop-blur-xl border-t border-black/5 absolute top-full left-0 right-0 z-50 shadow-lg">
-            <nav class="flex flex-col items-center py-3 gap-2 font-['Space_Grotesk'] font-bold uppercase tracking-wider text-xs">
-                <a class="w-full text-center py-2 text-on-surface/70 hover:text-primary transition-all" href="attestation.html" onclick="closeMobileMenu()">Аттестация</a>
-                <a class="w-full text-center py-2 text-on-surface/70 hover:text-primary transition-all" href="otchet.html" onclick="closeMobileMenu()">Пример отчёта</a>
-                <a class="w-full text-center py-2 text-on-surface/70 hover:text-primary transition-all" href="attestation.html#calculator" onclick="closeMobileMenu()">Калькулятор</a>
-            </nav>
-        </div>
-    </header>
+<main>
+  <div class="page-label">Ценообразование</div>
+  <h1 class="page-title">Не делаем дёшево.<br/>Делаем доступный вход.</h1>
+  <p class="page-sub">Один продукт. Одно качество. Пилот на двух сотрудниках — и вы видите реальные цифры по вашей компании. Дальше — ваше решение.</p>
 
-    <main class="flex-1 overflow-y-auto py-6 md:py-8">
-        <div class="max-w-6xl mx-auto px-4 md:px-8">
+  <!-- Principle -->
+  <div class="principle">
+    <div class="principle-icon">💡</div>
+    <div class="principle-text">
+      <strong>Почему нет дешёвой версии</strong>
+      В B2B цена — это сигнал ценности. Диагностика, которая находит 120 000 ₽/мес потерь на 10 сотрудниках, не может стоить как подписка на CRM. Мы дорожим результатом. Начните с двух человек — убедитесь сами.
+    </div>
+  </div>
 
-            <!-- Title -->
-            <h1 class="text-2xl md:text-4xl font-headline font-black text-on-surface text-center mb-2 tracking-tighter">Тарифы Аттестации 66AI</h1>
-            <p class="text-center text-on-surface-variant font-light text-sm mb-6 max-w-xl mx-auto">Прозрачные цены. ROI с первого месяца. Standard и Premium.</p>
+  <!-- PILOT -->
+  <div class="pilot-entry">
+    <div class="pilot-title">Пилот — рекомендуемый старт</div>
+    <div class="pilot-price">10 000 ₽ <span>/ сотрудник</span></div>
+    <p class="pilot-desc">Возьмите двух самых загруженных сотрудников. Через 2–3 дня вы получите карту потерь в рублях по каждому. Если результата нет — возвращаем деньги.</p>
+    <div class="pilot-features">
+      <span class="feat-chip">1–3 сотрудника</span>
+      <span class="feat-chip">Полная диагностика — без урезаний</span>
+      <span class="feat-chip">Результат за 2–3 дня</span>
+      <span class="feat-chip">Отчёт с ROI по каждому</span>
+      <span class="feat-chip">Гарантия возврата</span>
+    </div>
+    <a href="https://t.me/Bizbezit" target="_blank" rel="noopener" class="pilot-cta">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.394 13.9l-2.94-.924c-.64-.203-.652-.64.135-.954l11.57-4.461c.537-.194 1.006.131.735.66z"/></svg>
+      Начать пилот — написать в Telegram
+    </a>
+  </div>
 
-            <!-- Employee Pricing -->
-            <h2 class="text-lg md:text-xl font-headline font-bold text-on-surface mb-2">Для сотрудников</h2>
-            <div class="overflow-x-auto mb-6 rounded-xl border border-outline-variant/50 bg-white">
-                <table class="w-full text-xs md:text-sm">
-                    <thead class="bg-surface">
-                        <tr>
-                            <th class="text-left px-4 py-2 font-headline font-bold text-on-surface text-[10px] uppercase tracking-wider">Сотрудников</th>
-                            <th class="text-center px-4 py-2 font-headline font-bold text-primary text-[10px] uppercase tracking-wider">Standard</th>
-                            <th class="text-center px-4 py-2 font-headline font-bold text-primary text-[10px] uppercase tracking-wider">Premium</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-outline-variant/30">
-                        <tr><td class="px-4 py-2 text-on-surface-variant">10–29</td><td class="text-center px-4 py-2 font-bold">5 500 ₽</td><td class="text-center px-4 py-2 font-bold">12 000 ₽</td></tr>
-                        <tr><td class="px-4 py-2 text-on-surface-variant">30–49</td><td class="text-center px-4 py-2 font-bold">4 500 ₽</td><td class="text-center px-4 py-2 font-bold">10 000 ₽</td></tr>
-                        <tr><td class="px-4 py-2 text-on-surface-variant">50–99</td><td class="text-center px-4 py-2 font-bold">4 000 ₽</td><td class="text-center px-4 py-2 font-bold">9 000 ₽</td></tr>
-                        <tr><td class="px-4 py-2 text-on-surface-variant">100+</td><td class="text-center px-4 py-2 font-bold">3 500 ₽</td><td class="text-center px-4 py-2 font-bold">8 000 ₽</td></tr>
-                    </tbody>
-                </table>
-            </div>
+  <!-- TIERS -->
+  <div class="tiers-title">Тарифы при масштабировании</div>
+  <p class="tiers-sub">После пилота — скидка за объём. Руководители тарифицируются отдельно.</p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3 text-xs">
-                <div class="bg-white rounded-xl border border-outline-variant/50 p-4">
-                    <p class="font-headline font-bold text-on-surface mb-1 text-sm">Standard — 3 этапа:</p>
-                    <ul class="text-on-surface-variant space-y-0.5">
-                        <li>① Опросник сотрудника</li>
-                        <li>② Автоматическая обработка</li>
-                        <li>③ Индивидуальный отчёт</li>
-                    </ul>
-                </div>
-                <div class="bg-white rounded-xl border border-outline-variant/50 p-4">
-                    <p class="font-headline font-bold text-on-surface mb-1 text-sm">Premium — + эксперт:</p>
-                    <ul class="text-on-surface-variant space-y-0.5">
-                        <li>② Этап: <strong class="text-on-surface">комментарий эксперта</strong></li>
-                        <li>③ Оценивает <strong class="text-on-surface">эксперт 66ai</strong></li>
-                    </ul>
-                </div>
-            </div>
+  <div class="tiers-grid">
+    <!-- Standard -->
+    <div class="tier-card">
+      <div class="tier-badge">Standard</div>
+      <div class="tier-name">Автоматизированная диагностика</div>
+      <p class="tier-desc">Полная диагностика через Telegram Mini App. Карта экономии, грейды, готовые промпты.</p>
+      <table class="tier-table">
+        <thead><tr><th>Сотрудников</th><th>₽ / чел.</th></tr></thead>
+        <tbody>
+          <tr class="pilot-row"><td>1–3 (пилот)</td><td>10 000 ₽</td></tr>
+          <tr><td>4–9</td><td>8 000 ₽</td></tr>
+          <tr><td>10–29</td><td>6 500 ₽</td></tr>
+          <tr><td>30–49</td><td>6 000 ₽</td></tr>
+          <tr><td>50–99</td><td>5 500 ₽</td></tr>
+          <tr><td>100+</td><td>5 500 ₽</td></tr>
+        </tbody>
+      </table>
+      <div class="tier-features">
+        <div class="tier-feat">Диагностика через Telegram Mini App</div>
+        <div class="tier-feat">Карта потерь в часах и рублях</div>
+        <div class="tier-feat">Грейд сотрудника (1–4)</div>
+        <div class="tier-feat">Готовые промпты для его задач</div>
+        <div class="tier-feat">PDF-отчёт + QR-сертификат</div>
+        <div class="tier-feat">HR-дашборд с AI Skill Radar</div>
+      </div>
+    </div>
 
-            <!-- Manager Pricing -->
-            <h2 class="text-lg md:text-xl font-headline font-bold text-on-surface mb-2">Для руководителей</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
-                <div class="bg-white rounded-xl border border-outline-variant/50 p-4 text-center">
-                    <p class="font-headline font-bold text-on-surface text-base mb-1">Standard</p>
-                    <p class="text-2xl font-black text-primary mb-1">8 000 ₽</p>
-                    <p class="text-on-surface-variant text-[10px]">Общая аналитика по отделам</p>
-                </div>
-                <div class="bg-white rounded-xl border-2 border-primary/30 p-4 text-center relative">
-                    <span class="absolute -top-2 left-1/2 -translate-x-1/2 bg-primary text-white text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded-full">Популярный</span>
-                    <p class="font-headline font-bold text-on-surface text-base mb-1">Premium</p>
-                    <p class="text-2xl font-black text-primary mb-1">20 000 — 30 000 ₽</p>
-                    <p class="text-on-surface-variant text-[10px]">Карта автоматизации, ROI</p>
-                </div>
-            </div>
+    <!-- Premium -->
+    <div class="tier-card featured">
+      <div class="tier-badge">Premium</div>
+      <div class="tier-name">Диагностика + экспертное сопровождение</div>
+      <p class="tier-desc">Всё из Standard плюс живая работа с командой 66AI: разбор результатов, план внедрения, отраслевая адаптация.</p>
+      <table class="tier-table">
+        <thead><tr><th>Сотрудников</th><th>₽ / чел.</th></tr></thead>
+        <tbody>
+          <tr class="pilot-row"><td>1–3 (пилот)</td><td>18 000 ₽</td></tr>
+          <tr><td>4–9</td><td>15 000 ₽</td></tr>
+          <tr><td>10–29</td><td>12 000 ₽</td></tr>
+          <tr><td>30–49</td><td>10 000 ₽</td></tr>
+          <tr><td>50–99</td><td>9 000 ₽</td></tr>
+          <tr><td>100+</td><td>8 000 ₽</td></tr>
+        </tbody>
+      </table>
+      <div class="tier-features">
+        <div class="tier-feat">Всё из Standard</div>
+        <div class="tier-feat extra">Созвон по результатам с командой 66AI</div>
+        <div class="tier-feat extra">Приоритетный список задач для внедрения</div>
+        <div class="tier-feat extra">Адаптация промптов под вашу отрасль</div>
+        <div class="tier-feat extra">Онбординг-гайд для сотрудников</div>
+        <div class="tier-feat extra">Поддержка 3 месяца после диагностики</div>
+      </div>
+    </div>
+  </div>
 
-            <!-- ROI Section -->
-            <div class="bg-primary text-white rounded-xl p-5 md:p-6 mb-6 text-center">
-                <h2 class="text-lg md:text-xl font-headline font-black mb-3">ROI для клиента</h2>
-                <div class="grid grid-cols-3 gap-4 mb-4">
-                    <div>
-                        <p class="text-2xl md:text-3xl font-black mb-0.5">30</p>
-                        <p class="text-white/70 text-[10px]">сотрудников</p>
-                    </div>
-                    <div>
-                        <p class="text-2xl md:text-3xl font-black mb-0.5">450 000 ₽</p>
-                        <p class="text-white/70 text-[10px]">экономия/мес</p>
-                    </div>
-                    <div>
-                        <p class="text-2xl md:text-3xl font-black mb-0.5">165 000 ₽</p>
-                        <p class="text-white/70 text-[10px]">внедрение</p>
-                    </div>
-                </div>
-                <p class="text-xl md:text-2xl font-black">ROI <span class="text-sky-200">2.7×</span> в первый месяц</p>
-            </div>
+  <!-- ADDONS -->
+  <div class="addons-title">Дополнительные услуги</div>
+  <p class="addons-sub">Можно добавить к любому тарифу.</p>
+  <div class="addons-grid">
+    <div class="addon">
+      <div><div class="addon-name">Обучающий модуль (грейд 1–2)</div><div class="addon-desc">Групповое обучение основам промптинга, 4 часа</div></div>
+      <div class="addon-price">50 000 ₽<br/><span style="font-size:11px;color:var(--muted);font-weight:400">/группа</span></div>
+    </div>
+    <div class="addon">
+      <div><div class="addon-name">Повторная диагностика</div><div class="addon-desc">Через 6 месяцев — измерить прогресс команды</div></div>
+      <div class="addon-price">−30%<br/><span style="font-size:11px;color:var(--muted);font-weight:400">от первичной</span></div>
+    </div>
+    <div class="addon">
+      <div><div class="addon-name">Консультация по внедрению</div><div class="addon-desc">Разбор конкретных процессов и задач</div></div>
+      <div class="addon-price">10 000 ₽<br/><span style="font-size:11px;color:var(--muted);font-weight:400">/час</span></div>
+    </div>
+    <div class="addon">
+      <div><div class="addon-name">Адаптация под отрасль</div><div class="addon-desc">Кастомные профили должностей для вашей сферы</div></div>
+      <div class="addon-price">30 000 ₽<br/><span style="font-size:11px;color:var(--muted);font-weight:400">разово</span></div>
+    </div>
+  </div>
 
-            <!-- Additional Services -->
-            <h2 class="text-lg md:text-xl font-headline font-bold text-on-surface mb-2">Дополнительные услуги</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <div class="bg-white rounded-xl border border-outline-variant/50 p-3 flex items-center justify-between">
-                    <div>
-                        <p class="font-headline font-bold text-on-surface text-sm">Адаптация вопросов</p>
-                        <p class="text-on-surface-variant text-[10px] mt-0.5">Под вашу нишу</p>
-                    </div>
-                    <p class="font-black text-primary text-base whitespace-nowrap ml-3">30 000 ₽</p>
-                </div>
-                <div class="bg-white rounded-xl border border-outline-variant/50 p-3 flex items-center justify-between">
-                    <div>
-                        <p class="font-headline font-bold text-on-surface text-sm">Обучающий модуль</p>
-                        <p class="text-on-surface-variant text-[10px] mt-0.5">Вебинар по итогам</p>
-                    </div>
-                    <p class="font-black text-primary text-base whitespace-nowrap ml-3">50 000 ₽</p>
-                </div>
-            </div>
+  <!-- EXAMPLES -->
+  <div class="examples-title">Примеры ROI по типам компаний</div>
+  <p class="examples-sub">Консервативная оценка: 8 часов рутины в месяц на сотрудника, ставка 1 500 ₽/час.</p>
+  <div class="examples-grid">
+    <div class="example">
+      <div class="example-name">Маркетинговое агентство</div>
+      <div class="example-size">15 человек</div>
+      <div class="example-row"><span class="el">Потери/мес</span><span class="ev">180 000 ₽</span></div>
+      <div class="example-row"><span class="el">Диагностика</span><span class="ev">97 500 ₽</span></div>
+      <div class="example-row"><span class="el">Окупаемость</span><span class="ev">16 дней</span></div>
+      <div class="example-roi"><div class="rn">22x</div><div class="rl">ROI за год</div></div>
+    </div>
+    <div class="example">
+      <div class="example-name">Юридическая фирма</div>
+      <div class="example-size">8 человек</div>
+      <div class="example-row"><span class="el">Потери/мес</span><span class="ev">96 000 ₽</span></div>
+      <div class="example-row"><span class="el">Диагностика</span><span class="ev">68 000 ₽</span></div>
+      <div class="example-row"><span class="el">Окупаемость</span><span class="ev">21 день</span></div>
+      <div class="example-roi"><div class="rn">17x</div><div class="rl">ROI за год</div></div>
+    </div>
+    <div class="example">
+      <div class="example-name">Торговая компания</div>
+      <div class="example-size">30 человек</div>
+      <div class="example-row"><span class="el">Потери/мес</span><span class="ev">360 000 ₽</span></div>
+      <div class="example-row"><span class="el">Диагностика</span><span class="ev">180 000 ₽</span></div>
+      <div class="example-row"><span class="el">Окупаемость</span><span class="ev">15 дней</span></div>
+      <div class="example-roi"><div class="rn">24x</div><div class="rl">ROI за год</div></div>
+    </div>
+  </div>
 
-            <!-- CTA -->
-            <div class="text-center mt-6">
-                <a href="attestation.html" class="inline-flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full font-headline font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-lg">
-                    <span class="material-symbols-outlined text-base" style="font-variation-settings:'FILL' 1;">verified</span>
-                    Начать аттестацию
-                </a>
-            </div>
+  <!-- GUARANTEE -->
+  <div class="guarantee">
+    <div class="guarantee-icon">🛡</div>
+    <div class="guarantee-title">Гарантия результата</div>
+    <p class="guarantee-text">Если по итогам пилота экономия меньше 5 часов в месяц на сотрудника — возвращаем деньги. Мы настолько уверены в результате, что риск на нас. За всё время работы такого не случалось ни разу.</p>
+  </div>
 
-        </div>
-    </main>
+  <!-- BOTTOM CTA -->
+  <div class="bottom-cta">
+    <h2>Начните с двух сотрудников</h2>
+    <p>20 000 ₽. Результат через 3 дня. Решение — на основе фактов, а не обещаний.</p>
+    <a href="https://t.me/Bizbezit" target="_blank" rel="noopener" class="cta-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.394 13.9l-2.94-.924c-.64-.203-.652-.64.135-.954l11.57-4.461c.537-.194 1.006.131.735.66z"/></svg>
+      Написать в Telegram — @Bizbezit
+    </a>
+    <p class="cta-sub">Или позвоните: +7 922 180-09-11</p>
+  </div>
+</main>
 
-    <!-- Footer -->
-    <footer class="bg-surface py-6 border-t border-black/5 flex-shrink-0">
-        <div class="max-w-7xl mx-auto px-4 md:px-8 text-center">
-            <div class="text-lg font-black text-on-surface tracking-tighter flex items-center gap-2 justify-center mb-1">
-                <img src="photos/start.png" alt="VibeCraft" class="h-5 w-auto"/>
-                <span>VibeCraft</span>
-            </div>
-            <p class="text-on-surface-variant text-[9px] font-body uppercase tracking-widest">© 2025 VibeCraft — Аттестация 66AI</p>
-        </div>
-    </footer>
-
-    <script>
-        function toggleMobileMenu(){var m=document.getElementById('mobile-menu'),i=document.getElementById('menu-icon');if(m.classList.contains('hidden')){m.classList.remove('hidden');i.textContent='close'}else{m.classList.add('hidden');i.textContent='menu'}}
-        function closeMobileMenu(){var m=document.getElementById('mobile-menu'),i=document.getElementById('menu-icon');m.classList.add('hidden');i.textContent='menu'}
-    </script>
+<footer>
+  <div class="footer-logo">66<em>AI</em></div>
+  <div class="footer-links">
+    <a href="index.html">Главная</a>
+    <a href="cases.html">Кейсы</a>
+    <a href="about.html">Автор</a>
+    <a href="vibe.html">Обучение</a>
+  </div>
+  <div class="footer-copy">© 2026 66AI · Диагностика ИИ-эффективности</div>
+</footer>
 </body>
 </html>

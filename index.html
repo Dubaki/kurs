@@ -1,246 +1,613 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>66ai.ru — VibeCraft</title>
-    <link rel="canonical" href="https://66ai.ru/" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>66AI — Диагностика ИИ-эффективности для бизнеса</title>
+  <meta name="description" content="Находим, где ваши сотрудники теряют 200+ часов в месяц на рутине. Карта экономии с ROI 22x. Окупаемость — 16 дней."/>
+  <link rel="canonical" href="https://66ai.ru/"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Manrope', system-ui, sans-serif; background: #0f1219; color: #fff; -webkit-font-smoothing: antialiased; }
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <!-- Inter (заголовки) + Manrope (текст) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    :root {
+      --teal: #006875;
+      --teal-mid: #00909f;
+      --teal-light: #4dd0e1;
+      --dark: #0f1219;
+      --navy: #141b28;
+      --white: #ffffff;
+      --muted: rgba(255,255,255,0.5);
+      --border: rgba(255,255,255,0.09);
+      --head: 'Space Grotesk', system-ui, sans-serif;
+      --body: 'Manrope', system-ui, sans-serif;
+    }
 
-    <script id="tailwind-config">
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              "surface": "#f5f0e6",
-              "surface-dark": "#e8e2d9",
-              "on-surface": "#191c1e",
-              "on-surface-variant": "#43474e",
-              "primary": "#006875",
-              "primary-light": "#008a9a",
-              "bronze": "#8b6a4f",
-              "bronze-light": "#a37a5f",
-              "card-bg": "#ffffff",
-              "card-border": "#d4cfc6",
-            },
-            fontFamily: {
-              "emboss": ["Inter", "system-ui", "sans-serif"],
-              "body": ["Manrope", "-apple-system", "BlinkMacSystemFont", '"San Francisco"', '"Helvetica Neue"', "Helvetica", "Arial", "sans-serif"]
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      html, body { height: 100%; }
+    /* ── HEADER ─────────────────────────────────── */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px;
+      background: rgba(15,18,25,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--white); }
+    .logo-mark {
+      width: 32px; height: 32px; border-radius: 8px; background: var(--teal);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--head); font-weight: 900; font-size: 12px; letter-spacing: -0.5px;
+    }
+    .logo-name { font-family: var(--head); font-weight: 800; font-size: 17px; letter-spacing: -0.3px; }
+    .logo-name em { color: var(--teal-light); font-style: normal; }
 
-      body {
-          background-color: #f5f0e6;
-          color: #191c1e;
-          font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      }
+    nav { display: flex; align-items: center; gap: 2px; }
+    nav a {
+      font-family: var(--head); font-size: 13px; font-weight: 600;
+      color: var(--muted); text-decoration: none;
+      padding: 6px 13px; border-radius: 20px;
+      transition: color .2s, background .2s;
+    }
+    nav a:hover { color: var(--white); background: rgba(255,255,255,0.07); }
 
-      /* Bronze embossed text — Inter 900 */
-      .bronze-emboss {
-          color: #8b6a4f;
-          text-shadow:
-              0 1px 0 rgba(163, 122, 95, 0.3),
-              0 2px 0 rgba(130, 100, 75, 0.2),
-              0 3px 3px rgba(80, 60, 40, 0.15),
-              0 5px 8px rgba(60, 45, 30, 0.1);
-          font-family: 'Inter', system-ui, sans-serif;
-          letter-spacing: -0.03em;
-          font-weight: 900;
-      }
+    .btn-tg {
+      display: flex; align-items: center; gap: 7px;
+      font-family: var(--head); font-size: 13px; font-weight: 700;
+      color: var(--white); text-decoration: none;
+      border: 1px solid var(--border); padding: 7px 18px; border-radius: 24px;
+      transition: border-color .2s, background .2s;
+    }
+    .btn-tg:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.05); }
+    .btn-tg svg { width: 15px; height: 15px; opacity: 0.8; }
 
-      .bronze-emboss-sm {
-          color: #8b6a4f;
-          text-shadow:
-              0 1px 0 rgba(163, 122, 95, 0.25),
-              0 2px 0 rgba(130, 100, 75, 0.15),
-              0 3px 3px rgba(80, 60, 40, 0.12),
-              0 5px 8px rgba(60, 45, 30, 0.08);
-          font-family: 'Inter', system-ui, sans-serif;
-          letter-spacing: -0.03em;
-          font-weight: 800;
-      }
+    /* ── SPLIT GATEWAY ──────────────────────────── */
+    .gateway {
+      display: grid; grid-template-columns: 1fr 1fr;
+      height: 100vh; min-height: 600px;
+      padding-top: 60px;
+      position: relative;
+    }
+    .split-line {
+      position: absolute; top: 60px; bottom: 0; left: 50%;
+      width: 1px; background: var(--border); z-index: 5;
+    }
+    .split-badge {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--dark); border: 1px solid rgba(255,255,255,0.15);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      font-family: var(--head); font-size: 10px; font-weight: 900; line-height: 1.1;
+      box-shadow: 0 0 0 8px var(--dark);
+      animation: fadeIn .6s .8s both;
+    }
+    .split-badge span { color: var(--teal-light); }
 
-      /* Large Gateway Cards */
-      .gateway-card {
-          background: linear-gradient(160deg, #ffffff 0%, #faf8f4 100%);
-          border: 1px solid #d4cfc6;
-          border-radius: 1.5rem;
-          padding: 3rem 2.5rem;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          text-decoration: none;
-          position: relative;
-          overflow: hidden;
-          transition: all 0.4s cubic-bezier(.22,.61,.36,1);
-          box-shadow:
-              0 1px 3px rgba(25,28,30,0.04),
-              0 4px 12px rgba(25,28,30,0.06),
-              0 16px 40px rgba(25,28,30,0.04);
-      }
-      .gateway-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 40%;
-          background: linear-gradient(180deg, rgba(255,255,255,0.6) 0%, transparent 100%);
-          pointer-events: none;
-      }
-      .gateway-card:hover {
-          border-color: rgba(0, 104, 117, 0.3);
-          box-shadow:
-              0 2px 6px rgba(25,28,30,0.05),
-              0 8px 24px rgba(25,28,30,0.08),
-              0 24px 48px rgba(25,28,30,0.05),
-              0 0 0 1px rgba(0, 104, 117, 0.1);
-          transform: translateY(-3px);
-      }
+    .panel {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 64px 72px;
+      text-decoration: none; color: var(--white);
+      position: relative; overflow: hidden;
+      transition: flex .45s cubic-bezier(.22,.61,.36,1);
+    }
+    .panel:hover { flex: 1.08; }
+    .panel::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+      opacity: .5;
+    }
 
-      /* 3D Tilt */
-      .tilt-wrapper {
-          perspective: 1000px;
-      }
-      .tilt-card {
-          transform-style: preserve-3d;
-          transition: transform 0.35s cubic-bezier(.22,.61,.36,1);
-          will-change: transform;
-      }
-      .tilt-content {
-          transform: translateZ(15px);
-      }
+    /* Left — Диагностика */
+    .panel-diag {
+      background: linear-gradient(140deg, #00515f 0%, #003d49 55%, #002530 100%);
+    }
+    .panel-diag::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse at 25% 60%, rgba(0,144,159,.18) 0%, transparent 65%);
+      opacity: 0; transition: opacity .4s;
+    }
+    .panel-diag:hover::after { opacity: 1; }
 
-      /* Entrance animations */
-      @keyframes title-fade-in {
-          0%   { opacity: 0; transform: translateY(-15px) scale(0.97); }
-          100% { opacity: 1; transform: translateY(0) scale(1); }
-      }
-      @keyframes divider-fade-in {
-          0%   { opacity: 0; width: 0; }
-          100% { opacity: 1; width: 50px; }
-      }
-      @keyframes cards-fade-up {
-          0%   { opacity: 0; transform: translateY(30px); }
-          100% { opacity: 1; transform: translateY(0); }
-      }
-      .anim-title {
-          animation: title-fade-in 0.7s cubic-bezier(.22,.61,.36,1) forwards;
-          opacity: 0;
-      }
-      .anim-divider {
-          animation: divider-fade-in 0.5s ease-out 0.4s forwards;
-          opacity: 0;
-          width: 0;
-      }
-      .anim-cards {
-          animation: cards-fade-up 0.7s ease-out 0.7s forwards;
-          opacity: 0;
-      }
+    /* Right — VibeCraft */
+    .panel-vibe {
+      background: linear-gradient(140deg, #141b28 0%, #0f1520 55%, #090d14 100%);
+    }
+    .panel-vibe::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse at 75% 40%, rgba(77,208,225,.08) 0%, transparent 65%);
+      opacity: 0; transition: opacity .4s;
+    }
+    .panel-vibe:hover::after { opacity: 1; }
 
-      /* Responsive adjustments */
-      @media (max-width: 767px) {
-          .gateway-card {
-              padding: 2rem 1.5rem;
-              min-height: 280px;
-          }
-      }
-    </style>
+    .panel-content { position: relative; z-index: 2; }
+    .panel-tag {
+      font-family: var(--head); font-size: 10px; font-weight: 700;
+      letter-spacing: .22em; text-transform: uppercase; color: var(--muted);
+      display: flex; align-items: center; gap: 8px; margin-bottom: 22px;
+    }
+    .panel-tag::before { content: ''; width: 18px; height: 1px; background: currentColor; }
+
+    .panel-title {
+      font-family: var(--head); font-weight: 900; line-height: 1.0;
+      letter-spacing: -1.5px; margin-bottom: 18px;
+      font-size: clamp(34px, 3.5vw, 52px);
+    }
+    .panel-vibe .panel-title em { color: var(--teal-light); font-style: normal; }
+
+    .panel-desc {
+      font-size: 15px; font-weight: 400; color: rgba(255,255,255,.62);
+      line-height: 1.7; max-width: 360px; margin-bottom: 32px;
+    }
+
+    .panel-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--head); font-size: 14px; font-weight: 700;
+      text-decoration: none; padding: 12px 26px; border-radius: 32px;
+      transition: transform .22s, box-shadow .22s; width: fit-content;
+    }
+    .panel-cta:hover { transform: translateY(-2px); }
+    .panel-cta svg { width: 16px; height: 16px; transition: transform .22s; }
+    .panel-cta:hover svg { transform: translateX(3px); }
+
+    .panel-diag .panel-cta {
+      background: var(--white); color: var(--teal);
+      box-shadow: 0 4px 20px rgba(0,0,0,.28);
+    }
+    .panel-diag .panel-cta:hover { box-shadow: 0 8px 32px rgba(0,0,0,.38); }
+
+    .panel-vibe .panel-cta {
+      background: transparent; color: var(--teal-light);
+      border: 1.5px solid rgba(77,208,225,.4);
+    }
+    .panel-vibe .panel-cta:hover { background: rgba(77,208,225,.07); border-color: rgba(77,208,225,.7); }
+
+    .panel-stats {
+      display: flex; gap: 24px; margin-top: 36px; padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+    .stat-n {
+      font-family: var(--head); font-size: 20px; font-weight: 900; letter-spacing: -.5px;
+    }
+    .panel-diag .stat-n { color: rgba(77,208,225,.9); }
+    .panel-vibe .stat-n { color: rgba(77,208,225,.7); }
+    .stat-l { font-size: 10px; color: var(--muted); margin-top: 2px; font-weight: 500; }
+
+    /* VibeCraft tracks */
+    .tracks { display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; }
+    .track {
+      display: flex; align-items: flex-start; gap: 10px;
+      background: rgba(255,255,255,.04); border: 1px solid var(--border);
+      border-radius: 10px; padding: 12px 14px;
+    }
+    .track-dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 4px;
+    }
+    .track-title { font-family: var(--head); font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+    .track-sub { font-size: 11px; color: var(--muted); line-height: 1.4; }
+
+    /* Scroll hint */
+    .scroll-hint {
+      position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      font-size: 10px; font-family: var(--head); font-weight: 600;
+      letter-spacing: .18em; text-transform: uppercase; color: var(--muted);
+      animation: bounce 2s infinite; cursor: pointer; text-decoration: none; z-index: 10;
+    }
+    @keyframes bounce {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* Entrance animations */
+    @keyframes fadeIn { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform:none; } }
+    .panel-content > * { opacity: 0; animation: fadeIn .55s cubic-bezier(.22,.61,.36,1) both; }
+    .panel-diag .panel-content > *:nth-child(1) { animation-delay: .12s }
+    .panel-diag .panel-content > *:nth-child(2) { animation-delay: .22s }
+    .panel-diag .panel-content > *:nth-child(3) { animation-delay: .32s }
+    .panel-diag .panel-content > *:nth-child(4) { animation-delay: .42s }
+    .panel-diag .panel-content > *:nth-child(5) { animation-delay: .52s }
+    .panel-vibe .panel-content > *:nth-child(1) { animation-delay: .22s }
+    .panel-vibe .panel-content > *:nth-child(2) { animation-delay: .32s }
+    .panel-vibe .panel-content > *:nth-child(3) { animation-delay: .42s }
+    .panel-vibe .panel-content > *:nth-child(4) { animation-delay: .52s }
+    .panel-vibe .panel-content > *:nth-child(5) { animation-delay: .62s }
+
+    /* ── CALCULATOR SECTION ─────────────────────── */
+    #calculator {
+      background: #0a0e15;
+      padding: 100px 40px;
+      border-top: 1px solid var(--border);
+    }
+    .calc-wrap { max-width: 900px; margin: 0 auto; }
+    .section-label {
+      font-family: var(--head); font-size: 11px; font-weight: 700;
+      letter-spacing: .22em; text-transform: uppercase; color: var(--teal-light);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: var(--head); font-size: clamp(28px, 4vw, 44px);
+      font-weight: 900; letter-spacing: -1px; line-height: 1.1; margin-bottom: 12px;
+    }
+    .section-sub {
+      font-size: 16px; color: var(--muted); line-height: 1.65; max-width: 540px; margin-bottom: 52px;
+    }
+
+    .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+
+    .calc-inputs { display: flex; flex-direction: column; gap: 28px; }
+    .input-group label {
+      display: block; font-family: var(--head); font-size: 12px; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
+    }
+    .input-row { display: flex; align-items: center; gap: 16px; }
+    .range-wrap { flex: 1; position: relative; }
+    input[type=range] {
+      width: 100%; height: 4px; border-radius: 2px; outline: none; cursor: pointer;
+      background: linear-gradient(to right, var(--teal-mid) 0%, var(--teal-mid) var(--pct, 30%), rgba(255,255,255,.12) var(--pct, 30%), rgba(255,255,255,.12) 100%);
+      -webkit-appearance: none; appearance: none;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none; appearance: none;
+      width: 18px; height: 18px; border-radius: 50%;
+      background: var(--teal-mid); border: 2px solid var(--white);
+      box-shadow: 0 2px 8px rgba(0,0,0,.3); cursor: pointer;
+    }
+    .range-val {
+      font-family: var(--head); font-size: 22px; font-weight: 900;
+      color: var(--white); min-width: 72px; text-align: right;
+    }
+
+    .calc-result {
+      background: rgba(255,255,255,.03); border: 1px solid var(--border);
+      border-radius: 20px; padding: 36px 32px;
+      position: sticky; top: 80px;
+    }
+    .result-title {
+      font-family: var(--head); font-size: 12px; font-weight: 700;
+      letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 28px;
+    }
+    .result-rows { display: flex; flex-direction: column; gap: 0; }
+    .result-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 14px 0; border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+    .result-row:last-child { border-bottom: none; }
+    .result-row .lbl { color: var(--muted); }
+    .result-row .val { font-family: var(--head); font-weight: 700; font-size: 15px; }
+    .result-roi {
+      margin-top: 24px; background: linear-gradient(135deg, rgba(0,104,117,.3) 0%, rgba(77,208,225,.08) 100%);
+      border: 1px solid rgba(77,208,225,.2); border-radius: 14px; padding: 20px 22px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .roi-num {
+      font-family: var(--head); font-size: 42px; font-weight: 900;
+      color: var(--teal-light); letter-spacing: -2px; line-height: 1;
+    }
+    .roi-label { font-size: 13px; color: rgba(255,255,255,.7); line-height: 1.4; }
+    .roi-label strong { color: var(--white); display: block; font-size: 15px; margin-bottom: 2px; }
+
+    .calc-cta {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      width: 100%; margin-top: 22px; padding: 14px;
+      background: var(--teal); border-radius: 14px;
+      font-family: var(--head); font-size: 14px; font-weight: 700;
+      color: var(--white); text-decoration: none;
+      transition: background .2s, transform .2s;
+    }
+    .calc-cta:hover { background: var(--teal-mid); transform: translateY(-1px); }
+    .calc-cta svg { width: 16px; height: 16px; }
+
+    .calc-note {
+      margin-top: 12px; text-align: center; font-size: 11px; color: var(--muted); line-height: 1.5;
+    }
+
+    /* ── HOW IT WORKS ───────────────────────────── */
+    #how {
+      background: #0f1219; padding: 100px 40px; border-top: 1px solid var(--border);
+    }
+    .how-wrap { max-width: 900px; margin: 0 auto; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 52px; }
+    .step {
+      background: rgba(255,255,255,.03); border: 1px solid var(--border);
+      border-radius: 16px; padding: 28px 26px;
+    }
+    .step-num {
+      font-family: var(--head); font-size: 36px; font-weight: 900;
+      color: rgba(77,208,225,.2); letter-spacing: -2px; margin-bottom: 14px;
+    }
+    .step-title {
+      font-family: var(--head); font-size: 16px; font-weight: 700; margin-bottom: 8px;
+    }
+    .step-desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+    /* ── FOOTER ─────────────────────────────────── */
+    footer {
+      background: #0a0e15; border-top: 1px solid var(--border);
+      padding: 40px 40px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    }
+    .footer-logo { font-family: var(--head); font-weight: 800; font-size: 16px; }
+    .footer-logo em { color: var(--teal-light); font-style: normal; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; font-family: var(--head); transition: color .2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,.25); font-family: var(--head); }
+
+    /* ── MOBILE ─────────────────────────────────── */
+    @media (max-width: 900px) {
+      header { padding: 0 20px; }
+      nav { display: none; }
+      .gateway { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; height: auto; }
+      .panel { padding: 52px 28px; min-height: 52vh; }
+      .split-line { top: 60px; left: 0; right: 0; bottom: auto; width: 100%; height: 1px; }
+      .split-badge { display: none; }
+      .panel:hover { flex: unset; }
+      .calc-grid { grid-template-columns: 1fr; }
+      .calc-result { position: static; }
+      .steps { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
 </head>
-<body class="font-body">
+<body>
 
-    <!-- Full-screen Gateway -->
-    <div class="relative h-screen flex flex-col items-center justify-center px-4 py-4 overflow-hidden bg-[#f5f0e6]">
+<!-- ── HEADER ───────────────────────────────────── -->
+<header>
+  <a href="index.html" class="logo">
+    <div class="logo-mark">66</div>
+    <span class="logo-name">66<em>AI</em></span>
+  </a>
+  <nav>
+    <a href="#how">Как работает</a>
+    <a href="cases.html">Кейсы</a>
+    <a href="price.html">Цены</a>
+    <a href="about.html">Автор</a>
+    <a href="vibe.html">Обучение</a>
+  </nav>
+  <a href="https://t.me/Bizbezit" target="_blank" rel="noopener" class="btn-tg">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.394 13.9l-2.94-.924c-.64-.203-.652-.64.135-.954l11.57-4.461c.537-.194 1.006.131.735.66z"/>
+    </svg>
+    Написать
+  </a>
+</header>
 
-        <!-- Title: VibeCraft -->
-        <h1 class="anim-title text-center mb-1">
-            <span class="bronze-emboss text-7xl sm:text-8xl md:text-[9rem] lg:text-[12rem] leading-none tracking-tighter">VibeCraft</span>
-        </h1>
+<!-- ── GATEWAY ───────────────────────────────────── -->
+<section class="gateway">
+  <div class="split-line"></div>
+  <div class="split-badge">66<span>AI</span></div>
 
-        <!-- Subtitle -->
-        <p class="anim-title text-center text-on-surface-variant font-medium uppercase tracking-[0.25em] text-xs md:text-sm mb-4" style="animation-delay: 0.2s;">
-            Школа искусственного интеллекта
-        </p>
-
-        <!-- Divider -->
-        <div class="anim-divider h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent mb-6 md:mb-8"></div>
-
-        <!-- Two Large Equal Cards -->
-        <div class="anim-cards relative z-10 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-5xl w-full">
-
-            <!-- Card 1: Аттестация 66Ai -->
-            <div class="tilt-wrapper" data-tilt>
-                <a href="attestation.html" class="tilt-card gateway-card" style="min-height: 260px;">
-                    <div class="tilt-content flex flex-col items-center justify-center h-full w-full">
-                        <div class="bronze-emboss text-xl sm:text-2xl md:text-[1.5rem] leading-tight whitespace-nowrap mb-3">Аттестация 66Ai</div>
-                        <p class="text-on-surface-variant text-sm md:text-base leading-relaxed max-w-sm font-body font-light">
-                            Аттестация покажет кто из сотрудников умеет пользоваться ИИ и сколько можно будет экономить на рутинной работе в месяц
-                        </p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Card 2: Обучение Вайбкодингу -->
-            <div class="tilt-wrapper" data-tilt>
-                <a href="vibe.html" class="tilt-card gateway-card" style="min-height: 260px;">
-                    <div class="tilt-content flex flex-col items-center justify-center h-full w-full">
-                        <div class="bronze-emboss-sm text-lg sm:text-xl md:text-[1.35rem] leading-tight mb-3">Обучение Вайбкодингу</div>
-                        <p class="text-on-surface-variant text-sm md:text-base leading-relaxed max-w-sm font-body font-light">
-                            Вы можете обучить своих сотрудников или себя созданию телеграмм ботов, ИИ-Агентов или кастомных CRM систем
-                        </p>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <!-- Slogan -->
-        <div class="anim-cards relative z-10 max-w-5xl w-full mt-4 md:mt-6" style="animation-delay: 1s;">
-            <p class="text-center text-on-surface-variant font-light text-base md:text-lg leading-relaxed tracking-wide">
-                Масштабируйте интеллект, а&nbsp;не&nbsp;штат.
-            </p>
-        </div>
-
+  <!-- LEFT — Диагностика -->
+  <a href="attestation.html" class="panel panel-diag">
+    <div class="panel-content">
+      <div class="panel-tag">Для руководителей и HR</div>
+      <h1 class="panel-title">Диагностика<br/>ИИ-эффективности</h1>
+      <p class="panel-desc">
+        Находим, где ваши сотрудники теряют&nbsp;200+ часов в&nbsp;месяц на&nbsp;рутине. Показываем в&nbsp;рублях. Окупаемость&nbsp;— 16&nbsp;дней.
+      </p>
+      <div class="panel-cta">
+        Начать с&nbsp;двух сотрудников
+        <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="panel-stats">
+        <div><div class="stat-n">22x</div><div class="stat-l">ROI за год</div></div>
+        <div><div class="stat-n">16 дней</div><div class="stat-l">окупаемость</div></div>
+        <div><div class="stat-n">от 10 000 ₽</div><div class="stat-l">за сотрудника</div></div>
+      </div>
     </div>
+  </a>
 
-    <!-- 3D Tilt JS (Vanilla) -->
-    <script>
-    (function() {
-        var tiltWrappers = document.querySelectorAll('[data-tilt]');
-        var MAX_TILT = 2.5;
+  <!-- RIGHT — VibeCraft + Убийца рутины -->
+  <a href="vibe.html" class="panel panel-vibe">
+    <div class="panel-content">
+      <div class="panel-tag">Академия</div>
+      <div class="panel-title">Vibe<em>Craft</em></div>
+      <p class="panel-desc">Два трека обучения — в зависимости от уровня навыков команды.</p>
+      <div class="tracks">
+        <div class="track">
+          <div class="track-dot" style="background:#4dd0e1"></div>
+          <div>
+            <div class="track-title">VibeCraft — Академия</div>
+            <div class="track-sub">Создавайте ERP, CRM и Telegram-ботов без программистов. Для тех, кто готов строить IT своими руками.</div>
+          </div>
+        </div>
+        <div class="track">
+          <div class="track-dot" style="background:rgba(77,208,225,.4)"></div>
+          <div>
+            <div class="track-title">«Убийца Рутины» — старт</div>
+            <div class="track-sub">Базовый курс ИИ-грамотности. Для сотрудников, которые только начинают. Логичный следующий шаг после диагностики.</div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-cta">
+        Выбрать трек
+        <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </a>
 
-        tiltWrappers.forEach(function(wrapper) {
-            var card = wrapper.querySelector('.tilt-card');
-            if (!card) return;
+  <!-- Scroll hint -->
+  <a class="scroll-hint" href="#calculator">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+      <path d="M9 3v12M4 10l5 5 5-5" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Посчитать ROI
+  </a>
+</section>
 
-            wrapper.addEventListener('mousemove', function(e) {
-                var rect = wrapper.getBoundingClientRect();
-                var x = e.clientX - rect.left;
-                var y = e.clientY - rect.top;
-                var centerX = rect.width / 2;
-                var centerY = rect.height / 2;
+<!-- ── CALCULATOR ──────────────────────────────── -->
+<section id="calculator">
+  <div class="calc-wrap">
+    <div class="section-label">Калькулятор экономии</div>
+    <h2 class="section-title">Сколько теряет ваша команда прямо сейчас?</h2>
+    <p class="section-sub">Введите данные вашей компании — калькулятор покажет потенциал экономии и окупаемость диагностики.</p>
 
-                var rotateY = ((x - centerX) / centerX) * MAX_TILT;
-                var rotateX = ((centerY - y) / centerY) * MAX_TILT;
+    <div class="calc-grid">
+      <div class="calc-inputs">
+        <div class="input-group">
+          <label>Офисных сотрудников</label>
+          <div class="input-row">
+            <div class="range-wrap">
+              <input type="range" id="emp" min="2" max="200" value="10" step="1"/>
+            </div>
+            <div class="range-val" id="emp-val">10</div>
+          </div>
+        </div>
+        <div class="input-group">
+          <label>Средняя зарплата, ₽/мес</label>
+          <div class="input-row">
+            <div class="range-wrap">
+              <input type="range" id="salary" min="40000" max="300000" value="80000" step="5000"/>
+            </div>
+            <div class="range-val" id="salary-val">80 000</div>
+          </div>
+        </div>
+        <div class="input-group">
+          <label>Часов рутины в месяц (на&nbsp;чел.)</label>
+          <div class="input-row">
+            <div class="range-wrap">
+              <input type="range" id="hours" min="4" max="40" value="8" step="1"/>
+            </div>
+            <div class="range-val" id="hours-val">8</div>
+          </div>
+        </div>
+      </div>
 
-                card.style.transform = 'perspective(1000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
-            });
+      <div class="calc-result">
+        <div class="result-title">Ваши показатели</div>
+        <div class="result-rows">
+          <div class="result-row">
+            <span class="lbl">Стоимость часа (с&nbsp;налогами)</span>
+            <span class="val" id="r-hour">750 ₽</span>
+          </div>
+          <div class="result-row">
+            <span class="lbl">Потери в месяц</span>
+            <span class="val" id="r-month">60 000 ₽</span>
+          </div>
+          <div class="result-row">
+            <span class="lbl">Потери в год</span>
+            <span class="val" id="r-year">720 000 ₽</span>
+          </div>
+          <div class="result-row">
+            <span class="lbl">Стоимость диагностики</span>
+            <span class="val" id="r-diag">65 000 ₽</span>
+          </div>
+          <div class="result-row">
+            <span class="lbl">Окупаемость</span>
+            <span class="val" id="r-payback">33 дня</span>
+          </div>
+        </div>
+        <div class="result-roi">
+          <div class="roi-num" id="r-roi">11x</div>
+          <div class="roi-label">
+            <strong>ROI за первый год</strong>
+            Вложили в диагностику — вернули многократно
+          </div>
+        </div>
+        <a href="https://t.me/Bizbezit" target="_blank" rel="noopener" class="calc-cta">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.394 13.9l-2.94-.924c-.64-.203-.652-.64.135-.954l11.57-4.461c.537-.194 1.006.131.735.66z"/>
+          </svg>
+          Обсудить диагностику
+        </a>
+        <p class="calc-note">Начните с двух сотрудников — результат через 3 дня. <br/>Если экономии нет — вернём деньги.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-            wrapper.addEventListener('mouseleave', function() {
-                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
-            });
-        });
-    })();
-    </script>
+<!-- ── HOW IT WORKS ──────────────────────────── -->
+<section id="how">
+  <div class="how-wrap">
+    <div class="section-label">Как это работает</div>
+    <h2 class="section-title">Три шага до карты экономии</h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Пилот: два сотрудника</div>
+        <div class="step-desc">Выберите двух самых загруженных. Мы проведём полную диагностику за 2–3 дня. Те же этапы, тот же отчёт — никакой урезанной версии. Стоимость пилота: 20 000 ₽.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Карта потерь в рублях</div>
+        <div class="step-desc">На выходе — не «72 балла». А таблица: вот задача, вот часов теряется, вот стоимость, вот как исправить. Конкретный промпт, который работает с первого раза.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Масштаб или стоп</div>
+        <div class="step-desc">Увидели результат — расширяете на всю команду со скидкой за объём. Не увидели — не платите дальше. За всё время работы такого не было ни разу.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────── -->
+<footer>
+  <div class="footer-logo">66<em>AI</em></div>
+  <div class="footer-links">
+    <a href="cases.html">Кейсы</a>
+    <a href="price.html">Цены</a>
+    <a href="about.html">Об авторе</a>
+    <a href="vibe.html">Обучение</a>
+    <a href="https://t.me/Bizbezit" target="_blank" rel="noopener">Telegram</a>
+  </div>
+  <div class="footer-copy">© 2026 66AI · Масштабируйте интеллект, а не штат</div>
+</footer>
+
+<script>
+// ── Calculator logic ─────────────────────────
+function fmt(n) { return n.toLocaleString('ru-RU'); }
+
+function diagPrice(emp) {
+  if (emp <= 3)  return 10000 * emp;
+  if (emp <= 9)  return 8000 * emp;
+  if (emp <= 29) return 6500 * emp;
+  if (emp <= 49) return 6000 * emp;
+  if (emp <= 99) return 5500 * emp;
+  return 5500 * emp;
+}
+
+function updateCalc() {
+  const emp    = +document.getElementById('emp').value;
+  const salary = +document.getElementById('salary').value;
+  const hours  = +document.getElementById('hours').value;
+
+  const hourRate  = Math.round(salary / 160 * 1.5); // ~с налогами
+  const lossMonth = emp * hours * hourRate;
+  const lossYear  = lossMonth * 12;
+  const diagCost  = diagPrice(emp);
+  const payDays   = Math.round(diagCost / lossMonth * 30);
+  const roi       = Math.round(lossYear / diagCost);
+
+  document.getElementById('r-hour').textContent    = fmt(hourRate) + ' ₽';
+  document.getElementById('r-month').textContent   = fmt(lossMonth) + ' ₽';
+  document.getElementById('r-year').textContent    = fmt(lossYear) + ' ₽';
+  document.getElementById('r-diag').textContent    = fmt(diagCost) + ' ₽';
+  document.getElementById('r-payback').textContent = payDays + ' дн.';
+  document.getElementById('r-roi').textContent     = roi + 'x';
+
+  document.getElementById('emp-val').textContent    = emp;
+  document.getElementById('salary-val').textContent = fmt(salary);
+  document.getElementById('hours-val').textContent  = hours;
+
+  // Update range track fill
+  ['emp','salary','hours'].forEach(id => {
+    const el = document.getElementById(id);
+    const min = +el.min, max = +el.max, val = +el.value;
+    el.style.setProperty('--pct', ((val - min) / (max - min) * 100) + '%');
+  });
+}
+
+['emp','salary','hours'].forEach(id => {
+  document.getElementById(id).addEventListener('input', updateCalc);
+});
+updateCalc();
+</script>
 </body>
 </html>

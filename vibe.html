@@ -1,1461 +1,397 @@
 <!DOCTYPE html>
-<html class="light" lang="ru">
+<html lang="ru">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Курсы по Vibe Coding | Создай IT-инструменты без программистов</title>
-    <meta name="description" content="Обучение владельцев бизнеса Vibe Coding. Создавайте ERP, CRM и ИИ-ботов своими руками с помощью нейросетей, без найма программистов.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://66ai.ru/">
-    <meta property="og:title" content="Курсы по Vibe Coding | Создай IT-инструменты без программистов">
-    <meta property="og:description" content="Один человек. Мощность отдела. Ноль программистов. Научим автоматизировать бизнес через Cursor и Claude.">
-    <meta property="og:image" content="https://66ai.ru/robot_green_nodes.webp">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Курсы по Vibe Coding | Создай IT-инструменты без программистов">
-    <meta property="twitter:image" content="https://66ai.ru/robot_green_nodes.webp">
-
-    <link rel="canonical" href="https://66ai.ru/" />
-
-    <!-- Schema.org Microdata -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "Курсы по Vibe Coding | VibeCraft",
-      "description": "Обучение владельцев бизнеса Vibe Coding. Создавайте ERP, CRM и ИИ-ботов своими руками без программистов.",
-      "provider": {
-        "@type": "Organization",
-        "name": "VibeCraft",
-        "sameAs": "https://66ai.ru/"
-      },
-      "offers": {
-        "@type": "Offer",
-        "category": "Education",
-        "price": "4990",
-        "priceCurrency": "RUB"
-      }
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Обучение ИИ — VibeCraft и Убийца Рутины · 66AI</title>
+  <meta name="description" content="Два трека: «Убийца Рутины» — базовый курс для уровней 1–2, VibeCraft Академия — для тех, кто хочет создавать IT-продукты без программистов."/>
+  <link rel="canonical" href="https://66ai.ru/vibe.html"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Manrope', system-ui, sans-serif; background: #0f1219; color: #fff; -webkit-font-smoothing: antialiased; }
+    :root {
+      --teal: #006875; --teal-mid: #00909f; --teal-light: #4dd0e1;
+      --amber: #f59e0b; --amber-light: #fcd34d;
+      --violet: #7c3aed; --violet-light: #a78bfa;
+      --dark: #0f1219; --border: rgba(255,255,255,.09); --muted: rgba(255,255,255,.5);
+      --head: 'Space Grotesk', system-ui, sans-serif;
     }
-    </script>
-    
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-    
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "surface-container-highest": "#e8e2d9",
-              "inverse-primary": "#006875",
-              "on-tertiary-container": "#412d00",
-              "secondary-container": "#d3e3ff",
-              "surface-container-lowest": "#ffffff",
-              "tertiary": "#8d5f00",
-              "on-secondary": "#ffffff",
-              "on-surface": "#191c1e",
-              "surface-bright": "#fcf8f1",
-              "primary-container": "#9cf0ff",
-              "surface": "#f5f0e6",
-              "on-primary-container": "#001f24",
-              "on-background": "#191c1e",
-              "error": "#ba1a1a",
-              "primary": "#006875",
-              "on-primary": "#ffffff",
-              "surface-container": "#f0eade",
-              "on-surface-variant": "#43474e",
-              "background": "#f5f0e6",
-              "outline": "#73777f",
-              "surface-variant": "#dee3eb",
-              "outline-variant": "#c3c6cf"
-            },
-            fontFamily: {
-              "headline": ["Space Grotesk"],
-              "body": ["Manrope"],
-              "label": ["Manrope"]
-            },
-            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
-          },
-        },
-      }
-    </script>
-    <style>
-      .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-      }
-      body {
-        background-color: #f5f0e6;
-        color: #191c1e;
-      }
-      .image-container-glow {
-          position: relative;
-      }
-      .image-container-glow::after {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: radial-gradient(circle at center, transparent 40%, #f5f0e6 80%);
-          pointer-events: none;
-      }
-      @media (max-width: 767px) {
-        body {
-          padding-bottom: 80px;
-        }
-      }
-      @keyframes btn-pulse {
-          0%, 100% { box-shadow: 0 0 0 0 rgba(0, 104, 117, 0.4); transform: scale(1); }
-          50%       { box-shadow: 0 0 0 10px rgba(0, 104, 117, 0); transform: scale(1.02); }
-      }
-      .btn-pulse { animation: btn-pulse 2s ease-in-out infinite; }
-      @keyframes breathe {
-          0%, 100% { transform: scale(1); }
-          50%      { transform: scale(1.05); }
-      }
-      .anim-breathe { animation: breathe 3s ease-in-out infinite; will-change: transform; }
-      /* Logo morph animation */
-      @keyframes logo-morph {
-          0%, 100% { background-color: #006875; border-radius: 4px; border: 2px solid transparent; }
-          50%      { background-color: transparent; border-radius: 50%; border: 2px solid #006875; }
-      }
-      @keyframes logo-v-morph {
-          0%, 100% { color: #ffffff; }
-          50%      { color: #1e40af; }
-      }
-      .logo-morph { animation: logo-morph 5s ease-in-out infinite; will-change: background-color, border-radius; }
-      .logo-v-morph { animation: logo-v-morph 5s ease-in-out infinite; will-change: color; }
-      /* Slow pulse for CTA button - B2B Premium */
-      @keyframes slow-pulse {
-          0%, 100% { box-shadow: 0 4px 14px rgba(0, 104, 117, 0.25); }
-          50%      { box-shadow: 0 4px 28px rgba(0, 104, 117, 0.45); }
-      }
-      .slow-pulse { animation: slow-pulse 3s ease-in-out infinite; will-change: box-shadow; }
-      /* Vibe CTA intense pulse - sky blue */
-      @keyframes vibe-cta-pulse {
-          0%, 100% { box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3); }
-          50%      { box-shadow: 0 4px 32px rgba(56, 189, 248, 0.55), 0 0 0 8px rgba(56, 189, 248, 0.08); }
-      }
-      .vibe-cta-pulse { animation: vibe-cta-pulse 2.5s ease-in-out infinite; will-change: box-shadow; }
-      /* "Fantastic" shine animation - kept for potential future use */
-      @keyframes fancy-shine {
-          0%   { transform: translateX(-120%); }
-          100% { transform: translateX(220%); }
-      }
-      .fancy-shine {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 40%;
-          height: 100%;
-          background: linear-gradient(
-              105deg,
-              transparent 20%,
-              rgba(0, 104, 117, 0.12) 40%,
-              rgba(0, 104, 117, 0.25) 50%,
-              rgba(0, 104, 117, 0.12) 60%,
-              transparent 80%
-          );
-          animation: fancy-shine 3.5s ease-in-out infinite;
-          will-change: transform;
-      }
-      .fancy-btn:hover {
-          border-color: rgba(0, 104, 117, 0.8);
-          background-color: rgba(0, 104, 117, 0.06);
-          box-shadow: 0 4px 20px rgba(0, 104, 117, 0.15);
-          transition: all 0.4s cubic-bezier(.4,0,.2,1);
-      }
-      .fancy-btn:active {
-          transform: scale(0.97);
-          transition: transform 0.15s ease;
-      }
-    </style>
+
+    header { position: sticky; top: 0; z-index: 100; height: 60px; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; background: rgba(15,18,25,.9); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; }
+    .logo-mark { width: 32px; height: 32px; border-radius: 8px; background: var(--teal); display: flex; align-items: center; justify-content: center; font-family: var(--head); font-weight: 900; font-size: 12px; }
+    .logo-name { font-family: var(--head); font-weight: 800; font-size: 17px; }
+    .logo-name em { color: var(--teal-light); font-style: normal; }
+    nav { display: flex; gap: 2px; }
+    nav a { font-family: var(--head); font-size: 13px; font-weight: 600; color: var(--muted); text-decoration: none; padding: 6px 13px; border-radius: 20px; transition: color .2s, background .2s; }
+    nav a:hover, nav a.active { color: #fff; background: rgba(255,255,255,.07); }
+    .btn-tg { display: flex; align-items: center; gap: 7px; font-family: var(--head); font-size: 13px; font-weight: 700; color: #fff; text-decoration: none; border: 1px solid var(--border); padding: 7px 18px; border-radius: 24px; transition: border-color .2s, background .2s; }
+    .btn-tg:hover { border-color: rgba(255,255,255,.3); background: rgba(255,255,255,.05); }
+    .btn-tg svg { width: 15px; height: 15px; opacity: .8; }
+
+    /* HERO */
+    .hero { padding: 96px 40px 72px; max-width: 1000px; margin: 0 auto; text-align: center; }
+    .hero-label { font-family: var(--head); font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 20px; }
+    .hero-title { font-family: var(--head); font-size: clamp(34px, 5vw, 62px); font-weight: 900; letter-spacing: -2px; line-height: 1.05; margin-bottom: 20px; }
+    .hero-sub { font-size: 17px; color: var(--muted); line-height: 1.7; max-width: 560px; margin: 0 auto 16px; }
+    .hero-note { font-size: 13px; color: var(--muted); margin-bottom: 48px; }
+
+    /* TRACK SELECTOR */
+    .track-tabs { display: flex; justify-content: center; gap: 12px; margin-bottom: 64px; }
+    .track-tab { display: flex; align-items: center; gap: 8px; font-family: var(--head); font-size: 14px; font-weight: 700; padding: 10px 22px; border-radius: 28px; cursor: pointer; border: 1.5px solid var(--border); background: transparent; color: var(--muted); transition: all .25s; }
+    .track-tab.active-killer { border-color: var(--amber); background: rgba(245,158,11,.1); color: var(--amber-light); }
+    .track-tab.active-vibe { border-color: var(--violet-light); background: rgba(124,58,237,.12); color: var(--violet-light); }
+    .track-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+    /* TRACKS */
+    .tracks-container { max-width: 1000px; margin: 0 auto; padding: 0 40px 100px; }
+
+    .track-panel { display: none; }
+    .track-panel.visible { display: block; }
+
+    /* KILLER ROUTINE track */
+    .killer-hero {
+      background: linear-gradient(135deg, rgba(245,158,11,.12) 0%, rgba(245,158,11,.03) 100%);
+      border: 1px solid rgba(245,158,11,.2); border-radius: 24px; padding: 48px 40px; margin-bottom: 40px;
+      display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center;
+    }
+    .killer-title { font-family: var(--head); font-size: clamp(28px, 4vw, 42px); font-weight: 900; letter-spacing: -1px; margin-bottom: 12px; }
+    .killer-sub { font-size: 15px; color: rgba(255,255,255,.72); line-height: 1.7; max-width: 480px; margin-bottom: 28px; }
+    .killer-badge { background: rgba(245,158,11,.15); border: 1px solid rgba(245,158,11,.3); border-radius: 12px; padding: 20px 24px; text-align: center; flex-shrink: 0; min-width: 160px; }
+    .killer-price { font-family: var(--head); font-size: 36px; font-weight: 900; color: var(--amber-light); letter-spacing: -1px; }
+    .killer-price-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+    .btn-amber { display: inline-flex; align-items: center; gap: 8px; background: var(--amber); color: #0f1219; text-decoration: none; font-family: var(--head); font-size: 14px; font-weight: 800; padding: 13px 28px; border-radius: 28px; transition: background .2s, transform .2s; }
+    .btn-amber:hover { background: var(--amber-light); transform: translateY(-1px); }
+    .btn-amber svg { width: 16px; height: 16px; }
+
+    /* Grid of killer modules */
+    .modules-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 40px; }
+    .module-card { background: rgba(255,255,255,.025); border: 1px solid var(--border); border-radius: 14px; padding: 22px 20px; }
+    .module-num { font-family: var(--head); font-size: 11px; font-weight: 700; letter-spacing: .15em; color: var(--amber); margin-bottom: 8px; }
+    .module-title { font-family: var(--head); font-size: 16px; font-weight: 800; margin-bottom: 6px; }
+    .module-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .module-duration { margin-top: 10px; font-size: 12px; font-family: var(--head); font-weight: 600; color: var(--amber); }
+
+    .who-box { background: rgba(255,255,255,.025); border: 1px solid var(--border); border-radius: 16px; padding: 28px 28px; margin-bottom: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .who-title { font-family: var(--head); font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+    .who-list { display: flex; flex-direction: column; gap: 7px; }
+    .who-item { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.4; }
+    .who-item::before { content: '→'; color: var(--amber); flex-shrink: 0; font-weight: 700; }
+    .who-item.not::before { content: '✗'; color: var(--muted); }
+
+    /* VIBECRAFT track */
+    .vibe-hero {
+      background: linear-gradient(135deg, rgba(124,58,237,.15) 0%, rgba(77,208,225,.05) 100%);
+      border: 1px solid rgba(124,58,237,.25); border-radius: 24px; padding: 48px 40px; margin-bottom: 40px;
+      display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center;
+    }
+    .vibe-title { font-family: var(--head); font-size: clamp(28px, 4vw, 42px); font-weight: 900; letter-spacing: -1px; margin-bottom: 12px; }
+    .vibe-title em { color: var(--teal-light); font-style: normal; }
+    .vibe-sub { font-size: 15px; color: rgba(255,255,255,.72); line-height: 1.7; max-width: 480px; margin-bottom: 28px; }
+    .vibe-badge { background: rgba(124,58,237,.12); border: 1px solid rgba(124,58,237,.3); border-radius: 12px; padding: 20px 24px; text-align: center; flex-shrink: 0; min-width: 160px; }
+    .vibe-price { font-family: var(--head); font-size: 36px; font-weight: 900; color: var(--violet-light); letter-spacing: -1px; }
+    .vibe-price-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+    .btn-violet { display: inline-flex; align-items: center; gap: 8px; background: var(--violet); color: #fff; text-decoration: none; font-family: var(--head); font-size: 14px; font-weight: 800; padding: 13px 28px; border-radius: 28px; transition: background .2s, transform .2s; }
+    .btn-violet:hover { background: #6d28d9; transform: translateY(-1px); }
+    .btn-violet svg { width: 16px; height: 16px; }
+
+    .vibe-projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 40px; }
+    .project-card { background: rgba(255,255,255,.025); border: 1px solid var(--border); border-radius: 12px; padding: 18px 16px; }
+    .project-icon { font-size: 22px; margin-bottom: 10px; }
+    .project-title { font-family: var(--head); font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+    .project-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    .method-steps { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
+    .method-step { display: flex; align-items: flex-start; gap: 16px; padding: 16px 18px; background: rgba(255,255,255,.025); border: 1px solid var(--border); border-radius: 12px; }
+    .method-step-num { font-family: var(--head); font-size: 20px; font-weight: 900; color: var(--violet-light); width: 32px; flex-shrink: 0; }
+    .method-step-title { font-family: var(--head); font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .method-step-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+    /* ABOUT AUTHOR (shared) */
+    .author-block { background: rgba(255,255,255,.02); border: 1px solid var(--border); border-radius: 20px; padding: 36px 32px; display: flex; align-items: flex-start; gap: 24px; margin-bottom: 40px; }
+    .author-avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--teal); display: flex; align-items: center; justify-content: center; font-family: var(--head); font-weight: 900; font-size: 24px; flex-shrink: 0; }
+    .author-name { font-family: var(--head); font-size: 17px; font-weight: 800; margin-bottom: 4px; }
+    .author-role { font-size: 12px; color: var(--muted); margin-bottom: 12px; font-family: var(--head); font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+    .author-quote { font-size: 14px; color: rgba(255,255,255,.75); line-height: 1.7; font-style: italic; }
+    .author-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-family: var(--head); font-size: 13px; font-weight: 700; color: var(--teal-light); text-decoration: none; }
+    .author-link:hover { opacity: .8; }
+
+    /* CTA bottom */
+    .track-cta { background: linear-gradient(135deg, rgba(0,104,117,.2) 0%, rgba(77,208,225,.04) 100%); border: 1px solid rgba(77,208,225,.15); border-radius: 20px; padding: 48px 40px; text-align: center; }
+    .track-cta h3 { font-family: var(--head); font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; letter-spacing: -.8px; margin-bottom: 12px; }
+    .track-cta p { font-size: 15px; color: var(--muted); margin-bottom: 28px; max-width: 440px; margin-left: auto; margin-right: auto; }
+    .track-cta-note { font-size: 12px; color: var(--muted); margin-top: 12px; }
+
+    footer { background: #0a0e15; border-top: 1px solid var(--border); padding: 32px 40px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-logo { font-family: var(--head); font-weight: 800; font-size: 15px; }
+    .footer-logo em { color: var(--teal-light); font-style: normal; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; font-family: var(--head); transition: color .2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,.2); font-family: var(--head); }
+
+    @media (max-width: 768px) {
+      header { padding: 0 20px; } nav { display: none; }
+      .hero { padding: 64px 20px 48px; }
+      .tracks-container { padding: 0 20px 80px; }
+      .killer-hero, .vibe-hero { grid-template-columns: 1fr; }
+      .killer-badge, .vibe-badge { display: none; }
+      .modules-grid { grid-template-columns: 1fr; }
+      .vibe-projects { grid-template-columns: 1fr; }
+      .who-box { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
 </head>
-<body class="font-body selection:bg-primary selection:text-on-primary">
-    <!-- TopNavBar -->
-    <header class="bg-[#f5f0e6]/80 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-black/5">
-        <div class="flex justify-between items-center w-full px-4 md:px-8 py-2 md:py-4 max-w-7xl mx-auto">
-            <a href="index.html" class="flex items-center gap-2 text-xl font-black text-on-surface tracking-tighter no-underline">
-                <div class="bg-primary text-white w-8 h-8 flex items-center justify-center rounded font-bold text-sm logo-morph"><span class="logo-v-morph">V</span></div>
-                <span>VibeCraft</span>
-            </a>
-            <nav class="hidden lg:flex items-center gap-1 font-['Space_Grotesk'] font-bold uppercase tracking-tight text-lg">
-                <a class="text-primary px-3 py-1 hover:text-inverse-primary hover:-translate-y-0.5 rounded-lg transition-all duration-300 ease-in-out" href="#top">НАЧАЛО</a>
-                <a class="text-on-surface/70 hover:text-primary hover:-translate-y-0.5 px-3 py-1 rounded-lg transition-all duration-300 ease-in-out" href="#process">ПРОЦЕСС</a>
-                <a class="text-on-surface/70 hover:text-primary hover:-translate-y-0.5 px-3 py-1 rounded-lg transition-all duration-300 ease-in-out" href="#program">ПРОГРАММА</a>
-                <a class="text-on-surface/70 hover:text-primary hover:-translate-y-0.5 px-3 py-1 rounded-lg transition-all duration-300 ease-in-out" href="cases.html">КЕЙСЫ</a>
-                <a class="text-on-surface/70 hover:text-primary hover:-translate-y-0.5 px-3 py-1 rounded-lg transition-all duration-300 ease-in-out" href="blog.html">БЛОГ</a>
-                <a class="text-on-surface/70 hover:text-primary hover:-translate-y-0.5 px-3 py-1 rounded-lg transition-all duration-300 ease-in-out" href="about.html">АВТОР</a>
-                <a class="text-on-surface/70 hover:text-primary hover:-translate-y-0.5 px-3 py-1 rounded-lg transition-all duration-300 ease-in-out" href="#faq">FAQ</a>
-            </nav>
-            <div class="flex items-center gap-1">
-                <!-- Contact Icons: Phone, TG, MAX -->
-                <a href="tel:+79221800911" class="hover:opacity-80 transition-all duration-300 ease-in-out p-1.5" title="Позвонить">
-                    <img src="photos/T.png" alt="Позвонить" class="h-6 w-6 object-contain"/>
-                </a>
-                <a href="https://t.me/Bizbezit" target="_blank" rel="noopener" class="hover:opacity-80 transition-all duration-300 ease-in-out p-1.5" title="Telegram">
-                    <img src="photos/Telegram.png" alt="Telegram" class="h-6 w-6 object-contain"/>
-                </a>
-                <a href="https://max.ru/+79221800911" target="_blank" rel="noopener" class="hover:opacity-80 transition-all duration-300 ease-in-out p-1.5" title="MAX">
-                    <img src="photos/MAX.svg.png" alt="MAX" class="h-6 w-6 object-contain"/>
-                </a>
-                <!-- Hamburger (mobile only) -->
-                <button id="mobile-menu-btn" class="lg:hidden text-on-surface hover:text-primary transition-colors p-1" onclick="toggleMobileMenu()">
-                    <span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span>
-                </button>
-            </div>
-        </div>
-        <!-- Mobile Dropdown Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-[#f5f0e6]/95 backdrop-blur-xl border-t border-black/5 absolute top-full left-0 right-0 z-50 shadow-lg">
-            <nav class="flex flex-col items-center py-6 gap-1 font-['Space_Grotesk'] font-bold uppercase tracking-tight text-sm">
-                <a class="w-full text-center py-3 text-primary bg-primary/5 font-black" href="#top" onclick="closeMobileMenu()">НАЧАЛО</a>
-                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="#process" onclick="closeMobileMenu()">ПРОЦЕСС</a>
-                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="#program" onclick="closeMobileMenu()">ПРОГРАММА</a>
-                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="cases.html" onclick="closeMobileMenu()">КЕЙСЫ</a>
-                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="blog.html" onclick="closeMobileMenu()">БЛОГ</a>
-                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="about.html" onclick="closeMobileMenu()">АВТОР</a>
-                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="#faq" onclick="closeMobileMenu()">FAQ</a>
-                <div class="flex items-center gap-4 py-3 text-on-surface/50">
-                    <a href="tel:+79221800911" class="hover:opacity-80 transition-colors p-1.5" title="Позвонить">
-                        <img src="photos/T.png" alt="Позвонить" class="h-6 w-6 object-contain"/>
-                    </a>
-                    <a href="https://t.me/Bizbezit" target="_blank" rel="noopener" class="hover:opacity-80 transition-colors p-1.5" title="Telegram">
-                        <img src="photos/Telegram.png" alt="Telegram" class="h-6 w-6 object-contain"/>
-                    </a>
-                    <a href="https://max.ru/+79221800911" target="_blank" rel="noopener" class="hover:opacity-80 transition-colors p-1.5" title="MAX">
-                        <img src="photos/MAX.svg.png" alt="MAX" class="h-6 w-6 object-contain"/>
-                    </a>
-                </div>
-            </nav>
-        </div>
-    </header>
+<body>
 
-    <!-- Mobile Fixed Bottom Navigation -->
-    <div class="md:hidden fixed bottom-0 left-0 right-0 z-[60] bg-surface/90 backdrop-blur-xl border-t border-black/5 px-6 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
-        <div class="flex justify-between items-center w-full max-w-md mx-auto px-2">
-            <a class="flex flex-col items-center gap-1 text-primary" href="#top">
-                <span class="material-symbols-outlined text-[20px]" data-icon="home">home</span>
-                <span class="text-[8px] font-headline font-black uppercase tracking-widest">Домой</span>
-            </a>
-            <a class="flex flex-col items-center gap-1 text-on-surface/60 hover:text-primary transition-colors" href="#process">
-                <span class="material-symbols-outlined text-[20px]" data-icon="schema">schema</span>
-                <span class="text-[8px] font-headline font-black uppercase tracking-widest">Процесс</span>
-            </a>
-            <a class="flex flex-col items-center gap-1 text-on-surface/60 hover:text-primary transition-colors" href="#program">
-                <span class="material-symbols-outlined text-[20px]" data-icon="school">school</span>
-                <span class="text-[8px] font-headline font-black uppercase tracking-widest">Курсы</span>
-            </a>
-            <a class="flex flex-col items-center gap-1 text-on-surface/60 hover:text-primary transition-colors" href="cases.html">
-                <span class="material-symbols-outlined text-[20px]" data-icon="grid_view">grid_view</span>
-                <span class="text-[8px] font-headline font-black uppercase tracking-widest">Кейсы</span>
-            </a>
-        </div>
+<header>
+  <a href="index.html" class="logo">
+    <div class="logo-mark">66</div>
+    <span class="logo-name">66<em>AI</em></span>
+  </a>
+  <nav>
+    <a href="index.html#how">Как работает</a>
+    <a href="cases.html">Кейсы</a>
+    <a href="price.html">Цены</a>
+    <a href="about.html">Автор</a>
+    <a href="vibe.html" class="active">Обучение</a>
+  </nav>
+  <a href="https://t.me/Bizbezit" target="_blank" rel="noopener" class="btn-tg">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.394 13.9l-2.94-.924c-.64-.203-.652-.64.135-.954l11.57-4.461c.537-.194 1.006.131.735.66z"/></svg>
+    Написать
+  </a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">Академия 66AI · Два трека обучения</div>
+  <h1 class="hero-title">Обучение под ваш уровень</h1>
+  <p class="hero-sub">После диагностики каждый сотрудник получает рекомендацию. Уровни 1–2 — базовый курс ИИ-продуктивности. Уровни 3–5 — академия для создания собственных IT-инструментов.</p>
+  <p class="hero-note">Не проходили диагностику? <a href="attestation.html" style="color:var(--teal-light);text-decoration:none;font-weight:700">Начните с неё →</a></p>
+
+  <div class="track-tabs">
+    <button class="track-tab active-killer" onclick="showTrack('killer')">
+      <div class="track-dot" style="background:var(--amber)"></div>
+      ⚡ Убийца Рутины — уровни 1–2
+    </button>
+    <button class="track-tab" onclick="showTrack('vibe')">
+      <div class="track-dot" style="background:var(--violet-light)"></div>
+      🚀 VibeCraft Академия — уровни 3–5
+    </button>
+  </div>
+</div>
+
+<div class="tracks-container">
+
+  <!-- ── TRACK: УБИЙЦА РУТИНЫ ───────────────────── -->
+  <div class="track-panel visible" id="track-killer">
+
+    <div class="killer-hero">
+      <div>
+        <div class="killer-title">⚡ Убийца Рутины</div>
+        <p class="killer-sub">Базовый курс ИИ-грамотности. За 4 часа сотрудник научится применять ИИ к своим конкретным задачам — и начнёт экономить время уже на следующий день. Логичный следующий шаг после диагностики для уровней 1–2.</p>
+        <a href="https://t.me/Bizbezit" target="_blank" rel="noopener" class="btn-amber">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.394 13.9l-2.94-.924c-.64-.203-.652-.64.135-.954l11.57-4.461c.537-.194 1.006.131.735.66z"/></svg>
+          Записаться на курс
+        </a>
+      </div>
+      <div class="killer-badge">
+        <div class="killer-price">50 000 ₽</div>
+        <div class="killer-price-sub">за группу до 12 чел.<br/>или уточните формат</div>
+      </div>
     </div>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="relative min-h-[90vh] flex items-center overflow-hidden pt-3 pb-10 lg:pt-12 lg:pb-24 border-b border-black/5">
-            <!-- Фоновое изображение -->
-            <div class="absolute inset-0 z-0 pointer-events-none">
-                <img src="photos/fon.png" alt="" class="w-full h-full object-cover opacity-[0.09] grayscale"/>
-            </div>
-            <div class="max-w-7xl mx-auto px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-3 lg:gap-12 items-start lg:items-center relative z-10">
-                <!-- CTA Block: Mobile order-1, Desktop order-1 (full width top) -->
-                <div class="lg:col-span-12 order-1 lg:order-1 flex justify-center relative z-20">
-                    <a href="#program" class="block w-fit bg-sky-400 text-white px-8 py-4 rounded-2xl vibe-cta-pulse hover:scale-[1.02] transition-all mt-0">
-                        <div class="flex flex-col items-center justify-center leading-tight">
-                            <span class="font-headline font-black text-sm uppercase tracking-widest">Твой ИИ-Ассистент за выходные</span>
-                            <span class="font-headline font-black text-lg uppercase tracking-widest mt-1">за 990₽</span>
-                        </div>
-                    </a>
-                </div>
-                <!-- Photo: Mobile order-2, Desktop order-2 -->
-                <div class="lg:col-span-4 order-2 lg:order-2 flex justify-center lg:justify-start mt-[-50px] lg:mt-[-8rem] relative z-10">
-                    <img alt="Шахмаев Александр — основатель VibeCraft"
-                         class="w-full h-auto max-w-md object-contain p-0 m-0"
-                         src="photos/ph1.webp?v=1.1"
-                         style="-webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 88%), linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); mask-image: linear-gradient(to bottom, black 50%, transparent 88%), linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); -webkit-mask-composite: intersect; mask-composite: intersect;"/>
-                </div>
-                <!-- Text: Mobile order-3, Desktop order-3 -->
-                <div class="lg:col-span-8 order-3 lg:order-3 z-10">
-                    <h1 class="text-3xl md:text-6xl font-headline font-black text-on-surface leading-[0.85] tracking-tighter mb-4 md:min-h-0">
-                        НЕ НАНИМАЙ.<br/><span class="text-primary italic">МАСШТАБИРУЙ.</span>
-                    </h1>
-                    <p class="text-base md:text-xl text-primary font-black mb-3 uppercase tracking-tight border-l-4 border-primary pl-4 md:pl-6">Усиливай <span id="typewriter-hero" class="text-on-surface inline-block min-w-[12ch] text-left">себя</span> до мощности целого отдела — с помощью ИИ, без программистов и миллионных бюджетов.</p>
-                    <p class="text-on-surface-variant font-bold max-w-xl mb-6 text-xs md:text-base">Меня зовут Шахмаев Александр — <span class="text-primary font-black">я гарантирую результат, либо возвращаю деньги.</span></p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Insight: 99% -->
-        <section class="py-16 bg-surface border-b border-black/5">
-            <div class="max-w-5xl mx-auto px-4 md:px-8">
-                <div class="bg-white/80 backdrop-blur-sm rounded-3xl border border-black/5 shadow-sm px-8 py-12 md:px-16 md:py-16 text-center">
-                    <div class="text-7xl md:text-9xl font-headline font-black text-primary tracking-tighter leading-none mb-4">99%</div>
-                    <p class="text-xl md:text-3xl font-headline font-black text-on-surface tracking-tighter mb-4">
-                        руководителей не знают реальный уровень ИИ-навыков своих сотрудников
-                    </p>
-                    <p class="text-on-surface-variant text-base md:text-lg font-light max-w-2xl mx-auto mb-8">
-                        Каждый говорит «я использую нейросети» — но как именно, насколько эффективно и безопасно? Без системной оценки вы управляете вслепую и платите за иллюзию.
-                    </p>
-                    <a href="attestation.html" class="inline-flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full font-headline font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-lg shadow-primary/20 active:scale-95">
-                        Скачать пример отчёта аттестации
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Problem Section -->
-        <section class="py-24 bg-surface-container-lowest border-b border-black/5" id="problem">
-            <div class="max-w-7xl mx-auto px-4 md:px-8">
-                <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface leading-tight mb-16 text-center">
-                    Узнаёте себя?
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-black/5 shadow-sm flex items-start gap-6 hover:border-primary/20 hover:shadow-md transition-all hover:-translate-y-1">
-                        <span class="text-4xl">💸</span>
-                        <p class="text-lg text-on-surface font-semibold leading-snug">«Получили смету на CRM — 1 млн. Решили "пока обойдёмся"»</p>
-                    </div>
-                    <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-black/5 shadow-sm flex items-start gap-6 hover:border-primary/20 hover:shadow-md transition-all hover:-translate-y-1">
-                        <span class="text-4xl">📋</span>
-                        <p class="text-lg text-on-surface font-semibold leading-snug">«Заказы в Excel, переписка в WhatsApp, счета в почте. Ничего не найти»</p>
-                    </div>
-                    <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-black/5 shadow-sm flex items-start gap-6 hover:border-primary/20 hover:shadow-md transition-all hover:-translate-y-1">
-                        <span class="text-4xl">⏳</span>
-                        <p class="text-lg text-on-surface font-semibold leading-snug">«Попросили IT-подрядчика сделать простой дашборд — ждёте третий месяц»</p>
-                    </div>
-                    <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-black/5 shadow-sm flex items-start gap-6 hover:border-primary/20 hover:shadow-md transition-all hover:-translate-y-1">
-                        <span class="text-4xl">🤷</span>
-                        <p class="text-lg text-on-surface font-semibold leading-snug">«Слышали про ИИ и автоматизацию, но непонятно, с какой стороны подойти»</p>
-                    </div>
-                </div>
-                <div class="mt-12 text-center max-w-2xl mx-auto text-on-surface-variant text-lg">
-                    Всё это — симптомы одной проблемы: ваш бизнес зависит от людей, которых сложно найти, дорого нанять и невозможно контролировать. Есть другой путь.
-                </div>
-            </div>
-        </section>
-
-        <!-- Solution Section -->
-        <section class="py-24 bg-surface border-b border-black/5" id="solution">
-            <div class="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface leading-tight mb-8 tracking-tighter">
-                        А что если ВЫ — свой лучший IT-отдел?
-                    </h2>
-                    <div class="space-y-6 text-on-surface-variant text-lg leading-relaxed font-light">
-                        <p><strong class="font-bold text-primary">Vibe Coding</strong> — это подход, при котором ИИ пишет код, а вы управляете процессом на человеческом языке. Вы описываете задачу словами — ИИ создаёт рабочее решение. Не шаблон, не конструктор — полноценный код, который делает то, что вам нужно.</p>
-                        <p>Я не программист. Я управленец на производстве — 20 человек, металлоконструкции, заказы, логистика, документооборот. Когда хаос достал, я сел и за несколько недель собрал ERP-систему через ИИ. Потом сделал сайт для бизнеса по ремонту. Потом — этот сайт.</p>
-                        <p class="font-bold text-on-surface pt-4 border-t border-black/10">Всё своими руками, без единого программиста. Теперь я учу других делать то же самое.</p>
-                    </div>
-                </div>
-                <div class="relative w-full bg-white/80 backdrop-blur-sm rounded-2xl border border-black/5 overflow-hidden shadow-md flex items-center justify-center group text-on-surface/20 transition-all hover:border-primary/30 hover:shadow-xl cursor-pointer" onclick="document.getElementById('erp-image-modal').classList.remove('hidden');document.getElementById('erp-image-modal').classList.add('flex');">
-                    <img src="photos/ERP1.jpg" alt="Интерфейс ERP системы" class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-500"/>
-                    <div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md text-white px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
-                        Интерфейс ERP
-                    </div>
-                </div>
-
-                <!-- ERP Image Modal -->
-                <dialog id="erp-image-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onclick="if(event.target===this){this.classList.add('hidden');this.classList.remove('flex');}">
-                    <div class="relative max-w-5xl w-full">
-                        <button onclick="document.getElementById('erp-image-modal').classList.add('hidden');document.getElementById('erp-image-modal').classList.remove('flex');" class="absolute -top-10 right-0 text-white/70 hover:text-white transition-colors bg-black/40 w-10 h-10 rounded-full flex items-center justify-center">
-                            <span class="material-symbols-outlined">close</span>
-                        </button>
-                        <img src="photos/ERP1.jpg" alt="Интерфейс ERP системы" class="w-full h-auto rounded-2xl shadow-2xl"/>
-                    </div>
-                </dialog>
-            </div>
-        </section>
-
-        
-        <!-- Process Section -->
-        <section class="py-24 bg-surface-container-lowest border-b border-black/5" id="process">
-            <div class="max-w-7xl mx-auto px-4 md:px-8">
-                <div class="text-center max-w-4xl mx-auto mb-16">
-                    <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface mb-6 tracking-tighter">
-                        Вы не пишете промпты.<br/><span class="text-primary italic">Вы управляете ИИ-командой.</span>
-                    </h2>
-                    <p class="text-xl text-on-surface-variant font-light">У вас будет три ИИ-сотрудника с чёткими ролями. Вы — руководитель.</p>
-                </div>
-
-                <!-- Conveyor scheme -->
-                <div class="relative max-w-6xl mx-auto">
-                    <div class="flex flex-col md:flex-row gap-4 items-center justify-between text-center relative z-10">
-                        <!-- Step 1 -->
-                        <div class="flex-1 w-full bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-black/5 shadow-sm hover:-translate-y-1 transition-transform hover:shadow-md relative text-center">
-                            <div class="text-4xl mb-4">💡</div>
-                            <h4 class="font-black font-headline text-[10px] uppercase tracking-widest mb-2 opacity-50">ШАГ 1</h4>
-                            <h3 class="font-black text-sm uppercase tracking-widest mb-3">ВЫ + ИДЕЯ</h3>
-                            <p class="text-xs text-on-surface-variant leading-relaxed">Описываете задачу обычными словами</p>
-                        </div>
-                        <div class="hidden md:block material-symbols-outlined text-primary/30 text-2xl">arrow_forward</div>
-                        <div class="md:hidden material-symbols-outlined text-primary/30 text-2xl rotate-90">arrow_forward</div>
-                        
-                        <!-- Step 2 -->
-                        <div class="flex-1 w-full bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-black/5 shadow-sm hover:-translate-y-1 transition-transform hover:shadow-md relative text-center">
-                            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#10B981] text-white px-3 py-1 rounded-full text-[8px] font-black uppercase shadow tracking-widest whitespace-nowrap">Gemini Pro</div>
-                            <div class="text-4xl mb-4 mt-2">📐</div>
-                            <h4 class="font-black font-headline text-[10px] uppercase tracking-widest mb-2 opacity-50">ШАГ 2</h4>
-                            <h3 class="font-black text-sm uppercase tracking-widest mb-3 text-primary">АРХИТЕКТОР</h3>
-                            <p class="text-xs text-on-surface-variant leading-relaxed">Превращает идею в точное техзадание</p>
-                        </div>
-                        <div class="hidden md:block material-symbols-outlined text-primary/30 text-2xl">arrow_forward</div>
-                        <div class="md:hidden material-symbols-outlined text-primary/30 text-2xl rotate-90">arrow_forward</div>
-
-                        <!-- Step 3 -->
-                        <div class="flex-1 w-full bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-black/5 shadow-sm hover:-translate-y-1 transition-transform hover:shadow-md relative text-center">
-                            <div class="text-4xl mb-4">📁</div>
-                            <h4 class="font-black font-headline text-[10px] uppercase tracking-widest mb-2 opacity-50">ШАГ 3</h4>
-                            <h3 class="font-black text-sm uppercase tracking-widest mb-3">ЗАДАНИЕ → TODO</h3>
-                            <p class="text-xs text-on-surface-variant leading-relaxed">Один шаг — одна задача</p>
-                        </div>
-                        <div class="hidden md:block material-symbols-outlined text-primary/30 text-2xl">arrow_forward</div>
-                        <div class="md:hidden material-symbols-outlined text-primary/30 text-2xl rotate-90">arrow_forward</div>
-
-                        <!-- Step 4 -->
-                        <div class="flex-1 w-full bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-black/5 shadow-sm hover:-translate-y-1 transition-transform hover:shadow-md relative text-center">
-                            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white px-3 py-1 rounded-full text-[8px] font-black uppercase shadow tracking-widest whitespace-nowrap">Claude Code</div>
-                            <div class="text-4xl mb-4 mt-2">⌨️</div>
-                            <h4 class="font-black font-headline text-[10px] uppercase tracking-widest mb-2 opacity-50">ШАГ 4</h4>
-                            <h3 class="font-black text-sm uppercase tracking-widest mb-3 text-primary">ПРОГРАММИСТ</h3>
-                            <p class="text-xs text-on-surface-variant leading-relaxed">Выполняет задание → перемещает в DONE</p>
-                        </div>
-                        <div class="hidden md:block material-symbols-outlined text-primary/30 text-2xl">arrow_forward</div>
-                        <div class="md:hidden material-symbols-outlined text-primary/30 text-2xl rotate-90">arrow_forward</div>
-
-                        <!-- Step 5 -->
-                        <div class="flex-1 w-full bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-black/5 shadow-sm hover:-translate-y-1 transition-transform hover:shadow-md relative text-center">
-                            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-tertiary text-white px-3 py-1 rounded-full text-[8px] font-black uppercase shadow tracking-widest whitespace-nowrap">Совет 3 Моделей</div>
-                            <div class="text-4xl mb-4 mt-2">🛡️</div>
-                            <h4 class="font-black font-headline text-[10px] uppercase tracking-widest mb-2 opacity-50">ШАГ 5</h4>
-                            <h3 class="font-black text-sm uppercase tracking-widest mb-3 text-primary">АУДИТ</h3>
-                            <p class="text-xs text-on-surface-variant leading-relaxed">Перекрёстная проверка перед запуском</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-16 text-center">
-                    <div class="text-2xl md:text-3xl font-headline font-black text-on-surface tracking-tighter uppercase">
-                        Промпты создаёт ИИ. Код пишет ИИ. Вы — руководите.
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- AI Team Section -->
-        <section class="py-24 bg-surface border-b border-black/5" id="ai-team">
-            <div class="max-w-7xl mx-auto px-4 md:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface mb-4 tracking-tighter">Три сотрудника. Чёткие роли. Минимальный стек.</h2>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Архитектор -->
-                    <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-black/5 shadow-sm hover:-translate-y-1 transition-transform hover:shadow-md">
-                        <div class="text-5xl mb-4">📐</div>
-                        <h4 class="text-xl font-headline font-black mb-1">АРХИТЕКТОР</h4>
-                        <p class="text-xs font-bold text-[#10B981] uppercase tracking-widest mb-4">Gemini Pro</p>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">Проектирует решения и создаёт задания для программиста</p>
-                    </div>
-                    
-                    <!-- Программист -->
-                    <div class="bg-primary text-white rounded-3xl p-8 border border-primary/20 hover:-translate-y-1 transition-transform relative">
-                        <div class="absolute top-8 right-8 bg-white/20 text-white px-3 py-1 rounded-full text-[9px] font-black tracking-widest uppercase">Финальный арбитр</div>
-                        <div class="text-5xl mb-4">⌨️</div>
-                        <h4 class="text-xl font-headline font-black mb-1">ПРОГРАММИСТ</h4>
-                        <p class="text-xs font-bold text-white/50 uppercase tracking-widest mb-4">Claude Code Pro</p>
-                        <p class="text-white/80 text-sm leading-relaxed">Пишет код и принимает финальные решения</p>
-                    </div>
-
-                    <!-- Аудитор -->
-                    <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-black/5 shadow-sm hover:-translate-y-1 transition-transform hover:shadow-md relative">
-                        <div class="absolute top-8 right-8 bg-black/5 text-on-surface px-3 py-1 rounded-full text-[9px] font-black tracking-widest uppercase">Бесплатно</div>
-                        <div class="text-5xl mb-4">🔍</div>
-                        <h4 class="text-xl font-headline font-black mb-1">АУДИТОР</h4>
-                        <p class="text-xs font-bold text-tertiary uppercase tracking-widest mb-4">Qwen Code</p>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">Проверяет результат и страхует при исчерпании лимитов</p>
-                    </div>
-                </div>
-                <div class="text-center mt-12 text-[11px] font-bold uppercase tracking-widest text-on-surface-variant/50">
-                    Резерв: Gemini CLI. Никаких десятков приложений — три инструмента и чёткая методология.
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Cases Section -->
-        <section class="py-24 bg-surface-container-lowest border-b border-black/5" id="cases">
-            <div class="max-w-7xl mx-auto px-4 md:px-8">
-                <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface leading-tight mb-16">
-                    Что я уже собрал через <span class="text-primary italic">Vibe Coding</span>
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Case 1 -->
-                    <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-black/5 shadow-sm hover:shadow-md hover:border-primary/20 transition-all flex flex-col h-full group">
-                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-sm group-hover:scale-110 transition-transform">⚙️</div>
-                        <h3 class="text-2xl font-headline font-black mb-4">ERP для производства</h3>
-                        <ul class="space-y-3 mb-8 flex-grow text-sm text-on-surface-variant">
-                            <li><strong class="text-on-surface">Компания:</strong> 20 сотрудников, металлоконструкции.</li>
-                            <li><strong class="text-on-surface">Проблема:</strong> Excel, бумага, потери.</li>
-                            <li><strong class="text-on-surface">Решение:</strong> ERP (заказы, задачи, доки) за пару недель через ИИ.</li>
-                        </ul>
-                        <a href="cases.html" class="h-16 bg-surface-container rounded-xl border border-black/10 flex items-center justify-center text-xs text-on-surface-variant font-bold tracking-widest uppercase mt-auto group-hover:border-primary/30 hover:text-primary transition-all">Смотреть кейс →</a>
-                    </div>
-                    <!-- Case 2 -->
-                    <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-black/5 shadow-sm hover:shadow-md hover:border-primary/20 transition-all flex flex-col h-full group">
-                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-sm group-hover:scale-110 transition-transform">🏠</div>
-                        <h3 class="text-2xl font-headline font-black mb-4">Сайт по ремонту квартир</h3>
-                        <ul class="space-y-3 mb-8 flex-grow text-sm text-on-surface-variant">
-                            <li><strong class="text-on-surface">Задача:</strong> Портфолио и лид-формы.</li>
-                            <li><strong class="text-on-surface">Решение:</strong> Vibe Coding, собрано быстро, работает стабильно, клиенты приходят без студий.</li>
-                        </ul>
-                        <a href="https://www.uf66.ru" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary font-bold text-sm hover:underline mb-6">
-                            Посмотреть сайт →
-                        </a>
-                        <a href="cases.html" class="h-16 bg-surface-container rounded-xl border border-black/10 flex items-center justify-center text-xs text-on-surface-variant font-bold tracking-widest uppercase mt-auto group-hover:border-primary/30 hover:text-primary transition-all">Смотреть кейс →</a>
-                    </div>
-                    <!-- Case 3 -->
-                    <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-black/5 shadow-sm hover:shadow-md hover:border-primary/20 transition-all flex flex-col h-full group">
-                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-sm group-hover:scale-110 transition-transform">🤖</div>
-                        <h3 class="text-2xl font-headline font-black mb-4">Сайт ИИ-агентства</h3>
-                        <ul class="space-y-3 mb-8 flex-grow text-sm text-on-surface-variant">
-                            <li><strong class="text-on-surface">Задача:</strong> Продающий лендинг.</li>
-                            <li><strong class="text-on-surface">Решение:</strong> Этот сайт, на котором вы сейчас находитесь, с подключенным Telegram-ботом.</li>
-                        </ul>
-                        <a href="cases.html" class="h-16 bg-surface-container rounded-xl border border-black/10 flex items-center justify-center text-xs text-on-surface-variant font-bold tracking-widest uppercase mt-auto group-hover:border-primary/30 hover:text-primary transition-all">Смотреть кейс →</a>
-                    </div>
-                </div>
-                <div class="mt-12 text-center">
-                    <a href="cases.html" class="inline-flex bg-black/5 border border-black/10 text-on-surface px-10 py-5 rounded-full font-headline font-bold text-sm uppercase tracking-widest hover:bg-black/10 transition-all">
-                        Все кейсы и демо
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        
-        <!-- Process Section -->
-        
-
-        <!-- AI Team Section -->
-        
-
-
-        <!-- Program Section -->
-        
-
-        
-        <!-- Три прорыва -->
-        <section class="py-24 bg-surface border-b border-black/5">
-            <div class="max-w-7xl mx-auto px-4 md:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface tracking-tighter">
-                        Три результата — уже в первый месяц
-                    </h2>
-                    <p class="text-on-surface-variant text-lg font-light mt-4 max-w-xl mx-auto">
-                        Хватит раздувать штат. Обучите команду работать с ИИ — и получите мощность вдвое большей компании.
-                    </p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-black/5 shadow-sm hover:shadow-md hover:border-primary/20 transition-all hover:-translate-y-1 group">
-                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-primary text-2xl">trending_up</span>
-                        </div>
-                        <h3 class="font-headline font-bold text-on-surface text-xl mb-3">Рост без найма</h3>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">Текущая команда справляется с объёмом, на который раньше требовалось ещё два-три специалиста. Никакого расширения штата.</p>
-                    </div>
-                    <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-black/5 shadow-sm hover:shadow-md hover:border-primary/20 transition-all hover:-translate-y-1 group">
-                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-primary text-2xl">radar</span>
-                        </div>
-                        <h3 class="font-headline font-bold text-on-surface text-xl mb-3">Контроль компетенций</h3>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">Аттестация 66AI даёт полную картину: кто умеет работать с ИИ, кто — нет. Тестирование через бота, именные сертификаты, аналитика.</p>
-                        <a href="attestation.html" class="inline-flex items-center gap-1 mt-4 text-primary text-xs font-bold hover:underline underline-offset-4">
-                            Подробнее <span class="material-symbols-outlined text-base">arrow_forward</span>
-                        </a>
-                    </div>
-                    <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-black/5 shadow-sm hover:shadow-md hover:border-primary/20 transition-all hover:-translate-y-1 group">
-                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-primary text-2xl">bolt</span>
-                        </div>
-                        <h3 class="font-headline font-bold text-on-surface text-xl mb-3">Скорость внедрения</h3>
-                        <p class="text-on-surface-variant text-sm leading-relaxed">Сотрудники создают рабочие инструменты уже на первой неделе — без ожидания очереди в ИТ-отдел и без бюджетов на программистов.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Social Proof Section -->
-        <section class="py-12 bg-primary text-white border-y border-black/10 relative overflow-hidden">
-            <div class="absolute inset-0 z-0 opacity-10 mix-blend-overlay"></div>
-            <div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/20">
-                    <div>
-                        <div class="text-4xl md:text-5xl font-black font-headline mb-2">5</div>
-                        <div class="text-[10px] font-bold uppercase tracking-widest opacity-80">проекта собрано</div>
-                    </div>
-                    <div>
-                        <div class="text-4xl md:text-5xl font-black font-headline mb-2">0 ₽</div>
-                        <div class="text-[10px] font-bold uppercase tracking-widest opacity-80">на программистов</div>
-                    </div>
-                    <div>
-                        <div class="text-4xl md:text-5xl font-black font-headline mb-2">20</div>
-                        <div class="text-[10px] font-bold uppercase tracking-widest opacity-80">человек на производстве</div>
-                    </div>
-                    <div>
-                        <div class="text-4xl md:text-5xl font-black font-headline mb-2">4</div>
-                        <div class="text-[10px] font-bold uppercase tracking-widest opacity-80">недели до результата</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        
-        <!-- Program Section (v5) -->
-        <section class="py-16 md:py-20 bg-surface border-b border-black/5" id="program">
-            <div class="max-w-7xl mx-auto px-4 md:px-8">
-                <!-- Табы навигации -->
-                <div class="flex justify-center gap-3 mb-10 md:mb-12 flex-wrap">
-                    <button data-tab="program-start" class="tab-btn px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider transition-all border-2 border-primary bg-primary text-white shadow-lg" onclick="switchTab('program-start')">Быстрый старт</button>
-                    <button data-tab="program-engineer" class="tab-btn px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider transition-all border-2 border-black/10 text-on-surface-variant hover:border-primary/50" onclick="switchTab('program-engineer')">Бизнес-инженер</button>
-                    <button data-tab="program-business" class="tab-btn px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider transition-all border-2 border-black/10 text-on-surface-variant hover:border-primary/50" onclick="switchTab('program-business')">Для бизнеса</button>
-                </div>
-
-                <!-- Контент табов -->
-                <!-- ====== ТАБ: БЫСТРЫЙ СТАРТ ====== -->
-                <div class="tab-content" id="tab-program-start">
-                    <div class="max-w-2xl mx-auto">
-                        <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-black/5 shadow-sm flex flex-col">
-                            <div class="flex flex-wrap items-center gap-2 mb-6">
-                                <div class="inline-flex items-center justify-center bg-black/5 px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest text-on-surface-variant w-max">Быстрый старт • 2 дня</div>
-                                <div class="inline-flex items-center justify-center bg-error text-white px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest w-max animate-pulse">🔥 Скидка 90% до конца дня</div>
-                            </div>
-                            <h3 class="font-headline font-black text-2xl mb-4">ИИ-Спринт: Твой первый робот за 2 часа</h3>
-                            <p class="text-sm text-on-surface-variant mb-6">Настраиваете свою ИИ-команду (Gemini + Claude Code + Qwen), осваиваете конвейер и собираете первый рабочий инструмент для бизнеса — Telegram-бот или мини-сайт.</p>
-
-                            <div class="bg-white/60 backdrop-blur-sm p-4 rounded-xl mb-6 border border-black/5">
-                                <p class="text-[10px] uppercase font-black text-primary mb-2">ВАШ РЕЗУЛЬТАТ:</p>
-                                <ul class="text-xs space-y-2 font-medium">
-                                    <li>— Рабочий стек ИИ-инструментов</li>
-                                    <li>— Первый продукт для вашего бизнеса</li>
-                                    <li>— Понимание: «это реально, я могу»</li>
-                                </ul>
-                            </div>
-
-                            <!-- Формат -->
-                            <div class="bg-primary-container/10 p-4 rounded-xl mb-6 border border-primary/20">
-                                <p class="text-[10px] uppercase font-black text-primary mb-2">ФОРМАТ:</p>
-                                <ul class="text-xs space-y-2 font-medium">
-                                    <li>— Скринкасты + текстовые гайды</li>
-                                    <li>— Чат поддержки 2 недели</li>
-                                    <li class="font-bold text-primary">— 2 видео созвона каждый день по часу (личная работа с автором)</li>
-                                </ul>
-                            </div>
-
-                            <!-- Гарантия -->
-                            <div class="bg-error/10 border-2 border-error/30 p-5 rounded-2xl mb-6">
-                                <div class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-3xl text-error flex-shrink-0" style="font-variation-settings: 'FILL' 1;">verified</span>
-                                    <div>
-                                        <p class="text-sm font-black text-error mb-1 uppercase tracking-wider">Гарантия результата</p>
-                                        <p class="text-sm text-on-surface-variant font-medium">Если у Вас не будет готового рабочего бота — верну деньги. Без вопросов.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-auto pt-6 border-t border-black/5">
-                                <p class="text-lg text-on-surface-variant line-through price-element">9 999 ₽</p>
-                                <p class="text-4xl font-black text-error mb-1 price-element">990 ₽</p>
-                                <p class="text-[10px] font-black text-error mb-2">Осталось: <span id="promo-timer">--:--:--</span></p>
-                                <p class="text-[10px] font-bold text-primary mb-6 flex items-center gap-1">
-                                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">shield</span>
-                                    Гарантия результата: если не поймёте, как создать свой проект — верну деньги. 100%.
-                                </p>
-                                <button onclick="openAuditModal('Заявка на ИИ-Спринт')" class="w-full bg-error text-white hover:opacity-90 py-4 rounded-full font-bold uppercase text-xs tracking-widest transition-colors">Начать за 990 ₽</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ====== ТАБ: БИЗНЕС-ИНЖЕНЕР ====== -->
-                <div class="tab-content hidden" id="tab-program-engineer">
-                    <div class="max-w-2xl mx-auto">
-                        <div class="bg-primary text-white p-8 md:p-10 rounded-3xl border border-primary-container/30 flex flex-col shadow-2xl relative">
-                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#10B981] text-white px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest shadow-md whitespace-nowrap">Первая группа • Май 2025</div>
-                            <h3 class="font-headline font-black text-3xl mb-3 mt-2">Бизнес-инженер</h3>
-                            <div class="inline-flex items-center gap-2 bg-orange-500/20 border border-orange-400/30 px-3 py-2 rounded-xl mb-4 w-max">
-                                <span class="text-base leading-none">🔥</span>
-                                <span class="text-[10px] font-black uppercase tracking-wider text-orange-400">Осталось мест на личное ведение: <span class="text-white">4 из 15</span></span>
-                            </div>
-                            <p class="text-sm text-white/80 mb-6 font-light">Полный путь от бизнес-задачи до работающей системы. CRM, дашборды, боты, автоматизации — конкретно для ВАШЕГО бизнеса. Авторская методология: «Совет 3 Моделей», конвейер TODO→DONE, управление ИИ-командой.</p>
-
-                            <!-- Аккордеоны модулей 1-4 -->
-                            <div class="mb-6 space-y-3">
-                                <p class="text-[11px] font-black uppercase text-primary-container mb-3 tracking-wider">Программа курса (4 модуля):</p>
-
-                                <!-- Модуль 1 -->
-                                <details class="group bg-white/10 rounded-xl border border-white/10 overflow-hidden">
-                                    <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-white/5 transition-colors">
-                                        <div class="flex items-center gap-3">
-                                            <span class="bg-primary-container text-primary text-xs font-black px-2 py-1 rounded-lg">М1</span>
-                                            <span class="text-sm font-bold text-white">Фундамент</span>
-                                        </div>
-                                        <span class="material-symbols-outlined text-white/50 group-open:rotate-180 transition-transform">expand_more</span>
-                                    </summary>
-                                    <div class="px-4 pb-4 pt-2 border-t border-white/10">
-                                        <ul class="text-xs text-white/80 space-y-1.5 mb-3">
-                                            <li>• Настройка ИИ-команды (Gemini + Claude Code + Qwen)</li>
-                                            <li>• Методология «Совет моделей»</li>
-                                            <li>• Конвейер TODO→DONE</li>
-                                        </ul>
-                                        <p class="text-[11px] font-bold text-[#10B981] bg-[#10B981]/10 px-3 py-1.5 rounded-lg inline-block">Результат: 3 выполненных таска для вашего проекта</p>
-                                    </div>
-                                </details>
-
-                                <!-- Модуль 2 -->
-                                <details class="group bg-white/10 rounded-xl border border-white/10 overflow-hidden">
-                                    <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-white/5 transition-colors">
-                                        <div class="flex items-center gap-3">
-                                            <span class="bg-primary-container text-primary text-xs font-black px-2 py-1 rounded-lg">М2</span>
-                                            <span class="text-sm font-bold text-white">Поддержка 24/7</span>
-                                        </div>
-                                        <span class="material-symbols-outlined text-white/50 group-open:rotate-180 transition-transform">expand_more</span>
-                                    </summary>
-                                    <div class="px-4 pb-4 pt-2 border-t border-white/10">
-                                        <ul class="text-xs text-white/80 space-y-1.5 mb-3">
-                                            <li>• Telegram-бот с ИИ-мозгами по вашим данным</li>
-                                            <li>• Подключение к Supabase (MCP)</li>
-                                            <li>• Логика квалификации</li>
-                                        </ul>
-                                        <p class="text-[11px] font-bold text-[#10B981] bg-[#10B981]/10 px-3 py-1.5 rounded-lg inline-block">Результат: Экономия 2–4 часа/день</p>
-                                    </div>
-                                </details>
-
-                                <!-- Модуль 3 -->
-                                <details class="group bg-white/10 rounded-xl border border-white/10 overflow-hidden">
-                                    <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-white/5 transition-colors">
-                                        <div class="flex items-center gap-3">
-                                            <span class="bg-primary-container text-primary text-xs font-black px-2 py-1 rounded-lg">М3</span>
-                                            <span class="text-sm font-bold text-white">Данные и Дашборды</span>
-                                        </div>
-                                        <span class="material-symbols-outlined text-white/50 group-open:rotate-180 transition-transform">expand_more</span>
-                                    </summary>
-                                    <div class="px-4 pb-4 pt-2 border-t border-white/10">
-                                        <ul class="text-xs text-white/80 space-y-1.5 mb-3">
-                                            <li>• Веб-дашборд</li>
-                                            <li>• ИИ управляет БД напрямую</li>
-                                            <li>• Автоматизация кодом (без n8n/Make)</li>
-                                            <li>• Деплой 24/7</li>
-                                        </ul>
-                                        <p class="text-[11px] font-bold text-[#10B981] bg-[#10B981]/10 px-3 py-1.5 rounded-lg inline-block">Результат: Экономия до 8 часов/неделю</p>
-                                    </div>
-                                </details>
-
-                                <!-- Модуль 4 -->
-                                <details class="group bg-white/10 rounded-xl border border-white/10 overflow-hidden">
-                                    <summary class="flex items-center justify-between p-4 cursor-pointer hover:bg-white/5 transition-colors">
-                                        <div class="flex items-center gap-3">
-                                            <span class="bg-primary-container text-primary text-xs font-black px-2 py-1 rounded-lg">М4</span>
-                                            <span class="text-sm font-bold text-white">Автопилот</span>
-                                        </div>
-                                        <span class="material-symbols-outlined text-white/50 group-open:rotate-180 transition-transform">expand_more</span>
-                                    </summary>
-                                    <div class="px-4 pb-4 pt-2 border-t border-white/10">
-                                        <ul class="text-xs text-white/80 space-y-1.5 mb-3">
-                                            <li>• ИИ-агент отвечает строго по вашим документам</li>
-                                            <li>• Знает прайс из 500 позиций</li>
-                                            <li>• Аудит безопасности + автотесты</li>
-                                        </ul>
-                                        <p class="text-[11px] font-bold text-[#10B981] bg-[#10B981]/10 px-3 py-1.5 rounded-lg inline-block">Результат: ROI = замена 1 сотрудника (экономия 40–80 тыс. ₽/мес)</p>
-                                    </div>
-                                </details>
-                            </div>
-
-                            <!-- VIP Toggle -->
-                            <div class="mb-6 p-5 bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-2xl border border-amber-400/30">
-                                <label class="flex items-start gap-4 cursor-pointer">
-                                    <div class="relative flex-shrink-0 mt-0.5">
-                                        <input type="checkbox" id="vip-toggle" class="sr-only peer" onchange="updateCalculator()">
-                                        <div class="w-10 h-6 bg-white/20 rounded-full peer-checked:bg-amber-500 peer-focus:ring-2 peer-focus:ring-amber-400/50 transition-colors"></div>
-                                        <div class="absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow-md peer-checked:translate-x-4 transition-transform"></div>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-black text-amber-300 uppercase tracking-wider">VIP-блок (+36 000 ₽)</p>
-                                        <p class="text-[11px] text-white/70 mt-1">Всё из «Бизнес-инженера» + TDD-тестирование каждой функции, изолированные ветки для каждой фичи, персональное ревью автора (2 сессии)</p>
-                                    </div>
-                                </label>
-                            </div>
-
-                            <!-- Калькулятор -->
-                            <div class="mb-6 p-4 bg-white/10 rounded-xl border border-white/20">
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-white/70">Итого:</span>
-                                    <span class="text-3xl font-black text-white"><span id="calc-total">36 000</span> ₽</span>
-                                </div>
-                                <div id="vip-line" class="hidden flex justify-between items-center pt-2 border-t border-white/10 mt-2">
-                                    <span class="text-xs text-amber-300">+ VIP-блок</span>
-                                    <span class="text-sm font-bold text-amber-300">+36 000 ₽</span>
-                                </div>
-                            </div>
-
-                            <!-- Что вы получаете -->
-                            <button onclick="openResultsModal()" class="w-full mb-6 bg-white/10 hover:bg-white/15 border border-white/20 rounded-xl p-4 text-left transition-colors flex items-center justify-between">
-                                <div>
-                                    <p class="text-sm font-bold text-white">📦 Что вы получите по итогу курса</p>
-                                    <p class="text-[11px] text-white/60">4 инструмента + связь + навыки</p>
-                                </div>
-                                <span class="material-symbols-outlined text-white/50">arrow_forward_ios</span>
-                            </button>
-
-                            <div class="mt-auto pt-6 border-t border-white/10">
-                                <p class="text-xs text-white/70 mb-4">Формат: скринкасты + живые эфиры + текстовые гайды + чат</p>
-                                <div class="mb-6">
-                                    <p class="text-lg text-white/50 line-through decoration-white/30 price-element">72 000 ₽</p>
-                                    <div class="flex items-center gap-3 flex-wrap">
-                                        <p class="text-4xl font-black text-white price-element">от 36 000 ₽</p>
-                                        <span class="inline-flex items-center bg-[#10B981]/20 border border-[#10B981]/40 text-[#10B981] px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest whitespace-nowrap">
-                                            🔥 Скидка 50% только в этом месяце (Первый поток)
-                                        </span>
-                                    </div>
-                                </div>
-                                <button onclick="openAuditModal('Заявка на Флагман')" class="w-full bg-white text-primary hover:bg-surface py-4 rounded-full font-bold uppercase text-xs tracking-widest transition-colors shadow">Записаться на курс</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ====== ТАБ: ДЛЯ БИЗНЕСА (Корпоративный + Консалтинг) ====== -->
-                <div class="tab-content hidden" id="tab-program-business">
-                    <div class="max-w-5xl mx-auto space-y-12">
-
-                        <!-- Что получит ваш бизнес -->
-                        <div class="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-black/5 shadow-sm">
-                            <h3 class="font-headline font-black text-xl md:text-2xl mb-6 text-on-surface">Что получит ваш бизнес</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                <div class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary text-2xl flex-shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">speed</span>
-                                    <div>
-                                        <p class="text-sm font-bold text-on-surface mb-1">Оптимизация</p>
-                                        <p class="text-xs text-on-surface-variant">Каждый из 10 сотрудников научится автоматизировать свои рутинные задачи</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary text-2xl flex-shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
-                                    <div>
-                                        <p class="text-sm font-bold text-on-surface mb-1">Продуктивность</p>
-                                        <p class="text-xs text-on-surface-variant">Создание кастомных ИИ-приложений под конкретные отделы</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <span class="material-symbols-outlined text-primary text-2xl flex-shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">hub</span>
-                                    <div>
-                                        <p class="text-sm font-bold text-on-surface mb-1">Инструментарий</p>
-                                        <p class="text-xs text-on-surface-variant">Полная настройка ИИ-стека на инфраструктуре компании</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Корпоративный интенсив -->
-                        <div>
-                            <h3 class="font-headline font-black text-xl md:text-2xl mb-2 text-on-surface">Корпоративный интенсив</h3>
-                            <p class="text-sm text-on-surface-variant mb-6">Обучение вашей команды до 10 человек. От идеи до работающего прототипа.</p>
-
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                                <!-- Базовый -->
-                                <div class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-black/5 shadow-sm hover:border-primary/20 hover:shadow-md transition-all flex flex-col">
-                                    <div class="text-[9px] font-black uppercase tracking-widest text-primary mb-2">Базовый</div>
-                                    <p class="text-xs text-on-surface-variant mb-3">2–3 дня</p>
-                                    <div class="bg-primary/5 p-3 rounded-xl mb-4 flex-grow">
-                                        <p class="text-[11px] font-bold text-on-surface mb-1">Результат:</p>
-                                        <p class="text-xs text-on-surface-variant">Понимание возможностей ИИ и 1 пилотный проект автоматизации</p>
-                                    </div>
-                                    <p class="text-2xl font-black text-on-surface mb-4 price-element">250 000 ₽</p>
-                                    <button onclick="openAuditModal('Корпоративный — Базовый')" class="w-full bg-primary text-white hover:bg-primary/90 py-3 rounded-full font-bold uppercase text-[10px] tracking-widest transition-colors">Оставить заявку</button>
-                                </div>
-                                <!-- Расширенный -->
-                                <div class="bg-primary text-white p-6 rounded-2xl border border-primary-container/30 shadow-xl relative md:-translate-y-2 flex flex-col">
-                                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#10B981] text-white px-3 py-1 rounded-full text-[8px] font-black uppercase tracking-widest">Популярный</div>
-                                    <div class="text-[9px] font-black uppercase tracking-widest text-primary-container mb-2 mt-2">Расширенный</div>
-                                    <p class="text-xs text-white/70 mb-3">5–6 дней + кастом под отрасль</p>
-                                    <div class="bg-white/10 p-3 rounded-xl mb-4 flex-grow">
-                                        <p class="text-[11px] font-bold text-white mb-1">Результат:</p>
-                                        <p class="text-xs text-white/80">Решение отраслевых задач + пакет из 3–5 готовых инструментов для работы</p>
-                                    </div>
-                                    <p class="text-2xl font-black text-white mb-4 price-element">400 000 ₽</p>
-                                    <button onclick="openAuditModal('Корпоративный — Расширенный')" class="w-full bg-white text-primary hover:bg-surface py-3 rounded-full font-bold uppercase text-[10px] tracking-widest transition-colors">Оставить заявку</button>
-                                </div>
-                                <!-- Премиум -->
-                                <div class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-black/5 shadow-sm hover:border-amber-400/30 hover:shadow-md transition-all flex flex-col">
-                                    <div class="text-[9px] font-black uppercase tracking-widest text-amber-600 mb-2">Премиум</div>
-                                    <p class="text-xs text-on-surface-variant mb-3">10 дней + 2 нед. сопровождение</p>
-                                    <div class="bg-amber-500/5 p-3 rounded-xl mb-4 flex-grow">
-                                        <p class="text-[11px] font-bold text-on-surface mb-1">Результат:</p>
-                                        <p class="text-xs text-on-surface-variant">Создание полноценной ИИ-экосистемы предприятия + 2 недели сопровождения для внедрения «в кровь» компании <span class="font-bold text-amber-600">(Максимальный ROI)</span></p>
-                                    </div>
-                                    <p class="text-2xl font-black text-on-surface mb-4 price-element">600 000 ₽</p>
-                                    <button onclick="openAuditModal('Корпоративный — Премиум')" class="w-full bg-black text-white hover:bg-black/80 py-3 rounded-full font-bold uppercase text-[10px] tracking-widest transition-colors">Оставить заявку</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Персональный консалтинг -->
-                        <div>
-                            <h3 class="font-headline font-black text-xl md:text-2xl mb-2 text-on-surface">Персональный консалтинг</h3>
-                            <p class="text-sm text-on-surface-variant mb-6">Аудит ваших процессов + совместная сборка системы. Результат быстрее, фокус на вашем бизнесе.</p>
-                            <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-black/5 shadow-sm flex flex-col">
-                                <div class="mt-auto pt-6 border-t border-black/5 flex flex-col h-full justify-end">
-                                    <p class="text-3xl font-black text-on-surface mb-6 price-element">от 300 000 ₽</p>
-                                    <button onclick="openAuditModal('Обсудить задачу')" class="w-full bg-black/5 text-on-surface hover:bg-black/10 py-4 rounded-full font-bold uppercase text-xs tracking-widest transition-colors">Обсудить задачу</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Модалка: Результаты курса -->
-        <div id="results-modal" class="fixed inset-0 bg-black/60 z-50 hidden items-center justify-center p-4" onclick="closeResultsModal()">
-            <div class="bg-surface-container-lowest rounded-3xl max-w-lg w-full p-8 relative border border-black/10 shadow-2xl" onclick="event.stopPropagation()">
-                <button onclick="closeResultsModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface">
-                    <span class="material-symbols-outlined">close</span>
-                </button>
-                <h3 class="font-headline font-black text-2xl text-on-surface mb-6">📦 Что вы получите по итогу курса</h3>
-
-                <div class="space-y-5">
-                    <!-- 4 инструмента -->
-                    <div class="bg-primary/5 p-4 rounded-xl border border-primary/20">
-                        <p class="text-sm font-bold text-on-surface mb-2">4 работающих инструмента:</p>
-                        <ul class="text-xs text-on-surface-variant space-y-1">
-                            <li>🤖 Telegram-бот</li>
-                            <li>📊 Веб-дашборд</li>
-                            <li>🧠 ИИ-агент</li>
-                            <li>⚡ Автоматизации кодом</li>
-                        </ul>
-                    </div>
-
-                    <!-- Всё связано -->
-                    <div class="bg-[#10B981]/5 p-4 rounded-xl border border-[#10B981]/20">
-                        <p class="text-sm font-bold text-on-surface mb-2">Всё связано:</p>
-                        <p class="text-xs text-on-surface-variant">Клиент пишет боту → квалификация → база → дашборд → сводка в TG → <strong class="text-[#10B981]">всё работает без вас</strong></p>
-                    </div>
-
-                    <!-- Навыки -->
-                    <div class="bg-amber-500/5 p-4 rounded-xl border border-amber-400/20">
-                        <p class="text-sm font-bold text-on-surface mb-2">Навыки:</p>
-                        <ul class="text-xs text-on-surface-variant space-y-1">
-                            <li>• Управление ИИ-командой</li>
-                            <li>• Декомпозиция задач</li>
-                            <li>• Базы данных</li>
-                            <li>• Деплой</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <button onclick="closeResultsModal(); openAuditModal('Заявка на Флагман')" class="w-full mt-6 bg-primary text-white hover:bg-primary/90 py-4 rounded-full font-bold uppercase text-xs tracking-widest transition-colors">Записаться на курс</button>
-            </div>
+    <!-- For whom -->
+    <div class="who-box">
+      <div>
+        <div class="who-title">✅ Кому подходит</div>
+        <div class="who-list">
+          <div class="who-item">Сотрудники с уровнем 1–2 после диагностики</div>
+          <div class="who-item">Те, кто «пробовал ChatGPT, но не прижилось»</div>
+          <div class="who-item">Бухгалтеры, менеджеры, операционисты, HR</div>
+          <div class="who-item">Компании, которые хотят быстрый результат</div>
+          <div class="who-item">Группы от 3 до 12 человек</div>
         </div>
-
-
-        <!-- Flow Section -->
-        <section class="py-24 bg-surface-container-lowest border-b border-black/5" id="flow">
-            <div class="max-w-7xl mx-auto px-4 md:px-8">
-                <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface leading-tight mb-16 text-center">
-                    4 шага — от идеи до работающей системы
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                    <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-black/5 shadow-sm relative hover:-translate-y-1 transition-transform hover:shadow-md">
-                        <div class="text-primary font-black text-4xl mb-4 opacity-30">01</div>
-                        <h3 class="font-headline font-black text-xl mb-3">Описываете задачу</h3>
-                        <p class="text-sm text-on-surface-variant">Вы объясняете, что нужно, обычными словами. Никакого кода.</p>
-                    </div>
-                    <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-black/5 shadow-sm relative hover:-translate-y-1 transition-transform hover:shadow-md">
-                        <div class="text-primary font-black text-4xl mb-4 opacity-30">02</div>
-                        <h3 class="font-headline font-black text-xl mb-3">ИИ создаёт решение</h3>
-                        <p class="text-sm text-on-surface-variant">Gemini проектирует, Claude Code реализует.</p>
-                    </div>
-                    <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-black/5 shadow-sm relative hover:-translate-y-1 transition-transform hover:shadow-md">
-                        <div class="text-primary font-black text-4xl mb-4 opacity-30">03</div>
-                        <h3 class="font-headline font-black text-xl mb-3">Тестируете и правите</h3>
-                        <p class="text-sm text-on-surface-variant">Проверяете, уточняете нюансы. ИИ исправляет всё за секунды.</p>
-                    </div>
-                    <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-black/5 shadow-sm relative hover:-translate-y-1 transition-transform hover:shadow-md">
-                        <div class="text-primary font-black text-4xl mb-4 opacity-30">04</div>
-                        <h3 class="font-headline font-black text-xl mb-3">Запускаете в бизнес</h3>
-                        <p class="text-sm text-on-surface-variant">Система работает, вы или ваши сотрудники пользуются ею каждый день.</p>
-                    </div>
-                </div>
-                <div class="mt-12 text-center text-primary font-bold uppercase tracking-widest text-sm">
-                    Весь путь — без написания единой строчки кода руками.
-                </div>
-            </div>
-        </section>
-
-        <!-- Audience Section -->
-        <section class="py-24 bg-surface border-b border-black/5" id="audience">
-            <div class="max-w-7xl mx-auto px-4 md:px-8">
-                <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface leading-tight mb-16 text-center">
-                    Кому подойдут курсы
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="p-8 group">
-                        <div class="text-4xl mb-6 group-hover:scale-110 transition-transform origin-left">🏭</div>
-                        <h3 class="text-2xl font-headline font-black mb-4">Владельцы бизнеса</h3>
-                        <p class="text-on-surface-variant leading-relaxed">У вас 5-50 сотрудников, процессы в хаосе, бюджета на IT нет. Вы хотите систему как у «больших», но без их затрат и месяцев ожидания.</p>
-                    </div>
-                    <div class="p-8 group border-t md:border-t-0 md:border-l border-black/10">
-                        <div class="text-4xl mb-6 group-hover:scale-110 transition-transform origin-left">📊</div>
-                        <h3 class="text-2xl font-headline font-black mb-4">Руководители отделов</h3>
-                        <p class="text-on-surface-variant leading-relaxed">Вам нужен дашборд, бот или автоматизация — но IT-отдел занят, либо его нет. Вы устали ждать, пока вашу заявку возьмут в работу.</p>
-                    </div>
-                    <div class="p-8 group border-t md:border-t-0 md:border-l border-black/10">
-                        <div class="text-4xl mb-6 group-hover:scale-110 transition-transform origin-left">💼</div>
-                        <h3 class="text-2xl font-headline font-black mb-4">Консультанты</h3>
-                        <p class="text-on-surface-variant leading-relaxed">Вы хотите новую профессию: собирать бизнес-приложения для клиентов за хорошие деньги и без команды разработчиков в штате.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        
-        <!-- Methodology Section -->
-        
-
-        <!-- FAQ Section -->
-        <section class="py-24 bg-surface-container-lowest border-b border-black/5" id="faq">
-            <div class="max-w-4xl mx-auto px-4 md:px-8">
-                <h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface leading-tight mb-16 text-center">
-                    Частые вопросы
-                </h2>
-                <div class="space-y-4">
-                    <details class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 group cursor-pointer border border-black/5 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-                        <summary class="flex justify-between items-center font-headline font-black focus:outline-none">
-                            Какие инструменты нужны?
-                            <span class="material-symbols-outlined transition-transform group-open:rotate-180 text-primary">expand_more</span>
-                        </summary>
-                        <p class="mt-4 text-on-surface-variant leading-relaxed font-light">Три ИИ-модели: Gemini Pro, Claude Code Pro и Qwen Code (бесплатно). Настроим всё на первом занятии. Никаких десятков приложений.</p>
-                    </details>
-                    <details class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 group cursor-pointer border border-black/5 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-                        <summary class="flex justify-between items-center font-headline font-black focus:outline-none">
-                            А если я не знаю ни слова по-английски и никогда не писал код?
-                            <span class="material-symbols-outlined transition-transform group-open:rotate-180 text-primary">expand_more</span>
-                        </summary>
-                        <p class="mt-4 text-on-surface-variant leading-relaxed font-light">Вам не нужно учить язык программирования. Вы будете общаться с нейросетью на простом русском языке. Она сама переведет ваши слова в программный код. Ваш главный навык здесь — это умение ставить задачу подчинённому. Если вы умеете управлять людьми, вы легко научитесь управлять ИИ-командой.</p>
-                    </details>
-                    <details class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 group cursor-pointer border border-black/5 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-                        <summary class="flex justify-between items-center font-headline font-black focus:outline-none">
-                            Мне нужно уметь писать промпты?
-                            <span class="material-symbols-outlined transition-transform group-open:rotate-180 text-primary">expand_more</span>
-                        </summary>
-                        <p class="mt-4 text-on-surface-variant leading-relaxed font-light">Нет. В нашей методологии промпты создаёт ИИ, а не вы. Вы описываете задачу словами, Архитектор превращает её в техзадание, Программист выполняет. Вы — руководитель.</p>
-                    </details>
-                    <details class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 group cursor-pointer border border-black/5 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-                        <summary class="flex justify-between items-center font-headline font-black focus:outline-none">
-                            Что такое "Совет 3 Моделей"?
-                            <span class="material-symbols-outlined transition-transform group-open:rotate-180 text-primary">expand_more</span>
-                        </summary>
-                        <p class="mt-4 text-on-surface-variant leading-relaxed font-light">Авторская методика перекрёстной проверки. Три ИИ-модели проверяют работу друг друга — вместо слепого доверия одной нейросети. Подробно разбираем на курсе.</p>
-                    </details>
-                    <details class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 group cursor-pointer border border-black/5 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-                        <summary class="flex justify-between items-center font-headline font-black focus:outline-none">
-                            Сколько стоят подписки на инструменты?
-                            <span class="material-symbols-outlined transition-transform group-open:rotate-180 text-primary">expand_more</span>
-                        </summary>
-                        <p class="mt-4 text-on-surface-variant leading-relaxed font-light">Gemini Pro и Claude Code — платные подписки. Qwen — бесплатно. Суммарно в десятки раз дешевле одного месяца работы программиста. Точные цены и инструкцию дадим на старте.</p>
-                    </details>
-                    <details class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 group cursor-pointer border border-black/5 shadow-sm [&_summary::-webkit-details-marker]:hidden">
-                        <summary class="flex justify-between items-center font-headline font-black focus:outline-none">
-                            Чем это отличается от других курсов по Vibe Coding?
-                            <span class="material-symbols-outlined transition-transform group-open:rotate-180 text-primary">expand_more</span>
-                        </summary>
-                        <p class="mt-4 text-on-surface-variant leading-relaxed font-light">Другие курсы учат нажимать кнопки в Cursor. Мы учим управлять ИИ-командой по строгой методологии — с разделением ролей, конвейером задач и перекрёстным контролем качества. Автор — управленец, который собрал ERP для реального производства, а не блогер.</p>
-                    </details>
-                </div>
-            </div>
-        </section>
-
-        <!-- Final CTA -->
-        <section class="py-32 bg-primary relative overflow-hidden" id="cta">
-            <!-- Background Image overlay -->
-            <div class="absolute inset-0 z-0">
-                <img src="robot_green_nodes.png" alt="" class="w-full h-full object-cover opacity-10 grayscale mix-blend-overlay" />
-            </div>
-            <div class="max-w-4xl mx-auto px-4 md:px-8 relative z-10 text-center">
-                <h2 class="text-4xl md:text-6xl font-headline font-black text-white leading-tight mb-6">
-                    Один человек с ИИ опаснее <span class="italic text-primary-container">целого IT-отдела</span>
-                </h2>
-                <p class="text-xl text-white/80 mb-12 font-light">Перестаньте платить за то, что можете сделать сами. Начните сегодня.</p>
-                <div class="flex flex-col md:flex-row justify-center gap-6">
-                    <button onclick="openAuditModal()" class="bg-white text-primary px-10 py-5 rounded-full font-headline font-black text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
-                        Бесплатный разбор
-                    </button>
-                    <a href="#program" class="bg-primary-container/20 border border-primary-container/30 text-white px-10 py-5 rounded-full font-headline font-black text-sm uppercase tracking-widest hover:bg-primary-container/40 transition-all flex items-center justify-center">
-                        Интенсив за 4 990 ₽
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-[#f5f0e6] full-width py-16 border-t border-black/5">
-        <div class="max-w-7xl mx-auto px-4 md:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-12 mb-12">
-                <div class="text-2xl font-black text-on-surface tracking-tighter flex items-center gap-2">
-                    <div class="bg-primary text-white w-8 h-8 flex items-center justify-center rounded font-bold text-sm">V</div>
-                    <span>VibeCraft</span>
-                </div>
-                <div class="flex flex-wrap justify-center gap-10 font-['Space_Grotesk'] font-bold text-[10px] uppercase tracking-[0.2em] text-on-surface/40">
-                    <a class="hover:text-primary transition-colors" href="#">Политика конфиденциальности</a>
-                    <a class="hover:text-primary transition-colors" href="#">Условия</a>
-                    <a class="hover:text-primary transition-colors" href="about.html">О нас</a>
-                </div>
-            </div>
-            <div class="pt-12 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="font-['Manrope'] text-[10px] uppercase tracking-widest text-on-surface/20 text-center md:text-left">
-                    © 2025 VibeCraft. Интеллектуальная автоматизация бизнеса.
-                </div>
-            </div>
+      </div>
+      <div>
+        <div class="who-title">✗ Кому не нужен</div>
+        <div class="who-list">
+          <div class="who-item not">Уровень 3+ — там другие задачи</div>
+          <div class="who-item not">Кто хочет создавать IT-продукты (это VibeCraft)</div>
+          <div class="who-item not">Технические специалисты-разработчики</div>
         </div>
-    </footer>
-
-    <!-- Audit Form Modal -->
-    <div id="audit-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-        <div class="bg-surface-container rounded-[2rem] p-8 lg:p-12 border border-black/5 max-w-lg w-full relative">
-            <button onclick="closeAuditModal()" class="absolute top-6 right-6 text-on-surface/40 hover:text-primary transition-colors">
-                <span class="material-symbols-outlined">close</span>
-            </button>
-            <div id="audit-form-view">
-                <h2 id="audit-modal-title" class="text-3xl font-headline font-black text-on-surface mb-4 uppercase">Бесплатный аудит</h2>
-                <p class="text-on-surface-variant mb-8 text-sm leading-relaxed">Оставьте контакт — разберём ваш бизнес и покажем, где ИИ принесёт первые деньги.</p>
-                <div class="space-y-4">
-                    <input type="text" id="audit-name" placeholder="Ваше имя" class="w-full bg-surface-container-lowest border border-black/5 rounded-2xl p-4 outline-none focus:ring-2 focus:ring-primary/20"/>
-                    <input type="tel" id="audit-phone" placeholder="+7 (___) ___-__-__" class="w-full bg-surface-container-lowest border border-black/5 rounded-2xl p-4 outline-none focus:ring-2 focus:ring-primary/20"/>
-                    <input type="text" id="audit-tg" placeholder="@username (Telegram)" class="w-full bg-surface-container-lowest border border-black/5 rounded-2xl p-4 outline-none focus:ring-2 focus:ring-primary/20"/>
-                    <button onclick="submitAuditForm()" class="w-full bg-primary text-on-primary py-5 rounded-full font-headline font-black text-sm uppercase tracking-widest hover:scale-[1.02] transition-all">ОТПРАВИТЬ ЗАЯВКУ</button>
-                    <p id="audit-error" class="text-error text-xs hidden">Заполните имя и контакт</p>
-                </div>
-            </div>
-            <div id="audit-success-view" class="hidden text-center py-12">
-                <span class="material-symbols-outlined text-6xl text-primary" data-icon="verified">verified</span>
-                <h2 class="text-2xl font-headline font-black text-on-surface mt-6 uppercase">ЗАЯВКА ОТПРАВЛЕНА</h2>
-                <p class="text-on-surface-variant mt-2">Свяжемся с вами в течение часа.</p>
-            </div>
-        </div>
+      </div>
     </div>
 
-    <script>
-        // ─── TYPEWRITER ───────────────────────────────────────────────
-        const heroWords = ['себя', 'сотрудников'];
-        let hwWord = 0, hwChar = 0, hwDeleting = false;
-        const hwEl = document.getElementById('typewriter-hero');
+    <!-- Modules -->
+    <h3 style="font-family:var(--head);font-size:18px;font-weight:800;margin-bottom:20px;">Программа курса — 4 часа</h3>
+    <div class="modules-grid">
+      <div class="module-card">
+        <div class="module-num">МОДУЛЬ 01</div>
+        <div class="module-title">Как думает ИИ — и как думать вместе с ним</div>
+        <div class="module-desc">Не теория — практика. Почему «напиши отчёт» не работает, а «ты — аналитик компании, напиши...» работает. Структура промпта: роль, контекст, задача, формат.</div>
+        <div class="module-duration">⏱ 60 минут</div>
+      </div>
+      <div class="module-card">
+        <div class="module-num">МОДУЛЬ 02</div>
+        <div class="module-title">ИИ для вашей профессии — конкретные задачи</div>
+        <div class="module-desc">Разбираем ТОП-3 рутинные задачи для роли каждого участника. Пишем промпты вместе. Каждый уходит с готовыми шаблонами для своей работы.</div>
+        <div class="module-duration">⏱ 90 минут</div>
+      </div>
+      <div class="module-card">
+        <div class="module-num">МОДУЛЬ 03</div>
+        <div class="module-title">Ограничения и безопасность — что нельзя доверять ИИ</div>
+        <div class="module-desc">Галлюцинации на практике: как распознать, как проверить. Что нельзя передавать в ИИ. Какие модели работают в РФ и чем различаются.</div>
+        <div class="module-duration">⏱ 45 минут</div>
+      </div>
+      <div class="module-card">
+        <div class="module-num">МОДУЛЬ 04</div>
+        <div class="module-title">Практика: каждый автоматизирует одну свою задачу</div>
+        <div class="module-desc">Участники берут реальную задачу из своей работы и с помощью ИИ делают её быстрее. Разбор результатов. Вопросы и ответы.</div>
+        <div class="module-duration">⏱ 45 минут</div>
+      </div>
+    </div>
 
-        function typeWriterHero() {
-            if (!hwEl) return;
-            const word = heroWords[hwWord];
-            hwEl.textContent = hwDeleting
-                ? word.substring(0, hwChar - 1)
-                : word.substring(0, hwChar + 1);
+    <!-- Author -->
+    <div class="author-block">
+      <div class="author-avatar">А</div>
+      <div>
+        <div class="author-name">Александр Шахмаев</div>
+        <div class="author-role">Основатель 66AI · Автор курса</div>
+        <div class="author-quote">«Я сам управленец, не программист. Когда я начинал — не было курса, который объяснил бы конкретному бухгалтеру или менеджеру, как именно ему использовать ИИ. Пришлось разбираться самому. Теперь передаю это за 4 часа.»</div>
+        <a href="about.html" class="author-link">Подробнее об авторе →</a>
+      </div>
+    </div>
 
-            hwDeleting ? hwChar-- : hwChar++;
+    <!-- CTA -->
+    <div class="track-cta">
+      <h3>Запустить курс для команды</h3>
+      <p>Групповой формат до 12 человек. Онлайн или офлайн. Адаптируем под ваши профессии.</p>
+      <a href="https://t.me/Bizbezit" target="_blank" rel="noopener" class="btn-amber">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.394 13.9l-2.94-.924c-.64-.203-.652-.64.135-.954l11.57-4.461c.537-.194 1.006.131.735.66z"/></svg>
+        Написать в Telegram
+      </a>
+      <p class="track-cta-note">50 000 ₽ за группу · Индивидуальный формат — уточните условия</p>
+    </div>
 
-            let delay = hwDeleting ? 100 : 150;
+  </div>
 
-            if (!hwDeleting && hwChar === word.length) {
-                delay = 2500;
-                hwDeleting = true;
-            } else if (hwDeleting && hwChar === 0) {
-                hwDeleting = false;
-                hwWord = (hwWord + 1) % heroWords.length;
-                delay = 500;
-            }
-            setTimeout(typeWriterHero, delay);
-        }
+  <!-- ── TRACK: VIBECRAFT ───────────────────────── -->
+  <div class="track-panel" id="track-vibe">
 
-        setTimeout(typeWriterHero, 800);
+    <div class="vibe-hero">
+      <div>
+        <div class="vibe-title">🚀 Vibe<em>Craft</em> Академия</div>
+        <p class="vibe-sub">Для тех, кто готов идти дальше: создавать собственные IT-инструменты без программистов. ERP, CRM, Telegram-боты, ИИ-агенты — методология для предпринимателей и ИИ-чемпионов компаний.</p>
+        <a href="https://t.me/Bizbezit" target="_blank" rel="noopener" class="btn-violet">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.394 13.9l-2.94-.924c-.64-.203-.652-.64.135-.954l11.57-4.461c.537-.194 1.006.131.735.66z"/></svg>
+          Записаться — Telegram
+        </a>
+      </div>
+      <div class="vibe-badge">
+        <div class="vibe-price">от 4 990 ₽</div>
+        <div class="vibe-price-sub">уточните формат<br/>и состав программы</div>
+      </div>
+    </div>
 
-        
+    <!-- What you'll build -->
+    <h3 style="font-family:var(--head);font-size:18px;font-weight:800;margin-bottom:20px;">Что вы построите</h3>
+    <div class="vibe-projects">
+      <div class="project-card"><div class="project-icon">📋</div><div class="project-title">ERP-система</div><div class="project-desc">Управление производством, заказами, снабжением — без 1С и без программистов.</div></div>
+      <div class="project-card"><div class="project-icon">🤖</div><div class="project-title">Telegram-бот</div><div class="project-desc">Боты для продаж, поддержки, внутренних процессов. От идеи до запуска.</div></div>
+      <div class="project-card"><div class="project-icon">🧠</div><div class="project-title">ИИ-агент</div><div class="project-desc">Автономные агенты, которые выполняют сложные цепочки задач без участия человека.</div></div>
+      <div class="project-card"><div class="project-icon">💼</div><div class="project-title">CRM-система</div><div class="project-desc">Кастомная CRM под ваши процессы — лиды, сделки, аналитика, интеграции.</div></div>
+      <div class="project-card"><div class="project-icon">🌐</div><div class="project-title">Сайт и лендинг</div><div class="project-desc">Продающие страницы, блоги, порталы — с формами, SEO и аналитикой.</div></div>
+      <div class="project-card"><div class="project-icon">📊</div><div class="project-title">Дашборд и отчёты</div><div class="project-desc">Автоматический сбор данных и визуализация. Никаких ручных таблиц.</div></div>
+    </div>
 
-        // ─── MODAL LOGIC ─────────────────────────────────────────────
-        let currentTariff = '';
-        let currentOptions = '';
+    <!-- Methodology -->
+    <h3 style="font-family:var(--head);font-size:18px;font-weight:800;margin-bottom:20px;">Методология: не «нажал кнопку — получил результат»</h3>
+    <div class="method-steps">
+      <div class="method-step">
+        <div class="method-step-num">1</div>
+        <div><div class="method-step-title">Разделение ролей между моделями</div><div class="method-step-desc">Claude — архитектор и стратег. Cursor — исполнитель кода. Gemini — проверка и рефакторинг. Каждый ИИ делает то, в чём он лучше.</div></div>
+      </div>
+      <div class="method-step">
+        <div class="method-step-num">2</div>
+        <div><div class="method-step-title">Конвейер задач с документацией</div><div class="method-step-desc">Каждая задача — отдельный файл с контекстом, целью, ограничениями. ИИ всегда знает, что делает. Результат предсказуем.</div></div>
+      </div>
+      <div class="method-step">
+        <div class="method-step-num">3</div>
+        <div><div class="method-step-title">Перекрёстная проверка</div><div class="method-step-desc">Одна модель пишет, другая ревьюит. Система ошибок выявляется до продакшена. Без классического «дебаггинга вслепую».</div></div>
+      </div>
+      <div class="method-step">
+        <div class="method-step-num">4</div>
+        <div><div class="method-step-title">Итеративное накопление контекста</div><div class="method-step-desc">CLAUDE.md, структура папок, живая документация — ИИ помнит всё. Проект не деградирует после сотого промпта.</div></div>
+      </div>
+    </div>
 
-        function openAuditModal(sourceTitle, options) {
-            const titleEl = document.getElementById('audit-modal-title');
-            if (titleEl) titleEl.textContent = sourceTitle || 'Бесплатный аудит';
-            currentTariff = sourceTitle || '';
-            currentOptions = options || '';
+    <!-- Author -->
+    <div class="author-block">
+      <div class="author-avatar">А</div>
+      <div>
+        <div class="author-name">Александр Шахмаев</div>
+        <div class="author-role">Основатель VibeCraft · Автор методологии</div>
+        <div class="author-quote">«Этот сайт, ERP для моего производства, Telegram-бот для сотрудников — всё создано без единого программиста. Не потому что это "легко". А потому что я нашёл рабочую методологию и готов её передать.»</div>
+        <a href="about.html" class="author-link">История автора →</a>
+      </div>
+    </div>
 
-            // Если открыли из Флагмана — проверяем VIP
-            if (sourceTitle && sourceTitle.includes('Флагман')) {
-                const vipToggle = document.getElementById('vip-toggle');
-                if (vipToggle && vipToggle.checked) {
-                    currentOptions = 'VIP-блок (+36 000 ₽)';
-                }
-            }
+    <!-- Cases link -->
+    <div style="background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:14px;padding:22px 24px;margin-bottom:36px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
+      <div>
+        <div style="font-family:var(--head);font-size:15px;font-weight:700;margin-bottom:4px;">Посмотрите реальные кейсы</div>
+        <div style="font-size:13px;color:var(--muted)">ERP для металлопроизводства, сайты, боты — созданные по методологии VibeCraft</div>
+      </div>
+      <a href="cases.html" style="font-family:var(--head);font-size:13px;font-weight:700;color:var(--violet-light);text-decoration:none;white-space:nowrap;">Смотреть кейсы →</a>
+    </div>
 
-            // Сбросить форму и показать форму
-            document.getElementById('audit-form-view').classList.remove('hidden');
-            document.getElementById('audit-success-view').classList.add('hidden');
+    <!-- CTA -->
+    <div class="track-cta">
+      <h3>Начать обучение VibeCraft</h3>
+      <p>Форматы: индивидуально, в группе, корпоративно. Уточните состав и сроки — подберём программу.</p>
+      <a href="https://t.me/Bizbezit" target="_blank" rel="noopener" class="btn-violet">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.394 13.9l-2.94-.924c-.64-.203-.652-.64.135-.954l11.57-4.461c.537-.194 1.006.131.735.66z"/></svg>
+        Написать в Telegram
+      </a>
+      <p class="track-cta-note">от 4 990 ₽ · Индивидуальный формат доступен</p>
+    </div>
 
-            document.getElementById('audit-modal').classList.remove('hidden');
-            document.getElementById('audit-modal').classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        }
+  </div>
 
-        function closeAuditModal() {
-            document.getElementById('audit-modal').classList.add('hidden');
-            document.getElementById('audit-modal').classList.remove('flex');
-            document.body.style.overflow = 'auto';
-        }
+</div>
 
-        // Phone mask: +7 (XXX) XXX-XX-XX
-        document.getElementById('audit-phone').addEventListener('input', function(e) {
-            let v = e.target.value.replace(/\D/g, '');
-            if (v.startsWith('8')) v = '7' + v.slice(1);
-            if (!v.startsWith('7')) v = '7' + v;
-            v = v.slice(0, 11);
-            let out = '+7';
-            if (v.length > 1) out += ' (' + v.slice(1, 4);
-            if (v.length >= 4) out += ') ' + v.slice(4, 7);
-            if (v.length >= 7) out += '-' + v.slice(7, 9);
-            if (v.length >= 9) out += '-' + v.slice(9, 11);
-            e.target.value = out;
-        });
+<footer>
+  <div class="footer-logo">66<em>AI</em></div>
+  <div class="footer-links">
+    <a href="index.html">Главная</a>
+    <a href="attestation.html">Диагностика</a>
+    <a href="cases.html">Кейсы</a>
+    <a href="price.html">Цены</a>
+    <a href="about.html">Автор</a>
+  </div>
+  <div class="footer-copy">© 2026 66AI · Масштабируйте интеллект, а не штат</div>
+</footer>
 
-        async function submitAuditForm() {
-            const name  = document.getElementById('audit-name').value.trim();
-            const phone = document.getElementById('audit-phone').value.trim();
-            const tg    = document.getElementById('audit-tg').value.trim();
-            const errEl = document.getElementById('audit-error');
+<script>
+function showTrack(track) {
+  document.querySelectorAll('.track-panel').forEach(p => p.classList.remove('visible'));
+  document.querySelectorAll('.track-tab').forEach(t => {
+    t.classList.remove('active-killer', 'active-vibe');
+  });
+  document.getElementById('track-' + track).classList.add('visible');
+  const tabs = document.querySelectorAll('.track-tab');
+  if (track === 'killer') { tabs[0].classList.add('active-killer'); }
+  else { tabs[1].classList.add('active-vibe'); }
+  localStorage.setItem('vibe_track', track);
+}
 
-            if (!name) {
-                errEl.textContent = 'Пожалуйста, введите ваше имя';
-                errEl.classList.remove('hidden'); return;
-            }
-            if (!phone && !tg) {
-                errEl.textContent = 'Укажите телефон или Telegram';
-                errEl.classList.remove('hidden'); return;
-            }
-            errEl.classList.add('hidden');
-
-            const title = document.getElementById('audit-modal-title').textContent;
-            let text = `🔔 Новая заявка: ${title}\n👤 Имя: ${name}\n📞 Телефон: ${phone || '—'}\n✈️ Telegram: ${tg || '—'}`;
-
-            // Добавить тариф и опции
-            if (currentTariff) text += `\n📋 Тариф: ${currentTariff}`;
-            if (currentOptions) text += `\n⚙️ Опции: ${currentOptions}`;
-
-            // ─── LOCALHOST MODE (заглушка) ───
-            const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-
-            if (isLocalhost) {
-                console.log('═══ LOCALHOST TEST MODE ═══');
-                console.log('Форма:', title);
-                console.log('Имя:', name);
-                console.log('Телефон:', phone || '—');
-                console.log('Telegram:', tg || '—');
-                if (currentTariff) console.log('Тариф:', currentTariff);
-                if (currentOptions) console.log('Опции:', currentOptions);
-                console.log('Полный текст для Telegram:');
-                console.log(text);
-                console.log('═══ END TEST MODE ═══');
-
-                // Показать success без реального запроса
-                document.getElementById('audit-form-view').classList.add('hidden');
-                document.getElementById('audit-success-view').classList.remove('hidden');
-                return;
-            }
-
-            // ─── PRODUCTION MODE ───
-            try {
-                console.log('Отправка заявки на сервер...');
-                const response = await fetch('/api/send-lead.php', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ text })
-                });
-
-                if (!response.ok) {
-                    console.error('Ошибка сервера:', response.status, response.statusText);
-                }
-
-                const result = await response.json();
-                console.log('Ответ сервера:', result);
-
-                if (!result.success) {
-                    console.error('Ошибка отправки:', result.error);
-                }
-            } catch (error) {
-                console.error('═══ FETCH ERROR ═══');
-                console.error('Тип ошибки:', error.name);
-                console.error('Сообщение:', error.message);
-                console.error('═══ END ERROR ═══');
-                // Всё равно показать success — пользователь не должен видеть технические ошибки
-            }
-
-            document.getElementById('audit-form-view').classList.add('hidden');
-            document.getElementById('audit-success-view').classList.remove('hidden');
-        }
-
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('audit-modal')) closeAuditModal();
-        };
-
-        // ─── PROMO TIMER ──────────────────────────────────────────────
-        (function() {
-            const els = [
-                document.getElementById('promo-timer'),
-                document.getElementById('timer-cta')
-            ].filter(Boolean);
-            if (!els.length) return;
-            function updateTimer() {
-                const now = new Date();
-                let midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
-                let diff = midnight - now;
-                if (diff <= 0) {
-                    midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 2);
-                    diff = midnight - now;
-                }
-                const h = String(Math.floor(diff / 3600000)).padStart(2, '0');
-                const m = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
-                const s = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
-                const formatted = h + ':' + m + ':' + s;
-                els.forEach(function(el) { el.textContent = formatted; });
-            }
-            updateTimer();
-            setInterval(updateTimer, 1000);
-        })();
-
-        // ─── MOBILE MENU TOGGLE ──────────────────────────────────────
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const icon = document.getElementById('menu-icon');
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-                icon.textContent = 'close';
-            } else {
-                menu.classList.add('hidden');
-                icon.textContent = 'menu';
-            }
-        }
-        function closeMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const icon = document.getElementById('menu-icon');
-            menu.classList.add('hidden');
-            icon.textContent = 'menu';
-        }
-
-        // ─── PROGRAM TABS (Hash Routing) ─────────────────────────────
-        function switchTab(tabId) {
-            // Скрыть все табы
-            document.querySelectorAll('.tab-content').forEach(function(tab) {
-                tab.classList.add('hidden');
-            });
-            // Сбросить стили кнопок
-            document.querySelectorAll('.tab-btn').forEach(function(btn) {
-                btn.classList.remove('bg-primary', 'text-white', 'shadow-lg', 'border-primary');
-                btn.classList.add('border-black/10', 'text-on-surface-variant');
-            });
-
-            // Показать нужный таб
-            const targetTab = document.getElementById('tab-' + tabId);
-            if (targetTab) targetTab.classList.remove('hidden');
-
-            // Активировать кнопку
-            const activeBtn = document.querySelector('.tab-btn[data-tab="' + tabId + '"]');
-            if (activeBtn) {
-                activeBtn.classList.add('bg-primary', 'text-white', 'shadow-lg', 'border-primary');
-                activeBtn.classList.remove('border-black/10', 'text-on-surface-variant');
-            }
-
-            // Обновить хеш без скролла
-            history.pushState(null, null, '#program-' + tabId.replace('program-', ''));
-        }
-
-        // Чтение хеша при загрузке страницы
-        function initTabsFromHash() {
-            const hash = window.location.hash.replace('#', '');
-            if (hash.startsWith('program-')) {
-                const tabId = hash; // program-start, program-engineer, program-business
-                switchTab(tabId);
-            }
-        }
-
-        // Слушаем изменения хеша
-        window.addEventListener('hashchange', function() {
-            const hash = window.location.hash.replace('#', '');
-            if (hash.startsWith('program-')) {
-                switchTab(hash);
-            }
-        });
-
-        // Инициализация при загрузке
-        document.addEventListener('DOMContentLoaded', function() {
-            initTabsFromHash();
-        });
-
-        // ─── FLAGMAN CALCULATOR ──────────────────────────────────────
-        const BASE_PRICE = 36000;
-        const VIP_PRICE = 36000;
-
-        function updateCalculator() {
-            const vipToggle = document.getElementById('vip-toggle');
-            const totalEl = document.getElementById('calc-total');
-            const vipLine = document.getElementById('vip-line');
-
-            if (!totalEl) return;
-
-            let total = BASE_PRICE;
-
-            if (vipToggle && vipToggle.checked) {
-                total += VIP_PRICE;
-                if (vipLine) vipLine.classList.remove('hidden');
-            } else {
-                if (vipLine) vipLine.classList.add('hidden');
-            }
-
-            totalEl.textContent = total.toLocaleString('ru-RU');
-        }
-
-        // ─── UTM PRICE HIDER ─────────────────────────────────────────
-        function checkUtmPriceParam() {
-            const params = new URLSearchParams(window.location.search);
-            if (params.get('utm_custom_price') === 'hide') {
-                document.querySelectorAll('.price-element').forEach(function(el) {
-                    el.style.display = 'none';
-                });
-
-                const replacementText = 'Специальные условия (уточняйте у менеджера)';
-                document.querySelectorAll('.price-element').forEach(function(el) {
-                    const replacement = document.createElement('p');
-                    replacement.className = 'text-sm font-bold text-primary';
-                    replacement.textContent = replacementText;
-                    el.parentNode.insertBefore(replacement, el);
-                });
-            }
-        }
-
-        // ─── RESULTS MODAL ──────────────────────────────────────────
-        function openResultsModal() {
-            const modal = document.getElementById('results-modal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeResultsModal() {
-            const modal = document.getElementById('results-modal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Запуск UTM проверки при загрузке
-        document.addEventListener('DOMContentLoaded', function() {
-            checkUtmPriceParam();
-        });
-    </script>
+// Restore last tab
+const saved = localStorage.getItem('vibe_track');
+if (saved) showTrack(saved);
+</script>
 </body>
 </html>

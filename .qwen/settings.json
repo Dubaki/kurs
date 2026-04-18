@@ -18,7 +18,8 @@
       "Bash(powershell *)",
       "Bash(echo.)",
       "Bash(echo *)",
-      "Bash(echo)"
+      "Bash(echo)",
+      "Bash(dir)"
     ]
   },
   "$version": 3

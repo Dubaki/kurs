@@ -1,258 +1,237 @@
 <!DOCTYPE html>
-<html class="light" lang="ru" style="scroll-behavior: smooth;">
+<html lang="ru">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Об авторе | VibeCraft</title>
-    <meta name="description" content="Биография автора курсов Vibe Coding. От управленца на заводе до создателя собственных IT-решений.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://66ai.ru/about.html">
-    <meta property="og:title" content="Об авторе | VibeCraft">
-    <meta property="og:description" content="Биография автора курсов Vibe Coding. От управленца на заводе до создателя собственных IT-решений.">
-    <meta property="og:image" content="https://66ai.ru/robot_green_nodes.webp">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Об авторе | VibeCraft">
-    <meta property="twitter:image" content="https://66ai.ru/robot_green_nodes.webp">
-    <link rel="canonical" href="https://66ai.ru/about.html" />
-    
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-    
-    <script id="tailwind-config">
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              "surface-container-highest": "#e8e2d9",
-              "inverse-primary": "#006875",
-              "on-tertiary-container": "#412d00",
-              "secondary-container": "#d3e3ff",
-              "surface-container-lowest": "#ffffff",
-              "tertiary": "#8d5f00",
-              "on-secondary": "#ffffff",
-              "on-surface": "#191c1e",
-              "surface-bright": "#fcf8f1",
-              "primary-container": "#9cf0ff",
-              "surface": "#f5f0e6",
-              "on-primary-container": "#001f24",
-              "on-background": "#191c1e",
-              "error": "#ba1a1a",
-              "primary": "#006875",
-              "on-primary": "#ffffff",
-              "surface-container": "#f0eade",
-              "on-surface-variant": "#43474e",
-              "background": "#f5f0e6",
-              "outline": "#73777f",
-              "surface-variant": "#dee3eb",
-              "outline-variant": "#c3c6cf"
-            },
-            fontFamily: {
-              "headline": ["Space Grotesk"],
-              "body": ["Manrope"]
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-      body { background-color: #f5f0e6; color: #191c1e; }
-      /* Logo morph animation */
-      @keyframes logo-morph {
-          0%, 100% { background-color: #006875; border-radius: 4px; border: 2px solid transparent; }
-          50%      { background-color: transparent; border-radius: 50%; border: 2px solid #006875; }
-      }
-      @keyframes logo-v-morph {
-          0%, 100% { color: #ffffff; }
-          50%      { color: #1e40af; }
-      }
-      .logo-morph { animation: logo-morph 5s ease-in-out infinite; will-change: background-color, border-radius; }
-      .logo-v-morph { animation: logo-v-morph 5s ease-in-out infinite; will-change: color; }
-    </style>
-</head>
-<body class="font-body selection:bg-primary selection:text-on-primary">
-    <!-- TopNavBar -->
-    <header class="bg-[#f5f0e6]/80 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-black/5">
-        <div class="flex justify-between items-center w-full px-4 md:px-8 py-4 max-w-7xl mx-auto">
-            <a href="index.html" class="flex items-center gap-2 text-xl font-black text-on-surface tracking-tighter no-underline hover:opacity-80 transition-opacity">
-                <div class="bg-primary text-white w-8 h-8 flex items-center justify-center rounded font-bold text-sm logo-morph"><span class="logo-v-morph">V</span></div>
-                <span>VibeCraft</span>
-            </a>
-            <nav class="hidden lg:flex items-center gap-1 font-['Space_Grotesk'] font-bold uppercase tracking-tight text-lg">
-                <a class="text-on-surface/70 hover:text-primary hover:-translate-y-0.5 px-3 py-1 rounded-lg transition-all duration-300 ease-in-out" href="index.html">НАЧАЛО</a>
-                <a class="text-on-surface/70 hover:text-primary hover:-translate-y-0.5 px-3 py-1 rounded-lg transition-all duration-300 ease-in-out" href="vibe.html#process">ПРОЦЕСС</a>
-                <a class="text-on-surface/70 hover:text-primary hover:-translate-y-0.5 px-3 py-1 rounded-lg transition-all duration-300 ease-in-out" href="vibe.html#program">ПРОГРАММА</a>
-                <a class="text-on-surface/70 hover:text-primary hover:-translate-y-0.5 px-3 py-1 rounded-lg transition-all duration-300 ease-in-out" href="cases.html">КЕЙСЫ</a>
-                <a class="text-on-surface/70 hover:text-primary hover:-translate-y-0.5 px-3 py-1 rounded-lg transition-all duration-300 ease-in-out" href="blog.html">БЛОГ</a>
-                <a class="text-primary px-3 py-1 hover:text-inverse-primary hover:-translate-y-0.5 rounded-lg transition-all duration-300 ease-in-out" href="about.html">АВТОР</a>
-                <a class="text-on-surface/70 hover:text-primary hover:-translate-y-0.5 px-3 py-1 rounded-lg transition-all duration-300 ease-in-out" href="vibe.html#faq">FAQ</a>
-            </nav>
-            <div class="flex items-center gap-1">
-                <!-- Contact Icons: Phone, TG, MAX -->
-                <a href="tel:+79221800911" class="hover:opacity-80 transition-all duration-300 ease-in-out p-1.5" title="Позвонить">
-                    <img src="photos/T.png" alt="Позвонить" class="h-6 w-6 object-contain"/>
-                </a>
-                <a href="https://t.me/Bizbezit" target="_blank" rel="noopener" class="hover:opacity-80 transition-all duration-300 ease-in-out p-1.5" title="Telegram">
-                    <img src="photos/Telegram.png" alt="Telegram" class="h-6 w-6 object-contain"/>
-                </a>
-                <a href="https://max.ru/+79221800911" target="_blank" rel="noopener" class="hover:opacity-80 transition-all duration-300 ease-in-out p-1.5" title="MAX">
-                    <img src="photos/MAX.svg.png" alt="MAX" class="h-6 w-6 object-contain"/>
-                </a>
-                <!-- Hamburger (mobile only) -->
-                <button id="mobile-menu-btn" class="lg:hidden text-on-surface hover:text-primary transition-colors p-1" onclick="toggleMobileMenu()">
-                    <span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span>
-                </button>
-            </div>
-        </div>
-        <!-- Mobile Dropdown Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-[#f5f0e6]/95 backdrop-blur-xl border-t border-black/5 absolute top-full left-0 right-0 z-50 shadow-lg">
-            <nav class="flex flex-col items-center py-6 gap-1 font-['Space_Grotesk'] font-bold uppercase tracking-tight text-sm">
-                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="index.html" onclick="closeMobileMenu()">НАЧАЛО</a>
-                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="vibe.html#process" onclick="closeMobileMenu()">ПРОЦЕСС</a>
-                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="vibe.html#program" onclick="closeMobileMenu()">ПРОГРАММА</a>
-                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="cases.html" onclick="closeMobileMenu()">КЕЙСЫ</a>
-                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="blog.html" onclick="closeMobileMenu()">БЛОГ</a>
-                <a class="w-full text-center py-3 text-primary bg-primary/5 font-black" href="about.html" onclick="closeMobileMenu()">АВТОР</a>
-                <a class="w-full text-center py-3 text-on-surface/70 hover:text-primary hover:bg-primary/5 transition-all" href="vibe.html#faq" onclick="closeMobileMenu()">FAQ</a>
-                <div class="flex items-center gap-4 py-3 text-on-surface/50">
-                    <a href="tel:+79221800911" class="hover:opacity-80 transition-colors p-1.5" title="Позвонить">
-                        <img src="photos/T.png" alt="Позвонить" class="h-6 w-6 object-contain"/>
-                    </a>
-                    <a href="https://t.me/Bizbezit" target="_blank" rel="noopener" class="hover:opacity-80 transition-colors p-1.5" title="Telegram">
-                        <img src="photos/Telegram.png" alt="Telegram" class="h-6 w-6 object-contain"/>
-                    </a>
-                    <a href="https://max.ru/+79221800911" target="_blank" rel="noopener" class="hover:opacity-80 transition-colors p-1.5" title="MAX">
-                        <img src="photos/MAX.svg.png" alt="MAX" class="h-6 w-6 object-contain"/>
-                    </a>
-                </div>
-            </nav>
-        </div>
-    </header>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Об авторе — Александр Шахмаев · 66AI</title>
+  <meta name="description" content="Управляющий директор, который устал ждать. Собрал ERP, сайты и ботов без программистов. Основатель 66AI и VibeCraft."/>
+  <link rel="canonical" href="https://66ai.ru/about.html"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Manrope', system-ui, sans-serif; background: #0f1219; color: #fff; -webkit-font-smoothing: antialiased; }
+    :root {
+      --teal: #006875; --teal-mid: #00909f; --teal-light: #4dd0e1;
+      --dark: #0f1219; --border: rgba(255,255,255,.09); --muted: rgba(255,255,255,.5);
+      --head: 'Space Grotesk', system-ui, sans-serif;
+    }
+    header { position: sticky; top: 0; z-index: 100; height: 60px; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; background: rgba(15,18,25,.9); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; }
+    .logo-mark { width: 32px; height: 32px; border-radius: 8px; background: var(--teal); display: flex; align-items: center; justify-content: center; font-family: var(--head); font-weight: 900; font-size: 12px; }
+    .logo-name { font-family: var(--head); font-weight: 800; font-size: 17px; }
+    .logo-name em { color: var(--teal-light); font-style: normal; }
+    nav { display: flex; gap: 2px; }
+    nav a { font-family: var(--head); font-size: 13px; font-weight: 600; color: var(--muted); text-decoration: none; padding: 6px 13px; border-radius: 20px; transition: color .2s, background .2s; }
+    nav a:hover, nav a.active { color: #fff; background: rgba(255,255,255,.07); }
+    .btn-tg { display: flex; align-items: center; gap: 7px; font-family: var(--head); font-size: 13px; font-weight: 700; color: #fff; text-decoration: none; border: 1px solid var(--border); padding: 7px 18px; border-radius: 24px; transition: border-color .2s, background .2s; }
+    .btn-tg:hover { border-color: rgba(255,255,255,.3); background: rgba(255,255,255,.05); }
+    .btn-tg svg { width: 15px; height: 15px; opacity: .8; }
 
-    <!-- Mobile Fixed Bottom Navigation -->
-    <div class="md:hidden fixed bottom-0 left-0 right-0 z-[60] bg-surface/90 backdrop-blur-xl border-t border-black/5 px-6 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
-        <div class="flex justify-between items-center max-w-md mx-auto">
-            <a class="flex flex-col items-center gap-1 text-on-surface/60 hover:text-primary transition-colors" href="index.html">
-                <span class="material-symbols-outlined" data-icon="home">home</span>
-                <span class="text-[10px] font-headline font-black uppercase tracking-widest">Домой</span>
-            </a>
-            <a class="flex flex-col items-center gap-1 text-on-surface/60 hover:text-primary transition-colors" href="vibe.html#program">
-                <span class="material-symbols-outlined" data-icon="school">school</span>
-                <span class="text-[10px] font-headline font-black uppercase tracking-widest">Курсы</span>
-            </a>
-            <a class="flex flex-col items-center gap-1 text-on-surface/60 hover:text-primary transition-colors" href="cases.html">
-                <span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
-                <span class="text-[10px] font-headline font-black uppercase tracking-widest">Кейсы</span>
-            </a>
-            <a class="flex flex-col items-center gap-1 text-primary" href="about.html">
-                <span class="material-symbols-outlined" data-icon="person">person</span>
-                <span class="text-[10px] font-headline font-black uppercase tracking-widest">Автор</span>
-            </a>
+    main { max-width: 1000px; margin: 0 auto; padding: 80px 40px 120px; }
+
+    .page-label { font-family: var(--head); font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 48px; }
+
+    .bio-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 64px; align-items: start; }
+
+    /* LEFT — photo + credentials */
+    .photo-wrap {
+      position: sticky; top: 80px;
+    }
+    .photo-box {
+      aspect-ratio: 3/4; border-radius: 20px; overflow: hidden;
+      background: #1a2030; border: 1px solid var(--border);
+      position: relative; margin-bottom: 24px;
+    }
+    .photo-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      font-family: monospace; font-size: 12px; color: rgba(255,255,255,.3);
+      text-align: center; padding: 20px; line-height: 1.6;
+    }
+    .photo-placeholder-icon { font-size: 48px; margin-bottom: 12px; opacity: .4; }
+    .photo-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.8) 0%, transparent 100%);
+      padding: 28px 22px 22px;
+    }
+    .photo-name { font-family: var(--head); font-size: 20px; font-weight: 900; letter-spacing: -.3px; }
+    .photo-role { font-size: 11px; color: var(--muted); font-family: var(--head); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; margin-top: 4px; }
+
+    .credentials { display: flex; flex-direction: column; gap: 8px; }
+    .cred-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: rgba(255,255,255,.025); border: 1px solid var(--border); border-radius: 10px; }
+    .cred-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal-light); flex-shrink: 0; }
+    .cred-text { font-size: 13px; color: rgba(255,255,255,.8); font-weight: 500; }
+
+    /* RIGHT — bio text */
+    .bio-title { font-family: var(--head); font-size: clamp(28px, 4vw, 42px); font-weight: 900; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 36px; }
+
+    .bio-text { display: flex; flex-direction: column; gap: 20px; }
+    .bio-p { font-size: 16px; color: rgba(255,255,255,.72); line-height: 1.75; }
+
+    .quote-block {
+      background: rgba(255,255,255,.03); border: 1px solid var(--border);
+      border-radius: 16px; padding: 24px 24px;
+      margin: 8px 0;
+    }
+    .quote-mark { font-family: 'Georgia', serif; font-size: 48px; color: var(--teal-light); line-height: .8; margin-bottom: 10px; opacity: .7; }
+    .quote-text { font-size: 15px; color: rgba(255,255,255,.82); line-height: 1.7; font-style: italic; }
+
+    .statement {
+      font-family: var(--head); font-size: 20px; font-weight: 900; letter-spacing: -.5px;
+      color: #fff; line-height: 1.3; padding: 24px 0;
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      margin: 8px 0;
+    }
+
+    .bio-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #fff; text-decoration: none; font-family: var(--head); font-size: 14px; font-weight: 700; padding: 12px 24px; border-radius: 28px; transition: background .2s, transform .2s; }
+    .btn-primary:hover { background: var(--teal-mid); transform: translateY(-1px); }
+    .btn-primary svg { width: 15px; height: 15px; }
+    .btn-outline { display: inline-flex; align-items: center; gap: 8px; color: rgba(255,255,255,.7); text-decoration: none; font-family: var(--head); font-size: 14px; font-weight: 700; padding: 12px 22px; border-radius: 28px; border: 1px solid var(--border); transition: border-color .2s, color .2s; }
+    .btn-outline:hover { border-color: rgba(255,255,255,.3); color: #fff; }
+
+    /* What I built */
+    .built-section { margin-top: 80px; padding-top: 60px; border-top: 1px solid var(--border); }
+    .built-label { font-family: var(--head); font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 14px; }
+    .built-title { font-family: var(--head); font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; letter-spacing: -1px; margin-bottom: 36px; }
+    .built-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .built-card { background: rgba(255,255,255,.025); border: 1px solid var(--border); border-radius: 14px; padding: 22px 18px; }
+    .built-icon { font-size: 26px; margin-bottom: 10px; }
+    .built-name { font-family: var(--head); font-size: 14px; font-weight: 800; margin-bottom: 4px; }
+    .built-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .built-time { margin-top: 10px; font-size: 11px; font-family: var(--head); font-weight: 700; color: var(--teal-light); }
+
+    footer { background: #0a0e15; border-top: 1px solid var(--border); padding: 32px 40px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-logo { font-family: var(--head); font-weight: 800; font-size: 15px; }
+    .footer-logo em { color: var(--teal-light); font-style: normal; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; font-family: var(--head); transition: color .2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,.2); font-family: var(--head); }
+
+    @media (max-width: 768px) {
+      header { padding: 0 20px; } nav { display: none; }
+      main { padding: 48px 20px 80px; }
+      .bio-grid { grid-template-columns: 1fr; gap: 40px; }
+      .photo-wrap { position: static; }
+      .built-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo">
+    <div class="logo-mark">66</div>
+    <span class="logo-name">66<em>AI</em></span>
+  </a>
+  <nav>
+    <a href="index.html#how">Как работает</a>
+    <a href="cases.html">Кейсы</a>
+    <a href="price.html">Цены</a>
+    <a href="about.html" class="active">Автор</a>
+    <a href="vibe.html">Обучение</a>
+  </nav>
+  <a href="https://t.me/Bizbezit" target="_blank" rel="noopener" class="btn-tg">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.394 13.9l-2.94-.924c-.64-.203-.652-.64.135-.954l11.57-4.461c.537-.194 1.006.131.735.66z"/></svg>
+    Написать
+  </a>
+</header>
+
+<main>
+  <div class="page-label">Об авторе</div>
+
+  <div class="bio-grid">
+    <!-- LEFT -->
+    <div class="photo-wrap">
+      <div class="photo-box">
+        <div class="photo-placeholder">
+          <div class="photo-placeholder-icon">👤</div>
+          фото автора
         </div>
+        <div class="photo-overlay">
+          <div class="photo-name">Александр Шахмаев</div>
+          <div class="photo-role">Основатель 66AI · VibeCraft</div>
+        </div>
+      </div>
+      <div class="credentials">
+        <div class="cred-item"><div class="cred-dot"></div><div class="cred-text">20+ лет в управлении бизнесом</div></div>
+        <div class="cred-item"><div class="cred-dot"></div><div class="cred-text">ERP собрана без программистов</div></div>
+        <div class="cred-item"><div class="cred-dot"></div><div class="cred-text">Основатель 66AI и VibeCraft</div></div>
+        <div class="cred-item"><div class="cred-dot"></div><div class="cred-text">Методология Dual-AI разработки</div></div>
+      </div>
     </div>
 
-    <main class="py-24">
-        <div class="max-w-7xl mx-auto px-4 md:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-                
-                <!-- Left Side: Photo -->
-                <div class="lg:col-span-5 relative group">
-                    <!-- Photo placeholder -->
-                    <div class="w-full aspect-[3/4] bg-surface-container-highest rounded-3xl overflow-hidden border border-black/10 relative shadow-2xl transition-transform">
-                        <!-- REPLACE_WITH_YOUR_PHOTO --><img src="photos/robot_green_nodes.png" alt="VibeCraft — ИИ-автоматизация бизнеса" class="w-full h-full object-cover grayscale opacity-80 mix-blend-multiply transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100 group-hover:mix-blend-normal" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-8">
-                            <div>
-                                <h2 class="text-white font-headline font-black text-3xl">Шахмаев Александр</h2>
-                                <p class="text-white/80 font-bold uppercase tracking-widest text-xs mt-2">Основатель VibeCraft</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- RIGHT -->
+    <div>
+      <h1 class="bio-title">Я не программист, а управленец, который устал ждать.</h1>
 
-                <!-- Right Side: Bio -->
-                <div class="lg:col-span-7 flex flex-col justify-center">
-                    <h1 class="text-5xl md:text-6xl font-headline font-black text-on-surface leading-tight tracking-tighter mb-8">
-                        Я не программист, а управленец, который устал ждать.
-                    </h1>
-                    
-                    <div class="space-y-8 text-on-surface-variant text-lg leading-relaxed font-light">
-                        <p>
-                            Меня зовут Александр. Управляющий директор конноспортивного клуба, начальник цеха металлоконструкций. 20+ человек в подчинении, и всё — клиенты, заказы, снабжение, документы, сроки — размазано между Битрикс, 1С, Excel, WhatsApp и бумажками.
-                        </p>
-                        
-                        <p>
-                            Смета на ERP-систему — больше миллиона. Ответ: «Не сейчас». Тогда я нашёл другой путь.
-                        </p>
+      <div class="bio-text">
+        <p class="bio-p">Меня зовут Александр. Управляющий директор конноспортивного клуба, начальник цеха металлоконструкций. 20+ человек в подчинении, и всё — клиенты, заказы, снабжение, документы, сроки — размазано между Битрикс, 1С, Excel, WhatsApp и бумажками.</p>
 
-                        <p>
-                            Шаг за шагом я собрал полноценную ERP для производства через ИИ. Потом — сайт для бизнеса по ремонту квартир. Потом ботов. Потом — этот сайт. Без единого программиста.
-                        </p>
-                        
-                        <div class="p-8 bg-surface-container-low rounded-2xl border border-black/5 border-l-4 border-l-primary">
-                            <p class="font-bold text-on-surface italic">«Мне говорили: Vibe Coding — это несерьёзно, накопление ошибок, игрушка. А я смотрю на факты: в Anthropic от 70 до 90% кода пишется с помощью ИИ. Топ-инженеры OpenAI и Anthropic вообще перестали писать код руками. Вопрос не в том, работает ли это. Вопрос — в подходе.»</p>
-                        </div>
-                        
-                        <p>
-                            Я перепробовал десятки инструментов. Выбросил то, что не работает. Собрал методологию с разделением ролей между ИИ-моделями, конвейером задач и перекрёстной проверкой. Это не «нажал кнопку — получил результат». Но это реальная возможность для человека без знания кода собирать крепкие, рабочие инструменты для своего бизнеса.
-                        </p>
-                        
-                        <p class="text-2xl font-black text-on-surface py-4 border-y border-black/5 uppercase tracking-tighter">
-                            Один человек с правильной методологией заменяет целый IT-отдел.
-                        </p>
-                    </div>
+        <p class="bio-p">Смета на ERP-систему — больше миллиона. Ответ: «Не сейчас». Тогда я нашёл другой путь.</p>
 
-                    <div class="mt-12 flex gap-4">
-                        <a href="https://t.me/VibeCraft66" target="_blank" class="flex items-center gap-2 bg-black/5 hover:bg-black/10 px-6 py-3 rounded-full text-on-surface font-bold text-sm tracking-widest uppercase transition-colors">
-                            <span class="material-symbols-outlined text-lg">flight_takeoff</span>
-                            Telegram
-                        </a>
-                    </div>
-                </div>
+        <p class="bio-p">Шаг за шагом я собрал полноценную ERP для производства через ИИ. Потом — сайт для бизнеса по ремонту квартир. Потом ботов. Потом — этот сайт. Без единого программиста.</p>
 
-            </div>
+        <div class="quote-block">
+          <div class="quote-mark">"</div>
+          <div class="quote-text">Мне говорили: Vibe Coding — это несерьёзно, накопление ошибок, игрушка. А я смотрю на факты: в Anthropic от 70 до 90% кода пишется с помощью ИИ. Топ-инженеры OpenAI и Anthropic вообще перестали писать код руками. Вопрос не в том, работает ли это. Вопрос — в подходе.</div>
         </div>
-    </main>
 
-    <!-- Footer -->
-    <footer class="bg-[#f5f0e6] full-width py-16 border-t border-black/5">
-        <div class="max-w-7xl mx-auto px-4 md:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-12 mb-12">
-                <div class="text-2xl font-black text-on-surface tracking-tighter flex items-center gap-2">
-                    <div class="bg-primary text-white w-8 h-8 flex items-center justify-center rounded font-bold text-sm">V</div>
-                    <span>VibeCraft</span>
-                </div>
-                <div class="flex flex-wrap justify-center gap-10 font-['Space_Grotesk'] font-bold text-[10px] uppercase tracking-[0.2em] text-on-surface/40">
-                    <a class="hover:text-primary transition-colors" href="#">Политика конфиденциальности</a>
-                    <a class="hover:text-primary transition-colors" href="#">Условия</a>
-                </div>
-            </div>
-            <div class="pt-12 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="font-['Manrope'] text-[10px] uppercase tracking-widest text-on-surface/40 text-center md:text-left">
-                    © 2025 VibeCraft. Vibe Coding & Автоматизация.
-                </div>
-            </div>
+        <p class="bio-p">Я перепробовал десятки инструментов. Выбросил то, что не работает. Собрал методологию с разделением ролей между ИИ-моделями, конвейером задач и перекрёстной проверкой. Это не «нажал кнопку — получил результат». Но это реальная возможность для человека без знания кода собирать крепкие, рабочие инструменты для своего бизнеса.</p>
+
+        <div class="statement">Один человек с правильной методологией заменяет целый IT-отдел.</div>
+
+        <p class="bio-p">Сейчас я занимаюсь двумя вещами: помогаю компаниям измерить ИИ-эффективность сотрудников через диагностику 66AI — и обучаю предпринимателей создавать собственные IT-продукты через методологию VibeCraft.</p>
+
+        <div class="bio-actions">
+          <a href="https://t.me/Bizbezit" target="_blank" rel="noopener" class="btn-primary">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.394 13.9l-2.94-.924c-.64-.203-.652-.64.135-.954l11.57-4.461c.537-.194 1.006.131.735.66z"/></svg>
+            Написать в Telegram
+          </a>
+          <a href="cases.html" class="btn-outline">Смотреть кейсы →</a>
         </div>
-    </footer>
-    <script>
-        // ─── MOBILE MENU TOGGLE ──────────────────────────────────────
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const icon = document.getElementById('menu-icon');
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-                icon.textContent = 'close';
-            } else {
-                menu.classList.add('hidden');
-                icon.textContent = 'menu';
-            }
-        }
-        function closeMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const icon = document.getElementById('menu-icon');
-            menu.classList.add('hidden');
-            icon.textContent = 'menu';
-        }
-    </script>
+      </div>
+
+      <!-- What I built -->
+      <div class="built-section">
+        <div class="built-label">Что построено без программистов</div>
+        <div class="built-title">Реальные проекты методологии</div>
+        <div class="built-grid">
+          <div class="built-card">
+            <div class="built-icon">⚙️</div>
+            <div class="built-name">ERP для производства</div>
+            <div class="built-desc">Управление металлоконструкциями, 20 сотрудников. Заказы, снабжение, документы, логистика.</div>
+            <div class="built-time">~2 недели разработки</div>
+          </div>
+          <div class="built-card">
+            <div class="built-icon">🏠</div>
+            <div class="built-name">Сайт для ремонтного бизнеса</div>
+            <div class="built-desc">Кастомный дизайн, SEO, формы заявок, Telegram-интеграция. Без студий и шаблонов.</div>
+            <div class="built-time">За выходные</div>
+          </div>
+          <div class="built-card">
+            <div class="built-icon">🌐</div>
+            <div class="built-name">Платформа 66AI</div>
+            <div class="built-desc">Этот сайт, Telegram Mini App для диагностики, система отчётов. Многостраничная экосистема.</div>
+            <div class="built-time">Постоянно развивается</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-logo">66<em>AI</em></div>
+  <div class="footer-links">
+    <a href="index.html">Главная</a>
+    <a href="attestation.html">Диагностика</a>
+    <a href="cases.html">Кейсы</a>
+    <a href="price.html">Цены</a>
+    <a href="vibe.html">Обучение</a>
+  </div>
+  <div class="footer-copy">© 2026 66AI · Масштабируйте интеллект, а не штат</div>
+</footer>
 </body>
 </html>

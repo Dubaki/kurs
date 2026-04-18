@@ -1,363 +1,447 @@
 <!DOCTYPE html>
-<html class="light" lang="ru" style="scroll-behavior: smooth;">
+<html lang="ru">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Примеры отчётов Аттестации 66AI</title>
-    <meta name="description" content="Посмотрите примеры отчётов Аттестации 66AI: для компании, руководителя и сотрудника.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://66ai.ru/otchet.html">
-    <meta property="og:title" content="Примеры отчётов Аттестации 66AI">
-    <meta property="og:description" content="Посмотрите примеры отчётов: для компании, руководителя и сотрудника.">
-    <meta property="og:image" content="https://66ai.ru/robot_green_nodes.webp">
-    <link rel="canonical" href="https://66ai.ru/otchet.html" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Примеры отчётов — 66AI Диагностика</title>
+  <meta name="description" content="Примеры отчётов диагностики 66AI: сводный по компании, по сотруднику и по руководителю. Карта рутины, грейды, экономия в рублях."/>
+  <link rel="canonical" href="https://66ai.ru/otchet.html"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Manrope', system-ui, sans-serif; background: #0f1219; color: #fff; -webkit-font-smoothing: antialiased; }
+    :root {
+      --teal: #006875; --teal-mid: #00909f; --teal-light: #4dd0e1;
+      --dark: #0f1219; --border: rgba(255,255,255,.09); --muted: rgba(255,255,255,.5);
+      --head: 'Space Grotesk', system-ui, sans-serif;
+      --grade-a: #4dd0e1; --grade-b: #60a5fa; --grade-c: #fbbf24; --grade-d: #f87171;
+    }
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    header { position: sticky; top: 0; z-index: 100; height: 60px; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; background: rgba(15,18,25,.9); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; }
+    .logo-mark { width: 32px; height: 32px; border-radius: 8px; background: var(--teal); display: flex; align-items: center; justify-content: center; font-family: var(--head); font-weight: 900; font-size: 12px; }
+    .logo-name { font-family: var(--head); font-weight: 800; font-size: 17px; }
+    .logo-name em { color: var(--teal-light); font-style: normal; }
+    nav { display: flex; gap: 2px; }
+    nav a { font-family: var(--head); font-size: 13px; font-weight: 600; color: var(--muted); text-decoration: none; padding: 6px 13px; border-radius: 20px; transition: color .2s, background .2s; }
+    nav a:hover { color: #fff; background: rgba(255,255,255,.07); }
+    .btn-tg { display: flex; align-items: center; gap: 7px; font-family: var(--head); font-size: 13px; font-weight: 700; color: #fff; text-decoration: none; border: 1px solid var(--border); padding: 7px 18px; border-radius: 24px; transition: border-color .2s, background .2s; }
+    .btn-tg:hover { border-color: rgba(255,255,255,.3); background: rgba(255,255,255,.05); }
+    .btn-tg svg { width: 15px; height: 15px; opacity: .8; }
 
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "surface-container-highest": "#e8e2d9",
-              "inverse-primary": "#006875",
-              "on-surface": "#191c1e",
-              "on-surface-variant": "#43474e",
-              "primary": "#006875",
-              "on-primary": "#ffffff",
-              "surface": "#f5f0e6",
-              "surface-container": "#f0eade",
-              "background": "#f5f0e6",
-              "outline-variant": "#c3c6cf",
-              "grade-a": "#006875",
-              "grade-b": "#0ea5e9",
-              "grade-c": "#f59e0b",
-              "grade-d": "#ef4444",
-            },
-            fontFamily: {
-              "headline": ["Space Grotesk"],
-              "body": ["Manrope"]
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-      body { background-color: #f5f0e6; color: #191c1e; }
-      @keyframes logo-morph { 0%,100%{background:#006875;border-radius:4px;border:2px solid transparent}50%{background:transparent;border-radius:50%;border:2px solid #006875} }
-      @keyframes logo-v-morph { 0%,100%{color:#fff}50%{color:#1e40af} }
-      .logo-morph{animation:logo-morph 5s ease-in-out infinite}
-      .logo-v-morph{animation:logo-v-morph 5s ease-in-out infinite}
-      @keyframes logo-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
-      .embossed-logo{border-radius:.75rem;box-shadow:3px 3px 8px rgba(25,28,30,.08),-3px -3px 8px rgba(255,255,255,.6);animation:logo-breathe 4s ease-in-out infinite;will-change:transform;transition:opacity .3s}
-      .embossed-logo:hover{opacity:.85}
-      .report-card{transition:all .4s cubic-bezier(.22,.61,.36,1);box-shadow:0 1px 3px rgba(25,28,30,.04),0 4px 12px rgba(25,28,30,.06),0 16px 40px rgba(25,28,30,.04)}
-      .report-card:hover{transform:translateY(-4px);box-shadow:0 2px 6px rgba(25,28,30,.05),0 8px 24px rgba(25,28,30,.08),0 24px 48px rgba(25,28,30,.05);border-color:rgba(0,104,117,.3)}
-      .anim-card{opacity:0;animation:fadeInUp .6s ease-out forwards}
-      .anim-card:nth-child(1){animation-delay:.1s}
-      .anim-card:nth-child(2){animation-delay:.25s}
-      .anim-card:nth-child(3){animation-delay:.4s}
-      @keyframes fadeInUp{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
-      /* Modal styles */
-      .modal-overlay{transition:opacity .3s ease}
-      .modal-overlay.hidden{opacity:0;pointer-events:none}
-      .modal-overlay:not(.hidden){opacity:1;pointer-events:auto}
-      .modal-body::-webkit-scrollbar{width:6px}
-      .modal-body::-webkit-scrollbar-track{background:transparent}
-      .modal-body::-webkit-scrollbar-thumb{background:rgba(25,28,30,.15);border-radius:3px}
-      .modal-body::-webkit-scrollbar-thumb:hover{background:rgba(25,28,30,.25)}
-      /* Progress bars */
-      .progress-bar{height:8px;background:#e8e2d9;border-radius:4px;overflow:hidden}
-      .progress-bar-fill{height:100%;border-radius:4px;transition:width .8s ease}
-      /* Grade badges */
-      .grade-a{background:#006875;color:#fff}
-      .grade-b{background:#0ea5e9;color:#fff}
-      .grade-c{background:#f59e0b;color:#fff}
-      .grade-d{background:#ef4444;color:#fff}
-      /* Table styles */
-      .report-table th{text-align:left;padding:8px 12px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#43474e;background:#f0eade}
-      .report-table td{padding:8px 12px;font-size:13px;border-top:1px solid #e8e2d9}
-    </style>
+    /* HERO */
+    .hero { max-width: 900px; margin: 0 auto; padding: 72px 40px 56px; text-align: center; }
+    .hero-label { font-family: var(--head); font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 16px; }
+    .hero-title { font-family: var(--head); font-size: clamp(30px, 5vw, 52px); font-weight: 900; letter-spacing: -1.5px; line-height: 1.05; margin-bottom: 14px; }
+    .hero-title em { color: var(--teal-light); font-style: normal; }
+    .hero-sub { font-size: 16px; color: var(--muted); line-height: 1.7; max-width: 500px; margin: 0 auto; }
+
+    /* REPORT CARDS */
+    .cards-wrap { max-width: 900px; margin: 0 auto; padding: 0 40px; }
+    .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 64px; }
+    .report-card {
+      background: rgba(255,255,255,.025); border: 1px solid var(--border);
+      border-radius: 18px; padding: 32px 24px; text-align: center;
+      cursor: pointer; transition: border-color .25s, background .25s, transform .25s;
+    }
+    .report-card:hover { border-color: rgba(77,208,225,.3); background: rgba(255,255,255,.04); transform: translateY(-3px); }
+    .card-icon { width: 52px; height: 52px; border-radius: 14px; background: rgba(0,104,117,.2); border: 1px solid rgba(77,208,225,.2); display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; font-size: 22px; }
+    .card-title { font-family: var(--head); font-size: 16px; font-weight: 800; margin-bottom: 8px; }
+    .card-desc { font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 20px; }
+    .card-open { font-family: var(--head); font-size: 11px; font-weight: 700; color: var(--teal-light); letter-spacing: .1em; text-transform: uppercase; }
+
+    /* CTA */
+    .bottom-cta { background: linear-gradient(135deg, rgba(0,104,117,.2) 0%, rgba(77,208,225,.04) 100%); border: 1px solid rgba(77,208,225,.15); border-radius: 20px; padding: 48px 40px; text-align: center; margin-bottom: 80px; }
+    .bottom-cta h2 { font-family: var(--head); font-size: clamp(22px, 3.5vw, 34px); font-weight: 900; letter-spacing: -.8px; margin-bottom: 10px; }
+    .bottom-cta p { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: #fff; text-decoration: none; font-family: var(--head); font-size: 14px; font-weight: 700; padding: 13px 28px; border-radius: 28px; transition: background .2s, transform .2s; }
+    .btn-primary:hover { background: var(--teal-mid); transform: translateY(-1px); }
+
+    /* MODAL */
+    .modal-overlay { position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,.78); backdrop-filter: blur(10px); display: none; align-items: center; justify-content: center; padding: 20px; }
+    .modal-overlay.open { display: flex; }
+    .modal-box { background: #141b28; border: 1px solid var(--border); border-radius: 24px; width: 100%; max-width: 760px; max-height: 88vh; overflow-y: auto; position: relative; }
+    .modal-header { display: flex; align-items: center; justify-content: space-between; padding: 24px 28px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: #141b28; z-index: 10; }
+    .modal-header-info { display: flex; align-items: center; gap: 12px; }
+    .modal-header-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(0,104,117,.2); border: 1px solid rgba(77,208,225,.2); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .modal-header-title { font-family: var(--head); font-size: 16px; font-weight: 800; }
+    .modal-header-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .modal-close { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,.06); border: 1px solid var(--border); color: var(--muted); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; transition: color .2s, border-color .2s; }
+    .modal-close:hover { color: #fff; border-color: rgba(255,255,255,.3); }
+    .modal-body { padding: 28px; display: flex; flex-direction: column; gap: 28px; }
+
+    /* Report elements */
+    .report-section-title { font-family: var(--head); font-size: 14px; font-weight: 800; margin-bottom: 14px; }
+    .grade-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .grade-box { border-radius: 12px; padding: 14px 10px; text-align: center; }
+    .grade-box.a { background: rgba(77,208,225,.08); border: 1px solid rgba(77,208,225,.2); }
+    .grade-box.b { background: rgba(96,165,250,.08); border: 1px solid rgba(96,165,250,.2); }
+    .grade-box.c { background: rgba(251,191,36,.08); border: 1px solid rgba(251,191,36,.2); }
+    .grade-box.d { background: rgba(248,113,113,.08); border: 1px solid rgba(248,113,113,.2); }
+    .grade-num { font-family: var(--head); font-size: 28px; font-weight: 900; }
+    .grade-box.a .grade-num { color: var(--grade-a); }
+    .grade-box.b .grade-num { color: var(--grade-b); }
+    .grade-box.c .grade-num { color: var(--grade-c); }
+    .grade-box.d .grade-num { color: var(--grade-d); }
+    .grade-label { font-size: 10px; font-family: var(--head); font-weight: 700; margin-top: 4px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+
+    .dept-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .dept-name { font-size: 13px; font-weight: 600; width: 110px; flex-shrink: 0; }
+    .progress-track { flex: 1; height: 6px; background: rgba(255,255,255,.08); border-radius: 3px; overflow: hidden; }
+    .progress-fill { height: 100%; border-radius: 3px; }
+    .dept-pct { font-family: var(--head); font-size: 13px; font-weight: 800; width: 36px; text-align: right; flex-shrink: 0; }
+
+    .report-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .report-table th { text-align: left; padding: 8px 12px; font-family: var(--head); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); background: rgba(255,255,255,.03); border-bottom: 1px solid var(--border); }
+    .report-table td { padding: 9px 12px; border-bottom: 1px solid rgba(255,255,255,.04); color: rgba(255,255,255,.8); }
+    .report-table tr:last-child td { border-bottom: none; }
+    .badge { display: inline-block; font-family: var(--head); font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 8px; }
+    .badge-high { background: rgba(77,208,225,.12); color: var(--teal-light); }
+    .badge-mid { background: rgba(96,165,250,.12); color: #60a5fa; }
+    .badge-low { background: rgba(251,191,36,.12); color: #fbbf24; }
+
+    .profile-card { background: rgba(255,255,255,.03); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+    .profile-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--teal); display: flex; align-items: center; justify-content: center; font-family: var(--head); font-weight: 900; font-size: 16px; flex-shrink: 0; }
+    .profile-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 16px; text-align: center; }
+    .pstat-num { font-family: var(--head); font-size: 22px; font-weight: 900; }
+    .pstat-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-family: var(--head); font-weight: 600; margin-top: 2px; }
+
+    .stage-bars { display: flex; flex-direction: column; gap: 12px; }
+    .stage-bar-row { display: flex; flex-direction: column; gap: 5px; }
+    .stage-bar-header { display: flex; justify-content: space-between; font-size: 13px; }
+    .stage-bar-label { font-weight: 600; }
+    .stage-bar-val { font-family: var(--head); font-weight: 800; }
+
+    .routine-total { background: rgba(77,208,225,.06); border: 1px solid rgba(77,208,225,.15); border-radius: 10px; padding: 12px 16px; font-size: 13px; color: rgba(255,255,255,.8); }
+    .routine-total strong { color: var(--teal-light); font-family: var(--head); }
+
+    .stage-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .stage-result-card { border-radius: 12px; padding: 16px; }
+    .stage-result-card.s1 { background: rgba(77,208,225,.06); border: 1px solid rgba(77,208,217,.15); }
+    .stage-result-card.s2 { background: rgba(96,165,250,.06); border: 1px solid rgba(96,165,250,.15); }
+    .stage-result-card.s3 { background: rgba(251,191,36,.06); border: 1px solid rgba(251,191,36,.15); }
+    .stage-result-label { font-family: var(--head); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 8px; }
+    .stage-result-card.s1 .stage-result-label { color: var(--teal-light); }
+    .stage-result-card.s2 .stage-result-label { color: #60a5fa; }
+    .stage-result-card.s3 .stage-result-label { color: #fbbf24; }
+    .stage-result-num { font-family: var(--head); font-size: 28px; font-weight: 900; margin-bottom: 6px; }
+    .stage-result-desc { font-size: 11px; color: var(--muted); line-height: 1.5; }
+
+    .growth-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .growth-item:last-child { border-bottom: none; }
+    .growth-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+    .growth-title { font-family: var(--head); font-size: 13px; font-weight: 700; margin-bottom: 3px; }
+    .growth-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    .recs-block { background: linear-gradient(135deg, rgba(0,104,117,.2), rgba(77,208,225,.05)); border: 1px solid rgba(77,208,225,.15); border-radius: 14px; padding: 20px; }
+    .recs-title { font-family: var(--head); font-size: 14px; font-weight: 800; margin-bottom: 14px; color: var(--teal-light); }
+    .rec-item { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: rgba(255,255,255,.82); line-height: 1.5; margin-bottom: 8px; }
+    .rec-item::before { content: '✓'; color: var(--teal-light); font-weight: 700; flex-shrink: 0; }
+
+    footer { background: #0a0e15; border-top: 1px solid var(--border); padding: 32px 40px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-logo { font-family: var(--head); font-weight: 800; font-size: 15px; }
+    .footer-logo em { color: var(--teal-light); font-style: normal; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; font-family: var(--head); transition: color .2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,.2); font-family: var(--head); }
+
+    @media (max-width: 768px) {
+      header { padding: 0 20px; } nav { display: none; }
+      .hero { padding: 52px 20px 40px; }
+      .cards-wrap { padding: 0 20px; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .grade-grid { grid-template-columns: repeat(2, 1fr); }
+      .profile-stats { grid-template-columns: repeat(2, 1fr); }
+      .stage-results { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
 </head>
-<body class="font-body selection:bg-primary selection:text-on-primary flex flex-col h-screen overflow-hidden">
+<body>
 
-    <!-- Header -->
-    <header class="bg-[#f5f0e6]/80 backdrop-blur-xl top-0 sticky z-50 border-b border-black/5 flex-shrink-0">
-        <div class="flex items-center w-full px-4 md:px-6 py-2 md:py-3 max-w-7xl mx-auto">
-            <a href="index.html" class="flex-shrink-0 no-underline">
-                <img src="photos/start.png" alt="VibeCraft" class="h-7 w-auto embossed-logo"/>
-            </a>
-            <a href="attestation.html" class="flex-1 flex justify-center">
-                <span class="inline-flex items-center gap-1 text-on-surface/70 hover:text-primary px-2 py-1.5 rounded-lg transition-all duration-300 font-body text-xs font-bold">
-                    <span class="material-symbols-outlined text-sm">arrow_back</span>
-                    Назад к Аттестации
-                </span>
-            </a>
-            <div class="flex-shrink-0 ml-auto"></div>
-        </div>
-    </header>
+<header>
+  <a href="index.html" class="logo">
+    <div class="logo-mark">66</div>
+    <span class="logo-name">66<em>AI</em></span>
+  </a>
+  <nav>
+    <a href="index.html#how">Как работает</a>
+    <a href="cases.html">Кейсы</a>
+    <a href="price.html">Цены</a>
+    <a href="about.html">Автор</a>
+    <a href="vibe.html">Обучение</a>
+  </nav>
+  <a href="https://t.me/Bizbezit" target="_blank" rel="noopener" class="btn-tg">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.394 13.9l-2.94-.924c-.64-.203-.652-.64.135-.954l11.57-4.461c.537-.194 1.006.131.735.66z"/></svg>
+    Написать
+  </a>
+</header>
 
-    <main class="flex-1 overflow-y-auto">
-        <!-- Hero -->
-        <section class="py-10 md:py-16 bg-surface border-b border-black/5">
-            <div class="max-w-4xl mx-auto px-4 md:px-8 text-center">
-                <h1 class="text-2xl md:text-4xl lg:text-5xl font-headline font-black text-on-surface mb-3 tracking-tighter leading-tight">
-                    Примеры отчётов <span class="text-primary italic">Аттестации 66AI</span>
-                </h1>
-                <p class="text-base text-on-surface-variant font-light max-w-xl mx-auto">Посмотрите, как выглядят результаты аттестации</p>
-            </div>
-        </section>
+<div class="hero">
+  <div class="hero-label">Примеры отчётов · Диагностика 66AI</div>
+  <h1 class="hero-title">Не «сотрудник набрал 72 балла».<br/>А <em>карта потерь в рублях</em>.</h1>
+  <p class="hero-sub">Посмотрите, как выглядят реальные отчёты диагностики. Три уровня: по компании, по сотруднику и по руководителю.</p>
+</div>
 
-        <!-- Report Cards -->
-        <section class="py-10 md:py-14 bg-surface-container-lowest">
-            <div class="max-w-5xl mx-auto px-4 md:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                    <!-- Card 1: Компания -->
-                    <div class="anim-card report-card bg-white rounded-2xl border border-outline-variant/50 overflow-hidden cursor-pointer group" onclick="openModal('modal-company')">
-                        <div class="p-6 flex flex-col items-center justify-center text-center min-h-[220px]">
-                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                <span class="material-symbols-outlined text-primary text-2xl">business</span>
-                            </div>
-                            <h3 class="text-lg font-headline font-bold text-on-surface mb-2">Сводный по компании</h3>
-                            <p class="text-on-surface-variant text-xs leading-relaxed">Распределение грейдов, рейтинг отделов, топ-10 задач</p>
-                            <div class="mt-4 inline-flex items-center gap-1 text-primary font-body font-bold text-[10px] uppercase tracking-widest group-hover:gap-2 transition-all">
-                                Открыть <span class="material-symbols-outlined text-sm">open_in_new</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 2: Сотрудник -->
-                    <div class="anim-card report-card bg-white rounded-2xl border border-outline-variant/50 overflow-hidden cursor-pointer group" onclick="openModal('modal-employee')">
-                        <div class="p-6 flex flex-col items-center justify-center text-center min-h-[220px]">
-                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                <span class="material-symbols-outlined text-primary text-2xl">person</span>
-                            </div>
-                            <h3 class="text-lg font-headline font-bold text-on-surface mb-2">Сотрудник</h3>
-                            <p class="text-on-surface-variant text-xs leading-relaxed">Профиль Анны Смирновой, карта рутины, прогресс по этапам</p>
-                            <div class="mt-4 inline-flex items-center gap-1 text-primary font-body font-bold text-[10px] uppercase tracking-widest group-hover:gap-2 transition-all">
-                                Открыть <span class="material-symbols-outlined text-sm">open_in_new</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 3: Руководитель -->
-                    <div class="anim-card report-card bg-white rounded-2xl border border-outline-variant/50 overflow-hidden cursor-pointer group" onclick="openModal('modal-manager')">
-                        <div class="p-6 flex flex-col items-center justify-center text-center min-h-[220px]">
-                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                <span class="material-symbols-outlined text-primary text-2xl">supervisor_account</span>
-                            </div>
-                            <h3 class="text-lg font-headline font-bold text-on-surface mb-2">Руководитель</h3>
-                            <p class="text-on-surface-variant text-xs leading-relaxed">Профиль Дмитрия Волкова, зоны роста, рекомендации</p>
-                            <div class="mt-4 inline-flex items-center gap-1 text-primary font-body font-bold text-[10px] uppercase tracking-widest group-hover:gap-2 transition-all">
-                                Открыть <span class="material-symbols-outlined text-sm">open_in_new</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="py-14 bg-primary text-white text-center border-t border-black/5 relative overflow-hidden">
-            <div class="absolute inset-0 z-0">
-                <img src="photos/robot_green_nodes.webp" alt="" class="w-full h-full object-cover opacity-10 grayscale mix-blend-overlay"/>
-            </div>
-            <div class="max-w-3xl mx-auto px-4 md:px-8 relative z-10">
-                <h2 class="text-2xl md:text-3xl font-headline font-black mb-3 tracking-tighter">Готовы провести аттестацию?</h2>
-                <p class="text-base text-white/80 mb-6 font-light max-w-md mx-auto">Запустите тестирование для вашей команды</p>
-                <a href="attestation.html" class="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-full font-headline font-black text-xs uppercase tracking-widest hover:scale-105 transition-all shadow-xl">
-                    <span class="material-symbols-outlined text-base" style="font-variation-settings:'FILL' 1;">verified</span>
-                    Перейти к Аттестации
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <!-- ===== MODAL 1: Сводный по компании ===== -->
-    <div id="modal-company" class="modal-overlay hidden fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
-            <div class="flex items-center justify-between px-6 py-4 border-b border-black/5 flex-shrink-0">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-primary text-xl">business</span></div>
-                    <div><h2 class="font-headline font-bold text-on-surface text-lg">Сводный отчёт по компании</h2><p class="text-[10px] text-on-surface-variant">ООО «ТехноПром» • 47 сотрудников</p></div>
-                </div>
-                <button onclick="closeModal('modal-company')" class="text-on-surface/40 hover:text-on-surface transition-colors p-2 rounded-full hover:bg-black/5"><span class="material-symbols-outlined">close</span></button>
-            </div>
-            <div class="flex-1 overflow-y-auto modal-body px-6 py-6 space-y-6">
-                <!-- Распределение грейдов -->
-                <div>
-                    <h3 class="font-headline font-bold text-on-surface text-base mb-3">Распределение грейдов</h3>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                        <div class="text-center p-3 rounded-xl bg-[#006875]/5 border border-[#006875]/10"><p class="text-2xl font-black text-[#006875]">12</p><p class="text-[10px] font-bold uppercase tracking-wider text-[#006875]">Grade A — Эксперт</p></div>
-                        <div class="text-center p-3 rounded-xl bg-[#0ea5e9]/5 border border-[#0ea5e9]/10"><p class="text-2xl font-black text-[#0ea5e9]">18</p><p class="text-[10px] font-bold uppercase tracking-wider text-[#0ea5e9]">Grade B — Продвинутый</p></div>
-                        <div class="text-center p-3 rounded-xl bg-[#f59e0b]/5 border border-[#f59e0b]/10"><p class="text-2xl font-black text-[#f59e0b]">11</p><p class="text-[10px] font-bold uppercase tracking-wider text-[#f59e0b]">Grade C — Базовый</p></div>
-                        <div class="text-center p-3 rounded-xl bg-[#ef4444]/5 border border-[#ef4444]/10"><p class="text-2xl font-black text-[#ef4444]">6</p><p class="text-[10px] font-bold uppercase tracking-wider text-[#ef4444]">Grade D — Новичок</p></div>
-                    </div>
-                </div>
-                <!-- Рейтинг отделов -->
-                <div>
-                    <h3 class="font-headline font-bold text-on-surface text-base mb-3">Рейтинг отделов</h3>
-                    <div class="space-y-2">
-                        <div class="flex items-center gap-3"><span class="text-sm font-bold text-on-surface w-32">Маркетинг</span><div class="flex-1 progress-bar"><div class="progress-bar-fill bg-[#006875]" style="width:92%"></div></div><span class="text-sm font-bold text-[#006875] w-10 text-right">92%</span></div>
-                        <div class="flex items-center gap-3"><span class="text-sm font-bold text-on-surface w-32">Продажи</span><div class="flex-1 progress-bar"><div class="progress-bar-fill bg-[#0ea5e9]" style="width:78%"></div></div><span class="text-sm font-bold text-[#0ea5e9] w-10 text-right">78%</span></div>
-                        <div class="flex items-center gap-3"><span class="text-sm font-bold text-on-surface w-32">Бухгалтерия</span><div class="flex-1 progress-bar"><div class="progress-bar-fill bg-[#f59e0b]" style="width:54%"></div></div><span class="text-sm font-bold text-[#f59e0b] w-10 text-right">54%</span></div>
-                        <div class="flex items-center gap-3"><span class="text-sm font-bold text-on-surface w-32">Логистика</span><div class="flex-1 progress-bar"><div class="progress-bar-fill bg-[#ef4444]" style="width:31%"></div></div><span class="text-sm font-bold text-[#ef4444] w-10 text-right">31%</span></div>
-                    </div>
-                </div>
-                <!-- Топ-10 задач -->
-                <div>
-                    <h3 class="font-headline font-bold text-on-surface text-base mb-3">Топ-10 задач для автоматизации</h3>
-                    <div class="overflow-x-auto rounded-xl border border-outline-variant/30">
-                        <table class="w-full report-table text-sm">
-                            <thead><tr><th>#</th><th>Задача</th><th>Отдел</th><th>Часы/мес</th><th>Потенциал</th></tr></thead>
-                            <tbody>
-                                <tr><td>1</td><td class="font-medium">Формирование счетов</td><td>Бухгалтерия</td><td>120 ч</td><td><span class="grade-a px-2 py-0.5 rounded-full text-[10px] font-bold">Высокий</span></td></tr>
-                                <tr><td>2</td><td class="font-medium">Обработка входящих заявок</td><td>Продажи</td><td>95 ч</td><td><span class="grade-a px-2 py-0.5 rounded-full text-[10px] font-bold">Высокий</span></td></tr>
-                                <tr><td>3</td><td class="font-medium">Подготовка отчётов</td><td>Маркетинг</td><td>80 ч</td><td><span class="grade-a px-2 py-0.5 rounded-full text-[10px] font-bold">Высокий</span></td></tr>
-                                <tr><td>4</td><td class="font-medium">Маршрутизация грузов</td><td>Логистика</td><td>72 ч</td><td><span class="grade-b px-2 py-0.5 rounded-full text-[10px] font-bold">Средний</span></td></tr>
-                                <tr><td>5</td><td class="font-medium">Сверка с контрагентами</td><td>Бухгалтерия</td><td>60 ч</td><td><span class="grade-a px-2 py-0.5 rounded-full text-[10px] font-bold">Высокий</span></td></tr>
-                                <tr><td>6</td><td class="font-medium">Анализ конкурентов</td><td>Маркетинг</td><td>45 ч</td><td><span class="grade-b px-2 py-0.5 rounded-full text-[10px] font-bold">Средний</span></td></tr>
-                                <tr><td>7</td><td class="font-medium">Ответы на типовые вопросы</td><td>Поддержка</td><td>40 ч</td><td><span class="grade-a px-2 py-0.5 rounded-full text-[10px] font-bold">Высокий</span></td></tr>
-                                <tr><td>8</td><td class="font-medium">Ведение CRM-карточек</td><td>Продажи</td><td>35 ч</td><td><span class="grade-b px-2 py-0.5 rounded-full text-[10px] font-bold">Средний</span></td></tr>
-                                <tr><td>9</td><td class="font-medium">Планирование смен</td><td>Логистика</td><td>28 ч</td><td><span class="grade-c px-2 py-0.5 rounded-full text-[10px] font-bold">Низкий</span></td></tr>
-                                <tr><td>10</td><td class="font-medium">Онбординг новых сотрудников</td><td>HR</td><td>20 ч</td><td><span class="grade-b px-2 py-0.5 rounded-full text-[10px] font-bold">Средний</span></td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="cards-wrap">
+  <div class="cards-grid">
+    <div class="report-card" onclick="openModal('company')">
+      <div class="card-icon">🏢</div>
+      <div class="card-title">Сводный по компании</div>
+      <p class="card-desc">Распределение грейдов, рейтинг отделов, топ-10 задач для автоматизации, общий потенциал экономии.</p>
+      <div class="card-open">Открыть пример →</div>
     </div>
-
-    <!-- ===== MODAL 2: Сотрудник ===== -->
-    <div id="modal-employee" class="modal-overlay hidden fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
-            <div class="flex items-center justify-between px-6 py-4 border-b border-black/5 flex-shrink-0">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-primary text-xl">person</span></div>
-                    <div><h2 class="font-headline font-bold text-on-surface text-lg">Индивидуальный отчёт сотрудника</h2><p class="text-[10px] text-on-surface-variant">Анна Смирнова • Отдел продаж</p></div>
-                </div>
-                <button onclick="closeModal('modal-employee')" class="text-on-surface/40 hover:text-on-surface transition-colors p-2 rounded-full hover:bg-black/5"><span class="material-symbols-outlined">close</span></button>
-            </div>
-            <div class="flex-1 overflow-y-auto modal-body px-6 py-6 space-y-6">
-                <!-- Профиль -->
-                <div class="bg-surface rounded-2xl p-5">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary font-headline font-black text-xl">АС</div>
-                        <div><h3 class="font-headline font-bold text-on-surface text-lg">Анна Смирнова</h3><p class="text-sm text-on-surface-variant">Менеджер по продажам • Стаж 2 года</p></div>
-                        <span class="ml-auto grade-b px-3 py-1 rounded-full text-xs font-bold">Grade B</span>
-                    </div>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
-                        <div><p class="text-xl font-black text-primary">74%</p><p class="text-[10px] text-on-surface-variant uppercase tracking-wider">Общий балл</p></div>
-                        <div><p class="text-xl font-black text-primary">82%</p><p class="text-[10px] text-on-surface-variant uppercase tracking-wider">Промптинг</p></div>
-                        <div><p class="text-xl font-black text-[#f59e0b]">58%</p><p class="text-[10px] text-on-surface-variant uppercase tracking-wider">Безопасность</p></div>
-                        <div><p class="text-xl font-black text-primary">81%</p><p class="text-[10px] text-on-surface-variant uppercase tracking-wider">Автоматизация</p></div>
-                    </div>
-                </div>
-                <!-- Прогресс по этапам -->
-                <div>
-                    <h3 class="font-headline font-bold text-on-surface text-base mb-3">Прогресс по этапам аттестации</h3>
-                    <div class="space-y-3">
-                        <div><div class="flex justify-between mb-1"><span class="text-sm font-bold text-on-surface">Этап 1: Опросник</span><span class="text-sm font-bold text-[#006875]">100%</span></div><div class="progress-bar"><div class="progress-bar-fill bg-[#006875]" style="width:100%"></div></div></div>
-                        <div><div class="flex justify-between mb-1"><span class="text-sm font-bold text-on-surface">Этап 2: Практические задания</span><span class="text-sm font-bold text-[#0ea5e9]">75%</span></div><div class="progress-bar"><div class="progress-bar-fill bg-[#0ea5e9]" style="width:75%"></div></div></div>
-                        <div><div class="flex justify-between mb-1"><span class="text-sm font-bold text-on-surface">Этап 3: Оценка эксперта</span><span class="text-sm font-bold text-[#f59e0b]">60%</span></div><div class="progress-bar"><div class="progress-bar-fill bg-[#f59e0b]" style="width:60%"></div></div></div>
-                    </div>
-                </div>
-                <!-- Карта рутины -->
-                <div>
-                    <h3 class="font-headline font-bold text-on-surface text-base mb-3">Карта рутины</h3>
-                    <div class="overflow-x-auto rounded-xl border border-outline-variant/30">
-                        <table class="w-full report-table text-sm">
-                            <thead><tr><th>Задача</th><th>Часы/нед</th><th>Автоматизируется</th><th>Экономия/мес</th></tr></thead>
-                            <tbody>
-                                <tr><td class="font-medium">Внесение данных в CRM</td><td>8 ч</td><td><span class="text-[#006875] font-bold">✓ Да</span></td><td>32 ч</td></tr>
-                                <tr><td class="font-medium">Подготовка коммерческих предложений</td><td>6 ч</td><td><span class="text-[#006875] font-bold">✓ Да</span></td><td>24 ч</td></tr>
-                                <tr><td class="font-medium">Обработка входящих писем</td><td>5 ч</td><td><span class="text-[#0ea5e9] font-bold">△ Частично</span></td><td>12 ч</td></tr>
-                                <tr><td class="font-medium">Холодные звонки</td><td>10 ч</td><td><span class="text-[#ef4444] font-bold">✗ Нет</span></td><td>0 ч</td></tr>
-                                <tr><td class="font-medium">Еженедельные отчёты</td><td>3 ч</td><td><span class="text-[#006875] font-bold">✓ Да</span></td><td>12 ч</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="mt-4 bg-surface rounded-xl p-4"><p class="text-sm text-on-surface-variant"><strong class="text-on-surface">Итого:</strong> можно автоматизировать <strong class="text-[#006875]">68 часов/мес</strong> — это 17 рабочих часов экономии</p></div>
-                </div>
-            </div>
-        </div>
+    <div class="report-card" onclick="openModal('employee')">
+      <div class="card-icon">👤</div>
+      <div class="card-title">Отчёт сотрудника</div>
+      <p class="card-desc">Профиль Анны Смирновой: карта рутины, прогресс по этапам, валидированная экономия часов.</p>
+      <div class="card-open">Открыть пример →</div>
     </div>
-
-    <!-- ===== MODAL 3: Руководитель ===== -->
-    <div id="modal-manager" class="modal-overlay hidden fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
-            <div class="flex items-center justify-between px-6 py-4 border-b border-black/5 flex-shrink-0">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-primary text-xl">supervisor_account</span></div>
-                    <div><h2 class="font-headline font-bold text-on-surface text-lg">Отчёт руководителя</h2><p class="text-[10px] text-on-surface-variant">Дмитрий Волков • Руководитель отдела продаж</p></div>
-                </div>
-                <button onclick="closeModal('modal-manager')" class="text-on-surface/40 hover:text-on-surface transition-colors p-2 rounded-full hover:bg-black/5"><span class="material-symbols-outlined">close</span></button>
-            </div>
-            <div class="flex-1 overflow-y-auto modal-body px-6 py-6 space-y-6">
-                <!-- Профиль -->
-                <div class="bg-surface rounded-2xl p-5">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary font-headline font-black text-xl">ДВ</div>
-                        <div><h3 class="font-headline font-bold text-on-surface text-lg">Дмитрий Волков</h3><p class="text-sm text-on-surface-variant">Руководитель отдела продаж • 12 сотрудников в подчинении</p></div>
-                        <span class="ml-auto grade-a px-3 py-1 rounded-full text-xs font-bold">Grade A</span>
-                    </div>
-                </div>
-                <!-- Результаты этапов 1-3 -->
-                <div>
-                    <h3 class="font-headline font-bold text-on-surface text-base mb-3">Результаты по этапам</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                        <div class="bg-[#006875]/5 rounded-xl p-4 border border-[#006875]/10"><p class="text-xs font-bold text-[#006875] uppercase tracking-wider mb-2">Этап 1 — Опросник</p><p class="text-2xl font-black text-[#006875]">91%</p><p class="text-xs text-on-surface-variant mt-1">Отличное понимание возможностей ИИ. Умеет формулировать промпты для большинства задач.</p></div>
-                        <div class="bg-[#0ea5e9]/5 rounded-xl p-4 border border-[#0ea5e9]/10"><p class="text-xs font-bold text-[#0ea5e9] uppercase tracking-wider mb-2">Этап 2 — Практика</p><p class="text-2xl font-black text-[#0ea5e9]">78%</p><p class="text-xs text-on-surface-variant mt-1">Хорошие навыки автоматизации рутины. Есть потенциал в сложных интеграциях.</p></div>
-                        <div class="bg-[#f59e0b]/5 rounded-xl p-4 border border-[#f59e0b]/10"><p class="text-xs font-bold text-[#f59e0b] uppercase tracking-wider mb-2">Этап 3 — Эксперт 66ai</p><p class="text-2xl font-black text-[#f59e0b]">72%</p><p class="text-xs text-on-surface-variant mt-1">Комментарий эксперта: сильный практический навык, требуется углубление в безопасность данных.</p></div>
-                    </div>
-                </div>
-                <!-- Зоны роста -->
-                <div>
-                    <h3 class="font-headline font-bold text-on-surface text-base mb-3">Зоны роста</h3>
-                    <div class="space-y-3">
-                        <div class="flex gap-3 items-start"><div class="w-8 h-8 rounded-full bg-[#ef4444]/10 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-[#ef4444] text-sm">warning</span></div><div><p class="font-bold text-on-surface text-sm">Безопасность данных</p><p class="text-xs text-on-surface-variant">Загружает конфиденциальные данные в публичные ИИ без анонимизации</p></div></div>
-                        <div class="flex gap-3 items-start"><div class="w-8 h-8 rounded-full bg-[#f59e0b]/10 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-[#f59e0b] text-sm">info</span></div><div><p class="font-bold text-on-surface text-sm">API-интеграции</p><p class="text-xs text-on-surface-variant">Не использует API для автоматизации, работает только через чат-интерфейс</p></div></div>
-                        <div class="flex gap-3 items-start"><div class="w-8 h-8 rounded-full bg-[#0ea5e9]/10 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-[#0ea5e9] text-sm">lightbulb</span></div><div><p class="font-bold text-on-surface text-sm">Делегирование ИИ-задач</p><p class="text-xs text-on-surface-variant">Может эффективнее распределять ИИ-задачи внутри команды</p></div></div>
-                    </div>
-                </div>
-                <!-- Рекомендации -->
-                <div class="bg-primary text-white rounded-2xl p-5">
-                    <h3 class="font-headline font-bold text-lg mb-3">Рекомендации</h3>
-                    <ul class="space-y-2 text-sm text-white/90">
-                        <li class="flex gap-2"><span class="material-symbols-outlined text-sm flex-shrink-0 mt-0.5">check_circle</span>Пройти модуль «Безопасность работы с ИИ» (2 ч)</li>
-                        <li class="flex gap-2"><span class="material-symbols-outlined text-sm flex-shrink-0 mt-0.5">check_circle</span>Внедрить автоматизацию отчётов отдела через API (экономия ~20 ч/мес)</li>
-                        <li class="flex gap-2"><span class="material-symbols-outlined text-sm flex-shrink-0 mt-0.5">check_circle</span>Провести внутренний воркшоп для команды по промпт-инжинирингу</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <div class="report-card" onclick="openModal('manager')">
+      <div class="card-icon">📊</div>
+      <div class="card-title">Отчёт руководителя</div>
+      <p class="card-desc">Профиль Дмитрия Волкова: результаты по этапам, зоны роста, рекомендации эксперта 66AI.</p>
+      <div class="card-open">Открыть пример →</div>
     </div>
+  </div>
 
-    <!-- Footer -->
-    <footer class="bg-surface py-6 border-t border-black/5 flex-shrink-0">
-        <div class="max-w-7xl mx-auto px-4 md:px-8 text-center">
-            <div class="text-lg font-black text-on-surface tracking-tighter flex items-center gap-2 justify-center mb-1">
-                <img src="photos/start.png" alt="VibeCraft" class="h-5 w-auto"/>
-                <span>VibeCraft</span>
-            </div>
-            <p class="text-on-surface-variant text-[9px] font-body uppercase tracking-widest">© 2025 VibeCraft — Аттестация 66AI</p>
+  <div class="bottom-cta">
+    <h2>Готовы провести диагностику?</h2>
+    <p>Начните с двух сотрудников — результат через 3 дня. Гарантия возврата.</p>
+    <a href="attestation.html" class="btn-primary">Подробнее о диагностике →</a>
+  </div>
+</div>
+
+<!-- MODAL: Company -->
+<div class="modal-overlay" id="modal-company" onclick="handleOverlay(event,'modal-company')">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-header-info">
+        <div class="modal-header-icon">🏢</div>
+        <div>
+          <div class="modal-header-title">Сводный отчёт по компании</div>
+          <div class="modal-header-sub">ООО «ТехноПром» · 47 сотрудников</div>
         </div>
-    </footer>
+      </div>
+      <button class="modal-close" onclick="closeModal('modal-company')">✕</button>
+    </div>
+    <div class="modal-body">
+      <!-- Grades -->
+      <div>
+        <div class="report-section-title">Распределение уровней</div>
+        <div class="grade-grid">
+          <div class="grade-box a"><div class="grade-num">12</div><div class="grade-label">Уровень 4–5<br/>Эксперт</div></div>
+          <div class="grade-box b"><div class="grade-num">18</div><div class="grade-label">Уровень 3<br/>Практик</div></div>
+          <div class="grade-box c"><div class="grade-num">11</div><div class="grade-label">Уровень 2<br/>Начинающий</div></div>
+          <div class="grade-box d"><div class="grade-num">6</div><div class="grade-label">Уровень 1<br/>Новичок</div></div>
+        </div>
+      </div>
+      <!-- Dept rating -->
+      <div>
+        <div class="report-section-title">Рейтинг отделов</div>
+        <div class="dept-row"><span class="dept-name">Маркетинг</span><div class="progress-track"><div class="progress-fill" style="width:92%;background:var(--teal-light)"></div></div><span class="dept-pct" style="color:var(--teal-light)">92%</span></div>
+        <div class="dept-row"><span class="dept-name">Продажи</span><div class="progress-track"><div class="progress-fill" style="width:78%;background:#60a5fa"></div></div><span class="dept-pct" style="color:#60a5fa">78%</span></div>
+        <div class="dept-row"><span class="dept-name">Бухгалтерия</span><div class="progress-track"><div class="progress-fill" style="width:54%;background:#fbbf24"></div></div><span class="dept-pct" style="color:#fbbf24">54%</span></div>
+        <div class="dept-row"><span class="dept-name">Логистика</span><div class="progress-track"><div class="progress-fill" style="width:31%;background:#f87171"></div></div><span class="dept-pct" style="color:#f87171">31%</span></div>
+      </div>
+      <!-- Top tasks -->
+      <div>
+        <div class="report-section-title">Топ-10 задач для автоматизации</div>
+        <div style="border:1px solid var(--border);border-radius:12px;overflow:hidden">
+          <table class="report-table">
+            <thead><tr><th>#</th><th>Задача</th><th>Отдел</th><th>Часы/мес</th><th>Потенциал</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Формирование счетов</td><td>Бухгалтерия</td><td>120 ч</td><td><span class="badge badge-high">Высокий</span></td></tr>
+              <tr><td>2</td><td>Обработка входящих заявок</td><td>Продажи</td><td>95 ч</td><td><span class="badge badge-high">Высокий</span></td></tr>
+              <tr><td>3</td><td>Подготовка отчётов</td><td>Маркетинг</td><td>80 ч</td><td><span class="badge badge-high">Высокий</span></td></tr>
+              <tr><td>4</td><td>Маршрутизация грузов</td><td>Логистика</td><td>72 ч</td><td><span class="badge badge-mid">Средний</span></td></tr>
+              <tr><td>5</td><td>Сверка с контрагентами</td><td>Бухгалтерия</td><td>60 ч</td><td><span class="badge badge-high">Высокий</span></td></tr>
+              <tr><td>6</td><td>Анализ конкурентов</td><td>Маркетинг</td><td>45 ч</td><td><span class="badge badge-mid">Средний</span></td></tr>
+              <tr><td>7</td><td>Ответы на типовые вопросы</td><td>Поддержка</td><td>40 ч</td><td><span class="badge badge-high">Высокий</span></td></tr>
+              <tr><td>8</td><td>Ведение CRM-карточек</td><td>Продажи</td><td>35 ч</td><td><span class="badge badge-mid">Средний</span></td></tr>
+              <tr><td>9</td><td>Планирование смен</td><td>Логистика</td><td>28 ч</td><td><span class="badge badge-low">Низкий</span></td></tr>
+              <tr><td>10</td><td>Онбординг сотрудников</td><td>HR</td><td>20 ч</td><td><span class="badge badge-mid">Средний</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="routine-total">Итого по компании: потенциал экономии <strong>595 часов/мес</strong> = <strong>892 500 ₽/мес</strong> при ставке 1 500 ₽/час</div>
+    </div>
+  </div>
+</div>
 
-    <script>
-        function openModal(id){document.getElementById(id).classList.remove('hidden');document.getElementById(id).classList.add('flex');document.body.style.overflow='hidden'}
-        function closeModal(id){document.getElementById(id).classList.add('hidden');document.getElementById(id).classList.remove('flex');document.body.style.overflow=''}
-        // Close on overlay click
-        document.querySelectorAll('.modal-overlay').forEach(function(m){m.addEventListener('click',function(e){if(e.target===m){closeModal(m.id)}})});
-        // Close on Escape
-        document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.modal-overlay:not(.hidden)').forEach(function(m){closeModal(m.id)})}});
-        function toggleMobileMenu(){var m=document.getElementById('mobile-menu'),i=document.getElementById('menu-icon');if(m.classList.contains('hidden')){m.classList.remove('hidden');i.textContent='close'}else{m.classList.add('hidden');i.textContent='menu'}}
-        function closeMobileMenu(){document.getElementById('mobile-menu').classList.add('hidden');document.getElementById('menu-icon').textContent='menu'}
-    </script>
+<!-- MODAL: Employee -->
+<div class="modal-overlay" id="modal-employee" onclick="handleOverlay(event,'modal-employee')">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-header-info">
+        <div class="modal-header-icon">👤</div>
+        <div>
+          <div class="modal-header-title">Индивидуальный отчёт сотрудника</div>
+          <div class="modal-header-sub">Анна Смирнова · Менеджер по продажам</div>
+        </div>
+      </div>
+      <button class="modal-close" onclick="closeModal('modal-employee')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="profile-card">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px">
+          <div class="profile-avatar">АС</div>
+          <div>
+            <div style="font-family:var(--head);font-size:17px;font-weight:800">Анна Смирнова</div>
+            <div style="font-size:12px;color:var(--muted)">Менеджер по продажам · Стаж 2 года</div>
+          </div>
+          <div style="margin-left:auto;background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.25);color:#60a5fa;font-family:var(--head);font-size:11px;font-weight:700;padding:4px 12px;border-radius:12px">Уровень 3</div>
+        </div>
+        <div class="profile-stats">
+          <div><div class="pstat-num" style="color:var(--teal-light)">74%</div><div class="pstat-label">Общий балл</div></div>
+          <div><div class="pstat-num" style="color:var(--teal-light)">82%</div><div class="pstat-label">Промптинг</div></div>
+          <div><div class="pstat-num" style="color:#fbbf24">58%</div><div class="pstat-label">Безопасность</div></div>
+          <div><div class="pstat-num" style="color:var(--teal-light)">81%</div><div class="pstat-label">Автоматизация</div></div>
+        </div>
+      </div>
+      <!-- Stage progress -->
+      <div>
+        <div class="report-section-title">Прогресс по этапам</div>
+        <div class="stage-bars">
+          <div class="stage-bar-row">
+            <div class="stage-bar-header"><span class="stage-bar-label">Этап 1: Карта рутины</span><span class="stage-bar-val" style="color:var(--teal-light)">100%</span></div>
+            <div class="progress-track" style="height:8px"><div class="progress-fill" style="width:100%;background:var(--teal-light)"></div></div>
+          </div>
+          <div class="stage-bar-row">
+            <div class="stage-bar-header"><span class="stage-bar-label">Этап 2: ИИ-Симулятор</span><span class="stage-bar-val" style="color:#60a5fa">75%</span></div>
+            <div class="progress-track" style="height:8px"><div class="progress-fill" style="width:75%;background:#60a5fa"></div></div>
+          </div>
+          <div class="stage-bar-row">
+            <div class="stage-bar-header"><span class="stage-bar-label">Этап 3: Микро-проект</span><span class="stage-bar-val" style="color:#fbbf24">60%</span></div>
+            <div class="progress-track" style="height:8px"><div class="progress-fill" style="width:60%;background:#fbbf24"></div></div>
+          </div>
+        </div>
+      </div>
+      <!-- Routine map -->
+      <div>
+        <div class="report-section-title">Карта рутины</div>
+        <div style="border:1px solid var(--border);border-radius:12px;overflow:hidden">
+          <table class="report-table">
+            <thead><tr><th>Задача</th><th>Часы/нед</th><th>Автоматизируется</th><th>Экономия/мес</th></tr></thead>
+            <tbody>
+              <tr><td>Внесение данных в CRM</td><td>8 ч</td><td style="color:var(--teal-light);font-weight:700">✓ Да</td><td>32 ч</td></tr>
+              <tr><td>Подготовка коммерческих предложений</td><td>6 ч</td><td style="color:var(--teal-light);font-weight:700">✓ Да</td><td>24 ч</td></tr>
+              <tr><td>Обработка входящих писем</td><td>5 ч</td><td style="color:#60a5fa;font-weight:700">△ Частично</td><td>12 ч</td></tr>
+              <tr><td>Холодные звонки</td><td>10 ч</td><td style="color:#f87171;font-weight:700">✗ Нет</td><td>0 ч</td></tr>
+              <tr><td>Еженедельные отчёты</td><td>3 ч</td><td style="color:var(--teal-light);font-weight:700">✓ Да</td><td>12 ч</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="routine-total" style="margin-top:10px">Итого: можно автоматизировать <strong>68 часов/мес</strong> = <strong>102 000 ₽/мес</strong> экономии</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: Manager -->
+<div class="modal-overlay" id="modal-manager" onclick="handleOverlay(event,'modal-manager')">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-header-info">
+        <div class="modal-header-icon">📊</div>
+        <div>
+          <div class="modal-header-title">Отчёт руководителя</div>
+          <div class="modal-header-sub">Дмитрий Волков · Руководитель отдела продаж</div>
+        </div>
+      </div>
+      <button class="modal-close" onclick="closeModal('modal-manager')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="profile-card">
+        <div style="display:flex;align-items:center;gap:14px">
+          <div class="profile-avatar">ДВ</div>
+          <div>
+            <div style="font-family:var(--head);font-size:17px;font-weight:800">Дмитрий Волков</div>
+            <div style="font-size:12px;color:var(--muted)">Руководитель отдела продаж · 12 чел. в подчинении</div>
+          </div>
+          <div style="margin-left:auto;background:rgba(77,208,225,.1);border:1px solid rgba(77,208,225,.25);color:var(--teal-light);font-family:var(--head);font-size:11px;font-weight:700;padding:4px 12px;border-radius:12px">Уровень 4</div>
+        </div>
+      </div>
+      <!-- Stage results -->
+      <div>
+        <div class="report-section-title">Результаты по этапам</div>
+        <div class="stage-results">
+          <div class="stage-result-card s1">
+            <div class="stage-result-label">Этап 1 — Карта рутины</div>
+            <div class="stage-result-num" style="color:var(--teal-light)">91%</div>
+            <div class="stage-result-desc">Отличное понимание возможностей ИИ. Умеет формулировать промпты для большинства задач.</div>
+          </div>
+          <div class="stage-result-card s2">
+            <div class="stage-result-label">Этап 2 — Симулятор</div>
+            <div class="stage-result-num" style="color:#60a5fa">78%</div>
+            <div class="stage-result-desc">Хорошие навыки автоматизации рутины. Потенциал в сложных интеграциях не раскрыт.</div>
+          </div>
+          <div class="stage-result-card s3">
+            <div class="stage-result-label">Этап 3 — Микро-проект</div>
+            <div class="stage-result-num" style="color:#fbbf24">72%</div>
+            <div class="stage-result-desc">Сильный практический навык, требуется углубление в безопасность данных.</div>
+          </div>
+        </div>
+      </div>
+      <!-- Growth zones -->
+      <div>
+        <div class="report-section-title">Зоны роста</div>
+        <div>
+          <div class="growth-item">
+            <div class="growth-dot" style="background:#f87171"></div>
+            <div><div class="growth-title">Безопасность данных</div><div class="growth-desc">Загружает конфиденциальные данные в публичные ИИ без анонимизации. Критичный риск.</div></div>
+          </div>
+          <div class="growth-item">
+            <div class="growth-dot" style="background:#fbbf24"></div>
+            <div><div class="growth-title">API-интеграции</div><div class="growth-desc">Не использует API для автоматизации, работает только через чат-интерфейс — теряет скорость.</div></div>
+          </div>
+          <div class="growth-item">
+            <div class="growth-dot" style="background:#60a5fa"></div>
+            <div><div class="growth-title">Делегирование ИИ-задач</div><div class="growth-desc">Может эффективнее распределять ИИ-задачи внутри команды — умножать результат через людей.</div></div>
+          </div>
+        </div>
+      </div>
+      <!-- Recommendations -->
+      <div class="recs-block">
+        <div class="recs-title">Рекомендации эксперта 66AI</div>
+        <div class="rec-item">Пройти модуль «Безопасность работы с ИИ» — 2 часа, критично</div>
+        <div class="rec-item">Внедрить автоматизацию отчётов отдела через API — экономия ~20 ч/мес</div>
+        <div class="rec-item">Провести внутренний воркшоп для команды по промпт-инжинирингу</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">66<em>AI</em></div>
+  <div class="footer-links">
+    <a href="index.html">Главная</a>
+    <a href="attestation.html">Диагностика</a>
+    <a href="price.html">Цены</a>
+    <a href="about.html">Автор</a>
+    <a href="vibe.html">Обучение</a>
+  </div>
+  <div class="footer-copy">© 2026 66AI · Диагностика ИИ-эффективности</div>
+</footer>
+
+<script>
+function openModal(id) {
+  document.getElementById('modal-' + id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+function handleOverlay(e, id) {
+  if (e.target === document.getElementById(id)) closeModal(id);
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id));
+});
+</script>
 </body>
 </html>
